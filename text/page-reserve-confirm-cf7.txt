@@ -1,0 +1,79 @@
+<section class="p-reserve-input__wrapper confirm-container">
+
+<table class="confirm-table">
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> お名前</th>
+    <td class="confirm-input">[multiform your-name]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> ふりがな</th>
+    <td class="confirm-input">[multiform your-kana]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required p-reserve-input__optional">任意</span> 電話番号</th>
+    <td class="confirm-input">[multiform your-tel]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> メールアドレス</th>
+    <td class="confirm-input">[multiform your-email]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> ご希望の連絡方法</th>
+    <td class="confirm-input">[multiform contact-method]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required p-reserve-input__optional">任意</span> ご希望の連絡時間帯</th>
+    <td class="confirm-input">
+      <div class="contact-time">
+        <p class="checkbox-label">平日</p>
+        [multiform weekday-time]
+      </div>
+      <div class="contact-time">
+        <p class="checkbox-label">休日</p>
+        [multiform holiday-time]
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> お問い合わせ項目</th>
+    <td class="confirm-input">
+      [multiform contact-item]
+    </td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required">必須</span> 希望店舗</th>
+    <td class="confirm-input">[multiform store]</td>
+  </tr>
+
+  <tr>
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required p-reserve-input__optional">任意</span> 来店希望日（第一希望）</th>
+    <td class="confirm-input">[multiform first-date]</td>
+  </tr>
+
+  <tr class="second-visit">
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required p-reserve-input__optional">任意</span> 来店希望日（第二希望）</th>
+    <td class="confirm-input">[multiform second-date]</td>
+  </tr>
+
+  <tr class="confirm-contents">
+    <th class="confirm-label"><span class="p-reserve-input__comfirm-required p-reserve-input__optional">任意</span> お問い合わせ内容</th>
+    <td class="confirm-textarea">[multiform message]</td>
+  </tr>
+</table>
+
+<input type="submit" value="送信" class="p-reserve-input__submit u-hover confirm-submit pc_only">
+<input type="submit" value="確認" class="p-reserve-input__submit u-hover confirm-submit sp_only">
+
+</section>
+
+<!-- Multi-Step 本番用最終ステップ -->
+[multistep multistep-863 last_step send_email "reserve-thanks"]
+
+[multistep multistep-338 last_step send_email "reserve-thanks"]

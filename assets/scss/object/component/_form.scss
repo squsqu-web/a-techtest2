@@ -1,0 +1,465 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.p-reserve-form {
+  width: 75%;
+  // max-width: 106.1rem;
+  margin: 13rem auto 8%;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @media (max-width:767.98px) {
+    width: 84%;
+    margin: 27% auto 0;
+    padding: 0 0 21%;
+  }
+
+  &__minor {
+    display: flex;
+    gap: 10.1rem;
+
+    @media (max-width:767.98px) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+
+    &__text {
+      width: 66.6%;
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        margin: 0 auto 3.2rem;
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    margin: 12.1rem 0 0;
+
+    @media (max-width:767.98px) {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.form-bread {
+  padding: 0% 8%;
+
+  @media (max-width:767.98px) {
+    padding: 1% 4%;
+  }
+}
+
+.form-bread-nav {
+  top: 1rem;
+
+  @media (max-width:767.98px) {}
+}
+
+.c-minor-notice {
+  &__title {
+    font-size: 3.2rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    margin: 0 0 6%;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      font-size: 2.4rem;
+      line-height: calc(32 / 24);
+      margin: 0 0 4%;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    color: v.$color-main;
+    font-family: v.$font-primary-gothic;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      font-size: 1.4rem;
+      line-height: calc(21 / 14);
+    }
+  }
+}
+
+.c-minor-download {
+  width: 22%;
+  min-width: 24rem;
+  height: auto;
+  aspect-ratio: 240 / 147;
+  background-color: v.$color-bg-2;
+  text-align: center;
+  align-self: flex-start;
+
+  @media screen and (max-width: 1000px) {
+    margin: 0 auto 8%;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: v.$color-main;
+    font-family: v.$font-primary-gothic;
+    padding: 12% 0 7%;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  &__link {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: v.$color-white;
+    font-family: v.$font-primary-mincho;
+    width: 16rem;
+  }
+
+  a {
+    color: v.$color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.1rem;
+    margin: 0 auto;
+    height: 4rem;
+    text-transform: capitalize;
+
+    @media (max-width:767.98px) {
+      gap: 0.6rem;
+      padding-right: 2.1rem;
+    }
+  }
+}
+
+.c-contact-description {
+  &__title {
+    font-size: 4.8rem;
+    letter-spacing: 0.1em;
+    line-height: calc(60 / 48);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    margin: 0 0 2.4rem;
+    text-transform: uppercase;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      font-size: 2.4rem;
+      line-height: calc(32/24);
+      margin: 0 0 1.1rem;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    color: v.$color-main;
+    font-family: v.$font-primary-gothic;
+    padding: 0 8% 0 0;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      font-size: 1.4rem;
+      line-height: calc(21 / 14);
+      padding: 0;
+    }
+  }
+}
+
+.c-contact-info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6.5%;
+  border-left: 0.1rem solid v.$color-main;
+  width: 46%;
+  margin: 0 auto;
+  align-items: center;
+
+  @media (max-width:767.98px) {
+    padding: 0;
+    border-left: none;
+    width: 100%;
+  }
+
+  &__number,
+  &__number a {
+    font-size: 3.2rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    margin-bottom: 9%;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      margin: 8% auto 5%;
+      text-align: center;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__time {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    line-height: 2.3;
+    color: v.$color-main;
+    font-family: v.$font-primary-gothic;
+    border: 0.1rem solid v.$color-main;
+    border-radius: 1.6rem;
+    text-align: center;
+    width: 55%;
+    font-weight: v.$Regular;
+
+    @media screen and (max-width: 1100px) {
+      margin: 0 auto;
+      width: 75%;
+    }
+  }
+}
+
+.checkbox__bottom-box {
+  label {
+    width: 20rem;
+    font-family: v.$font-main-serif;
+
+    @media (max-width:767.98px) {
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+.c-contact-description {
+  width: 65%;
+
+  @media (max-width:767.98px) {
+    width: 100%;
+  }
+}
+
+.wpcf7-list-item input {
+  cursor: pointer;
+}
+
+.p-reserve-input-text__block p {
+  display: flex;
+  margin: 0 0 0rem;
+  align-items: start;
+  justify-content: space-between;
+
+  @media (max-width:767.98px) {
+    display: block;
+    margin-top: 2.2rem;
+  }
+}
+
+.label-text {
+  align-items: flex-start !important;
+}
+
+.p-reserve-input__label {
+  cursor: pointer;
+}
+
+// メールフォーム
+.p-reserve-mailform {
+  display: flex;
+  width: 76%;
+  margin: 0 auto;
+  justify-content: space-between;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @media (max-width:767.98px) {
+    display: block;
+    width: 84%;
+  }
+
+  &__intro-title {
+    font-size: 4.8rem;
+    letter-spacing: 0.1em;
+    line-height: calc(60 / 48);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    margin: 0 0 3.8rem;
+    text-transform: uppercase;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      font-size: 3.2rem;
+      padding: 13% 0 0;
+      margin: 0 0 4%;
+    }
+  }
+
+  &__intro-text {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    color: v.$color-text;
+    font-family: v.$font-primary-gothic;
+    font-weight: v.$Regular;
+
+    @media (max-width:767.98px) {
+      padding: 0 0 0%;
+    }
+  }
+}
+
+.p-reserve-mailform__intro {
+  margin-right: 9.8rem;
+  width: 50%;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+}
+
+// 入力ステップ
+.c-form-steps {
+  display: flex;
+  gap: 2.7rem;
+  width: 41%;
+  align-items: center;
+
+
+
+  @media (max-width:767.98px) {
+    width: 100%;
+    justify-content: center;
+    gap: 8%;
+  }
+
+  &__item {
+    border-top: 0.1rem solid v.$color-black;
+    border-bottom: 0.1rem solid v.$color-black;
+    padding: 5.2rem 0 5.2rem;
+    width: 13.1rem;
+
+    @media screen and (max-width: 1000px) {
+      margin-top: 7%;
+    }
+
+    @media (max-width:767.98px) {
+      width: 9.3rem;
+      padding: 12% 0 11%;
+    }
+
+    &.is-current,
+    .is-current h5,
+    .is-current .c-form-steps__step-text {
+      border-color: v.$color-main;
+      font-family: v.$font-main-serif;
+      color: v.$color-main !important;
+    }
+
+    &.is-current {
+      border-color: v.$color-main !important;
+
+      .c-form-steps__step-title,
+      .c-form-steps__step-text {
+        color: v.$color-main !important;
+      }
+    }
+  }
+
+  &__step-title {
+    font-size: clamp(0.875rem, 0.768rem + 0.54vw, 1.25rem);
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    font-family: v.$font-main-serif;
+    margin: 0 0 1.6rem;
+    text-align: center;
+    color: v.$color-text2;
+    text-transform: capitalize;
+    font-weight: v.$Regular;
+
+    @media screen and (max-width: 1050px) and (min-width: 769px) {
+      font-size: 1.6rem;
+      line-height: calc(18 / 14);
+      gap: 1.8rem;
+      margin: 0;
+      margin-bottom: 22%;
+    }
+
+    @media (max-width:767.98px)and (min-width: 480px) {
+      font-size: 1rem;
+      line-height: calc(18 / 14);
+      gap: 1.8rem;
+      margin: 0;
+      margin-bottom: 22%;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.4rem;
+    }
+
+    // @media screen and (max-width: 370px) {
+    //   font-size: 1.2rem;
+    // }
+  }
+
+  &__step-text {
+    // font-size: clamp(1rem, 0.857rem + 0.71vw, 1.5rem);
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    color: v.$color-text2;
+    font-family: v.$font-primary-mincho;
+    text-align: center;
+    font-weight: v.$Regular;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width:767.98px)and (min-width: 480px) {
+      font-size: 1rem;
+      line-height: calc(19 / 16);
+      margin: 0;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.form-bottom-block {
+  width: 100%;
+  height: 9.6rem;
+  background-color: v.$color-bg-1;
+
+  @media (max-width:767.98px) {
+    height: 2rem;
+  }
+}
+
+.form-bottom-block-comfirm {
+  width: 100%;
+  height: 9.6rem;
+  background-color: v.$color-bg-1;
+
+  @media (max-width:767.98px) {
+    height: 3rem;
+  }
+}
+
+.form-bottom-block-thanks {
+  width: 100%;
+  height: 7.5rem;
+  background-color: v.$color-bg-1;
+
+  @media (max-width:767.98px) {
+    height: 2rem;
+  }
+}

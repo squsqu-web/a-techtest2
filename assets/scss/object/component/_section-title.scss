@@ -1,0 +1,40 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.l-main-visual {
+  &__title {
+    font-size: 8rem;
+    letter-spacing: 0.1em;
+    line-height: calc(100 / 80);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: v.$color-bg-2;
+    font-weight: v.$Regular;
+    // padding: 9% 0;
+    // margin: 12% auto 0;
+    margin: 17.1rem auto 0;
+    padding: 13rem 0;
+    text-align: center;
+
+    @media (max-width:767.98px){
+      font-size: 3.2rem;
+      margin: 8rem auto 0;
+      position: static;
+      padding: 22% 0%;
+    }
+  }
+}
+
+.l-main-visual img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440/600;
+
+  @media (max-width:767.98px){
+    aspect-ratio: 375/300;
+  }
+}

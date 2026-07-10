@@ -1,0 +1,511 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.main-concept {
+  // background-color: v.$color-bg-2;
+}
+
+.p-concept {
+  position: relative;
+  padding: 6.5% 0 5%;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mq(md) {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 22% 0 9%;
+  }
+
+  &__title {
+    font-size: 8rem;
+    letter-spacing: 0.04em;
+    color: v.$color-main;
+    position: absolute;
+    top: 22rem;
+    left: 12rem;
+    font-family: v.$font-main-serif;
+
+    &::after {
+      content: "Concept";
+      font-size: 12rem;
+      color: v.$color-main-2;
+      font-family: v.$font-sub-cursive;
+      position: absolute;
+      top: -3rem;
+      left: 6rem;
+      text-transform: capitalize;
+    }
+
+    &__center {
+      font-size: 4rem;
+      letter-spacing: 0.1em;
+      line-height: calc(60 / 40);
+      font-family: v.$font-primary-mincho;
+      color: v.$color-main;
+      position: absolute;
+      top: 20%;
+      left: 0%;
+      font-weight: v.$Demibold;
+
+      @media screen and (max-width: 900px) {
+        font-size: 3rem;
+        line-height: 2;
+        top: 12%;
+      }
+
+      @include mq(md) {
+        font-size: 1.8rem;
+        line-height: 2;
+        position: static;
+        margin: 5% 0 5%;
+      }
+    }
+  }
+
+  &__picture {
+    object-fit: cover;
+  }
+
+  img {
+    width: 60%;
+    margin-left: auto;
+    display: block;
+    height: auto;
+    aspect-ratio: 720 / 405;
+
+    @include mq(md) {
+      width: 100%;
+      margin: 0 auto;
+      aspect-ratio: 315 / 177;
+    }
+  }
+}
+
+.concept-innerConcept {
+  width: 84%;
+  margin: 0 auto;
+  position: relative;
+
+  @include mq(md) {
+    width: 84%;
+  }
+}
+
+.concept-inner {
+  width: 84%;
+  margin: 0 auto;
+  position: relative;
+
+  @include mq(md) {
+    width: 91%;
+  }
+}
+
+.page-concept {
+  background-color: v.$color-bg-2;
+  position: relative;
+  background-color: gainsboro;
+  border: 3px solid red;
+}
+
+.con__txt {
+  max-width: 120rem;
+  width: 100%;
+  margin: 5% auto 0%;
+  color: v.$color-main;
+
+  @include mq(md) {
+    width: 100%;
+    font-size: 1.4rem;
+    margin: 0 auto 2rem;
+  }
+}
+
+// Instagram Section
+.p-instagram {
+  width: 100%;
+  text-align: center;
+  padding: 11.5% 0 0%;
+  box-sizing: border-box;
+  background-color: v.$color-bg-1;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 0;
+    margin: 0;
+    padding: 29% 0 2%;
+    margin: 0 0 26%;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 66%;
+    margin: 5% auto 4%;
+
+    @include mq(md) {
+      gap: 1.9rem;
+      width: 93%;
+      margin: 19% auto 9%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+
+      @include mq(md) {}
+    }
+  }
+
+  &__button {
+    font-family: v.$font-primary-mincho;
+
+    a {
+      color: v.$color-white;
+    }
+  }
+}
+
+// 共通セクションヘッダー
+.c-section-header {
+  &__en {
+    font-family: v.$font-main-serif;
+    font-size: 8.4rem;
+    color: v.$color-main;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.26;
+    position: relative;
+    text-align: left;
+    // overflow: hidden;
+
+    @include mq(md) {
+      font-size: 4.8rem;
+      margin: 0 auto;
+    }
+
+    &::after {
+      content: "Instagram";
+      font-size: 12rem;
+      line-height: calc(168 / 120);
+      letter-spacing: 0;
+      color: v.$color-main-light;
+      font-family: v.$font-sub-cursive;
+      position: absolute;
+      top: -3rem;
+      left: 10.6rem;
+      text-transform: capitalize;
+
+      @include mq(md) {
+        font-size: 7.2rem;
+        margin: 0 auto;
+        left: 7.2rem;
+        left: 2.9rem;
+      }
+    }
+  }
+
+  &__ja {
+    font-family: v.$font-primary-mincho;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: v.$color-main;
+    text-align: left;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Company Section
+.p-company {
+  position: relative;
+  padding: 11.5% 0 8%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: v.$color-bg-1;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 12% 0 32%;
+  }
+
+  &__profile {
+    width: 100%;
+    aspect-ratio: 1080/540;
+
+    @include mq(md) {
+      aspect-ratio: 343/200;
+    }
+
+    img {
+      width: 90%;
+      height: auto;
+      margin: 5.1rem auto 6.05rem;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 1080 / 540;
+
+      @include mq(md) {
+        margin: 19% auto 4.1rem;
+        aspect-ratio: 343 / 200;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.company-profile {
+  margin: 0 auto;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1.9fr 3fr;
+    width: 90%;
+    margin: 0 auto;
+
+    @include mq(md) {
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-top: 0.1rem solid v.$color-main;
+    padding: 2.4rem 0.5rem 2.4rem 1.5rem;
+
+    @include mq(md) {
+      flex: 0 0 100%;
+      padding: 8% 0.1rem 7.5%;
+      align-items: baseline;
+    }
+
+    .cp__title {
+      color: v.$color-main;
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      line-height: calc(24 / 18);
+      font-family: v.$font-primary-mincho;
+      font-weight: v.$Demibold;
+
+      @include mq(md) {
+        font-size: 1.4rem;
+        padding-left: 0.8rem;
+      }
+    }
+
+    .cp__content {
+      color: v.$color-text;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: calc(24 / 18);
+      font-family: v.$font-primary-gothic;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 1.2rem;
+        padding-left: 8%;
+      }
+    }
+  }
+
+  &__term {
+    flex: 0 0 10rem;
+    font-weight: bold;
+    color: v.$color-text;
+
+    @include mq(md) {}
+  }
+
+  &__desc {
+    flex: 1;
+    color: v.$color-text3;
+
+    @include mq(md) {}
+  }
+}
+
+/* 100%にする行 */
+.employee-item,
+.last-item {
+  grid-column: 1 / -1;
+}
+
+main {
+  background-color: v.$color-bg-1;
+}
+
+@include mq(md) {
+  .u-sp-none {
+    display: none;
+  }
+}
+
+.cp__content a {
+  color: v.$color-text;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  font-family: v.$font-primary-gothic;
+  font-weight: 500;
+
+  @include mq(md) {
+    font-size: 1.2rem;
+  }
+}
+
+#sb_instagram .sbi_photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: calc(1 / 1);
+
+  @include mq(md) {}
+}
+
+#sb_instagram #sbi_images {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  gap: 3.9rem 3.9rem !important;
+  padding: 0 0 2%;
+
+  @include mq(md) {
+    padding: 0;
+    gap: 0 !important;
+  }
+}
+
+.p-instagram__button {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  line-height: calc(32 / 20);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  justify-content: center;
+  font-weight: v.$Demibold;
+  padding-right: 1.3em;
+
+  @include mq(md) {
+    font-size: 2rem;
+    width: 20rem;
+    height: 5rem;
+    gap: 0.9rem;
+  }
+}
+
+.p-instagram__button a {
+
+  @include mq(md) {
+    gap: 0.9rem;
+    padding-right: 0.2rem;
+  }
+}
+
+
+
+@include mq(md) {
+  #sb_instagram .sbi_photo {
+    width: 48% !important;
+    margin-bottom: 4% !important;
+  }
+}
+
+@include mq(md) {
+  #sb_instagram #sbi_images {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3% 4% !important;
+  }
+
+  #sb_instagram .sbi_photo {
+    width: 100% !important;
+  }
+}
+
+@include mq(md) {
+  .concept-company h2 {
+    margin-left: 0;
+  }
+}
+
+@include mq(md) {
+  .concept-company-sm {
+    margin-left: 0;
+  }
+}
+
+@include mq(md) {
+  .last-item {
+    border-top: 0.1rem solid v.$color-main;
+    border-bottom: 0.1rem solid v.$color-main;
+  }
+}
+
+.tel-item {
+  @include mq(md) {
+    cursor: pointer;
+  }
+}
+
+.bottom-money {
+  // border-bottom: 0.1rem solid v.$color-main;
+
+  @include mq(md) {
+    border-bottom: none;
+  }
+}
+
+.instagram-title {
+  @media screen and (max-width: 340px) {
+    font-size: 4rem;
+  }
+}
+
+.company-profile-after::after {
+  content: "Company profile";
+  font-size: 12rem;
+  color: v.$color-main-2;
+  font-family: v.$font-sub-cursive;
+  position: absolute;
+  top: -5.5rem;
+  left: 11.5rem;
+  text-transform: capitalize;
+
+  @include mq(md) {
+    font-size: 7.2rem;
+    margin: 0 auto;
+    top: -2.5rem;
+    left: 6.7rem;
+  }
+}
+
+.tel-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+@include mq(md) {
+  .tel-link {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}

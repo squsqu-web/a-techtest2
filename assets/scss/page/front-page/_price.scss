@@ -1,0 +1,329 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.c-pricing {
+  padding: 4% 0% 0;
+  max-width: 1440px;
+  width: 84%;
+  margin: 0 auto;
+  overflow-x: clip;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  &__title {
+    font-size: 8.4rem;
+    letter-spacing: 0.04em;
+    line-height: calc(106 / 84);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: v.$Regular;
+    // overflow: hidden;
+
+    @include mq(md) {
+      font-size: 4.8rem;
+    }
+
+    &::after {
+      content: "Price menu";
+      font-size: 12rem;
+      letter-spacing: 0;
+      line-height: calc(168 / 120);
+      color: v.$color-main-2;
+      font-family: v.$font-sub-cursive;
+      position: absolute;
+      top: -4rem;
+      left: 9.6rem;
+      text-transform: none;
+      white-space: nowrap;
+      font-weight: v.$Regular;
+
+      @media screen and (max-width: 900px) {
+        font-size: 10rem;
+      }
+
+      @include mq(md) {
+        font-size: 7.2rem;
+        left: 7.2rem;
+      }
+    }
+  }
+
+  &__header {
+    @include mq(md) {
+      width: 84%;
+      margin: 0 auto 15%;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    line-height: calc(14 / 14);
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    margin-bottom: 6%;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    margin-top: -1.6rem;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 950px) {
+      justify-content: center;
+      width: 84%;
+      margin: 0 auto;
+    }
+
+    @include mq(md) {
+      margin-top: 0;
+    }
+  }
+
+  &__row {
+
+    &--top,
+    &--center,
+    &--bottom {
+      display: flex;
+      position: relative;
+      margin-left: auto;
+
+      @media screen and (max-width: 950px) {
+        flex-direction: column;
+        margin-left: 0;
+      }
+
+      @include mq(md) {
+        flex-direction: column;
+      }
+    }
+
+    &--center {
+      @include mq(md) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__col {
+    position: relative;
+
+    &--top-left {
+      border-right: 1px solid v.$color-main;
+
+      @media screen and (max-width: 950px) {
+        border-right: none;
+      }
+    }
+
+    &--center-left {
+      border-right: 1px solid v.$color-main;
+      cursor: pointer;
+
+      @media screen and (max-width: 950px) {
+        border-right: none;
+      }
+    }
+  }
+
+  &__item-title {
+    font-size: 4.8rem;
+    letter-spacing: 0.04em;
+    line-height: calc(60 / 48);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    padding: .7rem 0 0 .9rem;
+    text-transform: capitalize;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 3.6rem;
+      padding: 17% 0 10% 6px;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__item-subtitle {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    line-height: calc(14 / 14);
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    position: absolute;
+    font-weight: v.$Regular;
+
+    &.c-pricing__body {
+      top: 50%;
+      left: 36%;
+
+      @media screen and (max-width: 950px) {
+        left: 15rem;
+      }
+
+      @include mq(md) {
+        left: 11rem;
+      }
+    }
+
+    &.c-pricing__vio {
+      top: 50%;
+      left: 40%;
+
+      @media screen and (max-width: 950px) {
+        left: 19rem;
+      }
+
+      @include mq(md) {
+        margin-left: 12.7rem;
+        left: 0;
+      }
+    }
+
+    &.c-pricing__custom {
+      top: 50%;
+      left: 50%;
+
+      @media screen and (max-width: 950px) {
+        left: 22rem;
+      }
+
+      @include mq(md) {
+        margin-left: 16rem;
+        left: 0;
+      }
+
+      @media screen and (max-width: 350px) {
+        margin-left: 14rem;
+      }
+    }
+
+    &.c-pricing__set {
+      top: 51%;
+      left: 23%;
+
+      @media screen and (max-width: 950px) {
+        left: 11rem;
+      }
+
+      @include mq(md) {
+        margin-left: 8.5rem;
+        left: 0;
+      }
+    }
+
+    &.c-pricing__all {
+      top: 51%;
+      left: 22%;
+
+      @media screen and (max-width: 950px) {
+        left: 10rem;
+      }
+
+      @include mq(md) {
+        margin-left: 6.9rem;
+        left: 0;
+      }
+    }
+  }
+}
+
+
+.c-pricing__row--bottom {
+  display: flex;
+  border-right: 1px solid v.$color-main;
+  position: relative;
+
+  @include mq(md) {
+    border-right: none;
+  }
+}
+
+.fa-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-right: 7%;
+  padding-bottom: 3%;
+  border-bottom: 1px solid v.$color-main;
+  min-width: 40rem;
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    border-bottom: 1px solid v.$color-main;
+    padding-bottom: 1.8rem;
+    padding-right: .9rem;
+    min-width: 0;
+  }
+
+  @include mq(md) {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid v.$color-main;
+    padding-bottom: 0;
+    padding-right: 1.6rem;
+    min-height: 7.8rem;
+    min-width: 0;
+  }
+}
+
+.bottom-none {
+  border-bottom: none;
+}
+
+.fa-arrow .front-arrow {
+  font-size: 2.6rem;
+  color: v.$color-main;
+
+  @include mq(md) {
+    font-size: 2.2rem;
+  }
+}
+
+.c-pricing__row {
+  // cursor: pointer;
+
+  @media screen and (max-width: 950px) {
+    border-right: none;
+  }
+}
+
+.c-pricing__row--bottom:last-child {
+  pointer-events: none;
+  min-width: 40rem;
+
+  @media screen and (max-width: 950px) {
+    display: none;
+  }
+}
+
+.bottom-last {
+  visibility: hidden;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c-pricing__col a {
+  display: block;
+}
+
+.v-line-title {
+  text-transform: initial;
+}

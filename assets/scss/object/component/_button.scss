@@ -1,0 +1,56 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.c-button {
+
+  @include button-text(1.6rem,
+    v.$Demibold,
+    v.$font-primary-mincho,
+    calc(2 / 20 * 1em)
+    );
+
+  line-height: calc(32 / 20);
+
+  @include button-base(v.$color-accent-2,
+    v.$color-white);
+
+  @include button-size(20rem,
+    5rem);
+
+  @include hover-up();
+}
+
+@include mq(md) {
+  .c-button {
+    @include button-size(12rem,
+      3rem);
+  }
+}
+
+.c-button--primary {
+  background-color: v.$color-accent-6;
+  color: v.$color-white;
+}
+
+.c-button--secondary {
+  background-color: v.$color-text;
+  color: v.$color-white;
+}
+
+.c-button--sm {
+  @include button-size(
+    16rem,
+    4rem
+    );
+
+  gap: 0px;
+  padding-right: 0;
+  letter-spacing: 0.1em;
+  line-height: calc(26 / 16);
+
+  @include mq(md) {
+    font-size: 1.2rem;
+    width: 12rem;
+    height: 3rem;
+  }
+}

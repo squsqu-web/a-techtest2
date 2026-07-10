@@ -1,0 +1,40 @@
+// Foundation
+@use 'foundation/reset';
+@use 'foundation/variables';
+@use 'foundation/base';
+@use 'foundation/section';
+@use 'foundation/global';
+
+// Components / Objects
+@use 'object/component/button';
+@use 'object/component/form';
+@use 'object/component/section-title';
+
+// Project / Objects
+@use 'object/project/common';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/hero';
+
+// front-pageまとめ
+@use 'page/front-page/index' as front;
+
+// 固定ページまとめ
+@use 'page/concept-page' as concept;
+@use 'page/price-page' as price;
+@use 'page/salons-archive' as salons;
+@use 'page/salons-single' as salonsSingle;
+@use 'page/news-archive' as newsArchive;
+@use 'page/news-single' as newsSingle;
+@use 'page/reserve' as reserve;
+@use 'page/reserve-confirm' as reserve-confirm;
+@use 'page/reserve-thanks' as reserve-thanks;
+@use 'page/page404' as page404;
+
+
+// Utility
+@use 'utility/sp';
+@use 'utility/hover';
+@use 'utility/inview';

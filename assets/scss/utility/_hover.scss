@@ -1,0 +1,22 @@
+@use '../foundation/mixin' as *;
+
+.u-hover {
+  transition: opacity 1.0s, transform 1.0s;
+  will-change: transform, opacity;
+}
+
+/* PC */
+@media (any-hover: hover) {
+  .u-hover:hover {
+    opacity:.7;
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+/* sp */
+@media (hover: none) {
+  .u-hover:active {
+    opacity:.7;
+    transform: translate3d(0, -3px, 0) scale(0.90);
+  }
+}

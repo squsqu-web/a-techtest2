@@ -1,0 +1,665 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.wpcf7-form {
+  width: 75%;
+  margin: 0 auto;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 0;
+    width: 84%;
+    margin: 0 auto 2.7rem;
+    padding-bottom: 0.1rem;
+  }
+}
+
+.form-blck {
+  background-color: v.$color-accent-5;
+  padding: 6% 0 4.5%;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 5.5% 0 5%;
+  }
+}
+
+.p-reserve-input {
+
+  &__wrapper {
+    padding: 8% 0 0;
+
+    @include mq(md) {
+      padding: 16% 0 0;
+    }
+  }
+
+  &__block {
+    display: flex;
+    margin: 0 auto 3.2%;
+    align-items: center;
+    width: 94%;
+
+    @include mq(md) {
+      display: block;
+      margin: 0 0 7%;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    line-height: calc(28 / 16);
+    height: 5rem;
+    padding-left: 0.8rem;
+    box-sizing: border-box;
+    font-family: v.$font-primary-mincho;
+    color: v.$color-text;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.6rem;
+      padding-left: 0;
+    }
+  }
+
+  &__required {
+    background-color: v.$color-accent-1;
+    font-family: v.$font-primary-mincho;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    line-height: calc(28 / 12);
+    min-width: 6rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 2.6rem;
+    margin-right: 1.7rem;
+    color: v.$color-bg-1;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      margin-right: 6%;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    height: 5rem;
+    padding: 1.6rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: v.$Regular;
+    color: v.$color-text;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+  &__checkbox-group {
+
+    & .checkbox-top-day {
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin: 0 0 1.2rem;
+      white-space: nowrap;
+    }
+  }
+
+  &__checkbox-row {
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 1.4rem;
+      font-family: v.$font-primary-gothic;
+      cursor: pointer;
+    }
+  }
+
+  &__note {
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    line-height: calc(28 / 12);
+    text-align: left;
+    margin-top: -10%;
+    font-family: v.$font-primary-gothic;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      margin: 0 auto;
+      text-align: justify;
+      margin: -14% auto 0;
+    }
+  }
+
+  &__submit {
+    width: 16rem;
+    height: 4rem;
+    margin: 0 auto;
+    display: block;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    line-height: calc(26 / 16);
+    border-radius: 3rem;
+    text-align: center;
+    font-weight: v.$Demibold;
+    background-color: v.$color-accent-2;
+    color: v.$color-white;
+    font-family: v.$font-primary-mincho;
+    cursor: pointer;
+    margin-top: -1%;
+    border: none;
+
+    @include mq(md) {
+      margin: 10% auto 4%;
+      transition: 0.5s;
+    }
+
+    &:hover {
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+}
+
+.wpcf7-list-item-label {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  color: v.$color-text;
+  font-family: v.$font-primary-gothic;
+  font-weight: v.$Regular;
+  margin-right: 6.6rem;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}
+
+.wpcf7-list-item input {
+  width: 3rem;
+  height: 3rem;
+}
+
+.form-input-left {
+  width: 37.5%;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+.form-input-right {
+  width: 62.5%;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+.contact-times-weekday,
+.contact-times-holiday {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  color: v.$color-text;
+  font-family: v.$font-primary-gothic;
+  display: flex;
+  margin-bottom: 1.2rem;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 0;
+    row-gap: 1.2rem;
+  }
+}
+
+.contact-times-weekday span,
+.contact-times-holiday span {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+    padding-right: 1rem;
+  }
+}
+
+.checkbox-label {
+  font-size: 1.4rem;
+  font-family: v.$font-primary-gothic;
+  color: v.$color-text;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  padding-left: 1%;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+    transform: none;
+  }
+}
+
+.wpcf7-form-control {
+  border: none;
+  font-size: 1.6rem;
+  font-family: v.$font-primary-gothic;
+}
+
+.weekday-block {
+  display: flex;
+
+  @include mq(md) {
+    flex-direction: column;
+  }
+}
+
+.holiday-block {
+  display: flex;
+
+  @include mq(md) {
+    flex-direction: column;
+    padding: 6% 0 3%;
+  }
+}
+
+.p-reserve-input__block-contact p {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0%;
+
+  @include mq(md) {
+    flex-direction: column;
+    padding-left: 0;
+    padding-bottom: 4%;
+    gap: 0.9rem 0;
+  }
+}
+
+.koumoku {
+
+  @include mq(md) {
+    margin: 0 0 1%;
+  }
+
+}
+
+.checkbox-items .wpcf7-list-item {
+
+  width: 45%;
+
+  @include mq(md) {
+    width: 100%;
+  }
+
+}
+
+.p-reserve-input__checkbox-group {
+
+  padding-left: 0%;
+
+  @include mq(md) {
+    width: 100%;
+    padding-left: 0%;
+  }
+
+}
+
+.p-reserve-input__checkbox-group-contact {
+  width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.bottom-checkbox .wpcf7-list-item:first-child {
+
+  @include mq(md) {
+    width: 100%;
+    padding-top: 0;
+    margin-top: -1rem;
+  }
+}
+
+// 希望店舗用
+.my-field-half {
+  width: 48%;
+  height: 5rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @include mq(md) {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+}
+
+// 来店希望日用
+.my-field-half-store {
+  width: 48%;
+  height: 5rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @include mq(md) {
+    background-color: v.$color-black;
+  }
+}
+
+.p-reserve-input__block__my-field-half p {
+  display: flex;
+  align-items: center;
+  width: 48%;
+  justify-content: space-between;
+  margin: 0 0 3.3rem;
+  position: relative;
+
+  @include mq(md) {
+    display: block;
+    margin: 0 0 -0.2rem;
+  }
+}
+
+.wpcf7-textarea {
+  width: 100%;
+  padding: 1em;
+  height: 12rem;
+
+  @include mq(md) {
+    height: 20rem;
+  }
+}
+
+.p-reserve-input-bottom__block-bottom {
+  display: flex;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.form-fa {
+  font-size: 2.6rem;
+  padding: .5rem;
+  background-color: v.$color-main;
+  background-color: v.$color-accent-4;
+  width: 5rem;
+  height: 5rem;
+  color: v.$color-white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  @include mq(md) {
+    // margin-top: 1.2rem;
+  }
+}
+
+.p-reserve-input-text__block p {
+  display: flex;
+  margin: 0;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+// PCだけ表示
+.pc_only-form {
+  display: flex;
+}
+
+@include mq(md) {
+  .pc_only-form {
+    display: none;
+  }
+}
+
+.fa-calendar-days {
+  cursor: pointer;
+}
+
+// 日付入力エリアのラッパー
+.p-reserve-input__date-wrapper p {
+  display: flex;
+  align-items: center;
+  width: 48%;
+  min-width: 20rem;
+
+  @include mq(md) {
+    width: 100%;
+  }
+
+  span {
+    flex-grow: 1;
+    display: block;
+  }
+}
+
+// 入力フィールド本体
+.p-reserve-input__date-field {
+  width: 100%;
+  height: 5rem;
+  padding: 1.6rem;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+
+  @include mq(md) {
+    // margin-top: 1.2rem;
+  }
+}
+
+// 任意用スタイル
+.p-reserve-input__optional {
+  color: v.$color-text;
+  background-color: v.$color-bg-2;
+}
+
+// 入力欄ホバーアニメーション
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form input[type="date"],
+.wpcf7-form textarea {
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.wpcf7-form input:hover,
+.wpcf7-form textarea:hover {
+  border-color: v.$color-main;
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus {
+  border-color: v.$color-main;
+  outline: none;
+}
+
+.p-reserve-input__block label {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+@include mq(md) {
+  .wpcf7-textarea {
+    margin-top: 1.2rem;
+  }
+}
+
+.wpcf7-list-item input[type="checkbox"]:checked {
+  background-color: v.$color-main;
+}
+
+.wpcf7-list-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  position: relative;
+  cursor: pointer;
+  background-color: v.$color-white;
+
+  @include mq(md) {
+    margin-right: 0;
+  }
+}
+
+.wpcf7-list-item input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 34%;
+  width: 1.1rem;
+  height: 1.6rem;
+  transform: rotate(45deg);
+  border: solid v.$color-white;
+  border-width: 0 0.2rem 0.2rem 0;
+}
+
+.wpcf7-list-item input[type="radio"]:checked {
+  background-color: v.$color-main;
+}
+
+.wpcf7-list-item input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  position: relative;
+  cursor: pointer;
+  background-color: v.$color-white;
+
+  @include mq(md) {
+    margin-right: 0;
+  }
+}
+
+.wpcf7-list-item input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 34%;
+  width: 1.1rem;
+  height: 1.6rem;
+  transform: rotate(45deg);
+  border: solid v.$color-white;
+  border-width: 0 0.2rem 0.2rem 0;
+}
+
+.input-mt45 {
+  margin-top: -0.5%;
+}
+
+.input-mt {
+  margin-top: 4%;
+}
+
+.input-textarea {
+  align-items: flex-start;
+}
+
+.textarea-text {
+  margin-top: 5%;
+
+  @include mq(md) {
+    margin-top: 12%;
+    margin-bottom: -3rem;
+  }
+}
+
+.wpcf7-list-item {
+  display: flex;
+
+  @include mq(md) {
+    margin: 0;
+  }
+}
+
+.p-reserve-input__field,
+.p-reserve-input__textarea {
+  font-size: 1.6rem;
+  font-family: v.$font-primary-gothic;
+}
+
+.contact-times-weekday .wpcf7-list-item.last .wpcf7-list-item-label,
+.contact-times-holiday .wpcf7-list-item.last .wpcf7-list-item-label {
+  margin-right: 0;
+}
+
+.checkbox-items .wpcf7-list-item {
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+.checkbox-items .wpcf7-list-item-label {
+  margin-right: 0;
+}
+
+.req-store {
+  @include mq(md) {
+    position: relative;
+    top: -.5rem;
+  }
+}
+
+.req-store-input {
+  @include mq(md) {
+    position: relative;
+    top: -1.5rem;
+  }
+}
+
+.req-visit1st {
+  @include mq(md) {
+    margin-bottom: -2rem;
+    position: relative;
+    top: -1.5rem;
+  }
+}
+
+.req-visit1st-input {
+  @include mq(md) {
+    margin: 0;
+  }
+}
+
+.req-visit2nd {
+  @include mq(md) {
+    margin-top: 3rem;
+  }
+}
+
+.req-visit2nd-input {
+  @include mq(md) {
+    margin: 0;
+  }
+}

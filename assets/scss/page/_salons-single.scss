@@ -1,0 +1,705 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.salons_single {
+
+  margin: 0;
+  // padding: 0 0 6%;
+
+  @include mq(md){
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+// salon-description
+.salon-description {
+  @include mq(md){
+    padding: 0;
+    margin: 8rem auto 0;
+  }
+
+  &__text {
+    p {
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      line-height: calc(40 / 20);
+      color: v.$color-text;
+      font-family: v.$font-primary-mincho;
+      max-width: 1080px;
+      width: 75%;
+      margin: 9% auto 0;
+      font-weight: 400;
+
+      @include mq(md){
+        font-size: 1.4rem;
+        text-align: left;
+        max-width: none;
+        width: 84%;
+        margin: 26% auto 0;
+      }
+    }
+  }
+}
+
+// single専用メインビジュアル
+.l-main-visual__title-single {
+  font-size: 8rem;
+  letter-spacing: 0.1em;
+  line-height: calc(103 / 80);
+  color: v.$color-main;
+  font-family: v.$font-primary-mincho;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 16rem 0 10rem;
+  margin: 17.3rem auto 0;
+  background-color: v.$color-bg-2;
+  font-weight: v.$Regular;
+
+  @include mq(md){
+    font-size: 3.2rem;
+    padding: 26% 0 17%;
+    margin: 26% auto 0;
+  }
+}
+
+// メインビジュアル疑似要素
+.l-main-visual__title-single::before {
+  content: "valentine rose";
+  font-size: 4.8rem;
+  letter-spacing: 0.1em;
+  line-height: calc(60 / 48);
+  color: v.$color-main;
+  font-family: v.$font-main-serif;
+  text-transform: uppercase;
+  position: absolute;
+  top: 9.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: v.$Regular;
+
+  @include mq(md){
+    width: 100%;
+    font-size: 2.4rem;
+    top: 30%;
+  }
+}
+
+.mainvisual__title img {
+  width: 144rem;
+  height: 60rem;
+  object-fit: cover;
+
+  @include mq(md){
+    width: 37.5rem;
+    height: 30rem;
+  }
+}
+
+// フローセクション
+.salon-flow {
+  width: 83%;
+  counter-reset: flow-step;
+  margin: 11% auto 8%;
+  position: relative;
+
+  @include mq(md){
+    width: 100%;
+    margin: 28% auto 10%;
+    padding: 0 8%;
+    overflow-x: clip;
+  }
+
+  &__block {
+    display: flex;
+    gap: 3%;
+    justify-content: flex-start;
+    width: 67%;
+    margin: 0 auto;
+
+    @include mq(md){
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+    line-height: calc(30 / 24);
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    font-weight: v.$Demibold;
+    margin: 0 2% 1.2rem;
+    position: relative;
+
+    @include mq(md){
+      text-align: center;
+      padding: 3% 0 0;
+      font-size: 1.8rem;
+      margin: 0 auto 1.3rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: calc(27 / 18);
+    color: v.$color-main;
+    font-family: v.$font-primary-gothic;
+    font-weight: 400;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+
+    @include mq(md){
+      font-size: 1.4rem;
+      line-height: calc(21 / 14);
+      margin: 0 auto;
+      font-weight: v.$Regular;
+    }
+  }
+
+  &__item {
+    counter-increment: flow-step;
+    position: relative;
+    margin: 0 auto 3.2rem;
+
+    @include mq(md){
+      margin: 0 auto -4%;
+    }
+
+    &:last-child {
+      margin-bottom: 4.1rem;
+    }
+
+    &__content {
+      width: 50rem;
+      margin: 0 auto;
+      text-align: left;
+
+      @include mq(md){
+        width: 100%;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      @include mq(md){
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+    }
+  }
+}
+
+// 緑の丸
+.salon-flow__greenNum {
+  width: 6rem;
+  height: 6rem;
+  background-color: v.$color-accent-2;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$color-bg-1;
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-family: v.$font-main-serif;
+  flex-shrink: 0;
+
+  &::before {
+    content: counter(flow-step);
+  }
+}
+
+// セクションヘッダー
+.section-header {
+  @include mq(md){
+    margin-left: -4%;
+  }
+
+  &__en {
+    font-family: "Marcellus", serif;
+    font-size: 8.4rem;
+    color: v.$color-main;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 1.2619;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    &::after {
+      content: "Flow";
+      font-size: 12rem;
+      color: v.$color-mtransparent2;
+      font-family: "Parisienne", cursive;
+      position: absolute;
+      top: -2rem;
+      left: 6rem;
+      text-transform: capitalize;
+
+      @include mq(md){
+        font-size: 7.2rem;
+      }
+    }
+
+    @include mq(md){
+      font-size: 4.8rem;
+    }
+  }
+
+  &__ja {
+    font-family: v.$font-primary-mincho;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: v.$color-main;
+    margin-bottom: 8.4rem;
+
+    @include mq(md){
+      font-size: 1.2rem;
+      margin-bottom: 20%;
+    }
+  }
+}
+
+// スタッフ・マップ
+.p-salon-single {
+  &__staff {
+    background-color: v.$color-bg-3;
+    width: 100%;
+
+    @include mq(md){
+      padding: 10% 0 0;
+      text-align: center;
+    }
+
+    &__wrapper {
+      width: 75%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 5.5% 0 6%;
+
+      @media screen and (max-width: 1000px) {
+        width: 84%;
+        flex-direction: column;
+        padding: 5.5% 0 7%;
+      }
+    }
+
+    &-img {
+      width: 45%;
+
+      @media screen and (max-width: 1000px) {
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &-title {
+      display: flex;
+      align-items: end;
+      padding: 9% 0 8%;
+      gap: 4%;
+
+      @include mq(md){
+        margin: 0 0 6%;
+        gap: 1.4rem;
+        padding: 0;
+      }
+    }
+
+    &-title-en {
+      font-size: 4.8rem;
+      letter-spacing: 0.1em;
+      line-height: calc(60 / 48);
+      color: v.$color-main;
+      font-family: v.$font-main-serif;
+      font-weight: 400;
+      text-transform: capitalize;
+
+      @include mq(md){
+        font-size: 3.6rem;
+      }
+    }
+
+    &-title-ja {
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      line-height: calc(27 / 14);
+      color: v.$color-main;
+      font-family: v.$font-primary-gothic;
+      font-weight: 400;
+    }
+
+    &-text {
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      line-height: calc(36 / 18);
+      color: v.$color-main;
+      font-family: v.$font-primary-gothic;
+      font-weight: 400;
+      margin: 0 0 .9rem;
+      width: 100%;
+      overflow-wrap: break-word;
+
+      @include mq(md){
+        font-size: 1.4rem;
+        text-align: left;
+        margin: 0 0 .8rem;
+      }
+    }
+
+    &-name {
+      display: flex;
+      align-items: baseline;
+      gap: 1.6rem;
+
+      @include mq(md){
+        gap: 1%;
+      }
+
+      &-en {
+        font-size: 2.4rem;
+        letter-spacing: 0.1em;
+        line-height: calc(38 / 24);
+        color: v.$color-main;
+        font-family: v.$font-primary-mincho;
+        font-weight: v.$Demibold;
+        text-transform: capitalize;
+
+        @include mq(md){
+          font-size: 2rem;
+        }
+
+        @media screen and (max-width: 330px) {
+          text-align: left;
+        }
+      }
+
+      &-ja {
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        line-height: calc(20 / 12);
+        color: v.$color-main;
+        font-family: v.$font-primary-gothic;
+        font-weight: v.$Regular;
+
+        @media screen and (max-width: 330px) {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+
+  &__map-info {
+    background-color: v.$color-bg-2;
+    align-items: center;
+    padding: 5.5% 0 5%;
+
+    @include mq(md){
+      padding: 16% 0;
+      gap: 4rem;
+    }
+
+    &-embed {
+      iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 540/360;
+
+        @include mq(md){
+          aspect-ratio: 315/200;
+        }
+      }
+    }
+
+    &-store-profile {
+      display: flex;
+      border-bottom: 1px solid v.$color-main;
+      padding: .8rem 1.6rem;
+
+      &-term {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        line-height: calc(30 / 20);
+        color: v.$color-main;
+        font-family: v.$font-primary-mincho;
+        font-weight: 400;
+
+        @include mq(md){
+          font-size: 1.6rem;
+          line-height: calc(30 / 16);
+        }
+      }
+
+      &-desc {
+        font-size: 1.4rem;
+        line-height: calc(30 / 14);
+        color: v.$color-text;
+        font-family: v.$font-primary-gothic;
+        font-weight: 400;
+
+        @include mq(md){
+          font-size: 1.2rem;
+          line-height: calc(30 / 12);
+        }
+      }
+    }
+  }
+}
+
+.map-info-wrapper {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(md){
+    flex-direction: column-reverse;
+    width: 84%;
+  }
+}
+
+.p-salon-single__staff-comment {
+  width: 50%;
+
+  @media screen and (max-width: 1000px) {
+    padding: 6% 0 0;
+    width: 100%;
+  }
+}
+
+.p-salon-single__description {
+  width: 38%;
+
+  @include mq(md){
+    width: 100%;
+    padding: 13% 0 0;
+  }
+}
+
+.p-salon-single__store-profile {
+  display: flex;
+  border-bottom: 1px solid v.$color-main;
+  width: 100%;
+  padding: 4% 0;
+
+  @include mq(md){
+    padding: 1rem .7rem 1.5rem;
+  }
+}
+
+.p-salon-single__store-profile-term {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  line-height: calc(30 / 20);
+  color: v.$color-main;
+  font-family: v.$font-primary-mincho;
+  font-weight: v.$Demibold;
+  width: 40%;
+
+  @include mq(md){
+    font-size: 1.6rem;
+    line-height: calc(30 / 16);
+  }
+}
+
+.p-salon-single__store-profile-desc,
+.no-map {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  line-height: calc(30 / 14);
+  color: v.$color-text;
+  font-family: v.$font-primary-gothic;
+  font-weight: 400;
+  width: 60%;
+
+  @include mq(md){
+    font-size: 1.2rem;
+    line-height: calc(30 / 12);
+  }
+}
+
+.store-name-info::before {
+  content: 'VALENTINE ROSE ';
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  line-height: calc(30 / 14);
+  color: v.$color-text;
+  font-family: v.$font-primary-gothic;
+  font-weight: 400;
+
+  @include mq(md){
+    font-size: 1.2rem;
+    line-height: calc(30 / 12);
+  }
+}
+
+.p-salon-single__store-profile-desc a {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  line-height: calc(30 / 14);
+  color: v.$color-text;
+  font-family: v.$font-primary-gothic;
+  font-weight: 400;
+
+  @include mq(md){
+    font-size: 1.2rem;
+    line-height: calc(30 / 12);
+  }
+}
+
+.p-salon-single__map-embed {
+  width: 50%;
+  aspect-ratio: 540/360;
+
+  @include mq(md){
+    aspect-ratio: 315/200;
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.salon-flow__img img {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+
+  @include mq(md){
+    width: 100%;
+    height: auto;
+  }
+}
+
+.salon-flow__img--left {
+  width: 15rem;
+  position: absolute;
+  top: -35%;
+  left: -3%;
+
+  @include mq(md){
+    width: 8rem;
+    height: auto;
+    top: 2%;
+    left: 89%;
+  }
+}
+
+.salon-flow__img--right {
+  width: 18rem;
+  position: absolute;
+  top: -16%;
+  right: -4%;
+
+  @include mq(md){
+    width: 10rem;
+    height: 10rem;
+    top: -3%;
+    right: 80%;
+  }
+}
+
+.salon-flow__img--free {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+
+  @include mq(md){
+    width: 9rem;
+    height: 9rem;
+    margin-left: -13%;
+  }
+}
+
+.salon-flow__img--free img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.salon-single__back {
+  padding: 8.5% 0;
+  text-align: center;
+
+  @include mq(md){
+    padding: 0;
+  }
+}
+
+.salon-single__back-link {
+  width: 16.6rem;
+  height: 4.1rem;
+  margin: 0 auto;
+
+  @include mq(md){
+    width: 15.6rem;
+    height: 3.8rem;
+    margin: 21% auto;
+    font-size: 1.4rem;
+  }
+}
+
+.salon-flow__content {
+  @include mq(md){
+    margin-bottom: 5.2rem;
+  }
+}
+
+.salon-description__text {
+  font-size: 1.6rem;
+  text-align: center;
+  color: v.$color-main;
+  font-family: v.$font-primary-mincho;
+  margin: 2rem 0 0;
+
+  @include mq(md){
+    font-size: 1.4rem;
+  }
+}
+
+.tel-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media screen and (max-width:767.98px) {
+
+  .tel-link {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+}

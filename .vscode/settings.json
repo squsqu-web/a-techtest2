@@ -1,0 +1,16 @@
+{
+    // Live Sass Compiler の出力設定
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",      // 可読性のある CSS にする
+            "extensionName": ".css",   // 拡張子
+            "savePath": "/assets/css"  // 出力先（scss フォルダからの相対パス）
+        }
+    ],
+
+    // 保存時に自動コンパイル
+    "liveSassCompile.settings.autocompile": true,
+
+    // ソースマップを生成
+    "liveSassCompile.settings.generateMap": true
+}

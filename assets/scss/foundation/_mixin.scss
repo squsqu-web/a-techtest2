@@ -1,0 +1,89 @@
+@use '../foundation/variables' as v;
+
+// ブレイクポイント
+$breakpoints: (
+  sm: 699.98px,
+  md: 767.98px,
+  lg: 1023.98px,
+  xl: 1440px,
+);
+
+// レスポンシブ対応
+@mixin mq ($size) {
+  @media screen and (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+
+
+
+// 中央配置パーツ
+@mixin flex(
+  $justify: center,
+  $align: center
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+
+
+// ボタン用スタイル
+@mixin button-base($bg,
+  $color,
+  $radius: 40px) {
+
+  background-color: $bg;
+  color: $color;
+
+  border-radius: $radius;
+  cursor: pointer;
+
+  // 文字とアイコンを中央配置
+  @include flex;
+  display: inline-flex;
+  gap: 0.5em;
+
+  text-decoration: none;
+}
+
+@mixin button-size($w,
+  $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin button-text(
+  $size,
+  $weight,
+  $family,
+  $spacing: 0.1em
+  ) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  letter-spacing: $spacing;
+}
+
+
+@mixin hover-up($move: -7px,
+  $opacity: .7) {
+  transition: .4s;
+
+  &:hover {
+    opacity: $opacity;
+    transform: translateY($move);
+  }
+
+}
+
+// <!-- テストボタン -->
+// <div data-aos="fade-up">
+//   <a class="button u-hover" href="#">
+//     <i class="fa-brands fa-instagram"></i>
+//     <span>testボタン</span>
+//   </a>
+// </div>

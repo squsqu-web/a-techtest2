@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESERVE</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reserve.css">
+</head>
+
+<body>
+  <main>
+    <!-- Main Visual -->
+    <section class="l-main-visual">
+      <h2 class="l-main-visual__title">RESERVE</h2>
+      <picture>
+        <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-sp.jpg" media="(max-width: 767px)"
+          type="image/jpeg">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-pc.jpg" media="(min-width: 768px)"
+          type="image/jpeg">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/reserve_top-pc.jpg" alt="メインビジュアル画像"
+          class="l-main-visual__img">
+      </picture>
+    </section>
+    <!-- Reserve Form -->
+    <section class="p-reserve-form">
+      <!-- 未成年案内 -->
+      <article class="p-reserve-form__minor c-minor-notice">
+        <div class="p-reserve-form__minor__text">
+          <h3 class="c-minor-notice__title">未成年のお客様は必ずお読みください</h3>
+          <p class="c-minor-notice__text">
+            脱毛箇所を問わず、未成年のお客様が施術を受けるためには、保護者の同意が必要です。
+            「未成年契約同意書」をダウンロードし、保護者にご記入いただいた上で初回ご来店時に持参ください。
+          </p>
+        </div>
+        <div class="c-minor-download">
+          <h4 class="c-minor-download__title">未成年契約同意書</h4>
+          <a href="documents/report.pdf" download class="c-minor-download__link">PDFをダウンロード</a>
+        </div>
+      </article>
+      <!-- 電話問い合わせ案内 -->
+      <article class="p-reserve-form__contact">
+        <div class="c-contact-description">
+          <h3 class="c-contact-description__title">TEL</h3>
+          <p class="c-contact-description__text">
+            サービス・料金の質問や無料体験のご予約などを希望の方は、ご希望の店舗にお問い合わせください。
+            なお、施術中は、お電話に対応することができない可能性がありますので、あらためてお電話いただくか、
+            メールフォームからお問い合わせください。
+          </p>
+        </div>
+        <div class="c-contact-info">
+          <p class="c-contact-info__number">01-2345-6789</p>
+          <p class="c-contact-info__time">9:00～22:00 定休日なし</p>
+        </div>
+      </article>
+    </section>
+    <div class="form-blck">
+      <!-- メールフォーム案内 -->
+      <section class="p-reserve-mailform">
+        <div class="p-reserve-mailform__intro">
+          <h3 class="p-reserve-mailform__intro-title">MAIL FORM</h3>
+          <p class="p-reserve-mailform__intro-text">
+            脱毛の無料体験や施術のご予約などをご希望の方は、<br>
+            以下のフォームに必要事項を入力の上でお問い合わせください。<br>
+            なお、当日または翌日のご予約を希望の方は、お電話で問い合わせください。
+          </p>
+        </div>
+        <!-- フォームステップ -->
+        <div class="c-form-steps">
+          <div class="c-form-steps__item is-current">
+            <h5 class="c-form-steps__step-title">Step 01</h5>
+            <p class="c-form-steps__step-text">内容入力</p>
+          </div>
+          <div class="c-form-steps__item">
+            <h5 class="c-form-steps__step-title">Step 02</h5>
+            <p class="c-form-steps__step-text">確認画面</p>
+          </div>
+          <div class="c-form-steps__item">
+            <h5 class="c-form-steps__step-title">Step 03</h5>
+            <p class="c-form-steps__step-text">送信完了</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-form-thnaks">
+        <h3 class="c-form-thnaks__title">お問い合わせありがとうございます。</h3>
+        <p class="c-form-thnaks__text">3営業日以内に担当の者から連絡いたします。 <a href="#">TOPに戻る</a></p>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

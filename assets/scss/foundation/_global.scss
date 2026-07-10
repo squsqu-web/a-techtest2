@@ -1,0 +1,52 @@
+@use './variables' as v;
+@use './mixin' as *;
+
+// Breadcrumb NavXT パンくずリスト
+.breadcrumb-container {
+  position: relative;
+  background-color: v.$color-bg-1;
+  padding: 1rem 2% 2rem;
+  margin: 1rem 0 2rem;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    padding: 1% 4%;
+  }
+}
+
+// conceptページ用
+.breadcrumb-container-concept {
+  position: relative;
+  background-color: v.$color-bg-2;
+  padding: 1rem 2% 2rem;
+  margin: 1rem 0 2rem;
+
+  @include mq(md) {
+    padding: 1% 4%;
+  }
+}
+
+.breadcrumb {
+  cursor: pointer;
+  color: v.$color-main;
+  font-family: v.$font-primary-gothic;
+  font-size: 1.8rem;
+  z-index: 1;
+  letter-spacing: 0.1em;
+  line-height: calc(36 / 18);
+  font-weight: v.$Regular;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+    letter-spacing: 1.4px;
+  }
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  color: v.$color-main;
+}

@@ -1,0 +1,35 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.l-hero {
+  background-color: v.$color-accent-9;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: v.$color-text3;
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: v.$color-text;
+    color: v.$color-white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+}
+
+.p-hero {
+  position: relative;
+
+  @include mq(md){}
+}

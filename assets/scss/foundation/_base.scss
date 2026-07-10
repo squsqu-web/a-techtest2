@@ -1,0 +1,34 @@
+// リセット
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 基本スタイル
+html {
+  font-size: calc(10 / 1440 * 100vw);
+}
+
+// 画像
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+// SPのみ表示クラス
+.sp_only {
+  display: none;
+}
+
+@media (max-width:767.98px){
+  html {
+    font-size: calc(10 / 375 * 100vw);
+  }
+
+  .sp_only {
+    display: block;
+  }
+}

@@ -1,0 +1,276 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.l-header {
+  width: 100%;
+  height: 16rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @include mq(md) {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    height: 8rem;
+  }
+
+  &__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    @include flex(space-between);
+    height: 100%;
+    padding: 0 5rem;
+
+    @include mq(md) {
+      width: 100%;
+      padding: 0 2rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 10000;
+
+    @include mq(md) {
+      // padding: 20px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    img {
+      width: clamp(32px, 5vw, 64px);
+      height: clamp(32px, 5vw, 64px);
+      object-fit: cover;
+
+      @include mq(md) {
+        width: clamp(32px, 5vw, 64px);
+        height: clamp(32px, 5vw, 64px);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-family: v.$font-main-serif;
+    color: v.$color-accent-1;
+    text-transform: uppercase;
+    letter-spacing: calc(5.6 / 28 * 1em);
+    line-height: calc(35 / 28);
+    font-weight: v.$Regular;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      align-items: center;
+    }
+  }
+
+
+  &__link {
+    text-transform: capitalize;
+    font-weight: 400;
+    color: v.$color-accent-1;
+    font-size: 2rem;
+    font-family: v.$font-main-serif;
+    letter-spacing: calc(2 / 20 * 1em);
+    line-height: calc(25 / 20);
+  }
+}
+
+.reserve__btn {
+  color: v.$color-white;
+  font-family: v.$font-primary-mincho;
+  font-weight: v.$Demibold;
+}
+
+
+// ハンバーガーメニュー（SP用）
+.c-hamburger {
+  @include mq(md) {
+    position: relative;
+    display: inline-block;
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    border-radius: 40px;
+    font-size: 1.6rem;
+    line-height: 1.625;
+    text-align: center;
+    font-weight: 500;
+    background-color: v.$color-accent-2;
+    color: v.$color-white;
+    z-index: 10000;
+
+    &__text {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: v.$color-white;
+      font-size: 1.4rem;
+      font-family: v.$font-primary-mincho;
+    }
+
+    &__line-container {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 2rem;
+      height: 0.85rem;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__line {
+      width: 1.2rem;
+      height: 1px;
+      background-color: v.$color-white;
+      border-radius: 1px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    &.is-active {
+      width: 3rem;
+
+      .c-hamburger__text {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .c-hamburger__line-container {
+        .c-hamburger__line:nth-child(1) {
+          transform: rotate(45deg) translate(3px, 3px);
+        }
+
+        .c-hamburger__line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .c-hamburger__line:nth-child(3) {
+          transform: rotate(-45deg) translate(3px, -3px);
+        }
+      }
+    }
+  }
+}
+
+/* 背景固定用 */
+.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+// ドロワーメニュー
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: v.$color-bg-2;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9999;
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include mq(md) {
+      width: 100%;
+      padding-top: 38%;
+      align-items: flex-start;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
+    margin: 0 0 0 6rem;
+  }
+
+  &__link {
+    color: v.$color-white;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include mq(md) {
+      font-size: 2.4rem;
+      line-height: calc(30 / 24);
+      letter-spacing: .24em;
+      color: v.$color-main;
+      font-family: v.$font-main-serif;
+    }
+  }
+}
+
+
+// SP表示切替
+.u-sp-none {
+  display: block;
+}
+
+.u-sp-show {
+  display: none;
+}
+
+@include mq(md) {
+  .u-sp-none {
+    display: none;
+  }
+
+  .u-sp-show {
+    display: block;
+    position: relative;
+    z-index: 99999;
+  }
+}
+
+// アイコン用
+.fa-calendar-days {
+  padding-right: 1.6rem;
+
+  @include mq(md) {
+    margin-right: .5rem;
+  }
+}
+
+.fa-calendar-reserve {
+  margin-right: 4.4rem;
+
+  @include mq(md) {
+    margin-right: 3rem;
+  }
+}
+
+.fa-calender-pseudo::before {
+  padding-right: 1.6rem;
+}

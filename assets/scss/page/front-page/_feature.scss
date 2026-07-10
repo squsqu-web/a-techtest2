@@ -1,0 +1,367 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+
+.p-feature {
+  background-color: v.$color-bg-3;
+  margin: 14% auto 13%;
+  padding: 7% 0 4%;
+  position: relative;
+  width: 100%;
+  background-color: gainsboro;
+  border: 3px solid red;
+
+  @media screen and (max-width: 930px) {
+    padding: 7% 0 8%;
+  }
+
+  @include mq(md) {
+    margin: 32% 0 40%;
+    padding: 23% 0 0;
+  }
+
+  &__title {
+    font-size: 8.4rem;
+    letter-spacing: 0.04em;
+    line-height: calc(106 / 84);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: -3%;
+    z-index: 100;
+    position: relative;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 4.8rem;
+      line-height: calc(60/48);
+      text-align: center;
+      position: absolute;
+      top: 9%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+    }
+
+    &::after {
+      content: "Feature";
+      font-size: 12rem;
+      letter-spacing: 0;
+      line-height: calc(168 / 120);
+      color: v.$color-main-2;
+      font-family: v.$font-sub-cursive;
+      position: absolute;
+      top: -52%;
+      left: 37%;
+      text-transform: none;
+
+      @include mq(md) {
+        font-size: 7.2rem;
+        line-height: 1.25;
+        top: -62%;
+        left: -5%;
+      }
+    }
+  }
+
+  &__item {
+    ul li {
+      font-size: 1.8rem;
+      font-family: v.$font-primary-mincho;
+      line-height: calc(36/18);
+      letter-spacing: 0.1em;
+      margin-bottom: 3.6rem;
+      font-weight: 300;
+
+      &:nth-of-type(3) {
+        margin-bottom: 0;
+        line-height: calc(27 / 18);
+      }
+
+      @include mq(md) {
+        margin: 0;
+        font-size: 1.4rem;
+        padding: 0 0 16%;
+      }
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      font-family: v.$font-primary-mincho;
+      line-height: calc(36/24);
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin: 8% 0 9%;
+      margin-right: 11%;
+      font-weight: v.$Regular;
+
+      @media screen and (max-width: 1200px) {
+        margin: 12% 0 1%;
+      }
+
+      @include mq(md) {
+        margin: 1.5rem 0 2.1rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    &:nth-child(1) {
+      color: v.$color-main;
+
+      @include mq(md) {
+        width: 100%;
+        padding: 0;
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+
+      @include mq(md) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      color: v.$color-main;
+
+      @include mq(md) {
+        width: 100%;
+        padding: 0%;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-family: v.$font-primary-gothic;
+    line-height: 2;
+    margin-bottom: 5.5rem;
+    text-align: center;
+    margin: 0 auto;
+    letter-spacing: calc(1.4 / 14 * 1em);
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+      width: 100%;
+      padding: 0 0 15%;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+
+    @include mq(md) {
+      margin: 0 auto;
+      height: 27.5rem;
+    }
+  }
+}
+
+.p-feature__sub-list {
+  list-style: none;
+  padding: 0;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+
+  .item-text {
+    display: flex;
+    align-items: baseline;
+
+    &:nth-of-type(1)::before {
+      content: "I";
+      margin-right: 3rem;
+      font-size: 2.4rem;
+      font-family: v.$font-primary-mincho;
+    }
+
+    &:nth-of-type(2)::before {
+      content: "II";
+      margin-right: 4%;
+      font-size: 2.4rem;
+      font-family: v.$font-primary-mincho;
+    }
+
+    &:nth-of-type(3)::before {
+      content: "III";
+      margin-right: 3%;
+      font-size: 2.4rem;
+      font-family: v.$font-primary-mincho;
+      line-height: calc(27 / 18);
+    }
+  }
+}
+
+.p-feature__list-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @include mq(md) {
+    // flex-direction: column;
+  }
+}
+
+.p-feature__list-inner:nth-of-type(3) {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1%;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @include mq(md) {
+    flex-direction: column;
+  }
+}
+
+.p-feature__list-inner>* {
+  flex: 1 1 0;
+}
+
+/* 真ん中だけ固定 */
+.p-feature__list-inner> :nth-child(2) {
+  flex: 0 0 31%;
+}
+
+.p-feature__picture {
+  width: 100%;
+  display: block;
+
+  @media screen and (max-width: 1200px) {}
+}
+
+.p-feature__picture img {
+  width: 100%;
+}
+
+.item-text {
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+
+.p-feature__item .p-feature__text {
+  margin: 0 4.2rem 0 0;
+  font-family: v.$font-primary-gothic;
+
+  @media screen and (max-width: 1200px) {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* h3下の装飾「―」*/
+.p-feature__item__sm-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: v.$font-main-serif;
+  margin: 3% auto 0;
+  letter-spacing: 0.1em;
+  line-height: calc(27 / 18);
+  text-transform: uppercase;
+  font-weight: v.$Regular;
+  position: relative;
+  margin-bottom: 1rem;
+  margin-right: 8%;
+
+  @include mq(md) {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+}
+
+.p-feature__item__sm-title::after {
+  content: "―";
+  display: block;
+  font-size: 3.2rem;
+  height: 4px;
+  color: v.$color-main;
+  margin-top: 0px;
+
+  @include mq(md) {
+    content: "";
+    height: 1px;
+  }
+}
+
+@include mq(md) {
+  .p-feature__item__sm-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 9% 0 0;
+  }
+
+  .p-feature__item__sm-title::before,
+  .p-feature__item__sm-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: v.$color-main;
+    width: 10rem;
+  }
+}
+
+.p-feature__slide .item-text {
+  transition: opacity 0.5s;
+}
+
+.p-feature__item-inner {
+  width: 80%;
+  margin-left: auto;
+  margin-top: 8%;
+
+  @include mq(md) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+
+.p-feature__list-inner> :nth-child(1) {
+  align-self: flex-start;
+  padding-top: 10.5%;
+
+  @media screen and (max-width: 1200px) {
+    padding-top: 0%;
+  }
+}
+
+.p-feature__list-inner> :nth-child(3) {
+  align-self: flex-start;
+  padding-top: 7.5%;
+
+  @media screen and (max-width: 1200px) {
+    padding-top: 0%;
+    margin: 0 auto;
+  }
+}
+
+/* 非表示時は薄くする */
+.p-feature__sub-list {
+  .item-text {
+    opacity: 0.05;
+    transition: opacity 0.5s ease;
+
+    &.is-active {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+}

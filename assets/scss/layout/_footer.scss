@@ -1,0 +1,413 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+
+  @include mq(md) {}
+
+  &__reserve {
+    position: relative;
+    width: 100%;
+    aspect-ratio: calc(144rem / 40rem);
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../img/reserve-link-pc.webp');
+    margin: 0;
+
+    @include mq(md) {
+      background-image: url('../../img/reserve-link-sp.webp');
+      aspect-ratio: calc(37.5rem / 20rem);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: v.$color-bg-3;
+      opacity: 0.8;
+    }
+
+    &-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      @include flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @include mq(md) {
+        padding-top: 14%;
+        justify-content: flex-start;
+        gap: 0;
+      }
+    }
+
+    &-title {
+      font-size: 8rem;
+      letter-spacing: 0.1em;
+      line-height: calc(100 / 80);
+      color: v.$color-main;
+      font-family: v.$font-main-serif;
+      text-align: center;
+      line-height: normal;
+      text-transform: uppercase;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &-text {
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: calc(21 / 16);
+      color: v.$color-main;
+      font-family: v.$font-primary-mincho;
+      text-align: center;
+      font-weight: v.$Demibold;
+
+      @include mq(md) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    background-color: v.$color-bg-1;
+
+    @include mq(md) {
+      display: block;
+    }
+
+    &-item {
+      border-bottom: 0.1rem solid v.$color-main;
+      max-width: 72rem;
+      width: 50%;
+      padding: 6% 0 7%;
+      text-align: center;
+
+      @include mq(md) {
+        padding: 0;
+        width: 84%;
+        margin: 0 auto;
+      }
+
+      &--salon {
+        position: relative;
+
+        @include mq(md) {
+          padding: 2.4rem 0 0 0;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 13%;
+          height: 75%;
+          border-right: 0.1rem solid v.$color-main;
+
+          @include mq(md) {
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    &-title-salons {
+      font-size: 8rem;
+      letter-spacing: 0.1em;
+      line-height: calc(100 / 80);
+      color: v.$color-main;
+      font-family: v.$font-main-serif;
+      text-transform: uppercase;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 4.8rem;
+        text-align: center;
+        padding: 9% 0 0;
+      }
+    }
+
+    &-title-sns {
+      font-size: 7.2rem;
+      letter-spacing: 0.1em;
+      line-height: calc(90 / 72);
+      color: v.$color-main;
+      font-family: v.$font-main-serif;
+      text-transform: uppercase;
+      padding-right: 6%;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 4.8rem;
+        text-align: center;
+        padding: 18% 0 0;
+      }
+    }
+
+    &-text {
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: calc(21 / 16);
+      color: v.$color-main;
+      font-family: v.$font-primary-mincho;
+      text-align: center;
+      padding-top: 2%;
+      font-weight: v.$Demibold;
+
+      @include mq(md) {
+        font-size: 1.2rem;
+        padding: 0 0 23%;
+      }
+    }
+
+    &-text-sns {
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: calc(21 / 16);
+      color: v.$color-main;
+      font-family: v.$font-primary-mincho;
+      text-align: center;
+      padding-top: 2%;
+      padding-right: 7%;
+      font-weight: v.$Demibold;
+
+      @include mq(md) {
+        font-size: 1.2rem;
+        padding: 0 0 23%;
+      }
+    }
+  }
+
+  &__menu {
+    text-align: center;
+    padding: 8% 0 3%;
+    background-color: v.$color-bg-1;
+    background-color: gainsboro;
+    border: 3px solid red;
+
+    @include mq(md) {
+      padding: 27% 0 0%;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    img {
+      width: 6.4rem;
+      height: 6.4rem;
+      object-fit: cover;
+
+      @include mq(md) {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    &-title {
+      font-size: 2.8rem;
+      font-family: v.$font-main-serif;
+      letter-spacing: 0.2em;
+      line-height: calc(35 / 28);
+      color: v.$color-accent-1;
+      margin: 0;
+      text-align: left;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 2rem;
+        text-align: left;
+        padding-right: 7rem;
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 2rem;
+
+    @include mq(md) {
+      padding-top: 1.9rem;
+      padding-bottom: 1.7rem;
+    }
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      gap: 3.3rem 4.2rem;
+      list-style: none;
+      margin: 0 auto;
+      padding: 3% 0 2.5%;
+      flex-wrap: wrap;
+      width: calc(57.9rem / 120rem *100%);
+
+      @include mq(md) {
+        width: 31.8rem;
+        gap: 1.3rem;
+      }
+    }
+
+    &-link {
+      font-size: 2rem;
+      font-family: v.$font-main-serif;
+      color: v.$color-accent-1;
+      text-decoration: none;
+      border-left: 0.1rem solid v.$color-black;
+      padding-left: 2rem;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      line-height: calc(25 / 20);
+      text-transform: capitalize;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 1.4rem;
+        padding-left: 1rem;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-item {
+
+      &:first-child .footer__nav-link,
+      &:nth-child(6) .footer__nav-link {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__copyright-text {
+    font-size: 1.2rem;
+    line-height: calc(15 / 12);
+    color: v.$color-accent-1;
+    font-family: v.$font-main-serif;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    @include mq(md) {
+      padding-bottom: .8rem;
+    }
+  }
+}
+
+.page-top {
+  position: fixed;
+  bottom: 8rem;
+  right: 4rem;
+  z-index: 1000;
+
+  @include mq(md) {
+    right: 2.5rem;
+    bottom: 2rem;
+  }
+
+  &__link {
+    background-color: v.$color-accent-2;
+    color: v.$color-white;
+    border-radius: 50%;
+    box-shadow: 0 0.4rem 0.8rem v.$color-shadow;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 8rem;
+    height: 8rem;
+
+    @include mq(md) {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &::before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      border-left: 0.4rem solid v.$color-white;
+      border-top: 0.4rem solid v.$color-white;
+      transform: rotate(45deg);
+      display: block;
+
+      @include mq(md) {
+        width: 1rem;
+        height: 1rem;
+        border-left: 0.2rem solid v.$color-white;
+        border-top: 0.2rem solid v.$color-white;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-0.3rem);
+    }
+  }
+}
+
+.sp-list {
+  @include mq(md) {}
+}
+
+.sp-item {
+  @include mq(md) {}
+}
+
+.sp-list-top {
+  @include mq(md) {
+    padding: 7% 0 0;
+  }
+}
+
+.sp-list-middle {
+  @include mq(md) {
+    padding: 4% 0 0rem 6%;
+  }
+}
+
+.sp-list-bottom {
+  @include mq(md) {
+    padding: 8% 0rem 0rem 1%;
+  }
+}
+
+.footer__links-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.top-footer {
+  text-transform: uppercase;
+}
+
+.footer__nav [data-aos="fade-up"] {
+  transform: translateY(2rem);
+}
+
+.footer__nav [data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}

@@ -1,0 +1,192 @@
+<section class="p-reserve-input__wrapper">
+
+    <!-- お名前 -->
+    <div class="p-reserve-input__block u-hover">
+      <div class="form-input-left">
+        <label for="your-name" class="p-reserve-input__label">
+          <span class="p-reserve-input__required">必須</span>お名前
+        </label>
+      </div>
+      <div class="form-input-right">
+        [text* your-name id:your-name class:p-reserve-input__field]
+      </div>
+    </div>
+
+    <!-- ふりがな -->
+    <div class="p-reserve-input__block u-hover">
+      <div class="form-input-left">
+        <label for="your-kana" class="p-reserve-input__label">
+          <span class="p-reserve-input__required">必須</span>ふりがな
+        </label>
+      </div>
+      <div class="form-input-right">
+        [text* your-kana id:your-kana class:p-reserve-input__field]
+      </div>
+    </div>
+
+    <!-- 電話番号 -->
+    <div class="p-reserve-input__block u-hover">
+      <div class="form-input-left">
+        <label for="your-tel" class="p-reserve-input__label">
+          <span class="p-reserve-input__required p-reserve-input__optional">任意</span>電話番号
+        </label>
+      </div>
+      <div class="form-input-right">
+        [tel your-tel id:your-tel class:p-reserve-input__field]
+      </div>
+    </div>
+
+    <!-- メールアドレス -->
+    <div class="p-reserve-input__block u-hover">
+      <div class="form-input-left">
+        <label for="your-email" class="p-reserve-input__label">
+          <span class="p-reserve-input__required">必須</span>メールアドレス
+        </label>
+      </div>
+      <div class="form-input-right">
+        [email* your-email id:your-email class:p-reserve-input__field]
+      </div>
+    </div>
+
+    <!-- ご希望の連絡方法 -->
+    <div class="p-reserve-input__block u-hover">
+      <div class="form-input-left">
+        <label for="contact-method" class="p-reserve-input__label">
+          <span class="p-reserve-input__required">必須</span>ご希望の連絡方法
+        </label>
+      </div>
+      <div class="form-input-right">
+        [text* contact-method id:contact-method class:p-reserve-input__field]
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ご希望の連絡時間帯 -->
+    <div class="p-reserve-input__block input-mt45 u-hover">
+      <div class="form-input-left">
+        <label class="p-reserve-input__label">
+          <span class="p-reserve-input__required p-reserve-input__optional">任意</span>ご希望の連絡時間帯
+        </label>
+      </div>
+      <div class="form-input-right">
+        <div class="p-reserve-input__checkbox-group">
+          <div class="p-reserve-input__checkbox-row weekday-block">
+          <p class="checkbox-label">平日</p>
+            <!-- <p class="checkbox-label">平日</p> -->
+            [checkbox weekday-time class:contact-times-weekday use_label_element "10:00-13:00" "13:00-17:00" "17:00以降"]
+          </div>
+
+          <div class="p-reserve-input__checkbox-row holiday-block">
+          <p class="checkbox-label">休日</p>
+            <!-- <p class="checkbox-label">休日</p> -->
+            [checkbox holiday-time class:contact-times-holiday use_label_element "10:00-13:00" "13:00-17:00" "17:00以降"]
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+    <!-- お問い合わせ項目 -->
+    <div class="p-reserve-input__block input-mt45 u-hover">
+      <div class="form-input-left">
+        <label class="p-reserve-input__label koumoku">
+          <span class="p-reserve-input__required">必須</span>お問い合わせ項目
+        </label>
+      </div>
+
+      <div class="form-input-right">
+        <div class="p-reserve-input__checkbox-group-contact">
+          <div class="p-reserve-input__checkbox-row bottom-checkbox">
+           [radio contact-item class:checkbox-items use_label_element "施術のご予約" "無料体験のご予約" "サービス・料金などのご質問" "その他"]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 希望店舗 -->
+    <div class="p-reserve-input__block input-mt45 u-hover">
+      <div class="form-input-left req-store">
+        <label for="store" class="p-reserve-input__label">
+          <span class="p-reserve-input__required">必須</span>希望店舗
+        </label>
+      </div>
+      <div class="form-input-right req-store-input">
+        [text* store id:store class:my-field-half]
+      </div>
+    </div>
+
+    <!-- 来店希望日（第一希望） -->
+    <div class="p-reserve-input__block input-mt u-hover">
+      <div class="form-input-left req-visit1st">
+        <label for="first-date" class="p-reserve-input__label">
+          <span class="p-reserve-input__required p-reserve-input__optional">任意</span>来店希望日（第一希望）
+        </label>
+      </div>
+      <div class="form-input-right req-visit1st-input">
+        <div class="p-reserve-input__date-wrapper">
+          [text first-date id:first-date class:p-reserve-input__date-field placeholder ""]
+          <i class="fa-solid fa-calendar-days form-fa" data-target="first-date"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 来店希望日（第二希望） -->
+    <div class="p-reserve-input__block input-mt u-hover">
+      <div class="form-input-left req-visit2nd">
+        <label for="second-date" class="p-reserve-input__label">
+          <span class="p-reserve-input__required p-reserve-input__optional">任意</span>来店希望日（第二希望）
+        </label>
+      </div>
+      <div class="form-input-right">
+        <div class="p-reserve-input__date-wrapper req-visit2nd-input">
+          [text second-date id:second-date class:p-reserve-input__date-field placeholder ""]
+          <i class="fa-solid fa-calendar-days form-fa" data-target="second-date"></i>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- お問い合わせ内容 -->
+    <div class="p-reserve-input__block input-textarea u-hover">
+      <div class="form-input-left">
+        <label for="message" class="p-reserve-input__label label-text textarea-text">
+          <span class="p-reserve-input__required p-reserve-input__optional">任意</span>お問い合わせ内容
+        </label>
+      </div>
+      <div class="form-input-right">
+        [textarea message id:message class:p-reserve-input__textarea]
+      </div>
+    </div>
+    
+    <div class="p-reserve-input__block">
+
+      <div class="form-input-left"></div>
+
+      <div class="form-input-right">
+        <p class="p-reserve-input__note">
+          ※ ご希望の日時で予約することができない可能性がありますので、ご了承ください
+        </p>
+      </div>
+    </div>
+
+    <input type="submit" value="確認" class="p-reserve-input__submit u-hover">
+
+  </section>
+
+[multistep multistep-362 first_step "/reserve-confirm"]
+
+[multistep multistep-373 first_step "/reserve-confirm"]

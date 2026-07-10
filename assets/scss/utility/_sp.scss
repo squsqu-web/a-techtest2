@@ -1,0 +1,42 @@
+// スマホだけ表示
+.sp_only {
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .sp_only {
+    display: block;
+  }
+}
+
+// PCだけ表示
+.pc_only {
+  display: block;
+}
+
+@media screen and (max-width: 786px) {
+  .pc_only {
+    display: none;
+  }
+}
+
+/* 1200px以下専用 */
+.under1200_only {
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  .under1200_only {
+    display: none;
+  }
+}
+
+.over1200_only {
+  display: none;
+}
+
+@media screen and (min-width: 1201px) {
+  .over1200_only {
+    display: block;
+  }
+}

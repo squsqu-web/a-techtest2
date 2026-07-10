@@ -1,0 +1,252 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.single {
+  &__wrapper {
+    width: 72%;
+    display: flex;
+    gap: 11%;
+    margin: 8.5% 0 0 16%;
+    background-color: gainsboro;
+    border: 3px solid red;
+
+    @include mq(md) {
+      flex-direction: column;
+      width: 92%;
+      margin: 35% auto 0%;
+      padding: 0 0 12%;
+    }
+  }
+
+  &__back-btn-wrap {
+    width: 100%;
+
+    @include mq(md) {
+      margin: 0;
+    }
+  }
+
+  &__back-btn {
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    line-height: calc(21 / 16);
+    text-align: center;
+    background-color: v.$color-accent-2;
+    width: 20.2rem;
+    height: 4.1rem;
+    margin: 0 auto 26%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mq(md) {
+      margin: 0 auto 0;
+    }
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.5s;
+    }
+
+    a {
+      color: v.$color-white;
+      font-family: v.$font-primary-mincho;
+      font-weight: v.$Demibold;
+    }
+
+    &-linkbtn {
+      color: v.$color-white;
+      font-weight: v.$Demibold;
+    }
+  }
+
+  @include mq(md) {
+    &__back-btn {
+      width: 20.2rem;
+      height: 4.1rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.p-news-article {
+  width: 66%;
+  margin: 0 auto;
+
+  @include mq(md) {
+    margin: 0 auto 0;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+    line-height: calc(31 / 24);
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    margin-bottom: 0.6rem;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+      margin-bottom: 0.1rem;
+      line-height: calc(27 / 18);
+    }
+  }
+
+  &__category {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    font-weight: v.$Regular;
+    text-transform: capitalize;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__category a {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    line-height: calc(14 / 14);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    text-transform: capitalize;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    line-height: calc(14 / 14);
+    color: v.$color-main;
+    font-family: v.$font-main-serif;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 5% 0 4%;
+
+    @include mq(md) {
+      margin: 5% auto 13%;
+      aspect-ratio: 347 / 249;
+    }
+  }
+
+  &__excerpt,
+  &__text {
+    p {
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: 2;
+      color: v.$color-text;
+      font-family: v.$font-primary-gothic;
+      width: 100%;
+      margin: 0 0 4%;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 1.4rem;
+        margin: 0 auto 2.2rem;
+      }
+    }
+
+    p:last-child {
+      @include mq(md) {
+        margin: 0 auto 7%;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: calc(23 / 18);
+    color: v.$color-main;
+    font-family: v.$font-primary-mincho;
+    margin: 0 0 1.2%;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.newsContents-img img {
+  aspect-ratio: 691 / 250;
+
+  @include mq(md) {
+    aspect-ratio: 347 / 249;
+    object-fit: contain;
+  }
+}
+
+main {
+  @include mq(md) {
+    margin-bottom: 0;
+    position: relative;
+  }
+}
+
+.l-single-news__wrapper {
+  @include mq(md) {
+    padding-bottom: 0;
+  }
+}
+
+.l-single-news__sidebar-title {
+  @include mq(md) {
+    padding-top: 3.6rem;
+  }
+}
+
+@include mq(md) {
+  .l-single-news__sidebar {
+    padding: 0 0 0 0.7rem;
+  }
+}
+
+.single__sidebar {
+  @include mq(md) {
+    margin: 11% 0 1%;
+  }
+}
+
+.category-date {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+
+  @include mq(md) {}
+}
+
+.breadcrumb a {
+  color: v.$color-main;
+}
+
+.ctgt-back-btn {
+  @include mq(md) {
+    margin: 13% auto 0%;
+  }
+}
+
+@include mq(md) {
+  .l-main-visual img {
+    // object-fit: contain;
+  }
+}

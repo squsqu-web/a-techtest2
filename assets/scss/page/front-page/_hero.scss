@@ -1,0 +1,54 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+
+.p-hero {
+  &__text {
+    font-size: 6.4rem;
+    color: v.$color-white;
+    line-height: calc(96/64);
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: 40%;
+    left: 2.5%;
+    width: 71rem;
+    text-align: left;
+    font-family: v.$font-primary-mincho;
+    font-weight: v.$Light;
+
+    @include mq(md){
+      font-size: 3.2rem;
+      line-height: 1.5;
+      top: 48%;
+      left: 4%;
+      width: 90%;
+    }
+  }
+
+  &__picture {
+    display: block;
+    margin: 0 auto 2rem;
+
+    @include mq(md){
+      min-width: 320px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+  }
+}
+
+
+main {
+  margin: 0 auto;
+
+  @include mq(md){
+    margin-bottom: 0px;
+    position: relative;
+    width: 100%;
+  }
+}
