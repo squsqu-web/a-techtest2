@@ -299,6 +299,10 @@
 
                 <!-- SCF繰り返し（グループ）フィールド -->
                 <section class="p-news-article__body">
+
+                  <!-- SCFに保存されている「news_sections」というデータをください -->
+                   <p>SCFに保存されている「news_sections」というデータをください</p>
+                   <p>リピーターフィールドとforeachはセット</p>
                   <?php
                   $news_sections = SCF::get('news_sections');
 
@@ -375,11 +379,6 @@
     </section>
   </div>
 </main>
-
-
-
-
-
 
 
 
