@@ -1644,6 +1644,15 @@ body {
 .p-hero {
   position: relative;
 }
+.p-hero {
+  position: relative;
+  margin-top: 16rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-hero {
+    margin-top: 8rem;
+  }
+}
 .p-hero__text {
   font-size: 6.4rem;
   color: #fff;

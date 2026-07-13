@@ -3,6 +3,13 @@
 
 
 .p-hero {
+  position: relative;
+  margin-top: 16rem;
+
+  @include mq(md) {
+    margin-top: 8rem;
+  }
+
   &__text {
     font-size: 6.4rem;
     color: v.$color-white;
@@ -16,7 +23,7 @@
     font-family: v.$font-primary-mincho;
     font-weight: v.$Light;
 
-    @include mq(md){
+    @include mq(md) {
       font-size: 3.2rem;
       line-height: 1.5;
       top: 48%;
@@ -29,7 +36,7 @@
     display: block;
     margin: 0 auto 2rem;
 
-    @include mq(md){
+    @include mq(md) {
       min-width: 320px;
     }
   }
@@ -46,7 +53,7 @@
 main {
   margin: 0 auto;
 
-  @include mq(md){
+  @include mq(md) {
     margin-bottom: 0px;
     position: relative;
     width: 100%;
