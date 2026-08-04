@@ -4,9 +4,8 @@
   <div class="sticky-area">
     <!-- Main Visual -->
     <section class="l-main-visual">
-      <h1 class="l-main-visual__title" data-aos="fade-up">news</h1>
-      <div class="sticky-wrapper"></div>
-
+      <h1 class="l-main-visual__title" data-aos="fade-up">各園のご紹介</h1>
+       <div class="sticky-wrapper"></div>
 
 
       <div class="contents-overlap-wrapper">
@@ -15,7 +14,7 @@
           <nav class="breadcrumb  u-hover" data-aos="fade-up">
             <a href="<?php echo home_url('/'); ?>">ホーム</a>
             <span class="sep" data-aos="fade-up">｜</span>
-            <a href="<?php echo home_url('/news'); ?>">ニュース一覧</a>
+            <a href="<?php echo home_url('/news'); ?>">各園のご紹介</a>
             <span class="sep" data-aos="fade-up">｜</span>
             <span data-aos="fade-up"><?php the_title(); ?></span>
           </nav>

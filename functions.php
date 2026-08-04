@@ -183,30 +183,55 @@ add_theme_support('post-thumbnails');
  *====================================*/
 function create_post_types()
 {
-  register_post_type('news', array(
+  register_post_type('introduction', array(
     'labels' => array(
-      'name' => 'ニュース',
-      'singular_name' => 'ニュース',
+      'name' => '施設紹介',
+      'singular_name' => '施設紹介',
     ),
     'public' => true,
     'has_archive' => true,
     'menu_position' => 5,
-    'supports' => array('title', 'editor', 'excerpt'),
-    'taxonomies'  => array('category'),
-    'rewrite' => array('slug' => 'news'),
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+    'taxonomies' => array('category'),
+    'rewrite' => array('slug' => 'introduction'),
     'show_in_rest' => true,
   ));
 
-  register_post_type('salons', array(
+
+  register_post_type('letter', array(
     'labels' => array(
-      'name' => 'サロン',
-      'singular_name' => 'サロン'
+      'name' => 'こもれびだより',
+      'singular_name' => 'こもれびだより',
     ),
     'public' => true,
     'has_archive' => true,
-    'menu_position' => 6,
-    'supports' => array('title', 'editor', 'thumbnail'),
-    'rewrite' => array('slug' => 'salons')
+    'menu_position' => 5,
+    'supports' => array(
+      'title',
+      'editor',
+      'excerpt',
+      'thumbnail'
+    ),
+    'taxonomies'  => array('category'),
+    'rewrite' => array('slug' => 'letter'),
+    'show_in_rest' => true,
+  ));
+
+
+
+
+  register_post_type('info', array(
+    'labels' => array(
+      'name' => 'お知らせ',
+      'singular_name' => 'お知らせ',
+    ),
+    'public' => true,
+    'has_archive' => true,
+    'menu_position' => 7,
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+    'taxonomies' => array('category'),
+    'rewrite' => array('slug' => 'info'),
+    'show_in_rest' => true,
   ));
 }
 add_action('init', 'create_post_types');
@@ -217,10 +242,12 @@ add_action('init', 'create_post_types');
  *====================================*/
 function set_custom_posts_per_page_by_device($query)
 {
-  if (!is_admin() && $query->is_main_query()) {
-    if ($query->is_post_type_archive('news') || $query->is_post_type_archive('salons')) {
-      $query->set('posts_per_page', 9);
-    }
+  if (
+    $query->is_post_type_archive('introduction') ||
+    $query->is_post_type_archive('letter') ||
+    $query->is_post_type_archive('info')
+  ) {
+    $query->set('posts_per_page', 9);
   }
 }
 add_action('pre_get_posts', 'set_custom_posts_per_page_by_device');
@@ -229,13 +256,13 @@ add_action('pre_get_posts', 'set_custom_posts_per_page_by_device');
 /*====================================
  * 投稿＋ニュースをカテゴリーアーカイブに表示
  *====================================*/
-function add_news_to_category_archive($query)
+function add_letter_to_category_archive($query)
 {
   if (!is_admin() && $query->is_main_query() && $query->is_category()) {
-    $query->set('post_type', array('post', 'news'));
+    $query->set('post_type', array('post', 'letter'));
   }
 }
-add_action('pre_get_posts', 'add_news_to_category_archive');
+add_action('pre_get_posts', 'add_letter_to_category_archive');
 
 
 /*====================================
@@ -251,46 +278,13 @@ function my_breadcrumb()
 }
 
 
-/*====================================
- * 都道府県タクソノミー登録
- *====================================*/
-function register_prefecture_taxonomy()
-{
-  $labels = array(
-    'name' => '都道府県',
-    'singular_name' => '都道府県',
-    'search_items' => '都道府県を検索',
-    'all_items' => 'すべての都道府県',
-    'edit_item' => '都道府県を編集',
-    'update_item' => '都道府県を更新',
-    'add_new_item' => '新しい都道府県を追加',
-    'new_item_name' => '新しい都道府県名',
-    'menu_name' => '都道府県',
-  );
-
-  register_taxonomy(
-    'prefecture',
-    array('salons'),
-    array(
-      'hierarchical' => true,
-      'labels' => $labels,
-      'show_ui' => true,
-      'show_admin_column' => true,
-      'show_in_rest' => true,
-      'public' => true,
-      'rewrite' => array('slug' => 'prefecture'),
-    )
-  );
-}
-add_action('init', 'register_prefecture_taxonomy');
-
 
 /*====================================
  * ニュースサイドバー用カテゴリ取得
  *====================================*/
-function get_news_sidebar_categories()
+function get_letter_sidebar_categories()
 {
-  $fixed_slugs = array('all', 'campaign', 'news', 'column');
+  $fixed_slugs = array('all', 'campaign', 'letter', 'column');
   $fixed = array();
 
   foreach ($fixed_slugs as $slug) {
@@ -329,12 +323,14 @@ function get_news_sidebar_categories()
 }
 
 
-// NEWS投稿タイプにカテゴリーを紐付け
-function add_category_to_news()
+// カテゴリーを紐付け
+function add_category_to_custom_post()
 {
-  register_taxonomy_for_object_type('category', 'news');
+  register_taxonomy_for_object_type('category', 'introduction');
+  register_taxonomy_for_object_type('category', 'letter');
+  register_taxonomy_for_object_type('category', 'info');
 }
-add_action('init', 'add_category_to_news');
+add_action('init', 'add_category_to_custom_post');
 
 
 // フォームのバリデーション
@@ -366,9 +362,9 @@ add_theme_support('title-tag');
 /*====================================
  * ニュースカスタムパーマリンク設定（全角対策版）
  *====================================*/
-function news_permalink($post_link, $post)
+function letter_permalink($post_link, $post)
 {
-  if ($post->post_type !== 'news') {
+  if ($post->post_type !== 'letter') {
     return $post_link;
   }
 
@@ -379,34 +375,34 @@ function news_permalink($post_link, $post)
     $category_slug = $cats[0]->slug;
     // スラッグに全角文字が含まれている場合は安全な代替スラッグにフォールバック
     if (preg_match('/[^%a-zA-Z0-9_-]/', $category_slug)) {
-      $category_slug = 'news-cat';
+      $category_slug = 'letter-cat';
     }
   } else {
-    $category_slug = 'news';
+    $category_slug = 'letter';
   }
 
   return home_url(
-    "/news/{$category_slug}/{$post->ID}/"
+    "/letter/{$category_slug}/{$post->ID}/"
   );
 }
 add_filter(
   'post_type_link',
-  'news_permalink',
+  'letter_permalink',
   10,
   2
 );
 
-function news_rewrite_rules()
+function letter_rewrite_rules()
 {
   add_rewrite_rule(
-    '^news/([^/]+)/([0-9]+)/?$',
-    'index.php?post_type=news&p=$matches[2]',
+    '^letter/([^/]+)/([0-9]+)/?$',
+    'index.php?post_type=letter&p=$matches[2]',
     'top'
   );
 }
 add_action(
   'init',
-  'news_rewrite_rules'
+  'letter_rewrite_rules'
 );
 
 
@@ -415,17 +411,35 @@ add_action(
  *====================================*/
 function auto_slug_to_ascii($data, $postarr)
 {
-  // ニュース(news) と サロン(salons) を対象にする
-  if (in_array($data['post_type'], array('news', 'salons'), true)) {
-    if (empty($data['post_name']) || $data['post_name'] === sanitize_title($data['post_title'])) {
+  if (in_array($data['post_type'], array(
+    'introduction',
+    'letter',
+    'info'
+  ), true)) {
 
-      if ($data['post_type'] === 'salons') {
-        $data['post_name'] = 'salon-' . uniqid();
-      } else {
-        $data['post_name'] = 'post-' . uniqid();
+    if (
+      empty($data['post_name']) ||
+      $data['post_name'] === sanitize_title($data['post_title'])
+    ) {
+
+      switch ($data['post_type']) {
+
+        case 'introduction':
+          $data['post_name'] = 'introduction-' . uniqid();
+          break;
+
+        case 'letter':
+          $data['post_name'] = 'letter-' . uniqid();
+          break;
+
+        case 'info':
+          $data['post_name'] = 'info-' . uniqid();
+          break;
       }
     }
   }
+
   return $data;
 }
+
 add_filter('wp_insert_post_data', 'auto_slug_to_ascii', 10, 2);

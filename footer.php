@@ -1,36 +1,5 @@
 <footer class="footer">
 
-  <?php
-  // reserve / reserve-confirm / reserve-thanks の場合は非表示
-  if (!is_page(array('reserve', 'reserve-confirm', 'reserve-thanks'))) :
-  ?>
-    <!-- 予約セクション -->
-    <section class="footer__reserve">
-      <a href="<?php echo home_url('/reserve'); ?>" class="reserve-link u-hover">
-        <div class="footer__reserve-content">
-          <h3 class="footer__reserve-title" data-aos="fade-up">reserve</h3>
-          <p class="footer__reserve-text" data-aos="fade-up">予約はこちらから</p>
-        </div>
-      </a>
-    </section>
-  <?php endif; ?>
-
-  <!-- リンクセクション -->
-  <div class="footer__links">
-    <section class="footer__links-item footer__links-item--salon">
-      <a href="<?php echo home_url('/salons'); ?>" class="u-hover">
-        <h3 class="footer__links-title-salons u-hover" data-aos="fade-up">salons</h3>
-        <p class="footer__links-text" data-aos="fade-up">店舗一覧</p>
-      </a>
-    </section>
-    <section class="footer__links-item footer__links-item--sns">
-      <a href="https://www.instagram.com/valentine_rose_squ?igsh=bHBqNXRsNzVyajAx" target="_blank" class="u-hover">
-        <h3 class="footer__links-title-sns" data-aos="fade-up">sns</h3>
-        <p class="footer__links-text-sns" data-aos="fade-up">インスタグラム</p>
-      </a>
-    </section>
-  </div>
-
   <!-- ナビゲーションとロゴ -->
   <section class="footer__menu">
     <h2 class="footer__logo inview">
@@ -79,7 +48,7 @@
 
     <div class="footer__copyright">
       <p class="footer__copyright-text inview">
-        &copy; 2024 Valentine Rose., Ltd. All rights Reserved.
+        &copy; ©桜のこもれびキッズランド All Rights Reserved.
       </p>
     </div>
   </section>

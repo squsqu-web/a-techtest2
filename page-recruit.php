@@ -3,16 +3,8 @@
   <div class="sticky-area">
     <!-- Main Visual -->
     <section class="l-main-visual">
-      <h1 class="l-main-visual__title">reserve</h1>
-      <div class="sticky-wrapper">
-        <picture class="">
-          <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-sp.webp" media="(max-width: 767px)" type="image/webp">
-          <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-sp.jpg" media="(max-width: 767px)" type="image/jpeg">
-          <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-pc.webp" media="(min-width: 768px)" type="image/webp">
-          <source srcset="<?php echo get_template_directory_uri(); ?>/img/reserve_top-pc.jpg" media="(min-width: 768px)" type="image/jpeg">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/reserve_top-pc.jpg" alt="スマホで予約をしている様子" class="l-main-visual__img">
-        </picture>
-      </div>
+      <h1 class="l-main-visual__title">採用情報</h1>
+      <div class="sticky-wrapper"></div>
 
 
       <div class="contents-overlap-wrapper">
@@ -21,7 +13,7 @@
           <nav class="breadcrumb form-bread-nav u-hover">
             <a href="<?php echo home_url('/'); ?>">ホーム</a>
             <span class="sep">｜</span>
-            <span>ご予約・お問い合わせ</span>
+            <span>採用情報</span>
           </nav>
         </div>
 

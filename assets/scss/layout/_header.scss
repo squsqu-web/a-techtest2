@@ -30,6 +30,47 @@
     }
   }
 
+  &__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+
+    @include mq(md) {}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   &__logo {
     display: flex;
     align-items: center;
@@ -91,11 +132,7 @@
   }
 }
 
-.reserve__btn {
-  color: v.$color-white;
-  font-family: v.$font-primary-mincho;
-  font-weight: v.$Demibold;
-}
+
 
 
 // ハンバーガーメニュー（SP用）
@@ -263,14 +300,5 @@
   }
 }
 
-.fa-calendar-reserve {
-  margin-right: 4.4rem;
 
-  @include mq(md) {
-    margin-right: 3rem;
-  }
-}
 
-.fa-calender-pseudo::before {
-  padding-right: 1.6rem;
-}
