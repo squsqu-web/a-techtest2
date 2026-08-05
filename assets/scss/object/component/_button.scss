@@ -5,13 +5,13 @@
 
   @include button-text(1.6rem,
     v.$Demibold,
-    v.$font-primary-mincho,
-    calc(2 / 20 * 1em)
-    );
+    v.$font-sub,
+    calc(2 / 20 * 1em));
 
   line-height: calc(32 / 20);
+  border: 1px solid v.$color-main;
 
-  @include button-base(v.$color-accent-2,
+  @include button-base(v.$color-white,
     v.$color-white);
 
   @include button-size(20rem,
@@ -33,15 +33,13 @@
 }
 
 .c-button--secondary {
-  background-color: v.$color-text;
+  background-color: v.$color-main;
   color: v.$color-white;
 }
 
 .c-button--sm {
-  @include button-size(
-    16rem,
-    4rem
-    );
+  @include button-size(16rem,
+    4rem);
 
   gap: 0px;
   padding-right: 0;

@@ -1,0 +1,81 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.p-recruit {
+  background-color: v.$color-main-3;
+  @include flex;
+  margin: 0 0 5rem;
+  background: url('../img/recruit-bg.png') no-repeat center / cover;
+  
+
+  @include mq(md) {}
+
+  &__inner {
+    width: 75%;
+    background-color: v.$color-white;
+    text-align: center;
+    padding: 6.4rem 28rem;
+
+    @include mq(md) {}
+
+  }
+
+  &__inner-wrap {
+    @include mq(md) {}
+
+  }
+
+  &__icon {
+    width: 10.8rem;
+    height: 10.8rem;
+    margin: 0 auto 5rem;
+
+    @include mq(md) {}
+
+  }
+
+  &__heading {
+
+    @include mq(md) {}
+
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    color: v.$color-main;
+
+
+    @include mq(md) {}
+
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+
+  &__link-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+
+}

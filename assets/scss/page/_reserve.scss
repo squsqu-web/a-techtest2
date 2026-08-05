@@ -59,7 +59,7 @@
     padding-left: 0.8rem;
     box-sizing: border-box;
     font-family: v.$font-primary-mincho;
-    color: v.$color-text;
+    color: v.$color-main;
     font-weight: v.$Regular;
 
     @include mq(md) {
@@ -96,7 +96,7 @@
     box-sizing: border-box;
     cursor: pointer;
     font-weight: v.$Regular;
-    color: v.$color-text;
+    color: v.$color-main;
 
     @include mq(md) {
       width: 100%;
@@ -175,7 +175,7 @@
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   line-height: calc(28 / 14);
-  color: v.$color-text;
+  color: v.$color-main;
   font-family: v.$font-primary-gothic;
   font-weight: v.$Regular;
   margin-right: 6.6rem;
@@ -212,7 +212,7 @@
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   line-height: calc(28 / 14);
-  color: v.$color-text;
+  color: v.$color-main;
   font-family: v.$font-primary-gothic;
   display: flex;
   margin-bottom: 1.2rem;
@@ -241,7 +241,7 @@
 .checkbox-label {
   font-size: 1.4rem;
   font-family: v.$font-primary-gothic;
-  color: v.$color-text;
+  color: v.$color-main;
   letter-spacing: 0.1em;
   line-height: calc(28 / 14);
   padding-left: 1%;
@@ -475,7 +475,7 @@
 
 // 任意用スタイル
 .p-reserve-input__optional {
-  color: v.$color-text;
+  color: v.$color-main;
   background-color: v.$color-bg-2;
 }
 

@@ -29,7 +29,7 @@
 .p-reserve-input__block-comfirm p {
   display: flex;
   font-size: 1.6em;
-  color: v.$color-text2;
+  color: v.$color-main2;
 }
 
 .p-reserve-input__label-text {
@@ -59,7 +59,7 @@
   font-size: 1.6rem;
   padding-left: .8rem;
   font-family: v.$font-primary-mincho;
-  color: v.$color-text;
+  color: v.$color-main;
   font-weight: 400;
 
   @media screen and (max-width: 950px) {
@@ -82,7 +82,7 @@
   font-size: 1.6rem;
   padding-left: 2.5%;
   font-family: v.$font-primary-gothic;
-  color: v.$color-text2;
+  color: v.$color-main2;
   font-weight: 400;
 
   @include mq(md) {
@@ -120,11 +120,11 @@
   letter-spacing: 0.1em;
   line-height: calc(28 / 16);
   font-weight: v.$Regular;
-  color: v.$color-text;
+  color: v.$color-main;
 
   @include mq(md) {
     font-size: 1.6rem;
-    color: v.$color-text;
+    color: v.$color-main;
   }
 }
 
@@ -133,12 +133,12 @@
   letter-spacing: 0.1em;
   line-height: calc(28 / 16);
   font-weight: v.$Regular;
-  color: v.$color-text2;
+  color: v.$color-main2;
 
   @include mq(md) {
     font-size: 1.4rem;
     line-height: calc(22 / 14);
-    color: v.$color-text;
+    color: v.$color-main;
   }
 }
 
@@ -180,7 +180,7 @@
 
 // 任意用スタイル
 .p-reserve-input__optional {
-  color: v.$color-text;
+  color: v.$color-main;
   background-color: v.$color-bg-2;
 }
 

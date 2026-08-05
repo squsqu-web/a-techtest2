@@ -45,6 +45,21 @@
                         ?>
                       </p>
                     </div>
+
+
+
+
+                    <!-- こもれびのパーツ -->
+                    <p>こもれびのパーツ</p>
+                    <h2><?php the_title(); ?></h2>
+                    <?php the_content(); ?>
+                    <?php the_post_thumbnail(); ?>
+                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>" data-aos="fade-up">
+                      <?php echo get_the_date('Y.m.d'); ?>
+                    </time>
+
+
+
                   </a>
                 </div>
 
@@ -63,43 +78,6 @@
             </div>
           </section>
 
-          <!-- サイドバー -->
-          <aside class="l-news__sidebar">
-            <h5 class="l-news__sidebar-title" id="news-cat" data-aos="fade-up">category</h5>
-
-            <ul class="l-news__category-list">
-              <li class="l-news__category-item u-hover inview" data-cat="all">すべて</li>
-              <li class="l-news__category-item u-hover inview" data-cat="campaign">キャンペーン</li>
-              <li class="l-news__category-item u-hover inview" data-cat="news">お知らせ</li>
-              <li class="l-news__category-item u-hover inview" data-cat="column">コラム</li>
-            </ul>
-
-          </aside>
-
-          <!--カテゴリー絞り込み -->
-          <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              const categoryItems = document.querySelectorAll('.l-news__category-item');
-              const newsItems = document.querySelectorAll('.news-item');
-
-              categoryItems.forEach(item => {
-                item.addEventListener('click', () => {
-                  const cat = item.getAttribute('data-cat');
-
-                  categoryItems.forEach(i => i.classList.remove('active'));
-                  item.classList.add('active');
-
-                  newsItems.forEach(news => {
-                    if (cat === 'all') {
-                      news.style.display = 'block';
-                    } else {
-                      news.style.display = news.classList.contains(cat) ? 'block' : 'none';
-                    }
-                  });
-                });
-              });
-            });
-          </script>
 
         </div>
       </div>

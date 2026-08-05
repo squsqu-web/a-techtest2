@@ -63,6 +63,21 @@
                         <?php echo get_the_date('Y年n月j日'); ?>
                       </time>
 
+
+
+
+
+                      <!-- こもれびのパーツ -->
+                      <p>こもれびのパーツ</p>
+                      <h2><?php the_title(); ?></h2>
+                      <?php the_content(); ?>
+                      <?php the_post_thumbnail(); ?>
+                      <time datetime="<?php echo get_the_date('Y-m-d'); ?>" data-aos="fade-up">
+                        <?php echo get_the_date('Y.m.d'); ?>
+                      </time>
+
+
+
                     </a>
                   </article>
 

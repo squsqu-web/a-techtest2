@@ -5,6 +5,7 @@
 .p-hero {
   position: relative;
   margin-top: 16rem;
+  background-color: rgb(200, 200, 197);
 
   @include mq(md) {
     margin-top: 8rem;

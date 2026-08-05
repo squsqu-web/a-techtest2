@@ -41,522 +41,185 @@
 
   </section>
 
-  <!-- News -->
-  <section class="p-news">
-    <div class="p-news__header">
-      <h2 class="c-heading-en" data-aos="fade-up">news</h2>
-      <p class="c-heading-ja" data-aos="fade-up">お知らせ</p>
+
+  <!-- Aboutセクション -->
+  <section class="p-about">
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
+      alt=""
+      class="p-about__icon"
+      loading="lazy"
+      data-aos="fade-up">
+
+    <div class="p-about__heading">
+      <h2 class="p-about__title">
+        桜のこもれびキッズランドへ<br>
+        ようこそ
+      </h2>
+      <p class="p-about__subtitle">welcome</p>
     </div>
 
-    <ul class="o-list-reset p-news__list">
-      <?php
-      $args = array(
-        'post_type' => 'news',
-        'posts_per_page' => 3,
-      );
-      $the_query = new WP_Query($args);
-      ?>
-
-      <?php if ($the_query->have_posts()): ?>
-        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-          <li class="p-news__item">
-            <a href="<?php the_permalink(); ?>" class="u-hover">
-              <div data-aos="fade-up">
-                <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="p-news__date">
-                  <?php echo get_the_date('Y.m.d'); ?>
-                </time>
-              </div>
+    <p class="p-about__text">
+      「こもれび」とは<br>
+      風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
+      それはその瞬間に一度だけ存在します。
+    </p>
+  </section>
 
 
-              <h3 class="p-news__heading" data-aos="fade-up"><?php the_title(); ?></h3>
+  <!-- 各園のご紹介セクション -->
+  <section class="p-introduction">
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
+      alt=""
+      class="p-introduction__icon"
+      loading="lazy"
+      data-aos="fade-up">
 
-              <?php
-              // カテゴリーを取得
-              $terms = get_the_terms(get_the_ID(), 'category');
+    <div class="p-introduction__heading">
+      <h2 class="p-introduction__title">各園のご紹介</h2>
+      <p class="p-introduction__subtitle">introduction</p>
+    </div>
 
-              if ($terms && !is_wp_error($terms)) :
-
-                $term_slugs = wp_list_pluck($terms, 'slug');
-                $term_list = implode(', ', $term_slugs);
-              ?>
-                <p class="p-news__category inview">
-                  <?php echo esc_html($term_list); ?>
-                </p>
-              <?php endif; ?>
-
-            </a>
-          </li>
-        <?php endwhile; ?>
-      <?php else: ?>
-        <p>投稿がまだありません</p>
-      <?php endif;
-      wp_reset_postdata(); ?>
+    <ul class="p-introduction__prefectures-list">
+      <li class="p-introduction__prefectures-item">東京都</li>
+      <li class="p-introduction__prefectures-item">神奈川県</li>
+      <li class="p-introduction__prefectures-item">埼玉県</li>
+      <li class="p-introduction__prefectures-item">千葉県</li>
+      <li class="p-introduction__prefectures-item">大阪府</li>
+      <li class="p-introduction__prefectures-item">京都府</li>
     </ul>
 
-    <div class="p-news__action" data-aos="fade-up">
-      <a href="<?php echo home_url('/news'); ?>" class="c-button c-button--sm u-hover">
-        View All
+    <!-- リンクボタン -->
+    <div class="inview">
+      <a href="<?php echo home_url('/introduction'); ?>" class="p-introduction__link c-button u-hover">
+        一覧ページへ
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- こもれびだよりセクション -->
+  <section class="p-letter">
+
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg"
+      alt=""
+      class="p-letter__icon"
+      loading="lazy"
+      data-aos="fade-up">
+
+
+    <div class="p-letter__heading">
+      <h2 class="p-letter__title">こもれびだより</h2>
+      <p class="p-letter__subtitle">letter</p>
+    </div>
+
+    <ul class="p-letter__list">
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">なは園からのおたより</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+      <li class="p-letter__item">
+        <a href="" class="p-letter__card">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
+          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
+          <p class="p-letter__text">説明テキスト</p>
+          <time class="p-letter__date" datetime="">日付もってくる</time>
+        </a>
+      </li>
+
+    </ul>
+
+
+    <!-- リンクボタン -->
+    <div class="inview">
+      <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover">
+        もっとみる
       </a>
     </div>
 
   </section>
 
-  <!-- Concept -->
-  <section class="p-concept-sec">
-    <div class="concept-picture">
-      <picture class="p-concept__picture">
 
-        <source
-          srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_01-sp.webp"
-          media="(max-width:767.98px)"
-          type="image/webp">
 
-        <source
-          srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_01-sp.jpg"
-          media="(max-width:767.98px)"
-          type="image/jpeg">
-
-        <source
-          srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_01-pc.webp"
-          media="(min-width: 768px)"
-          type="image/webp">
-
-        <source
-          srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_01-pc.jpg"
-          media="(min-width: 768px)"
-          type="image/jpeg">
-
+  <!-- 採用情報セクション -->
+  <section class="p-recruit">
+    <div class="p-recruit__inner">
+      <div class="p-recruit__inner-wrap">
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/top-concept_01-pc.jpg"
-          alt="">
-      </picture>
-    </div>
-    <div class="p-concept__header">
-      <h2 class="p-concept__title" data-aos="fade-up">concept</h2>
-      <p class="p-concept__subtitle" data-aos="fade-up">コンセプト</p>
-      <p class="p-concept__lead pc_only" data-aos="fade-up">洗練されたワンランク上の女性を目指す</p>
-      <p class="p-concept__lead sp_only" data-aos="fade-up">洗練された<br>ワンランク上の<br>女性を目指す</p>
-    </div>
-    <div class="p-concept__body">
-      <picture>
-        <source srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_02-sp.webp" media="(max-width:767.98px)" type="image/webp">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_02-sp.jpg" media="(max-width:767.98px)" type="image/jpeg">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_02-pc.webp" media="(min-width: 768px)" type="image/webp">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/img/top-concept_02-pc.jpg" media="(min-width: 768px)" type="image/jpeg">
-        <!-- フォールバック -->
-        <img src="<?php echo get_template_directory_uri(); ?>/img/top-concept_02-pc.jpg" alt="受付をしている様子" class="p-concept__body__img" loading="lazy" width="540" height="211" data-aos="fade-up">
-      </picture>
-      <p class="p-concept__text  pc_only" data-aos="fade-up">バレンタインローズでは脱毛の完了はゴールではなく、<br>あくまでもお客様がワンランク上の女性に近づくための<br>第一歩と考えています。<br>「洗練されたワンランク上の女性を目指す」<br>というコンセプトのもと、<br>スタッフが徹底したホスピタリティによりお客様をもてなし、<br>脱毛を通してお客様が理想とする女性像に導きます。</p>
-      <p class="p-concept__text  sp_only" data-aos="fade-up">バレンタインローズでは脱毛の完了は<br>ゴールではなく、あくまでもお客様が<br>ワンランク上の女性に近づくための<br>第一歩と考えています。<br>「洗練されたワンランク上の女性を目指す」というコンセプトのもと、<br>スタッフが徹底したホスピタリティによりお客様をもてなし、脱毛を通してお客様が理想とする女性像に導きます。</p>
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
+          alt=""
+          class="p-recruit__icon"
+          loading="lazy"
+          data-aos="fade-up">
+
+        <div class="p-recruit__heading">
+          <h2 class="p-recruit__title">採用情報</h2>
+          <p class="p-recruit__subtitle">recruit</p>
+        </div>
+
+        <p class="p-recruit__text">桜のこもれびキッズランドで働いてみませんか？</p>
+      </div>
+
+      <!-- リンクボタン -->
+      <div class="p-recruit__link-wrap inview">
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link c-button u-hover">
+          もっとみる
+        </a>
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link c-button u-hover">
+          もっとみる
+        </a>
+      </div>
+
     </div>
 
-    <div class="parent-viewmore" data-aos="fade-up">
-      <a href="<?php echo home_url('/concept'); ?>" class="viewmore-down u-hover">
-        <span class="viewmore-down__text">View More</span>
-        <span class="viewmore-down__arrow"></span>
-      </a>
-    </div>
+
 
   </section>
 
-
-  <!-- Feature -->
-  <section class="p-feature" data-aos="fade-up">
-    <h2 class="p-feature__title">feature</h2>
-    <div class="swiper p-feature__swiper">
-      <div class="swiper-wrapper">
-
-        <!-- スライド3 -->
-        <!-- <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/feature_02-pc.jpg" alt="テスト3画像" class="p-feature__img" width="450" height="630" loading="lazy" data-aos="fade-up">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature Ⅲ</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">1回の施術は入店～退店まで約30分</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                施術自体は15分程度。初回はカウンセリングもあるので多少お時間をいただきますが、2回目以降は薄化粧で来ていただくと、入店から退店まで30分弱で済みます。
-              </p>
-            </li>
-          </ul>
-        </div> -->
-
-        <!-- スライド1 -->
-        <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-sp.webp"
-                  media="(max-width:767.98px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-sp.jpg"
-                  media="(max-width:767.98px)"
-                  type="image/jpeg">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.webp"
-                  media="(min-width: 768px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.jpg"
-                  media="(min-width: 768px)"
-                  type="image/jpeg">
-
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.jpg"
-                  alt="背景画像"
-                  width="450"
-                  height="630"
-                  class="p-feature__img"
-                  loading="lazy">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature I</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">高性能の機械を導入</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                美肌に特化したフィルターを使用し<br>
-                真皮層に働きかけることで<br>
-                コラーゲンの生成を促進させます。<br>
-                また、むくみの原因である溜まった<br>
-                リンパを流すことで顔のむくみを取り、<br>
-                若々しいお肌と小顔効果が期待できます。
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- スライド2 -->
-        <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-sp.webp"
-                  media="(max-width:767.98px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-sp.jpg"
-                  media="(max-width:767.98px)"
-                  type="image/jpeg">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.webp"
-                  media="(min-width: 768px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.jpg"
-                  media="(min-width: 768px)"
-                  type="image/jpeg">
-
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.jpg"
-                  alt="テスト2画像"
-                  class="p-feature__img"
-                  width="450"
-                  height="630"
-                  loading="lazy">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature Ⅱ</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">痛みを最小限まで抑えた施術</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                毛質・毛量や脱毛箇所などに合わせて<br>オーダーメイドの脱毛プランを作成し、<br>メンズ専用の脱毛器を使用して施術します。
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- スライド3 -->
-        <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_02-sp.webp"
-                  media="(max-width:767.98px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_02-sp.jpg"
-                  media="(max-width:767.98px)"
-                  type="image/jpeg">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_02-pc.webp"
-                  media="(min-width: 768px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_02-pc.jpg"
-                  media="(min-width: 768px)"
-                  type="image/jpeg">
-
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/img/feature_02-pc.jpg"
-                  alt="テスト3画像"
-                  class="p-feature__img"
-                  width="450"
-                  height="630"
-                  loading="lazy">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature Ⅲ</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">1回の施術は入店～退店まで約30分</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                施術自体は15分程度。<br>初回はカウンセリングもあるので<br>多少お時間をいただきますが、<br>2回目以降は薄化粧で来ていただくと、<br>入店から退店まで30分弱で済みます。
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- スライド1 -->
-        <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-sp.webp"
-                  media="(max-width:767.98px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-sp.jpg"
-                  media="(max-width:767.98px)"
-                  type="image/jpeg">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.webp"
-                  media="(min-width: 768px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.jpg"
-                  media="(min-width: 768px)"
-                  type="image/jpeg">
-
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/img/feature_03-pc.jpg"
-                  alt="背景画像"
-                  width="450"
-                  height="630"
-                  class="p-feature__img"
-                  loading="lazy">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature I</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">高性能の機械を導入</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                美肌に特化したフィルターを使用し<br>
-                真皮層に働きかけることで<br>
-                コラーゲンの生成を促進させます。<br>
-                また、むくみの原因である溜まった<br>
-                リンパを流すことで顔のむくみを取り、<br>
-                若々しいお肌と小顔効果が期待できます。
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- スライド2 -->
-        <div class="swiper-slide p-feature__slide">
-          <ul class="p-feature__list-inner">
-            <li class="p-feature__item">
-              <div class="p-feature__item-inner">
-                <ul class="p-feature__sub-list">
-                  <li data-aos="fade-up" class="item-text">高性能の機械を導入</li>
-                  <li data-aos="fade-up" class="item-text">痛みを最小限まで抑えた施術</li>
-                  <li data-aos="fade-up" class="item-text">1回の施術は<br>入店～退店まで約30分</li>
-                </ul>
-              </div>
-            </li>
-            <li class="p-feature__item">
-              <picture class="p-feature__picture">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-sp.webp"
-                  media="(max-width:767.98px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-sp.jpg"
-                  media="(max-width:767.98px)"
-                  type="image/jpeg">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.webp"
-                  media="(min-width: 768px)"
-                  type="image/webp">
-
-                <source
-                  srcset="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.jpg"
-                  media="(min-width: 768px)"
-                  type="image/jpeg">
-
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/img/feature_01-pc.jpg"
-                  alt="テスト2画像"
-                  class="p-feature__img"
-                  width="450"
-                  height="630"
-                  loading="lazy">
-              </picture>
-            </li>
-            <li class="p-feature__item">
-              <h3 class="p-feature__item__sm-title" data-aos="fade-up">feature Ⅱ</h3>
-              <h4 class="p-feature__item__title" data-aos="fade-up">痛みを最小限まで抑えた施術</h4>
-              <p class="p-feature__text" data-aos="fade-up">
-                毛質・毛量や脱毛箇所などに合わせてオーダーメイドの脱毛プランを作成し、メンズ専用の脱毛器を使用して施術します。
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Price -->
-  <section class="c-pricing">
-    <article class="c-pricing__header">
-      <h2 class="c-pricing__title" data-aos="fade-up">price menu</h2>
-      <p class="c-pricing__subtitle" data-aos="fade-up">メニュー料金</p>
-    </article>
-
-    <div class="c-pricing__content">
-
-      <div class="c-pricing__row c-pricing__row--top">
-        <div class="c-pricing__col c-pricing__col--top-left">
-          <a href="<?php echo home_url('/price/#body'); ?>" class="u-hover">
-            <div class="fa-arrow">
-              <div class="price-item-arrow">
-                <h3 class="c-pricing__item-title" data-aos="fade-up">body</h3>
-                <p class="c-pricing__item-subtitle c-pricing__body" data-aos="fade-up">体脱毛</p>
-              </div>
-              <i class="fa-solid fa-chevron-right front-arrow" data-aos="fade-up"></i>
-            </div>
-          </a>
-        </div>
-
-        <div class="c-pricing__col c-pricing__col--top-right">
-          <a href="<?php echo home_url('/price/#V-line'); ?>" class="u-hover">
-            <div class="fa-arrow">
-              <div class="price-item-arrow">
-                <h3 class="c-pricing__item-title v-line-title" data-aos="fade-up">V-line</h3>
-                <p class="c-pricing__item-subtitle c-pricing__vio" data-aos="fade-up">VIO脱毛</p>
-              </div>
-              <i class="fa-solid fa-chevron-right front-arrow" data-aos="fade-up"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="c-pricing__row c-pricing__row--center">
-        <div class="c-pricing__col c-pricing__col--center-left">
-          <a href="<?php echo home_url('/price/#custom'); ?>" class="u-hover">
-            <div class="fa-arrow">
-              <div class="price-item-arrow">
-                <h3 class="c-pricing__item-title" data-aos="fade-up">custom</h3>
-                <p class="c-pricing__item-subtitle c-pricing__custom" data-aos="fade-up">オーダーメイド</p>
-              </div>
-              <i class="fa-solid fa-chevron-right front-arrow" data-aos="fade-up"></i>
-            </div>
-          </a>
-        </div>
-
-        <div class="c-pricing__col c-pricing__col--center-right">
-          <a href="<?php echo home_url('/price/#Set'); ?>" class="u-hover">
-            <div class="fa-arrow">
-              <div class="price-item-arrow">
-                <h3 class="c-pricing__item-title" data-aos="fade-up">set</h3>
-                <p class="c-pricing__item-subtitle c-pricing__set" data-aos="fade-up">セット脱毛</p>
-              </div>
-              <i class="fa-solid fa-chevron-right front-arrow" data-aos="fade-up"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="c-pricing__row c-pricing__row--center">
-
-        <div class="c-pricing__row c-pricing__row--bottom">
-          <a href="<?php echo home_url('/price'); ?>" class="u-hover">
-            <div class="fa-arrow bottom-none">
-              <div class="price-item-arrow">
-                <h3 class="c-pricing__item-title" data-aos="fade-up">all</h3>
-                <p class="c-pricing__item-subtitle c-pricing__all" data-aos="fade-up">全てのメニュー</p>
-              </div>
-              <i class="fa-solid fa-chevron-right front-arrow" data-aos="fade-up"></i>
-            </div>
-          </a>
-        </div>
-        <div class="c-pricing__row c-pricing__row--bottom bottom-last pc_only"></div>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section class="p-faq">

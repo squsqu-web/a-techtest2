@@ -24,7 +24,7 @@
     font-size: 8.4rem;
     letter-spacing: 0.04em;
     line-height: calc(106 / 84);
-    color: v.$color-main;
+    color: v.$color-text;
     font-family: v.$font-main-serif;
     text-transform: uppercase;
     text-align: center;
@@ -49,7 +49,7 @@
       font-size: 12rem;
       letter-spacing: 0;
       line-height: calc(168 / 120);
-      color: v.$color-main-2;
+      color: v.$color-text-2;
       font-family: v.$font-sub-cursive;
       position: absolute;
       top: -52%;
@@ -107,7 +107,7 @@
     }
 
     &:nth-child(1) {
-      color: v.$color-main;
+      color: v.$color-text;
 
       @include mq(md) {
         width: 100%;
@@ -124,7 +124,7 @@
     }
 
     &:nth-child(3) {
-      color: v.$color-main;
+      color: v.$color-text;
 
       @include mq(md) {
         width: 100%;
@@ -289,7 +289,7 @@
   display: block;
   font-size: 3.2rem;
   height: 4px;
-  color: v.$color-main;
+  color: v.$color-text;
   margin-top: 0px;
 
   @include mq(md) {
@@ -312,7 +312,7 @@
     content: "";
     display: block;
     height: 1px;
-    background: v.$color-main;
+    background: v.$color-text;
     width: 10rem;
   }
 }

@@ -314,7 +314,7 @@
     }
 
     .cp__content {
-      color: v.$color-text;
+      color: v.$color-main;
       font-size: 1.6rem;
       letter-spacing: 0.1em;
       line-height: calc(24 / 18);
@@ -331,14 +331,14 @@
   &__term {
     flex: 0 0 10rem;
     font-weight: bold;
-    color: v.$color-text;
+    color: v.$color-main;
 
     @include mq(md) {}
   }
 
   &__desc {
     flex: 1;
-    color: v.$color-text3;
+    color: v.$color-main3;
 
     @include mq(md) {}
   }
@@ -361,7 +361,7 @@ main {
 }
 
 .cp__content a {
-  color: v.$color-text;
+  color: v.$color-main;
   font-size: 1.6rem;
   letter-spacing: 0.1em;
   font-family: v.$font-primary-gothic;

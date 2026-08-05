@@ -1,0 +1,52 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as *;
+
+.p-about {
+  background-color: v.$color-main-3;
+  text-align: center;
+  margin: 0 auto 5rem;
+
+  @include mq(md) {}
+
+  &__icon {
+    width: 10.8rem;
+    height: 10.8rem;
+    margin: 0 auto 5rem;
+
+    @include mq(md) {}
+
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    color: v.$color-main;
+
+
+    @include mq(md) {}
+
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+
+  }
+}

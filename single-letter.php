@@ -26,6 +26,21 @@
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+
+
+                <!-- こもれびのパーツ -->
+                <p>こもれびのパーツ</p>
+                <h2><?php the_title(); ?></h2>
+                <?php the_content(); ?>
+                <?php the_post_thumbnail(); ?>
+                <time datetime="<?php echo get_the_date('Y-m-d'); ?>" data-aos="fade-up">
+                  <?php echo get_the_date('Y.m.d'); ?>
+                </time>
+
+
+
+
+
                 <!-- 記事タイトル -->
                 <header class="p-news-article__header">
                   <h2 class="p-news-article__title" data-aos="fade-up"><?php the_title(); ?></h2>
@@ -48,52 +63,16 @@
                   </div>
                 </header>
 
-                <!-- アイキャッチ -->
-                <div class="p-news-article__img" data-aos="fade-up">
-
-                  <?php
-                  $pc = get_field('news_image_pc');
-                  $sp = get_field('news_image_sp');
-                  ?>
-
-                  <?php if (!empty($pc)) : ?>
-                    <picture class="newsContents-img">
-                      <?php if (!empty($sp)) : ?>
-                        <source srcset="<?php echo esc_url($sp['url']); ?>" media="(max-width: 767px)">
-                      <?php endif; ?>
-
-                      <img
-                        src="<?php echo esc_url($pc['url']); ?>"
-                        alt="<?php echo esc_attr($pc['alt'] ?: get_the_title()); ?>"
-                        class="p-news-article__img"
-                        loading="lazy"
-                        width="691" height="250">
-                    </picture>
-
-                  <?php else : ?>
-                    <picture class="newsContents-img">
-                      <source
-                        srcset="<?php echo get_template_directory_uri(); ?>/img/no-image.webp"
-                        type="image/webp">
-
-                      <img
-                        src="<?php echo get_template_directory_uri(); ?>/img/no-image.jpg"
-                        alt=""
-                        class="p-news-article__img"
-                        loading="lazy"
-                        width="691"
-                        height="250">
-                    </picture>
-                  <?php endif; ?>
-
-                </div>
 
                 <!-- ACFリピーターフィールド -->
                 <section class="p-news-article__body">
-                  <?php if (have_rows('news_sections')) : ?>
-                    <?php while (have_rows('news_sections')) : the_row(); ?>
+                  <?php if (have_rows('letter_sections')) : ?>
+                    <?php while (have_rows('letter_sections')) : the_row(); ?>
                       <article class="p-news-article__section">
                         <h5 class="p-news-article__subtitle" data-aos="fade-up">
+                          <p>👇大見出し</p>
+                          <?php the_sub_field('title'); ?>
+                          <p>👇小見出し</p>
                           <?php the_sub_field('subtitle'); ?>
                         </h5>
                         <div class="p-news-article__text" data-aos="fade-up">
