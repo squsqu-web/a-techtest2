@@ -7,21 +7,23 @@
   position: relative;
   z-index: 10;
 
+  background: linear-gradient(to bottom,
+      v.$color-mtransparent2-top 0%,
+      v.$color-mtransparent2-top 45%,
+      v.$color-mtransparent2-bottom 100%);
+
   @include mq(md) {}
 
-  
 
-  
 
   &__menu {
     text-align: center;
-    padding: 8% 0 3%;
-    background-color: v.$color-bg-1;
-    background-color: gainsboro;
+    padding: 4.8rem 0 1.2rem;
+
     border: 3px solid red;
 
     @include mq(md) {
-      padding: 27% 0 0%;
+      padding: 4.8rem 0 1.2rem;
     }
   }
 
@@ -40,19 +42,19 @@
     }
 
     img {
-      width: 6.4rem;
-      height: 6.4rem;
+      width: 24rem;
+      height: auto;
       object-fit: cover;
 
       @include mq(md) {
-        width: 5rem;
-        height: 5rem;
+        width: 20rem;
+        height: auto;
       }
     }
 
     &-title {
       font-size: 2.8rem;
-      font-family: v.$font-main-serif;
+      font-family: v.$font-main;
       letter-spacing: 0.2em;
       line-height: calc(35 / 28);
       color: v.$color-accent-1;
@@ -72,33 +74,32 @@
     margin-bottom: 2rem;
 
     @include mq(md) {
-      padding-top: 1.9rem;
-      padding-bottom: 1.7rem;
+      padding: 1.9rem 0 4.8rem;
+      margin-bottom: 0;
     }
 
     &-list {
-      display: flex;
-      justify-content: center;
-      gap: 3.3rem 4.2rem;
-      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 1rem;
+      width: 92%;
       margin: 0 auto;
-      padding: 3% 0 2.5%;
-      flex-wrap: wrap;
-      width: calc(57.9rem / 120rem *100%);
+      padding: 3rem 0;
+
 
       @include mq(md) {
-        width: 31.8rem;
-        gap: 1.3rem;
+        width: 92%;
+        gap: 0;
+        padding: 0;
+        margin: 0 auto;
       }
     }
 
     &-link {
-      font-size: 2rem;
-      font-family: v.$font-main-serif;
+      font-size: 1.6rem;
+      font-family: v.$font-main;
       color: v.$color-accent-1;
       text-decoration: none;
-      border-left: 0.1rem solid v.$color-black;
-      padding-left: 2rem;
       cursor: pointer;
       letter-spacing: 0.1em;
       line-height: calc(25 / 20);
@@ -122,14 +123,18 @@
         border-left: none;
         padding-left: 0;
       }
+
+      @include mq(md) {
+        text-align: left;
+      }
     }
   }
 
   &__copyright-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: calc(15 / 12);
     color: v.$color-accent-1;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     text-align: center;
     letter-spacing: 0.1em;
 
@@ -151,8 +156,8 @@
   }
 
   &__link {
-    background-color: v.$color-accent-2;
-    color: v.$color-white;
+    background-color: v.$color-white;
+    color: v.$color-main;
     border-radius: 50%;
     box-shadow: 0 0.4rem 0.8rem v.$color-shadow;
     opacity: 0.8;
@@ -161,28 +166,28 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 8rem;
-    height: 8rem;
+    width: 7.2rem;
+    height: 7.2rem;
 
     @include mq(md) {
-      width: 4rem;
-      height: 4rem;
+      width: 4.8rem;
+      height: 4.8rem;
     }
 
     &::before {
       content: '';
       width: 2rem;
       height: 2rem;
-      border-left: 0.4rem solid v.$color-white;
-      border-top: 0.4rem solid v.$color-white;
+      border-left: 0.4rem solid v.$color-main;
+      border-top: 0.4rem solid v.$color-main;
       transform: rotate(45deg);
       display: block;
 
       @include mq(md) {
         width: 1rem;
         height: 1rem;
-        border-left: 0.2rem solid v.$color-white;
-        border-top: 0.2rem solid v.$color-white;
+        border-left: 0.2rem solid v.$color-main;
+        border-top: 0.2rem solid v.$color-main;
       }
     }
 

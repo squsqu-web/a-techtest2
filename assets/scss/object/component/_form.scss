@@ -65,7 +65,7 @@
     letter-spacing: 0.1em;
     line-height: 1;
     color: v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     margin: 0 0 6%;
     font-weight: v.$Regular;
 
@@ -118,7 +118,7 @@
     font-size: 1.6rem;
     line-height: 1.6;
     color: v.$color-white;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     width: 16rem;
   }
 
@@ -145,7 +145,7 @@
     letter-spacing: 0.1em;
     line-height: calc(60 / 48);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     margin: 0 0 2.4rem;
     text-transform: uppercase;
     font-weight: v.$Regular;
@@ -196,7 +196,7 @@
     letter-spacing: 0.1em;
     line-height: 1;
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     margin-bottom: 9%;
     font-weight: v.$Regular;
 
@@ -229,7 +229,7 @@
 .checkbox__bottom-box {
   label {
     width: 20rem;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
 
     @media (max-width:767.98px) {
       margin-bottom: 1.2rem;
@@ -288,7 +288,7 @@
     letter-spacing: 0.1em;
     line-height: calc(60 / 48);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     margin: 0 0 3.8rem;
     text-transform: uppercase;
     font-weight: v.$Regular;
@@ -357,7 +357,7 @@
     .is-current h5,
     .is-current .c-form-steps__step-text {
       border-color: v.$color-main;
-      font-family: v.$font-main-serif;
+      font-family: v.$font-main;
       color: v.$color-main !important;
     }
 
@@ -376,7 +376,7 @@
     font-size: 2rem;
     letter-spacing: 0.1em;
     line-height: 1.4;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     margin: 0 0 1.6rem;
     text-align: center;
     color: v.$color-main-2;
@@ -414,7 +414,7 @@
     letter-spacing: 0.1em;
     line-height: 1.2;
     color: v.$color-main-2;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     text-align: center;
     font-weight: v.$Regular;
 

@@ -4,9 +4,7 @@
 .l-header {
   width: 100%;
   height: 25rem;
-  // position: fixed;
-  // top: 0;
-  // z-index: 1000;
+
   background-image: url("../../img/header.png");
   background-size: cover;
   background-position: center;
@@ -30,6 +28,7 @@
     @include mq(md) {
       width: 100%;
       padding: 0 2rem;
+      height: 15rem;
     }
   }
 
@@ -197,7 +196,7 @@
 
   &__title {
     font-size: 2.8rem;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     color: v.$color-accent-1;
     text-transform: uppercase;
     letter-spacing: calc(5.6 / 28 * 1em);
@@ -236,7 +235,7 @@
       transform: translateY(-50%);
       color: v.$color-white;
       font-size: 1.4rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
     }
 
     &__line-container {
@@ -283,6 +282,50 @@
     }
   }
 }
+
+
+.l-header__sp {
+  display: none;
+
+  @include mq(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+}
+
+.l-header__sp .l-header__logo img {
+
+  @include mq(md) {
+    width: 20rem;
+    height: auto;
+  }
+
+}
+
+.l-header__sp {
+  position: relative;
+  height: 8rem;
+}
+
+.l-header__sp .l-header__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.c-hamburger {
+  position: absolute;
+  right: -32rem;
+  top: -3.5rem;
+}
+
+
+
 
 /* 背景固定用 */
 .no-scroll {
@@ -341,7 +384,7 @@
       line-height: calc(30 / 24);
       letter-spacing: .24em;
       color: v.$color-main;
-      font-family: v.$font-main-serif;
+      font-family: v.$font-main;
     }
   }
 }
@@ -363,7 +406,9 @@
 
   .u-sp-show {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     z-index: 99999;
   }
 }

@@ -25,7 +25,7 @@
     letter-spacing: 0.04em;
     line-height: calc(106 / 84);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: -3%;
@@ -68,7 +68,7 @@
   &__item {
     ul li {
       font-size: 1.8rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       line-height: calc(36/18);
       letter-spacing: 0.1em;
       margin-bottom: 3.6rem;
@@ -88,7 +88,7 @@
 
     &__title {
       font-size: 2.4rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       line-height: calc(36/24);
       letter-spacing: 0.1em;
       text-align: center;
@@ -176,21 +176,21 @@
       content: "I";
       margin-right: 3rem;
       font-size: 2.4rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
     }
 
     &:nth-of-type(2)::before {
       content: "II";
       margin-right: 4%;
       font-size: 2.4rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
     }
 
     &:nth-of-type(3)::before {
       content: "III";
       margin-right: 3%;
       font-size: 2.4rem;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       line-height: calc(27 / 18);
     }
   }
@@ -268,7 +268,7 @@
 .p-feature__item__sm-title {
   text-align: center;
   font-size: 1.8rem;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   margin: 3% auto 0;
   letter-spacing: 0.1em;
   line-height: calc(27 / 18);

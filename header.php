@@ -26,7 +26,7 @@
           <ul class="l-header__list" data-aos="fade-up">
             <!-- about -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/about'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/about/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">わたしたちのこと</span>
                 <span class="l-header__link-en">about</span>
@@ -35,7 +35,7 @@
 
             <!-- introduction -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/introduction'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/introduction/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">各園のご紹介</span>
                 <span class="l-header__link-en">introduction</span>
@@ -44,7 +44,7 @@
 
             <!-- letter -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/letter'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/letter/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">こもれびだより</span>
                 <span class="l-header__link-en">letter</span>
@@ -87,7 +87,7 @@
 
             <!-- info -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/info'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/info/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">お知らせ</span>
                 <span class="l-header__link-en">info</span>
@@ -96,7 +96,7 @@
 
             <!-- recruit -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/recruit'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/recruit/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">採用情報</span>
                 <span class="l-header__link-en">recruit</span>
@@ -105,7 +105,7 @@
 
             <!-- contact -->
             <li class="l-header__item u-hover">
-              <a href="<?php echo home_url('/contact'); ?>" class="l-header__link u-hover">
+              <a href="<?php echo home_url('/contact/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">お問い合わせ</span>
                 <span class="l-header__link-en">contact</span>
@@ -117,16 +117,34 @@
 
 
         <!-- ハンバーガーメニュー -->
-        <div class="u-hover u-sp-show">
-          <div class="c-button c-hamburger js-hamburger" data-aos="fade-up">
-            <span class="c-hamburger__text">メニュー</span>
-            <span class="c-hamburger__line-container">
-              <span class="c-hamburger__line"></span>
-              <span class="c-hamburger__line"></span>
-              <span class="c-hamburger__line"></span>
-            </span>
-          </div>
-        </div>
+<!-- SPヘッダー -->
+<div class="l-header__sp">
+
+  <!-- ロゴ -->
+  <div class="l-header__logo">
+    <a href="<?php echo home_url('/'); ?>">
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
+        alt="桜のこもれびキッズランド">
+    </a>
+  </div>
+
+
+  <!-- ハンバーガー -->
+  <div class="u-hover">
+    <div class="c-button c-hamburger js-hamburger">
+      <span class="c-hamburger__text">メニュー</span>
+
+      <span class="c-hamburger__line-container">
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+      </span>
+
+    </div>
+  </div>
+
+</div>
 
         <!-- ドロワーメニュー -->
         <div class="drawer js-drawer">

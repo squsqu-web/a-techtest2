@@ -10,7 +10,9 @@
   display: flex;
   align-items: center;
 
-  @include mq(md) {}
+  @include mq(md) {
+    height: 69.6rem;
+  }
 
   &__inner {
     width: 75%;
@@ -20,7 +22,10 @@
     padding: 6.4rem 28rem;
     border-radius: 40px;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 92%;
+      padding: 6.4rem 4.4rem;
+    }
 
   }
 
@@ -37,15 +42,23 @@
     margin: 0 auto 5rem;
     border-radius: 50%;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 8rem;
+      height: 8rem;
+      margin: 0 auto .8rem;
+    }
 
   }
 
   &__icon {
     width: 7.2rem;
     height: 7.2rem;
+    border-radius: 50%;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 5.3rem;
+      height: 5.3rem;
+    }
 
   }
 
@@ -60,7 +73,10 @@
     color: v.$color-main;
     margin: 0 auto 1rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 1.8rem;
+      margin: 0 auto 1rem;
+    }
 
   }
 
@@ -69,7 +85,9 @@
     color: v.$color-main;
     margin: 0 auto 4.8rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      margin: 0 auto 4.8rem;
+    }
 
   }
 
@@ -78,13 +96,21 @@
     color: v.$color-main;
     margin: 0 auto 3.9rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      margin: 0 auto 3.2rem;
+    }
 
   }
 
   &__link-wrap {
     display: flex;
     justify-content: space-between;
+
+    @include mq(md) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.4rem;
+    }
   }
 
   &__link {
@@ -99,6 +125,10 @@
     background-color: v.$color-main-4;
     width: 24rem;
     height: 6rem;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
   }
 
   &__link-entry {
@@ -106,6 +136,10 @@
     background-color: v.$color-main-3;
     width: 24rem;
     height: 6rem;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
   }
 
 }

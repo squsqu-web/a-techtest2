@@ -103,7 +103,7 @@
   letter-spacing: .04em;
   line-height: calc(41 / 33);
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   padding: 1rem;
   padding-left: .8rem;
   text-align: left;
@@ -139,7 +139,7 @@
   letter-spacing: .04em;
   line-height: calc(106 / 84);
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   text-align: center;
   margin: 0 0 3%;
   text-transform: capitalize;
@@ -164,7 +164,7 @@
   letter-spacing: .1em;
   line-height: calc(32 / 24);
   color: v.$color-main;
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   text-align: center;
   margin-bottom: 2.8rem;
   text-transform: capitalize;
@@ -182,7 +182,7 @@
   letter-spacing: .1em;
   line-height: calc(32 / 18);
   color: v.$color-main;
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   width: 41%;
   margin: 0 auto 3%;
   text-align: center;
@@ -214,7 +214,7 @@
   letter-spacing: .4em;
   line-height: calc(30 / 18);
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
 }
 
 .price__item-prices {
@@ -235,7 +235,7 @@
   content: "1箇所";
   font-size: 1.8rem;
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   position: absolute;
   top: 1rem;
   left: 2rem;
@@ -245,7 +245,7 @@
 .price__item-prices li {
   font-size: 1.8rem;
   color: v.$color-main;
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   border-top: .1rem solid v.$color-main;
   border-bottom: .1rem solid v.$color-main;
   padding: 1rem 4.7rem 1rem 12.8rem;
@@ -310,7 +310,7 @@
   letter-spacing: 0.1em;
   line-height: calc(48/27);
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   margin-bottom: 6%;
   font-weight: v.$Regular;
   text-transform: capitalize;
@@ -340,7 +340,7 @@
   letter-spacing: .04em;
   line-height: calc(9 / 9);
   color: v.$color-main;
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   position: absolute;
   font-weight: v.$Regular;
 
@@ -556,13 +556,13 @@
     padding-bottom: 3.3rem;
     text-align: center;
     font-size: 1.6rem;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-weight: v.$Regular;
   }
 
   .price__table td {
     border-bottom: 0.1rem solid v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 2.4rem;
     color: v.$color-main;
 
@@ -573,7 +573,7 @@
 
   .price__table td:first-child {
     border-bottom: 0.1rem solid v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 2.4rem;
     color: v.$color-main;
 
@@ -614,7 +614,7 @@
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   line-height: calc(30/24);
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   padding-left: 7.5%;
@@ -716,13 +716,13 @@
     padding-bottom: 3.3rem;
     text-align: center;
     font-size: 1.6rem;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-weight: v.$Regular;
   }
 
   .price__table td {
     border-bottom: 1px solid v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 2.4rem;
     color: v.$color-main;
 
@@ -733,7 +733,7 @@
 
   .price__table td:first-child {
     border-bottom: 1px solid v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 2.4rem;
     color: v.$color-main;
 
@@ -774,7 +774,7 @@
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   line-height: calc(30/24);
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 4rem;
@@ -909,7 +909,7 @@ tr {
 }
 
 .price-table-row1st p {
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   position: relative;
   font-weight: v.$Regular;
 }
@@ -985,7 +985,7 @@ tr {
 
   .price-table-row1st p {
     font-weight: 700;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     position: relative;
     letter-spacing: 0.1em;
   }

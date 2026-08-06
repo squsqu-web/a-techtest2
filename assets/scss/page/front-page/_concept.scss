@@ -54,7 +54,7 @@
       position: absolute;
       top: -41rem;
       left: 0;
-      font-family: v.$font-main-serif;
+      font-family: v.$font-main;
       text-transform: uppercase;
       z-index: 999;
       font-weight: v.$Regular;
@@ -94,7 +94,7 @@
     position: absolute;
     top: -31.3rem;
     left: 0;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-weight: v.$Regular;
 
     @media (max-width:767.98px) {
@@ -112,7 +112,7 @@
     position: absolute;
     top: -26.6rem;
     left: 0;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-weight: v.$Regular;
 
     @media (max-width:767.98px) {
@@ -204,7 +204,7 @@
   line-height: 1;
   color: v.$color-accent-1;
   text-decoration: none;
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   cursor: pointer;
   font-weight: v.$Regular;
 

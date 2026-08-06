@@ -392,8 +392,8 @@ img {
 
 @media screen and (max-width: 767.98px) {
   .c-button {
-    width: 12rem;
-    height: 3rem;
+    width: 20rem;
+    height: 5rem;
   }
 }
 .c-button--primary {
@@ -483,7 +483,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin: 0 0 6%;
   font-weight: 400;
 }
@@ -536,7 +536,7 @@ img {
   font-size: 1.6rem;
   line-height: 1.6;
   color: #FFFFFF;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   width: 16rem;
 }
 .c-minor-download a {
@@ -561,7 +561,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin: 0 0 2.4rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -612,7 +612,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin-bottom: 9%;
   font-weight: 400;
 }
@@ -644,7 +644,7 @@ img {
 
 .checkbox__bottom-box label {
   width: 20rem;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
 }
 @media (max-width: 767.98px) {
   .checkbox__bottom-box label {
@@ -705,7 +705,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin: 0 0 3.8rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -775,7 +775,7 @@ img {
 .c-form-steps__item .is-current h5,
 .c-form-steps__item .is-current .c-form-steps__step-text {
   border-color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   color: #55000C !important;
 }
 .c-form-steps__item.is-current {
@@ -790,7 +790,7 @@ img {
   font-size: 2rem;
   letter-spacing: 0.1em;
   line-height: 1.4;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin: 0 0 1.6rem;
   text-align: center;
   color: #333333;
@@ -825,7 +825,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.2;
   color: #333333;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   text-align: center;
   font-weight: 400;
 }
@@ -885,7 +885,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -923,6 +923,10 @@ img {
 
 .grecaptcha-badge {
   z-index: 9999999;
+}
+
+body {
+  font-family: "Kosugi Maru", sans-serif;
 }
 
 .l-page-bg {
@@ -968,6 +972,7 @@ img {
   .l-header__inner {
     width: 100%;
     padding: 0 2rem;
+    height: 15rem;
   }
 }
 .l-header__list {
@@ -1051,7 +1056,7 @@ img {
 }
 .l-header__title {
   font-size: 2.8rem;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   color: #54372D;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1082,7 +1087,7 @@ img {
     transform: translateY(-50%);
     color: #FFFFFF;
     font-size: 1.4rem;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
   }
   .c-hamburger__line-container {
     position: absolute;
@@ -1118,6 +1123,44 @@ img {
   .c-hamburger.is-active .c-hamburger__line-container .c-hamburger__line:nth-child(3) {
     transform: rotate(-45deg) translate(3px, -3px);
   }
+}
+
+.l-header__sp {
+  display: none;
+}
+@media screen and (max-width: 767.98px) {
+  .l-header__sp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .l-header__sp .l-header__logo img {
+    width: 20rem;
+    height: auto;
+  }
+}
+
+.l-header__sp {
+  position: relative;
+  height: 8rem;
+}
+
+.l-header__sp .l-header__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-hamburger {
+  position: absolute;
+  right: -32rem;
+  top: -3.5rem;
 }
 
 /* 背景固定用 */
@@ -1174,7 +1217,7 @@ img {
     line-height: 1.25;
     letter-spacing: 0.24em;
     color: #55000C;
-    font-family: "Marcellus", serif;
+    font-family: "Jost", sans-serif;
   }
 }
 
@@ -1192,7 +1235,9 @@ img {
   }
   .u-sp-show {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     z-index: 99999;
   }
 }
@@ -1210,17 +1255,16 @@ img {
   margin: 0 auto;
   position: relative;
   z-index: 10;
+  background: linear-gradient(to bottom, #FFFEF3 0%, #FFFEF3 45%, #FFF7B8 100%);
 }
 .footer__menu {
   text-align: center;
-  padding: 8% 0 3%;
-  background-color: #F9F8F6;
-  background-color: gainsboro;
+  padding: 4.8rem 0 1.2rem;
   border: 3px solid red;
 }
 @media screen and (max-width: 767.98px) {
   .footer__menu {
-    padding: 27% 0 0%;
+    padding: 4.8rem 0 1.2rem;
   }
 }
 .footer__logo {
@@ -1237,20 +1281,20 @@ img {
   cursor: pointer;
 }
 .footer__logo img {
-  width: 6.4rem;
-  height: 6.4rem;
+  width: 24rem;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media screen and (max-width: 767.98px) {
   .footer__logo img {
-    width: 5rem;
-    height: 5rem;
+    width: 20rem;
+    height: auto;
   }
 }
 .footer__logo-title {
   font-size: 2.8rem;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1.25;
   color: #54372D;
@@ -1270,33 +1314,31 @@ img {
 }
 @media screen and (max-width: 767.98px) {
   .footer__nav {
-    padding-top: 1.9rem;
-    padding-bottom: 1.7rem;
+    padding: 1.9rem 0 4.8rem;
+    margin-bottom: 0;
   }
 }
 .footer__nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 3.3rem 4.2rem;
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+  width: 92%;
   margin: 0 auto;
-  padding: 3% 0 2.5%;
-  flex-wrap: wrap;
-  width: 48.25%;
+  padding: 3rem 0;
 }
 @media screen and (max-width: 767.98px) {
   .footer__nav-list {
-    width: 31.8rem;
-    gap: 1.3rem;
+    width: 92%;
+    gap: 0;
+    padding: 0;
+    margin: 0 auto;
   }
 }
 .footer__nav-link {
-  font-size: 2rem;
-  font-family: "Marcellus", serif;
+  font-size: 1.6rem;
+  font-family: "Jost", sans-serif;
   color: #54372D;
   text-decoration: none;
-  border-left: 0.1rem solid #000;
-  padding-left: 2rem;
   cursor: pointer;
   letter-spacing: 0.1em;
   line-height: 1.25;
@@ -1316,11 +1358,16 @@ img {
   border-left: none;
   padding-left: 0;
 }
+@media screen and (max-width: 767.98px) {
+  .footer__nav-item {
+    text-align: left;
+  }
+}
 .footer__copyright-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.25;
   color: #54372D;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-align: center;
   letter-spacing: 0.1em;
 }
@@ -1343,8 +1390,8 @@ img {
   }
 }
 .page-top__link {
-  background-color: #949E33;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #55000C;
   border-radius: 50%;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   opacity: 0.8;
@@ -1353,21 +1400,21 @@ img {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 8rem;
-  height: 8rem;
+  width: 7.2rem;
+  height: 7.2rem;
 }
 @media screen and (max-width: 767.98px) {
   .page-top__link {
-    width: 4rem;
-    height: 4rem;
+    width: 4.8rem;
+    height: 4.8rem;
   }
 }
 .page-top__link::before {
   content: "";
   width: 2rem;
   height: 2rem;
-  border-left: 0.4rem solid #FFFFFF;
-  border-top: 0.4rem solid #FFFFFF;
+  border-left: 0.4rem solid #55000C;
+  border-top: 0.4rem solid #55000C;
   transform: rotate(45deg);
   display: block;
 }
@@ -1375,8 +1422,8 @@ img {
   .page-top__link::before {
     width: 1rem;
     height: 1rem;
-    border-left: 0.2rem solid #FFFFFF;
-    border-top: 0.2rem solid #FFFFFF;
+    border-left: 0.2rem solid #55000C;
+    border-top: 0.2rem solid #55000C;
   }
 }
 .page-top__link:hover {
@@ -1445,6 +1492,11 @@ img {
   position: relative;
   margin: 0 0 12rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-hero {
+    margin: 0 0 8rem;
+  }
+}
 .p-hero__picture {
   display: block;
   width: 128rem;
@@ -1463,6 +1515,14 @@ img {
      object-fit: cover;
   border-radius: 12rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-hero__img {
+    width: 80%;
+    height: 54rem;
+    margin: 0 auto;
+    border-radius: 6rem;
+  }
+}
 .p-hero__text {
   position: absolute;
   top: 13%;
@@ -1476,7 +1536,7 @@ img {
 }
 @media screen and (max-width: 767.98px) {
   .p-hero__text {
-    width: 30rem;
+    width: 27rem;
   }
 }
 .p-hero__text-comment {
@@ -1488,6 +1548,7 @@ img {
   font-size: 4rem;
   text-align: center;
   line-height: 1.8;
+  font-family: "Yusei Magic", sans-serif;
 }
 @media screen and (max-width: 767.98px) {
   .p-hero__text-comment {
@@ -1509,10 +1570,23 @@ img {
   margin: 0 auto 5rem;
   border-radius: 50%;
 }
+@media screen and (max-width: 767.98px) {
+  .p-about__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
 .p-about__icon {
   width: 7.2rem;
   height: 7.2rem;
   border-radius: 50%;
+}
+@media screen and (max-width: 767.98px) {
+  .p-about__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
 }
 .p-about__heading {
   font-size: 2.4rem;
@@ -1523,23 +1597,51 @@ img {
   color: #55000C;
   margin: 0 auto 1rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-about__title {
+    font-size: 1.8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
 .p-about__subtitle {
   font-size: 1rem;
   color: #55000C;
   margin: 0 auto 6.4rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-about__subtitle {
+    margin: 0 auto 4.8rem;
+  }
+}
 .p-about__text-wrap {
   margin: 0 0 12rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-about__text-wrap {
+    margin: 0 0 8.8rem;
+  }
 }
 .p-about__text {
   font-size: 1.8rem;
   color: #55000C;
   margin: 1.6rem 0;
 }
+@media screen and (max-width: 767.98px) {
+  .p-about__text {
+    font-size: 1.4rem;
+    margin: 1.6rem 0 3.1rem;
+  }
+}
+
 .p-introduction {
   text-align: center;
   width: 75%;
   margin: 0 auto 16.2rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction {
+    margin: 0 auto 12rem;
+  }
 }
 .p-introduction__icon-wrap {
   width: 10.8rem;
@@ -1551,9 +1653,23 @@ img {
   margin: 0 auto 5rem;
   border-radius: 50%;
 }
+@media screen and (max-width: 767.98px) {
+  .p-introduction__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
 .p-introduction__icon {
   width: 7.2rem;
   height: 7.2rem;
+  border-radius: 50%;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
 }
 .p-introduction__heading {
   font-size: 2.4rem;
@@ -1564,10 +1680,21 @@ img {
   color: #55000C;
   margin: 0 auto 1rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-introduction__title {
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+  }
+}
 .p-introduction__subtitle {
   font-size: 1rem;
   color: #55000C;
   margin: 0 auto 7.2rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction__subtitle {
+    margin: 0 auto 4.8rem;
+  }
 }
 .p-introduction__prefectures-list {
   display: flex;
@@ -1587,10 +1714,25 @@ img {
   align-items: center;
   border-radius: 2rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-introduction__prefectures-item {
+    width: 24rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+  }
+}
 .p-introduction__link {
   font-size: 1.8rem;
   color: #55000C;
 }
+@media screen and (max-width: 767.98px) {
+  .p-introduction__link {
+    font-size: 1.6rem;
+    width: 20rem;
+    height: 5rem;
+  }
+}
+
 .p-letter {
   background-image: url("../../img/top-letters__bg.svg");
   margin: 0 auto;
@@ -1600,6 +1742,11 @@ img {
   width: 75%;
   margin: 0 auto;
   padding: 6.2rem 0 12rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-letter__inner {
+    padding: 6.2rem 0 8rem;
+  }
 }
 .p-letter__icon-wrap {
   width: 10.8rem;
@@ -1614,9 +1761,22 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 767.98px) {
+  .p-letter__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
 .p-letter__icon {
   width: 7.2rem;
   height: 7.2rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-letter__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
 }
 .p-letter__heading {
   text-align: center;
@@ -1626,10 +1786,21 @@ img {
   color: #55000C;
   margin: 0 auto 1rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-letter__title {
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+  }
+}
 .p-letter__subtitle {
   font-size: 1rem;
   color: #55000C;
   margin: 0 auto 6.2rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-letter__subtitle {
+    margin: 0 auto 7.1rem;
+  }
 }
 .p-letter__list {
   display: flex;
@@ -1637,6 +1808,12 @@ img {
   justify-content: center;
   gap: 4.8rem 5.1rem;
   margin: 0 0 5rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-letter__list {
+    gap: 2.5rem;
+    margin: 0 0 4.2rem;
+  }
 }
 .p-letter__item {
   width: 32rem;
@@ -1677,6 +1854,12 @@ img {
   font-size: 1.8rem;
   color: #55000C;
 }
+@media screen and (max-width: 767.98px) {
+  .p-letter__link {
+    font-size: 1.6rem;
+  }
+}
+
 .p-recruit {
   background-color: #FFF7B8;
   background-image: url("../../img/recruit-bg.png");
@@ -1686,6 +1869,11 @@ img {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 767.98px) {
+  .p-recruit {
+    height: 69.6rem;
+  }
+}
 .p-recruit__inner {
   width: 75%;
   margin-inline: auto;
@@ -1693,6 +1881,12 @@ img {
   text-align: center;
   padding: 6.4rem 28rem;
   border-radius: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .p-recruit__inner {
+    width: 92%;
+    padding: 6.4rem 4.4rem;
+  }
 }
 .p-recruit__icon-wrap {
   width: 10.8rem;
@@ -1704,28 +1898,65 @@ img {
   margin: 0 auto 5rem;
   border-radius: 50%;
 }
+@media screen and (max-width: 767.98px) {
+  .p-recruit__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
 .p-recruit__icon {
   width: 7.2rem;
   height: 7.2rem;
+  border-radius: 50%;
+}
+@media screen and (max-width: 767.98px) {
+  .p-recruit__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
 }
 .p-recruit__title {
   font-size: 2.4rem;
   color: #55000C;
   margin: 0 auto 1rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-recruit__title {
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+  }
+}
 .p-recruit__subtitle {
   font-size: 1rem;
   color: #55000C;
   margin: 0 auto 4.8rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-recruit__subtitle {
+    margin: 0 auto 4.8rem;
+  }
 }
 .p-recruit__text {
   font-size: 1.8rem;
   color: #55000C;
   margin: 0 auto 3.9rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-recruit__text {
+    margin: 0 auto 3.2rem;
+  }
+}
 .p-recruit__link-wrap {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 767.98px) {
+  .p-recruit__link-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
 }
 .p-recruit__link {
   font-size: 1.8rem;
@@ -1736,11 +1967,21 @@ img {
   width: 24rem;
   height: 6rem;
 }
+@media screen and (max-width: 767.98px) {
+  .p-recruit__link-info {
+    font-size: 1.8rem;
+  }
+}
 .p-recruit__link-entry {
   color: #55000C;
   background-color: #FFF7B8;
   width: 24rem;
   height: 6rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-recruit__link-entry {
+    font-size: 1.8rem;
+  }
 }
 
 .p-news {
@@ -1852,7 +2093,7 @@ img {
   line-height: 1.2857142857;
   letter-spacing: 0.1em;
   color: #54372D;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   margin: 1.6rem 0 0;
   text-transform: capitalize;
@@ -1901,7 +2142,7 @@ img {
 }
 
 .c-heading-ja {
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -2028,7 +2269,7 @@ img {
   position: absolute;
   top: -41rem;
   left: 0;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   z-index: 999;
   font-weight: 400;
@@ -2067,7 +2308,7 @@ img {
   position: absolute;
   top: -31.3rem;
   left: 0;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
 }
 @media (max-width: 767.98px) {
@@ -2085,7 +2326,7 @@ img {
   position: absolute;
   top: -26.6rem;
   left: 0;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
 }
 @media (max-width: 767.98px) {
@@ -2164,7 +2405,7 @@ img {
   line-height: 1;
   color: #54372D;
   text-decoration: none;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   cursor: pointer;
   font-weight: 400;
 }
@@ -2232,7 +2473,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2619047619;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: -3%;
@@ -2274,7 +2515,7 @@ img {
 }
 .p-feature__item ul li {
   font-size: 1.8rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   line-height: 2;
   letter-spacing: 0.1em;
   margin-bottom: 3.6rem;
@@ -2293,7 +2534,7 @@ img {
 }
 .p-feature__item__title {
   font-size: 2.4rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   line-height: 1.5;
   letter-spacing: 0.1em;
   text-align: center;
@@ -2381,19 +2622,19 @@ img {
   content: "I";
   margin-right: 3rem;
   font-size: 2.4rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }
 .p-feature__sub-list .item-text:nth-of-type(2)::before {
   content: "II";
   margin-right: 4%;
   font-size: 2.4rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }
 .p-feature__sub-list .item-text:nth-of-type(3)::before {
   content: "III";
   margin-right: 3%;
   font-size: 2.4rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   line-height: 1.5;
 }
 
@@ -2464,7 +2705,7 @@ img {
 .p-feature__item__sm-title {
   text-align: center;
   font-size: 1.8rem;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin: 3% auto 0;
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -2582,7 +2823,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2619047619;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   position: relative;
   text-transform: uppercase;
   font-weight: 400;
@@ -2628,7 +2869,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin-bottom: 6%;
 }
 @media screen and (max-width: 767.98px) {
@@ -2700,7 +2941,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   padding: 0.7rem 0 0 0.9rem;
   text-transform: capitalize;
   font-weight: 400;
@@ -2721,7 +2962,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   position: absolute;
   font-weight: 400;
 }
@@ -2920,7 +3161,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2619047619;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   position: relative;
   text-transform: uppercase;
   font-weight: 400;
@@ -2950,7 +3191,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin-bottom: 6.1rem;
   font-weight: 400;
 }
@@ -2994,7 +3235,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2777777778;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -3022,7 +3263,7 @@ img {
   font-size: 2.4rem;
   letter-spacing: 0.04em;
   margin-right: 2rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -3040,7 +3281,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2777777778;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -3062,7 +3303,7 @@ img {
   font-size: 2.4rem;
   letter-spacing: 0.04em;
   margin-right: 2rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -3135,7 +3376,7 @@ img {
   position: absolute;
   top: 22rem;
   left: 12rem;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
 }
 .p-concept__title::after {
   content: "Concept";
@@ -3151,7 +3392,7 @@ img {
   font-size: 4rem;
   letter-spacing: 0.1em;
   line-height: 1.5;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   color: #55000C;
   position: absolute;
   top: 20%;
@@ -3271,14 +3512,14 @@ img {
   height: auto;
 }
 .p-instagram__button {
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }
 .p-instagram__button a {
   color: #FFFFFF;
 }
 
 .c-section-header__en {
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-size: 8.4rem;
   color: #55000C;
   font-weight: 400;
@@ -3315,7 +3556,7 @@ img {
   }
 }
 .c-section-header__ja {
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -3409,7 +3650,7 @@ img {
   font-size: 1.8rem;
   letter-spacing: 0.1em;
   line-height: 1.3333333333;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 600;
 }
 @media screen and (max-width: 767.98px) {
@@ -3733,7 +3974,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2424242424;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   padding: 1rem;
   padding-left: 0.8rem;
   text-align: left;
@@ -3772,7 +4013,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1.2619047619;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-align: center;
   margin: 0 0 3%;
   text-transform: capitalize;
@@ -3799,7 +4040,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.3333333333;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   text-align: center;
   margin-bottom: 2.8rem;
   text-transform: capitalize;
@@ -3818,7 +4059,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.7777777778;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   width: 41%;
   margin: 0 auto 3%;
   text-align: center;
@@ -3852,7 +4093,7 @@ img {
   letter-spacing: 0.4em;
   line-height: 1.6666666667;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
 }
 
 .price__item-prices {
@@ -3874,7 +4115,7 @@ img {
   content: "1箇所";
   font-size: 1.8rem;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   position: absolute;
   top: 1rem;
   left: 2rem;
@@ -3884,7 +4125,7 @@ img {
 .price__item-prices li {
   font-size: 1.8rem;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   border-top: 0.1rem solid #55000C;
   border-bottom: 0.1rem solid #55000C;
   padding: 1rem 4.7rem 1rem 12.8rem;
@@ -3954,7 +4195,7 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.7777777778;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin-bottom: 6%;
   font-weight: 400;
   text-transform: capitalize;
@@ -3986,7 +4227,7 @@ img {
   letter-spacing: 0.04em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   position: absolute;
   font-weight: 400;
 }
@@ -4207,12 +4448,12 @@ img {
     padding-bottom: 3.3rem;
     text-align: center;
     font-size: 1.6rem;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-weight: 400;
   }
   .price__table td {
     border-bottom: 0.1rem solid #55000C;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-size: 2.4rem;
     color: #55000C;
   }
@@ -4225,7 +4466,7 @@ img {
 @media screen and (max-width: 767.98px) {
   .price__table td:first-child {
     border-bottom: 0.1rem solid #55000C;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-size: 2.4rem;
     color: #55000C;
   }
@@ -4270,7 +4511,7 @@ img {
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   line-height: 1.25;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   padding-left: 7.5%;
@@ -4361,12 +4602,12 @@ img {
     padding-bottom: 3.3rem;
     text-align: center;
     font-size: 1.6rem;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-weight: 400;
   }
   .price__table td {
     border-bottom: 1px solid #55000C;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-size: 2.4rem;
     color: #55000C;
   }
@@ -4379,7 +4620,7 @@ img {
 @media screen and (max-width: 767.98px) {
   .price__table td:first-child {
     border-bottom: 1px solid #55000C;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     font-size: 2.4rem;
     color: #55000C;
   }
@@ -4424,7 +4665,7 @@ img {
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   line-height: 1.25;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 4rem;
@@ -4565,7 +4806,7 @@ tr {
 }
 
 .price-table-row1st p {
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   position: relative;
   font-weight: 400;
 }
@@ -4634,7 +4875,7 @@ tr {
   }
   .price-table-row1st p {
     font-weight: 700;
-    font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+    font-family: "Kosugi Maru", sans-serif;
     position: relative;
     letter-spacing: 0.1em;
   }
@@ -4705,7 +4946,7 @@ tr {
   letter-spacing: 0.04em;
   line-height: 1.2619047619;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   overflow-x: clip;
@@ -4727,7 +4968,7 @@ tr {
   letter-spacing: 0.04em;
   line-height: 1;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -4877,7 +5118,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 2.5;
   color: #FFFFFF;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   background-color: #55000C;
   max-width: 120rem;
   height: 12rem;
@@ -4922,7 +5163,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   padding: 1.5% 0 0;
   text-transform: uppercase;
   font-weight: 400;
@@ -4938,7 +5179,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.3125;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   padding: 0 0 1%;
   font-weight: 400;
 }
@@ -4994,7 +5235,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin-bottom: 2rem;
   position: relative;
   text-transform: capitalize;
@@ -5041,7 +5282,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 2;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   max-width: 1080px;
   width: 75%;
   margin: 9% auto 0;
@@ -5062,7 +5303,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.2875;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -5086,7 +5327,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   position: absolute;
   top: 9.5rem;
@@ -5148,7 +5389,7 @@ tr {
   letter-spacing: 0.04em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 600;
   margin: 0 2% 1.2rem;
   position: relative;
@@ -5237,7 +5478,7 @@ tr {
   font-size: 3.2rem;
   font-weight: 400;
   letter-spacing: 0.1em;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   flex-shrink: 0;
 }
 .salon-flow__greenNum::before {
@@ -5264,7 +5505,7 @@ tr {
 .section-header__en::after {
   content: "Flow";
   font-size: 12rem;
-  color: rgba(202, 127, 19, 0.0784);
+  color: #FFF7B8;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -2rem;
@@ -5282,7 +5523,7 @@ tr {
   }
 }
 .section-header__ja {
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -5353,7 +5594,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -5403,7 +5644,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.5833333333;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 600;
   text-transform: capitalize;
 }
@@ -5461,7 +5702,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.5;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -5535,7 +5776,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.5;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 600;
   width: 40%;
 }
@@ -5706,7 +5947,7 @@ tr {
   font-size: 1.6rem;
   text-align: center;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin: 2rem 0 0;
 }
 @media screen and (max-width: 767.98px) {
@@ -5764,7 +6005,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   padding: 0 0 15%;
   text-transform: capitalize;
   font-weight: 400;
@@ -5971,7 +6212,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.4285714286;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -5986,7 +6227,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.3125;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   width: 66%;
   margin-left: 1rem;
   font-weight: 400;
@@ -6003,7 +6244,7 @@ tr {
   letter-spacing: 0.04em;
   line-height: 1.25;
   color: rgba(84, 55, 45, 0.2);
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin-left: auto;
   margin-right: 3%;
   text-transform: capitalize;
@@ -6034,7 +6275,7 @@ tr {
   background: rgba(255, 255, 255, 0.8980392157);
   border: 1px solid rgba(255, 255, 255, 0.8980392157);
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-size: 3.2rem;
   box-shadow: none;
   letter-spacing: 0.1em;
@@ -6219,7 +6460,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.25;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   padding: 0 0 15%;
   text-transform: capitalize;
   font-weight: 400;
@@ -6284,7 +6525,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.4285714286;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -6299,7 +6540,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.3125;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   width: 66%;
   margin-left: 1rem;
   font-weight: 400;
@@ -6316,7 +6557,7 @@ tr {
   letter-spacing: 0.04em;
   line-height: 1.25;
   color: rgba(84, 55, 45, 0.2);
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   margin-left: auto;
   margin-right: 3%;
   text-transform: capitalize;
@@ -6347,7 +6588,7 @@ tr {
   background: rgba(255, 255, 255, 0.8980392157);
   border: 1px solid rgba(255, 255, 255, 0.8980392157);
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-size: 3.2rem;
   box-shadow: none;
   letter-spacing: 0.1em;
@@ -6516,7 +6757,7 @@ tr {
 }
 .single__back-btn a {
   color: #FFFFFF;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 600;
 }
 .single__back-btn-linkbtn {
@@ -6546,7 +6787,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.2916666667;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin-bottom: 0.6rem;
   font-weight: 400;
 }
@@ -6561,7 +6802,7 @@ tr {
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -6575,7 +6816,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   text-transform: capitalize;
   font-weight: 400;
 }
@@ -6589,7 +6830,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1;
   color: #55000C;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 767.98px) {
@@ -6635,7 +6876,7 @@ tr {
   letter-spacing: 0.1em;
   line-height: 1.2777777778;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   margin: 0 0 1.2%;
   font-weight: 400;
 }
@@ -6758,7 +6999,7 @@ tr {
   height: 5rem;
   padding-left: 0.8rem;
   box-sizing: border-box;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   color: #55000C;
   font-weight: 400;
 }
@@ -6770,7 +7011,7 @@ tr {
 }
 .p-reserve-input__required {
   background-color: #54372D;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   line-height: 2.3333333333;
@@ -6846,7 +7087,7 @@ tr {
   font-weight: 600;
   background-color: #949E33;
   color: #FFFFFF;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   cursor: pointer;
   margin-top: -1%;
   border: none;
@@ -7384,7 +7625,7 @@ tr {
   height: 5rem;
   padding-left: 0.8rem;
   box-sizing: border-box;
-  font-family: "Marcellus", serif;
+  font-family: "Jost", sans-serif;
   width: 38.8rem;
 }
 
@@ -7403,7 +7644,7 @@ tr {
   height: 3.6rem;
   font-size: 1.6rem;
   padding-left: 0.8rem;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   color: #55000C;
   font-weight: 400;
 }
@@ -7504,7 +7745,7 @@ tr {
 
 .p-reserve-input__comfirm-required {
   background-color: #54372D;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   line-height: 2.3333333333;
@@ -7596,7 +7837,7 @@ tr {
   font-size: 3.6rem;
   letter-spacing: 0.1em;
   line-height: 1.3055555556;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-weight: 400;
   text-align: center;
   font-weight: 400;
@@ -7681,14 +7922,14 @@ tr {
   font-size: 4rem;
   margin-bottom: 1rem;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }
 
 .page-404 p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #55000C;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }
 
 .page-404 a.button-home {

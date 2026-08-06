@@ -27,7 +27,7 @@
     letter-spacing: 0.04em;
     line-height: calc(106 / 84);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     text-transform: uppercase;
     font-weight: v.$Regular;
     overflow-x: clip;
@@ -48,7 +48,7 @@
     letter-spacing: 0.04em;
     line-height: calc(14 / 14);
     color: v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-weight: v.$Regular;
 
     @include mq(md){
@@ -199,7 +199,7 @@
   letter-spacing: 0.1em;
   line-height: calc(120 / 48);
   color: v.$color-white;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   background-color: v.$color-main;
   max-width: 120rem;
   height: 12rem;
@@ -245,7 +245,7 @@
     letter-spacing: 0.1em;
     line-height: calc(40 / 32);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     padding: 1.5% 0 0;
     text-transform: uppercase;
     font-weight: v.$Regular;
@@ -261,7 +261,7 @@
     letter-spacing: 0.1em;
     line-height: calc(21 / 16);
     color: v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     padding: 0 0 1%;
     font-weight: v.$Regular;
 
@@ -317,7 +317,7 @@
   letter-spacing: 0.1em;
   line-height: calc(60 / 48);
   color: v.$color-main;
-  font-family: v.$font-main-serif;
+  font-family: v.$font-main;
   margin-bottom: 2rem;
   position: relative;
   text-transform: capitalize;

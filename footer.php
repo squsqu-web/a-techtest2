@@ -1,5 +1,3 @@
-
-
 <footer class="footer">
 
   <!-- ナビゲーションとロゴ -->
@@ -15,42 +13,63 @@
             src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
             alt="ロゴ画像">
         </picture>
-        
+
       </a>
     </h2>
     <!-- pc -->
-    <nav class="footer__nav pc_only">
+    <nav class="footer__nav">
       <ul class="footer__nav-list inview">
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/'); ?>" class="footer__nav-link top-footer">top</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/concept/'); ?>" class="footer__nav-link">concept</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/price/'); ?>" class="footer__nav-link">price</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/news/'); ?>" class="footer__nav-link">news</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/reserve/'); ?>" class="footer__nav-link">reserve</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link">privacy policy</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/site-map/'); ?>" class="footer__nav-link">site map</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/about/'); ?>" class="footer__nav-link top-footer">わたしたちのこと</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/introduction/'); ?>" class="footer__nav-link">各園のご紹介</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/letter/'); ?>" class="footer__nav-link">こもれびだより</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/recruit/'); ?>" class="footer__nav-link">採用情報</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/info/'); ?>" class="footer__nav-link">お知らせ</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/contact/'); ?>" class="footer__nav-link">お問い合わせ</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/site-map/'); ?>" class="footer__nav-link">サイトマップ</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link">プライバシーポリシー</a></li>
       </ul>
     </nav>
 
     <!-- sp -->
-    <nav class="footer__nav sp_only">
+    <!-- sp -->
+    <!-- <nav class="footer__nav sp_only">
       <ul class="footer__nav-list sp-list sp-list-top inview">
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/'); ?>" class="footer__nav-link top-footer">top</a></li>
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/concept/'); ?>" class="footer__nav-link">concept</a></li>
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/price/'); ?>" class="footer__nav-link">price</a></li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/about/'); ?>" class="footer__nav-link">わたしたちのこと</a>
+        </li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/introduction/'); ?>" class="footer__nav-link">各園のご紹介</a>
+        </li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/letter/'); ?>" class="footer__nav-link">こもれびだより</a>
+        </li>
       </ul>
+
       <ul class="footer__nav-list sp-list sp-list-middle inview">
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/news/'); ?>" class="footer__nav-link">news</a></li>
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/reserve/'); ?>" class="footer__nav-link">reserve</a></li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/recruit/'); ?>" class="footer__nav-link">採用情報</a>
+        </li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/info/'); ?>" class="footer__nav-link">お知らせ</a>
+        </li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/contact/'); ?>" class="footer__nav-link">お問い合わせ</a>
+        </li>
       </ul>
+
       <ul class="footer__nav-list sp-list sp-list-bottom inview">
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/privacy-policy404/'); ?>" class="footer__nav-link">privacy policy</a></li>
-        <li class="footer__nav-item sp-item u-hover"><a href="<?php echo home_url('/site-map404/'); ?>" class="footer__nav-link">site map</a></li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/site-map/'); ?>" class="footer__nav-link">サイトマップ</a>
+        </li>
+        <li class="footer__nav-item sp-item u-hover">
+          <a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link">プライバシーポリシー</a>
+        </li>
       </ul>
-    </nav>
+    </nav> -->
 
     <div class="footer__copyright">
       <p class="footer__copyright-text inview">
-        &copy; ©桜のこもれびキッズランド All Rights Reserved.
+        &copy; 桜のこもれびキッズランド All Rights Reserved.
       </p>
     </div>
   </section>

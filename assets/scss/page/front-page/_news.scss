@@ -107,7 +107,7 @@
     line-height: calc(18/14);
     letter-spacing: .1em;
     color: v.$color-accent-1;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     font-weight: 400;
     margin: 1.6rem 0 0;
     text-transform: capitalize;
@@ -155,7 +155,7 @@
 }
 
 .c-heading-ja {
-  font-family: v.$font-primary-mincho;
+  font-family: v.$font-sub;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.04em;

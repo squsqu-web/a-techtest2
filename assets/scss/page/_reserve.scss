@@ -58,7 +58,7 @@
     height: 5rem;
     padding-left: 0.8rem;
     box-sizing: border-box;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     color: v.$color-main;
     font-weight: v.$Regular;
 
@@ -70,7 +70,7 @@
 
   &__required {
     background-color: v.$color-accent-1;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     line-height: calc(28 / 12);
@@ -154,7 +154,7 @@
     font-weight: v.$Demibold;
     background-color: v.$color-accent-2;
     color: v.$color-white;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     cursor: pointer;
     margin-top: -1%;
     border: none;

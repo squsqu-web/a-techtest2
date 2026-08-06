@@ -51,7 +51,7 @@
 
     a {
       color: v.$color-white;
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       font-weight: v.$Demibold;
     }
 
@@ -84,7 +84,7 @@
     letter-spacing: 0.1em;
     line-height: calc(31 / 24);
     color: v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     margin-bottom: 0.6rem;
     font-weight: v.$Regular;
 
@@ -99,7 +99,7 @@
     font-size: 1.4rem;
     letter-spacing: 0.1em;
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     font-weight: v.$Regular;
     text-transform: capitalize;
 
@@ -113,7 +113,7 @@
     letter-spacing: 0.1em;
     line-height: calc(14 / 14);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     text-transform: capitalize;
     font-weight: v.$Regular;
 
@@ -127,7 +127,7 @@
     letter-spacing: 0.1em;
     line-height: calc(14 / 14);
     color: v.$color-main;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     font-weight: v.$Regular;
 
     @include mq(md) {
@@ -177,7 +177,7 @@
     letter-spacing: 0.1em;
     line-height: calc(23 / 18);
     color: v.$color-main;
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     margin: 0 0 1.2%;
     font-weight: v.$Regular;
 

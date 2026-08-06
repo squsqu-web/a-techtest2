@@ -22,8 +22,8 @@
 
 @include mq(md) {
   .c-button {
-    @include button-size(12rem,
-      3rem);
+    @include button-size(20rem,
+      5rem);
   }
 }
 

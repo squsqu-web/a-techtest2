@@ -25,7 +25,7 @@
     position: absolute;
     top: 22rem;
     left: 12rem;
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
 
     &::after {
       content: "Concept";
@@ -42,7 +42,7 @@
       font-size: 4rem;
       letter-spacing: 0.1em;
       line-height: calc(60 / 40);
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       color: v.$color-main;
       position: absolute;
       top: 20%;
@@ -162,7 +162,7 @@
   }
 
   &__button {
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
 
     a {
       color: v.$color-white;
@@ -173,7 +173,7 @@
 // 共通セクションヘッダー
 .c-section-header {
   &__en {
-    font-family: v.$font-main-serif;
+    font-family: v.$font-main;
     font-size: 8.4rem;
     color: v.$color-main;
     font-weight: 400;
@@ -211,7 +211,7 @@
   }
 
   &__ja {
-    font-family: v.$font-primary-mincho;
+    font-family: v.$font-sub;
     font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -304,7 +304,7 @@
       font-size: 1.8rem;
       letter-spacing: 0.1em;
       line-height: calc(24 / 18);
-      font-family: v.$font-primary-mincho;
+      font-family: v.$font-sub;
       font-weight: v.$Demibold;
 
       @include mq(md) {

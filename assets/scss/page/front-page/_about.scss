@@ -15,7 +15,11 @@
     margin: 0 auto 5rem;
     border-radius: 50%;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 8rem;
+      height: 8rem;
+      margin: 0 auto .8rem;
+    }
 
   }
 
@@ -24,7 +28,10 @@
     height: 7.2rem;
     border-radius: 50%;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 5.3rem;
+      height: 5.3rem;
+    }
 
   }
 
@@ -41,7 +48,10 @@
     color: v.$color-main;
     margin: 0 auto 1rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 1.8rem;
+      margin: 0 auto .8rem;
+    }
 
   }
 
@@ -50,14 +60,18 @@
     color: v.$color-main;
     margin: 0 auto 6.4rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      margin: 0 auto 4.8rem;
+    }
 
   }
 
   &__text-wrap {
     margin: 0 0 12rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      margin: 0 0 8.8rem;
+    }
 
   }
 
@@ -66,7 +80,10 @@
     color: v.$color-main;
     margin: 1.6rem 0;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 1.4rem;
+      margin: 1.6rem 0 3.1rem;
+    }
 
   }
 }
