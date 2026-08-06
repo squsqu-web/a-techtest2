@@ -5,51 +5,36 @@
   <!-- Hero -->
   <section class="p-hero">
     <picture class="p-hero__picture">
-
       <source
-        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.webp"
-        media="(max-width:767.98px)"
+        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg.webp"
         type="image/webp">
-
-      <source
-        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.jpg"
-        media="(max-width:767.98px)"
-        type="image/jpeg">
-
-      <source
-        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-pc.webp"
-        media="(min-width: 768px)"
-        type="image/webp">
-
-      <source
-        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-pc.jpg"
-        media="(min-width: 768px)"
-        type="image/jpeg">
 
       <img
-        src="<?php echo get_template_directory_uri(); ?>/img/fv_bg-pc.jpg"
-        alt="綺麗な女性の様子"
-        width="865"
-        height="680"
+        src="<?php echo get_template_directory_uri(); ?>/img/fv_bg.png"
+        alt="園児が楽しく過ごしている様子"
         class="p-hero__img"
         fetchpriority="high">
     </picture>
 
-    <p class="p-hero__text" data-aos="fade-up">
-      a-tech_test2<br class="sp_only">美しい。a-tech_test2
-    </p>
+    <div class="p-hero__text" data-aos="fade-up">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/svg/Vector.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up">
+      <p class="p-hero__text-comment">一人ひとりの輝きが、<br>未来を彩る</p>
+    </div>
 
   </section>
 
 
   <!-- Aboutセクション -->
   <section class="p-about">
-    <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
-      alt=""
-      class="p-about__icon"
-      loading="lazy"
-      data-aos="fade-up">
+    <div class="p-about__icon-wrap">
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
+        alt=""
+        class="p-about__icon"
+        loading="lazy"
+        data-aos="fade-up">
+    </div>
+
 
     <div class="p-about__heading">
       <h2 class="p-about__title">
@@ -59,22 +44,34 @@
       <p class="p-about__subtitle">welcome</p>
     </div>
 
-    <p class="p-about__text">
-      「こもれび」とは<br>
-      風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
-      それはその瞬間に一度だけ存在します。
-    </p>
+    <div class="p-about__text-wrap">
+      <p class="p-about__text">
+        「こもれび」とは<br>
+        風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
+        それはその瞬間に一度だけ存在します。
+      </p>
+      <p class="p-about__text">
+        桜のこもれびキッズランドは、<br>
+        子どもたち一人ひとりが独自の輝きを放つように、<br>
+        大切な個性を伸ばす場所です。<br>
+        温かく包み込むような雰囲気の中で、安心して成長できる環境を提供し、<br>
+        笑顔あふれる毎日をお約束します。
+      </p>
+    </div>
+
   </section>
 
 
   <!-- 各園のご紹介セクション -->
   <section class="p-introduction">
-    <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
-      alt=""
-      class="p-introduction__icon"
-      loading="lazy"
-      data-aos="fade-up">
+    <div class="p-introduction__icon-wrap">
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
+        alt=""
+        class="p-introduction__icon"
+        loading="lazy"
+        data-aos="fade-up">
+    </div>
 
     <div class="p-introduction__heading">
       <h2 class="p-introduction__title">各園のご紹介</h2>
@@ -102,83 +99,89 @@
 
   <!-- こもれびだよりセクション -->
   <section class="p-letter">
+    <div class="p-letter__inner">
+      <div class="p-letter__icon-wrap">
+        <img
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg"
+          alt=""
+          class="p-letter__icon"
+          loading="lazy"
+          data-aos="fade-up">
+      </div>
 
-    <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg"
-      alt=""
-      class="p-letter__icon"
-      loading="lazy"
-      data-aos="fade-up">
+      <div class="p-letter__heading">
+        <h2 class="p-letter__title">こもれびだより</h2>
+        <p class="p-letter__subtitle">letter</p>
+      </div>
+
+      <ul class="p-letter__list">
+
+        <?php
+        $args = array(
+          'post_type' => 'letter',
+          'posts_per_page' => 6,
+          'orderby' => 'date',
+          'order' => 'DESC',
+        );
+
+        $letter_query = new WP_Query($args);
+
+        if ($letter_query->have_posts()) :
+          while ($letter_query->have_posts()) :
+            $letter_query->the_post();
+        ?>
+
+            <li class="p-letter__item">
+              <a href="<?php the_permalink(); ?>" class="p-letter__card">
+
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('large', array(
+                    'class' => 'p-letter__image',
+                    'alt' => get_the_title()
+                  )); ?>
+                <?php else : ?>
+                  <img
+                    src="<?php echo get_template_directory_uri(); ?>/img/no-image.png"
+                    alt=""
+                    class="p-letter__image">
+                <?php endif; ?>
 
 
-    <div class="p-letter__heading">
-      <h2 class="p-letter__title">こもれびだより</h2>
-      <p class="p-letter__subtitle">letter</p>
-    </div>
+                <div class="p-letter__card-wrap">
 
-    <ul class="p-letter__list">
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">なは園からのおたより</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
+                  <h3 class="p-letter__card-title">
+                    <?php the_title(); ?>
+                    <!-- <?php the_field('title'); ?> -->
+                  </h3>
+
+                  <!-- <p class="p-letter__text"></p> -->
+
+                  <time class="p-letter__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                    <?php echo get_the_date('Y.m.d'); ?>
+                  </time>
+
+                </div>
+
+              </a>
+            </li>
+
+
+        <?php
+          endwhile;
+        endif;
+
+        wp_reset_postdata();
+        ?>
+
+      </ul>
+
+
+      <!-- リンクボタン -->
+      <div class="inview p-letter__link-wrap">
+        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover">
+          もっとみる
         </a>
-      </li>
-
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
-        </a>
-      </li>
-
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
-        </a>
-      </li>
-
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
-        </a>
-      </li>
-
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
-        </a>
-      </li>
-
-      <li class="p-letter__item">
-        <a href="" class="p-letter__card">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/letter/aquarium.png" alt="てすと" class="p-letter__image">
-          <h3 class="p-letter__card-title">タイトル持ってくる</h3>
-          <p class="p-letter__text">説明テキスト</p>
-          <time class="p-letter__date" datetime="">日付もってくる</time>
-        </a>
-      </li>
-
-    </ul>
-
-
-    <!-- リンクボタン -->
-    <div class="inview">
-      <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover">
-        もっとみる
-      </a>
+      </div>
     </div>
 
   </section>
@@ -189,12 +192,14 @@
   <section class="p-recruit">
     <div class="p-recruit__inner">
       <div class="p-recruit__inner-wrap">
-        <img
-          src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
-          alt=""
-          class="p-recruit__icon"
-          loading="lazy"
-          data-aos="fade-up">
+        <div class="p-recruit__icon-wrap">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
+            alt=""
+            class="p-recruit__icon"
+            loading="lazy"
+            data-aos="fade-up">
+        </div>
 
         <div class="p-recruit__heading">
           <h2 class="p-recruit__title">採用情報</h2>
@@ -206,86 +211,23 @@
 
       <!-- リンクボタン -->
       <div class="p-recruit__link-wrap inview">
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link c-button u-hover">
-          もっとみる
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">
+          採用情報
         </a>
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link c-button u-hover">
-          もっとみる
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">
+          エントリー
         </a>
       </div>
 
     </div>
 
-
-
   </section>
 
 
-  <!-- FAQ -->
-  <section class="p-faq">
-    <div class="faq_inner">
 
-      <article class="p-faq__header">
-        <h2 class="c-heading" data-aos="fade-up">faq</h2>
-        <p class="c-heading-sub" data-aos="fade-up">よくある質問</p>
-      </article>
-
-      <div class="c-accordion">
-        <div class="c-accordion__item u-hover">
-          <button class="c-accordion__question accordion-header active" data-aos="fade-up">
-            脱毛後にまた毛が生えてくることはありますか？
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="c-accordion__answer accordion-content" data-aos="fade-up">
-            <p>出産や生理といったホルモンバランスの変化によって、脱毛後も体毛が生えてくるケースがあります</p>
-          </div>
-        </div>
-
-        <div class="c-accordion__item u-hover">
-          <button class="c-accordion__question accordion-header" data-aos="fade-up">
-            脱毛すると汗の量が増えると聞いたことがあるのですが本当ですか？
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="c-accordion__answer accordion-content" data-aos="fade-up">
-            <p>脱毛によって発汗量が増えるというエビデンスはありませんが、毛がなくなることによって汗が直接衣服に触れることで、汗が増えたように感じることはあるかもしれません。</p>
-          </div>
-        </div>
-
-        <div class="c-accordion__item u-hover">
-          <button class="c-accordion__question accordion-header" data-aos="fade-up">
-            コースの勧誘やセールスなどはありますか？
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="c-accordion__answer accordion-content" data-aos="fade-up">
-            <p>お客様の毛質や毛量、ご予算等をお伺いして最適な脱毛プランを提案しますが、最終的にはお客様が無理なく通える範囲のコースを、ご自身で決定いただきたいと考えています。 特に、初めての脱毛の場合は不安になる気持ちもよくわかりますので、その場で契約せずにゆっくりと考えていただく時間も大切です。 バレンタインローズでは、無理な勧誘やしつこい営業行為は一切行いませんので、安心して無料体験にお越しください。</p>
-          </div>
-        </div>
-
-        <div class="c-accordion__item u-hover">
-          <button class="c-accordion__question accordion-header" data-aos="fade-up">
-            脱毛することで毛が濃くなることはありますか？
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="c-accordion__answer accordion-content" data-aos="fade-up">
-            <p>脱毛によって毛が濃くなることはありません。 ただし、硬毛化という現象によって一時的に体毛が濃くなるケースが稀にありますが、施術を進めていくことで少しずつ体毛は薄くなっていきます。</p>
-          </div>
-        </div>
-
-        <div class="c-accordion__item u-hover">
-          <button class="c-accordion__question accordion-header" data-aos="fade-up">
-            脱毛箇所を剃毛することで、かえって体毛が太くなることはありますか？
-            <span class="accordion-icon">▼</span>
-          </button>
-          <div class="c-accordion__answer accordion-content" data-aos="fade-up">
-            <p>剃毛によって体毛が太くなることはありません。剃毛すると体毛の断面が見えやすくなることによって太く見えることはありますが、施術を重ねるたびに少しずつ薄く・細くなっていきます。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
 
 </main>
+
+
 
 <?php get_footer(); ?>

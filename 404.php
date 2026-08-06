@@ -6,4 +6,5 @@
   <a class="button-home u-hover" href="<?php echo esc_url(get_bloginfo('url')); ?>">トップページに戻る</a>
 </div>
 
+
 <?php get_footer(); ?>

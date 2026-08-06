@@ -4,59 +4,59 @@
 
 .p-hero {
   position: relative;
-  margin-top: 16rem;
-  background-color: rgb(200, 200, 197);
-
-  @include mq(md) {
-    margin-top: 8rem;
-  }
-
-  &__text {
-    font-size: 6.4rem;
-    color: v.$color-white;
-    line-height: calc(96/64);
-    letter-spacing: 0.1em;
-    position: absolute;
-    top: 40%;
-    left: 2.5%;
-    width: 71rem;
-    text-align: left;
-    font-family: v.$font-primary-mincho;
-    font-weight: v.$Light;
-
-    @include mq(md) {
-      font-size: 3.2rem;
-      line-height: 1.5;
-      top: 48%;
-      left: 4%;
-      width: 90%;
-    }
-  }
+  margin: 0 0 12rem;
 
   &__picture {
     display: block;
-    margin: 0 auto 2rem;
+    width: 128rem;
+    margin: 0 auto;
 
     @include mq(md) {
-      min-width: 320px;
+      width: 100%;
     }
   }
 
   &__img {
+    display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
-
+    border-radius: 12rem;
   }
-}
 
+  &__text {
+    position: absolute;
+    top: 13%;
+    left: 12%;
+    // transform: translate(-50%, -50%);
 
-main {
-  margin: 0 auto;
+    width: 51.6rem;
 
-  @include mq(md) {
-    margin-bottom: 0px;
-    position: relative;
-    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @include mq(md) {
+      width: 30rem;
+    }
+  }
+
+  &__text-comment {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1.8;
+
+    @include mq(md) {
+      font-size: 2.4rem;
+    }
   }
 }

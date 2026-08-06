@@ -20,7 +20,7 @@
     font-size: 8.4rem;
     letter-spacing: 0.04em;
     line-height: calc(106 / 84);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-main-serif;
     position: relative;
     text-transform: uppercase;
@@ -36,7 +36,7 @@
       font-size: 12rem;
       letter-spacing: 0;
       line-height: calc(168 / 120);
-      color: v.$color-text-2;
+      color: v.$color-main-2;
       font-family: v.$font-sub-cursive;
       position: absolute;
       top: -4rem;
@@ -67,7 +67,7 @@
     font-size: 1.4rem;
     letter-spacing: 0.04em;
     line-height: calc(14 / 14);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-primary-mincho;
     margin-bottom: 6%;
 
@@ -123,7 +123,7 @@
     position: relative;
 
     &--top-left {
-      border-right: 1px solid v.$color-text;
+      border-right: 1px solid v.$color-main;
 
       @media screen and (max-width: 950px) {
         border-right: none;
@@ -131,7 +131,7 @@
     }
 
     &--center-left {
-      border-right: 1px solid v.$color-text;
+      border-right: 1px solid v.$color-main;
       cursor: pointer;
 
       @media screen and (max-width: 950px) {
@@ -144,7 +144,7 @@
     font-size: 4.8rem;
     letter-spacing: 0.04em;
     line-height: calc(60 / 48);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-main-serif;
     padding: .7rem 0 0 .9rem;
     text-transform: capitalize;
@@ -164,7 +164,7 @@
     font-size: 1.4rem;
     letter-spacing: 0.04em;
     line-height: calc(14 / 14);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-primary-mincho;
     position: absolute;
     font-weight: v.$Regular;
@@ -247,7 +247,7 @@
 
 .c-pricing__row--bottom {
   display: flex;
-  border-right: 1px solid v.$color-text;
+  border-right: 1px solid v.$color-main;
   position: relative;
 
   @include mq(md) {
@@ -262,12 +262,12 @@
   padding-top: 1%;
   padding-right: 7%;
   padding-bottom: 3%;
-  border-bottom: 1px solid v.$color-text;
+  border-bottom: 1px solid v.$color-main;
   min-width: 40rem;
 
   @media screen and (max-width: 950px) {
     width: 100%;
-    border-bottom: 1px solid v.$color-text;
+    border-bottom: 1px solid v.$color-main;
     padding-bottom: 1.8rem;
     padding-right: .9rem;
     min-width: 0;
@@ -276,7 +276,7 @@
   @include mq(md) {
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid v.$color-text;
+    border-bottom: 1px solid v.$color-main;
     padding-bottom: 0;
     padding-right: 1.6rem;
     min-height: 7.8rem;
@@ -290,7 +290,7 @@
 
 .fa-arrow .front-arrow {
   font-size: 2.6rem;
-  color: v.$color-text;
+  color: v.$color-main;
 
   @include mq(md) {
     font-size: 2.2rem;

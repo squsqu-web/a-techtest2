@@ -3,18 +3,22 @@
 
 .p-recruit {
   background-color: v.$color-main-3;
-  @include flex;
-  margin: 0 0 5rem;
-  background: url('../img/recruit-bg.png') no-repeat center / cover;
-  
+  background-image: url("../../img/recruit-bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 63rem;
+  display: flex;
+  align-items: center;
 
   @include mq(md) {}
 
   &__inner {
     width: 75%;
-    background-color: v.$color-white;
+    margin-inline: auto;
+    background-color: v.$color-mtransparent;
     text-align: center;
     padding: 6.4rem 28rem;
+    border-radius: 40px;
 
     @include mq(md) {}
 
@@ -25,10 +29,21 @@
 
   }
 
-  &__icon {
+  &__icon-wrap {
     width: 10.8rem;
     height: 10.8rem;
+    background-color: v.$color-main-3;
+    @include flex;
     margin: 0 auto 5rem;
+    border-radius: 50%;
+
+    @include mq(md) {}
+
+  }
+
+  &__icon {
+    width: 7.2rem;
+    height: 7.2rem;
 
     @include mq(md) {}
 
@@ -43,7 +58,7 @@
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
-
+    margin: 0 auto 1rem;
 
     @include mq(md) {}
 
@@ -52,6 +67,7 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    margin: 0 auto 4.8rem;
 
     @include mq(md) {}
 
@@ -60,6 +76,7 @@
   &__text {
     font-size: 1.8rem;
     color: v.$color-main;
+    margin: 0 auto 3.9rem;
 
     @include mq(md) {}
 
@@ -72,10 +89,23 @@
 
   &__link {
     font-size: 1.8rem;
-    color: v.$color-main;
 
     @include mq(md) {}
 
+  }
+
+  &__link-info {
+    color: v.$color-main;
+    background-color: v.$color-main-4;
+    width: 24rem;
+    height: 6rem;
+  }
+
+  &__link-entry {
+    color: v.$color-main;
+    background-color: v.$color-main-3;
+    width: 24rem;
+    height: 6rem;
   }
 
 }

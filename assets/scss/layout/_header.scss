@@ -3,12 +3,13 @@
 
 .l-header {
   width: 100%;
-  height: 16rem;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: gainsboro;
-  border: 3px solid red;
+  height: 25rem;
+  // position: fixed;
+  // top: 0;
+  // z-index: 1000;
+  background-image: url("../../img/header.png");
+  background-size: cover;
+  background-position: center;
 
   @include mq(md) {
     max-width: 100%;
@@ -19,10 +20,12 @@
 
   &__inner {
     max-width: 1440px;
-    margin: 0 auto;
-    @include flex(space-between);
-    height: 100%;
-    padding: 0 5rem;
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    padding-inline: 20px;
+    padding: 9.6rem 0 0;
 
     @include mq(md) {
       width: 100%;
@@ -30,9 +33,97 @@
     }
   }
 
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include mq(md) {}
+
+  }
+
+
+  &__item {
+    position: relative; // 上下の丸ポッチの基準位置
+
+    /* ロゴ（4番目）以外のすべての項目に「左側の点線」を引く */
+    &:not(:nth-child(4)) {
+      border-left: 1px dotted v.$color-main;
+
+      /* 点線の上下にある丸いポッチ（ドット） */
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 6px;
+        /* 丸の大きさ */
+        height: 6px;
+        background-color: v.$color-main;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+
+      &::before {
+        top: 0;
+        /* 上のポッチ */
+      }
+
+      &::after {
+        bottom: 0;
+        /* 下のポッチ */
+      }
+    }
+
+    /* 【重要】一番右（お問い合わせ：7番目）の「さらに右側」にも線を出したい場合 */
+    /* ※デザイン見本でお問い合わせの右端にも線が必要な場合は、以下のコメントアウトを外してください */
+
+    // &:last-child {
+    //   border-right: 1px dotted v.$color-main;
+
+    //   &::before,
+    //   &::after {
+    //     right: 0;
+    //     left: auto;
+    //     transform: translateX(50%);
+    //   }
+    // }
+
+  }
+
+
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+
+    // border-left: 1px dotted v.$color-main;
+    // border-right: 1px dotted v.$color-main;
+    @include mq(md) {}
+
+  }
+
+
+  &__link-ja {
+    margin: 0 0 0.4rem;
+    font-size: 1.6rem;
+
+    @include mq(md) {}
+  }
+
+  &__link-en {
+    font-size: 1rem;
+
+    @include mq(md) {}
+  }
+
   &__icon {
     width: 4.8rem;
     height: 4.8rem;
+    margin: 0 0 3.4rem;
 
     @include mq(md) {}
   }
@@ -90,13 +181,16 @@
     }
 
     img {
-      width: clamp(32px, 5vw, 64px);
-      height: clamp(32px, 5vw, 64px);
+      // width: clamp(32px, 5vw, 64px);
+      // height: clamp(32px, 5vw, 64px);
+      width: 28rem;
+      height: auto;
       object-fit: cover;
 
       @include mq(md) {
-        width: clamp(32px, 5vw, 64px);
-        height: clamp(32px, 5vw, 64px);
+        // width: clamp(32px, 5vw, 64px);
+        // height: clamp(32px, 5vw, 64px);
+        width: 100%;
       }
     }
   }
@@ -111,25 +205,8 @@
     font-weight: v.$Regular;
   }
 
-  &__nav {
-    ul {
-      display: flex;
-      gap: 3rem;
-      list-style: none;
-      align-items: center;
-    }
-  }
 
 
-  &__link {
-    text-transform: capitalize;
-    font-weight: 400;
-    color: v.$color-accent-1;
-    font-size: 2rem;
-    font-family: v.$font-main-serif;
-    letter-spacing: calc(2 / 20 * 1em);
-    line-height: calc(25 / 20);
-  }
 }
 
 
@@ -263,7 +340,7 @@
       font-size: 2.4rem;
       line-height: calc(30 / 24);
       letter-spacing: .24em;
-      color: v.$color-text;
+      color: v.$color-main;
       font-family: v.$font-main-serif;
     }
   }
@@ -299,6 +376,3 @@
     margin-right: .5rem;
   }
 }
-
-
-

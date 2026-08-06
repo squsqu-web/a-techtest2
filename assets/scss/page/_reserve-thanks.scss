@@ -4,7 +4,7 @@
 
 .c-form-thnaks {
   // text-align: center;
-  color: v.$color-text;
+  color: v.$color-main;
   padding: 4% 0 2%;
   width: 75%;
   margin: 0 auto;
@@ -71,9 +71,9 @@
       font-size: 1.8rem;
       letter-spacing: 0.04em;
       line-height: calc(36 / 18);
-      color: v.$color-text;
+      color: v.$color-main;
       text-decoration: underline;
-      text-decoration-color: v.$color-text;
+      text-decoration-color: v.$color-main;
       cursor: pointer;
       font-family: v.$font-primary-gothic;
       font-weight: v.$Regular;

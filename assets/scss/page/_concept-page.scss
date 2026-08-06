@@ -350,9 +350,7 @@
   grid-column: 1 / -1;
 }
 
-main {
-  background-color: v.$color-bg-1;
-}
+
 
 @include mq(md) {
   .u-sp-none {

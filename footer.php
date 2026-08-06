@@ -1,3 +1,5 @@
+
+
 <footer class="footer">
 
   <!-- ナビゲーションとロゴ -->
@@ -13,7 +15,7 @@
             src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
             alt="ロゴ画像">
         </picture>
-        <p class="footer__logo-title">VALENTINE<br>ROSE</p>
+        
       </a>
     </h2>
     <!-- pc -->
@@ -59,6 +61,8 @@
   <a href="#" class="page-top__link inview"></a>
 </div>
 
+<!-- ↓共通背景用の為消さない -->
+</div>
 
 <?php wp_footer(); ?>
 </body>

@@ -2,16 +2,27 @@
 @use '../../foundation/mixin' as *;
 
 .p-about {
-  background-color: v.$color-main-3;
   text-align: center;
   margin: 0 auto 5rem;
 
   @include mq(md) {}
 
-  &__icon {
+  &__icon-wrap {
     width: 10.8rem;
     height: 10.8rem;
+    background-color: v.$color-main-3;
+    @include flex;
     margin: 0 auto 5rem;
+    border-radius: 50%;
+
+    @include mq(md) {}
+
+  }
+
+  &__icon {
+    width: 7.2rem;
+    height: 7.2rem;
+    border-radius: 50%;
 
     @include mq(md) {}
 
@@ -28,7 +39,7 @@
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
-
+    margin: 0 auto 1rem;
 
     @include mq(md) {}
 
@@ -37,6 +48,14 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    margin: 0 auto 6.4rem;
+
+    @include mq(md) {}
+
+  }
+
+  &__text-wrap {
+    margin: 0 0 12rem;
 
     @include mq(md) {}
 
@@ -45,6 +64,7 @@
   &__text {
     font-size: 1.8rem;
     color: v.$color-main;
+    margin: 1.6rem 0;
 
     @include mq(md) {}
 

@@ -921,49 +921,12 @@ img {
   outline: 2px dashed green;
 }
 
-body {
-  background-color: #F9F8F6;
-}
-
 .grecaptcha-badge {
   z-index: 9999999;
 }
 
-.sticky-area {
-  position: relative;
-}
-
-.l-main-visual {
-  position: relative;
-  z-index: 0;
-}
-.l-main-visual__title {
-  position: relative;
-  z-index: 2;
-}
-
-.sticky-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-.sticky-wrapper img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1440/600;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media screen and (max-width: 767.98px) {
-  .sticky-wrapper img {
-    aspect-ratio: 375/300;
-  }
-}
-
-.contents-overlap-wrapper {
-  position: relative;
-  z-index: 2;
-  background-color: #F9F8F6;
+.l-page-bg {
+  background-image: url("../../img/bg.png");
 }
 
 .inview {
@@ -979,12 +942,10 @@ body {
 
 .l-header {
   width: 100%;
-  height: 16rem;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: gainsboro;
-  border: 3px solid red;
+  height: 25rem;
+  background-image: url("../../img/header.png");
+  background-size: cover;
+  background-position: center;
 }
 @media screen and (max-width: 767.98px) {
   .l-header {
@@ -996,12 +957,12 @@ body {
 }
 .l-header__inner {
   max-width: 1440px;
-  margin: 0 auto;
+  height: 12rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 0 5rem;
+  justify-content: center;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding: 9.6rem 0 0;
 }
 @media screen and (max-width: 767.98px) {
   .l-header__inner {
@@ -1009,9 +970,60 @@ body {
     padding: 0 2rem;
   }
 }
+.l-header__list {
+  display: flex;
+  align-items: center;
+}
+.l-header__item {
+  position: relative;
+  /* ロゴ（4番目）以外のすべての項目に「左側の点線」を引く */
+}
+.l-header__item:not(:nth-child(4)) {
+  border-left: 1px dotted #55000C;
+  /* 点線の上下にある丸いポッチ（ドット） */
+}
+.l-header__item:not(:nth-child(4))::before, .l-header__item:not(:nth-child(4))::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 6px;
+  /* 丸の大きさ */
+  height: 6px;
+  background-color: #55000C;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.l-header__item:not(:nth-child(4))::before {
+  top: 0;
+  /* 上のポッチ */
+}
+.l-header__item:not(:nth-child(4))::after {
+  bottom: 0;
+  /* 下のポッチ */
+}
+.l-header__item {
+  /* 【重要】一番右（お問い合わせ：7番目）の「さらに右側」にも線を出したい場合 */
+  /* ※デザイン見本でお問い合わせの右端にも線が必要な場合は、以下のコメントアウトを外してください */
+}
+.l-header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+}
+.l-header__link-ja {
+  margin: 0 0 0.4rem;
+  font-size: 1.6rem;
+}
+.l-header__link-en {
+  font-size: 1rem;
+}
 .l-header__icon {
   width: 4.8rem;
   height: 4.8rem;
+  margin: 0 0 3.4rem;
 }
 .l-header__logo {
   display: flex;
@@ -1027,15 +1039,14 @@ body {
   text-decoration: none;
 }
 .l-header__logo img {
-  width: clamp(32px, 5vw, 64px);
-  height: clamp(32px, 5vw, 64px);
+  width: 28rem;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media screen and (max-width: 767.98px) {
   .l-header__logo img {
-    width: clamp(32px, 5vw, 64px);
-    height: clamp(32px, 5vw, 64px);
+    width: 100%;
   }
 }
 .l-header__title {
@@ -1046,21 +1057,6 @@ body {
   letter-spacing: 0.2em;
   line-height: 1.25;
   font-weight: 400;
-}
-.l-header__nav ul {
-  display: flex;
-  gap: 3rem;
-  list-style: none;
-  align-items: center;
-}
-.l-header__link {
-  text-transform: capitalize;
-  font-weight: 400;
-  color: #54372D;
-  font-size: 2rem;
-  font-family: "Marcellus", serif;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -1447,72 +1443,76 @@ body {
 }
 .p-hero {
   position: relative;
-  margin-top: 16rem;
-  background-color: rgb(200, 200, 197);
-}
-@media screen and (max-width: 767.98px) {
-  .p-hero {
-    margin-top: 8rem;
-  }
-}
-.p-hero__text {
-  font-size: 6.4rem;
-  color: #FFFFFF;
-  line-height: 1.5;
-  letter-spacing: 0.1em;
-  position: absolute;
-  top: 40%;
-  left: 2.5%;
-  width: 71rem;
-  text-align: left;
-  font-family: "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif;
-  font-weight: 300;
-}
-@media screen and (max-width: 767.98px) {
-  .p-hero__text {
-    font-size: 3.2rem;
-    line-height: 1.5;
-    top: 48%;
-    left: 4%;
-    width: 90%;
-  }
+  margin: 0 0 12rem;
 }
 .p-hero__picture {
   display: block;
-  margin: 0 auto 2rem;
+  width: 128rem;
+  margin: 0 auto;
 }
 @media screen and (max-width: 767.98px) {
   .p-hero__picture {
-    min-width: 320px;
+    width: 100%;
   }
 }
 .p-hero__img {
+  display: block;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 12rem;
 }
-
-main {
-  margin: 0 auto;
+.p-hero__text {
+  position: absolute;
+  top: 13%;
+  left: 12%;
+  width: 51.6rem;
+}
+.p-hero__text img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 @media screen and (max-width: 767.98px) {
-  main {
-    margin-bottom: 0px;
-    position: relative;
-    width: 100%;
+  .p-hero__text {
+    width: 30rem;
+  }
+}
+.p-hero__text-comment {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1.8;
+}
+@media screen and (max-width: 767.98px) {
+  .p-hero__text-comment {
+    font-size: 2.4rem;
   }
 }
 
 .p-about {
-  background-color: #FFF7B8;
   text-align: center;
   margin: 0 auto 5rem;
 }
-.p-about__icon {
+.p-about__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto 5rem;
+  border-radius: 50%;
+}
+.p-about__icon {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 50%;
 }
 .p-about__heading {
   font-size: 2.4rem;
@@ -1521,25 +1521,39 @@ main {
 .p-about__title {
   font-size: 2.4rem;
   color: #55000C;
+  margin: 0 auto 1rem;
 }
 .p-about__subtitle {
   font-size: 1rem;
   color: #55000C;
+  margin: 0 auto 6.4rem;
+}
+.p-about__text-wrap {
+  margin: 0 0 12rem;
 }
 .p-about__text {
   font-size: 1.8rem;
   color: #55000C;
+  margin: 1.6rem 0;
 }
 .p-introduction {
-  background-color: #FFF7B8;
   text-align: center;
   width: 75%;
-  margin: 0 auto 5rem;
+  margin: 0 auto 16.2rem;
 }
-.p-introduction__icon {
+.p-introduction__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto 5rem;
+  border-radius: 50%;
+}
+.p-introduction__icon {
+  width: 7.2rem;
+  height: 7.2rem;
 }
 .p-introduction__heading {
   font-size: 2.4rem;
@@ -1548,16 +1562,19 @@ main {
 .p-introduction__title {
   font-size: 2.4rem;
   color: #55000C;
+  margin: 0 auto 1rem;
 }
 .p-introduction__subtitle {
   font-size: 1rem;
   color: #55000C;
+  margin: 0 auto 7.2rem;
 }
 .p-introduction__prefectures-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2.4rem;
+  margin: 0 0 5.4rem;
 }
 .p-introduction__prefectures-item {
   font-size: 1.8rem;
@@ -1575,23 +1592,44 @@ main {
   color: #55000C;
 }
 .p-letter {
-  background-color: #FFEDF0;
-  text-align: center;
-  width: 75%;
-  margin: 0 auto 5rem;
+  background-image: url("../../img/top-letters__bg.svg");
+  margin: 0 auto;
+  position: relative;
 }
-.p-letter__icon {
+.p-letter__inner {
+  width: 75%;
+  margin: 0 auto;
+  padding: 6.2rem 0 12rem;
+}
+.p-letter__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
-  margin: 0 auto 5rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.p-letter__icon {
+  width: 7.2rem;
+  height: 7.2rem;
+}
+.p-letter__heading {
+  text-align: center;
 }
 .p-letter__title {
   font-size: 2.4rem;
   color: #55000C;
+  margin: 0 auto 1rem;
 }
 .p-letter__subtitle {
   font-size: 1rem;
   color: #55000C;
+  margin: 0 auto 6.2rem;
 }
 .p-letter__list {
   display: flex;
@@ -1604,14 +1642,22 @@ main {
   width: 32rem;
   height: 28rem;
   background-color: #FFFFFF;
+  border-radius: 2rem;
+}
+.p-letter__card-wrap {
+  padding: 1.2rem;
+  position: relative;
+  height: 14.5rem;
 }
 .p-letter__image {
   width: 100%;
   height: 13.5rem;
+  border-radius: 2rem 2rem 0 0;
 }
 .p-letter__card-title {
   font-size: 1.8rem;
   color: #55000C;
+  margin: 0 0 1.1rem;
 }
 .p-letter__text {
   font-size: 1.6rem;
@@ -1620,6 +1666,12 @@ main {
 .p-letter__date {
   font-size: 1.4rem;
   color: #55000C;
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+}
+.p-letter__link-wrap {
+  text-align: center;
 }
 .p-letter__link {
   font-size: 1.8rem;
@@ -1627,34 +1679,49 @@ main {
 }
 .p-recruit {
   background-color: #FFF7B8;
+  background-image: url("../../img/recruit-bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 63rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 0 5rem;
-  background: url("../img/recruit-bg.png") no-repeat center/cover;
 }
 .p-recruit__inner {
   width: 75%;
-  background-color: #FFFFFF;
+  margin-inline: auto;
+  background-color: rgba(255, 255, 255, 0.8980392157);
   text-align: center;
   padding: 6.4rem 28rem;
+  border-radius: 40px;
 }
-.p-recruit__icon {
+.p-recruit__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto 5rem;
+  border-radius: 50%;
+}
+.p-recruit__icon {
+  width: 7.2rem;
+  height: 7.2rem;
 }
 .p-recruit__title {
   font-size: 2.4rem;
   color: #55000C;
+  margin: 0 auto 1rem;
 }
 .p-recruit__subtitle {
   font-size: 1rem;
   color: #55000C;
+  margin: 0 auto 4.8rem;
 }
 .p-recruit__text {
   font-size: 1.8rem;
   color: #55000C;
+  margin: 0 auto 3.9rem;
 }
 .p-recruit__link-wrap {
   display: flex;
@@ -1662,8 +1729,20 @@ main {
 }
 .p-recruit__link {
   font-size: 1.8rem;
-  color: #55000C;
 }
+.p-recruit__link-info {
+  color: #55000C;
+  background-color: #FFEDF0;
+  width: 24rem;
+  height: 6rem;
+}
+.p-recruit__link-entry {
+  color: #55000C;
+  background-color: #FFF7B8;
+  width: 24rem;
+  height: 6rem;
+}
+
 .p-news {
   position: relative;
   width: 100%;
@@ -1806,7 +1885,7 @@ main {
   font-size: 12rem;
   letter-spacing: 0;
   line-height: 1.4;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -3rem;
@@ -1966,7 +2045,7 @@ main {
   font-size: 12rem;
   letter-spacing: 0;
   line-height: 1.4;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -3rem;
@@ -2178,7 +2257,7 @@ main {
   font-size: 12rem;
   letter-spacing: 0;
   line-height: 1.4;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -52%;
@@ -2518,7 +2597,7 @@ main {
   font-size: 12rem;
   letter-spacing: 0;
   line-height: 1.4;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -4rem;
@@ -2855,7 +2934,7 @@ main {
   content: "FAQ";
   font-size: 12rem;
   line-height: 1.4;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -3rem;
@@ -3061,7 +3140,7 @@ main {
 .p-concept__title::after {
   content: "Concept";
   font-size: 12rem;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -3rem;
@@ -3368,10 +3447,6 @@ main {
   grid-column: 1/-1;
 }
 
-main {
-  background-color: #F9F8F6;
-}
-
 @media screen and (max-width: 767.98px) {
   .u-sp-none {
     display: none;
@@ -3489,7 +3564,7 @@ main {
 .company-profile-after::after {
   content: "Company profile";
   font-size: 12rem;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -5.5rem;
@@ -4237,10 +4312,6 @@ main {
     padding-top: 3%;
   }
 }
-main {
-  background-color: #F9F8F6;
-}
-
 .price__table-wrapper {
   width: 57%;
   margin: 0 auto 5%;
@@ -4683,7 +4754,7 @@ tr {
 .p-prefectures__title::after {
   content: "Prefectures";
   font-size: 12rem;
-  color: #FFEDF0;
+  color: #333333;
   font-family: "Parisienne", cursive;
   position: absolute;
   top: -3rem;
@@ -5960,8 +6031,8 @@ tr {
 }
 
 .pagination .nav-links .page-numbers {
-  background: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.8980392157);
+  border: 1px solid rgba(255, 255, 255, 0.8980392157);
   color: #55000C;
   font-family: "Marcellus", serif;
   font-size: 3.2rem;
@@ -6047,7 +6118,7 @@ tr {
 .fa-chevron-left {
   font-size: 2rem;
   color: #55000C;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.8980392157);
 }
 @media screen and (max-width: 767.98px) {
   .fa-chevron-right,
@@ -6273,8 +6344,8 @@ tr {
 }
 
 .pagination .nav-links .page-numbers {
-  background: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.8980392157);
+  border: 1px solid rgba(255, 255, 255, 0.8980392157);
   color: #55000C;
   font-family: "Marcellus", serif;
   font-size: 3.2rem;
@@ -6360,7 +6431,7 @@ tr {
 .fa-chevron-left {
   font-size: 2rem;
   color: #55000C;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.8980392157);
 }
 @media screen and (max-width: 767.98px) {
   .fa-chevron-right,

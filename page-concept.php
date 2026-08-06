@@ -6,17 +6,8 @@
     <div class="contents-wrapper">
       <section class="l-main-visual concept-main-visual" data-aos="fade-up">
         <h1 class="l-main-visual__title">salon concept</h1>
-        <div class="sticky-wrapper">
-          <picture class="">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/page-concept_top-sp.webp" media="(max-width: 767px)" type="image/webp">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/page-concept_top-sp.jpg" media="(max-width: 767px)" type="image/jpeg">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/page-concept_top-pc.webp" media="(min-width: 768px)" type="image/webp">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/page-concept_top-pc.jpg" media="(min-width: 768px)" type="image/jpeg">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/page-concept_top-pc.jpg" alt="施術を受けた奇麗な女性の様子" class="l-main-visual__img">
-          </picture>
-        </div>
 
-
+        
         <div class="contents-overlap-wrapper">
           <!-- カスタムパンくずリスト -->
           <div class="breadcrumb-container-concept">
@@ -200,4 +191,6 @@
 
 </main>
 
+<!-- ↓共通背景用の為消さない -->
+</div>
 <?php get_footer(); ?>

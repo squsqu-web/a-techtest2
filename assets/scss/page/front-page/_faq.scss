@@ -28,7 +28,7 @@
   font-size: 8.4rem;
   letter-spacing: 0.04em;
   line-height: calc(106 / 84);
-  color: v.$color-text;
+  color: v.$color-main;
   font-family: v.$font-main-serif;
   position: relative;
   text-transform: uppercase;
@@ -42,7 +42,7 @@
     content: "FAQ";
     font-size: 12rem;
     line-height: calc(168 / 120);
-    color: v.$color-text-2;
+    color: v.$color-main-2;
     font-family: v.$font-sub-cursive;
     position: absolute;
     top: -3rem;
@@ -57,7 +57,7 @@
     font-size: 1.4rem;
     letter-spacing: 0.04em;
     line-height: calc(14 / 14);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-primary-mincho;
     margin-bottom: 6.1rem;
     font-weight: v.$Regular;
@@ -100,7 +100,7 @@
     font-size: 1.8rem;
     letter-spacing: 0.04em;
     line-height: calc(23 / 18);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-primary-mincho;
     display: flex;
     align-items: flex-start;
@@ -146,7 +146,7 @@
     font-size: 1.8rem;
     letter-spacing: 0.04em;
     line-height: calc(23 / 18);
-    color: v.$color-text;
+    color: v.$color-main;
     font-family: v.$font-primary-mincho;
     display: flex;
     align-items: flex-start;

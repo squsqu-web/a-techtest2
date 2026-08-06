@@ -2,24 +2,48 @@
 @use '../../foundation/mixin' as *;
 
 .p-letter {
-  background-color: v.$color-main-2;
-  text-align: center;
-  width: 75%;
-  margin: 0 auto 5rem;
+  // background-color: v.$color-main-2;
+  background-image: url("../../img/top-letters__bg.svg");
+  margin: 0 auto;
+  position: relative;
 
   @include mq(md) {}
 
-  &__icon {
+  &__inner {
+    width: 75%;
+    margin: 0 auto;
+    padding: 6.2rem 0 12rem;
+
+    @include mq(md) {}
+
+  }
+
+  &__icon-wrap {
     width: 10.8rem;
     height: 10.8rem;
-    margin: 0 auto 5rem;
+    background-color: v.$color-main-3;
+    @include flex;
+    // margin: 0 auto 5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mq(md) {}
+
+  }
+
+  &__icon {
+    width: 7.2rem;
+    height: 7.2rem;
 
     @include mq(md) {}
 
   }
 
   &__heading {
-
+    text-align: center;
 
     @include mq(md) {}
 
@@ -28,7 +52,7 @@
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
-
+    margin: 0 auto 1rem;
 
     @include mq(md) {}
 
@@ -37,6 +61,7 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    margin: 0 auto 6.2rem;
 
     @include mq(md) {}
 
@@ -56,20 +81,29 @@
     width: 32rem;
     height: 28rem;
     background-color: v.$color-white;
+    border-radius: 2rem;
 
     @include mq(md) {}
   }
 
   &__card {
+    @include mq(md) {}
+  }
 
+  &__card-wrap {
+    padding: 1.2rem;
+    position: relative;
+    height: calc(28rem - 13.5rem); // 画像以外の高さ
 
     @include mq(md) {}
 
   }
 
+
   &__image {
     width: 100%;
     height: 13.5rem;
+    border-radius: 2rem 2rem 0 0;
 
     @include mq(md) {}
 
@@ -78,6 +112,7 @@
   &__card-title {
     font-size: 1.8rem;
     color: v.$color-main;
+    margin: 0 0 1.1rem;
 
     @include mq(md) {}
 
@@ -96,10 +131,17 @@
     font-size: 1.4rem;
     color: v.$color-main;
 
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1.2rem;
+
     @include mq(md) {}
 
   }
 
+  &__link-wrap {
+    text-align: center;
+  }
 
   &__link {
     font-size: 1.8rem;
