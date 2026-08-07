@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
+
 <main class="l-info-page">
+
 
   <!-- Main Visual -->
   <section class="l-main-visual">
@@ -9,26 +11,33 @@
       <p class="l-main-visual__title-en">info</p>
     </div>
 
-
-    <!-- カスタムパンくずリスト -->
+    <!-- パンくず -->
     <div class="breadcrumb-container u-hover" data-aos="fade-up">
       <nav class="breadcrumb">
         <a href="<?php echo home_url('/'); ?>">ホーム</a>
-        <span class="sep" data-aos="fade-up">&gt;</span>
-        <span>お知らせ一覧</span>
+        <span class="sep">&gt;</span>
+        <a href="<?php echo get_post_type_archive_link('info'); ?>">
+          お知らせ一覧
+        </a>
+        <span class="sep">&gt;</span>
+        <span>
+          <?php single_term_title(); ?>
+        </span>
       </nav>
     </div>
+
   </section>
 
-  <!-- 記事セクション全体（インナーで最大幅を制御） -->
-  <section class="l-info">
+
+
+
+  <section class="p-info">
+
     <div class="l-info__inner">
-
       <!-- カテゴリタブ -->
-      <div class="p-info-filter">
+      <div class="p-info-tab" data-aos="fade-up">
 
-        <a href="<?php echo get_post_type_archive_link('info'); ?>"
-          class="p-info-filter__button is-active">
+        <a href="<?php echo get_post_type_archive_link('info'); ?>">
           すべて
         </a>
 
@@ -38,43 +47,51 @@
           'taxonomy' => 'info_category',
           'hide_empty' => true,
         ));
-
-        if (!empty($terms) && !is_wp_error($terms)) :
-
-          foreach ($terms as $term) :
         ?>
 
-            <a href="<?php echo get_term_link($term); ?>"
-              class="p-info-filter__button">
 
-              <?php echo esc_html($term->name); ?>
+        <?php foreach ($terms as $term): ?>
 
-            </a>
+          <a
+            href="<?php echo get_term_link($term); ?>"
+            class="<?php echo is_tax('info_category', $term->term_id) ? 'is-active' : ''; ?>">
 
-        <?php
-          endforeach;
-        endif;
-        ?>
+            <?php echo esc_html($term->name); ?>
+
+          </a>
+
+        <?php endforeach; ?>
+
 
       </div>
+
+
+
 
       <!-- 記事一覧 -->
       <?php if (have_posts()) : ?>
 
         <div class="p-info-list">
 
+
           <?php while (have_posts()) : the_post(); ?>
 
+
             <article class="p-info-list__item" data-aos="fade-up">
+
+
               <a class="p-info-card" href="<?php the_permalink(); ?>">
 
-                <!-- カテゴリバッジ -->
+
+
+                <!-- カテゴリ -->
                 <div class="p-info-card__badge">
+
+
                   <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
                     <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
                     <path d="M13.7 21a2 2 0 01-3.4 0" />
                   </svg>
-
 
 
                   <?php
@@ -82,64 +99,99 @@
                     get_the_ID(),
                     'info_category'
                   );
-
-                  if ($terms && !is_wp_error($terms)):
                   ?>
 
+
+                  <?php if ($terms && !is_wp_error($terms)): ?>
+
                     <span>
-                      <?php echo $terms[0]->name; ?>
+                      <?php echo esc_html($terms[0]->name); ?>
                     </span>
 
                   <?php endif; ?>
 
 
-
-
-
                 </div>
+
+
+
 
                 <!-- 日付 -->
                 <time class="p-info-card__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+
                   <?php echo get_the_date('Y. m. d'); ?>
+
                 </time>
+
+
+
 
                 <!-- タイトル -->
                 <h2 class="p-info-card__title">
+
                   <?php the_title(); ?>
+
                 </h2>
 
-                <!-- リード文 -->
+
+
+
+                <!-- リード -->
                 <p class="p-info-card__lead">
+
                   <?php the_field('info_lead'); ?>
+
                 </p>
 
+
+
               </a>
+
+
             </article>
+
 
           <?php endwhile; ?>
 
+
         </div>
+
 
       <?php else : ?>
 
-        <p class="c-no-post" data-aos="fade-up">
+
+        <p class="c-no-post">
           投稿が見つかりませんでした。
         </p>
 
+
       <?php endif; ?>
 
+
+
+
+
       <!-- ページネーション -->
-      <div class="c-pagination js-stagger" id="info-pagi" data-aos="fade-up">
-        <?php the_posts_pagination(array(
-          'mid_size'  => 2,
+      <div class="c-pagination js-stagger" data-aos="fade-up">
+
+        <?php
+        the_posts_pagination(array(
+          'mid_size' => 2,
           'prev_text' => '<i class="fa-solid fa-chevron-left boby-fa info-arrow"></i>',
           'next_text' => '<i class="fa-solid fa-chevron-right boby-fa info-arrow"></i>',
-        )); ?>
-      </div>
+        ));
+        ?>
 
+      </div>
     </div>
+
+
+
+
   </section>
 
+
 </main>
+
 
 <?php get_footer(); ?>

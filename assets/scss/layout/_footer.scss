@@ -79,19 +79,21 @@
     }
 
     &-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem 1rem;
-      width: 92%;
+      display: flex;
+      justify-content: center;
+      gap: 2.4rem 4.4rem;
+      list-style: none;
       margin: 0 auto;
-      padding: 3rem 0;
-
+      padding: 4.8rem 27rem;
+      flex-wrap: wrap;
 
       @include mq(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
         width: 92%;
-        gap: 0;
-        padding: 0;
         margin: 0 auto;
+        padding: 0;
       }
     }
 
@@ -108,7 +110,7 @@
 
       @include mq(md) {
         font-size: 1.4rem;
-        padding-left: 1rem;
+        padding-left: 0;
       }
 
       &:hover {
@@ -125,7 +127,7 @@
       }
 
       @include mq(md) {
-        text-align: left;
+        text-align: center;
       }
     }
   }
@@ -198,31 +200,7 @@
   }
 }
 
-.sp-list {
-  @include mq(md) {}
-}
 
-.sp-item {
-  @include mq(md) {}
-}
-
-.sp-list-top {
-  @include mq(md) {
-    padding: 7% 0 0;
-  }
-}
-
-.sp-list-middle {
-  @include mq(md) {
-    padding: 4% 0 0rem 6%;
-  }
-}
-
-.sp-list-bottom {
-  @include mq(md) {
-    padding: 8% 0rem 0rem 1%;
-  }
-}
 
 
 

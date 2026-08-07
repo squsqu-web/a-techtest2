@@ -192,7 +192,6 @@ function create_post_types()
     'has_archive' => true,
     'menu_position' => 5,
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
-    'taxonomies' => array('category'),
     'rewrite' => array('slug' => 'introduction'),
     'show_in_rest' => true,
   ));
@@ -212,7 +211,6 @@ function create_post_types()
       'excerpt',
       'thumbnail'
     ),
-    'taxonomies'  => array('category'),
     'rewrite' => array('slug' => 'letter'),
     'show_in_rest' => true,
   ));
@@ -229,12 +227,74 @@ function create_post_types()
     'has_archive' => true,
     'menu_position' => 7,
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
-    'taxonomies' => array('category'),
     'rewrite' => array('slug' => 'info'),
     'show_in_rest' => true,
   ));
 }
 add_action('init', 'create_post_types');
+
+
+
+/*====================================
+ * カスタムタクソノミー
+ *====================================*/
+function create_custom_taxonomies()
+{
+
+  // こもれびだよりカテゴリー
+  register_taxonomy(
+    'letter_category',
+    'letter',
+    array(
+      'label' => 'こもれびだよりカテゴリー',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+      'rewrite' => array(
+        'slug' => 'letter-category'
+      ),
+    )
+  );
+
+
+  // お知らせカテゴリー
+  register_taxonomy(
+    'info_category',
+    'info',
+    array(
+      'label' => 'お知らせカテゴリー',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+      'rewrite' => array(
+        'slug' => 'info-category'
+      ),
+    )
+  );
+
+
+  // 施設紹介エリア
+  register_taxonomy(
+    'introduction_area',
+    'introduction',
+    array(
+      'label' => '施設エリア',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+      'rewrite' => array(
+        'slug' => 'area'
+      ),
+    )
+  );
+}
+
+add_action(
+  'init',
+  'create_custom_taxonomies'
+);
+
+
 
 
 /*====================================
@@ -253,16 +313,7 @@ function set_custom_posts_per_page_by_device($query)
 add_action('pre_get_posts', 'set_custom_posts_per_page_by_device');
 
 
-/*====================================
- * 投稿＋ニュースをカテゴリーアーカイブに表示
- *====================================*/
-function add_letter_to_category_archive($query)
-{
-  if (!is_admin() && $query->is_main_query() && $query->is_category()) {
-    $query->set('post_type', array('post', 'letter'));
-  }
-}
-add_action('pre_get_posts', 'add_letter_to_category_archive');
+
 
 
 /*====================================
@@ -277,60 +328,6 @@ function my_breadcrumb()
   }
 }
 
-
-
-/*====================================
- * ニュースサイドバー用カテゴリ取得
- *====================================*/
-function get_letter_sidebar_categories()
-{
-  $fixed_slugs = array('all', 'campaign', 'letter', 'column');
-  $fixed = array();
-
-  foreach ($fixed_slugs as $slug) {
-    if ($slug === 'all') {
-      $fixed[] = array(
-        'slug' => 'all',
-        'name' => 'すべて'
-      );
-    } else {
-      $cat = get_category_by_slug($slug);
-      if ($cat) {
-        $fixed[] = array(
-          'slug' => $cat->slug,
-          'name' => $cat->name
-        );
-      }
-    }
-  }
-
-  $all_cats = get_categories(array(
-    'hide_empty' => true,
-    'exclude' => get_cat_ID('Uncategorized')
-  ));
-
-  $dynamic = array();
-  foreach ($all_cats as $cat) {
-    if (!in_array($cat->slug, $fixed_slugs)) {
-      $dynamic[] = array(
-        'slug' => $cat->slug,
-        'name' => $cat->name
-      );
-    }
-  }
-
-  return array_merge($fixed, $dynamic);
-}
-
-
-// カテゴリーを紐付け
-function add_category_to_custom_post()
-{
-  register_taxonomy_for_object_type('category', 'introduction');
-  register_taxonomy_for_object_type('category', 'letter');
-  register_taxonomy_for_object_type('category', 'info');
-}
-add_action('init', 'add_category_to_custom_post');
 
 
 // フォームのバリデーション
@@ -368,9 +365,12 @@ function letter_permalink($post_link, $post)
     return $post_link;
   }
 
-  $cats = get_the_category($post->ID);
+  $cats = get_the_terms(
+    $post->ID,
+    'letter_category'
+  );
 
-  // カテゴリが存在し、かつスラッグに全角文字（マルチバイト）が含まれていないかチェック
+  // こもれびだよりカテゴリーを取得
   if (!empty($cats)) {
     $category_slug = $cats[0]->slug;
     // スラッグに全角文字が含まれている場合は安全な代替スラッグにフォールバック

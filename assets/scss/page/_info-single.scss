@@ -1,0 +1,68 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.l-info {
+  &__inner {
+    width: 75%;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 92%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/* ==============================
+  ページネーション
+============================== */
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12.3rem;
+
+  @include mq(md) {
+    margin-bottom: 8rem;
+  }
+
+  .page-numbers {
+    background: v.$color-mtransparent;
+    border: 1px solid v.$color-mtransparent;
+    color: v.$color-main;
+    font-family: v.$font-main;
+    font-size: 1.6rem;
+    line-height: calc(40 / 32);
+    font-weight: 400;
+    padding: 6px 14px;
+
+    &.current {
+      background: none;
+      border: none;
+    }
+
+    &.next,
+    &.prev {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+/* ==============================
+  Font Awesome
+============================== */
+.fa-chevron-right,
+.fa-chevron-left {
+  font-size: 2rem;
+  color: v.$color-main;
+
+  @include mq(md) {
+    font-size: 1.2rem;
+  }
+}

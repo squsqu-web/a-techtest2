@@ -9,11 +9,18 @@
   background-size: cover;
   background-position: center;
 
+  // ヘッダーとKVを重ねる為
+  position: absolute;
+  top: 0;
+  z-index: 10;
+
   @include mq(md) {
     max-width: 100%;
     left: 0;
     right: 0;
-    height: 8rem;
+    height: 15.4rem;
+    height: auto;
+    background-image: url("../../img/sp-header.png");
   }
 
   &__inner {
@@ -307,7 +314,6 @@
 
 .l-header__sp {
   position: relative;
-  height: 8rem;
 }
 
 .l-header__sp .l-header__logo {

@@ -1,104 +1,125 @@
 <?php get_header(); ?>
 
-<main class="l-single-news-single">
+<main class="l-info-page">
 
   <!-- Main Visual -->
   <section class="l-main-visual">
-    <h1 class="l-main-visual__title" data-aos="fade-up">お知らせ</h1>
+    <div class="l-main-visual__title">
+      <h1 class="l-main-visual__title-ja" data-aos="fade-up">お知らせ</h1>
+      <p class="l-main-visual__title-en">info</p>
+    </div>
 
     <!-- カスタムパンくずリスト -->
-    <div class="breadcrumb-container">
-      <nav class="breadcrumb u-hover" data-aos="fade-up">
-        <a href="<?php echo home_url('/'); ?>">ホーム</a>
-        <span class="sep" data-aos="fade-up">｜</span>
-        <a href="<?php echo home_url('/news'); ?>">お知らせ一覧</a>
-        <span class="sep" data-aos="fade-up">｜</span>
-        <span data-aos="fade-up"><?php the_title(); ?></span>
+    <div class="breadcrumb-container u-hover" data-aos="fade-up">
+      <nav class="breadcrumb">
+
+        <a href="<?php echo home_url('/'); ?>">
+          ホーム
+        </a>
+
+        <span class="sep">&gt;</span>
+
+        <a href="<?php echo get_post_type_archive_link('info'); ?>">
+          お知らせ一覧
+        </a>
+
+        <span class="sep">&gt;</span>
+
+        <span>
+          <?php the_title(); ?>
+        </span>
+
       </nav>
     </div>
 
 
+    <section class="l-info">
 
-    
-    <div class="l-single-news-single__wrapper single__wrapper" data-aos="fade-up">
-      <section class="p-news-article">
+      <div class="l-info__inner">
+
+
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-
-
-            <!-- こもれびのパーツ -->
-            <p>こもれびのパーツ</p>
-            <h2><?php the_title(); ?></h2>
-            <?php the_content(); ?>
-            <?php the_post_thumbnail(); ?>
-            <time datetime="<?php echo get_the_date('Y-m-d'); ?>" data-aos="fade-up">
-              <?php echo get_the_date('Y.m.d'); ?>
-            </time>
-
-
-
-
-
-
             <!-- 記事タイトル・カテゴリ・日付 -->
-            <header class="p-news-article__header">
-              <h2 class="p-news-article__title" data-aos="fade-up"><?php the_title(); ?></h2>
+            <header class="p-info-article__header">
+
+              <h1 class="p-info-article__title" data-aos="fade-up">
+                <?php the_title(); ?>
+              </h1>
+
+
               <div class="category-date">
-                <div class="p-news-article__category" data-aos="fade-up">
+
+                <div class="p-info-article__category" data-aos="fade-up">
+
                   <?php
-                  $categories = get_the_category();
-                  if (!empty($categories)) {
-                    echo esc_html($categories[0]->name);
+                  $terms = get_the_terms(
+                    get_the_ID(),
+                    'info_category'
+                  );
+
+                  if ($terms && !is_wp_error($terms)) {
+                    echo esc_html($terms[0]->name);
                   }
                   ?>
+
                 </div>
-                <div class="p-news-article__date">
+
+
+                <div class="p-info-article__date">
+
                   <time datetime="<?php echo get_the_date('Y-m-d'); ?>" data-aos="fade-up">
+
                     <?php echo get_the_date('Y.m.d'); ?>
+
                   </time>
+
                 </div>
+
+
               </div>
+
             </header>
 
 
 
-            <!-- ACFリピーターフィールド（本文の小見出しとテキスト） -->
-            <section class="p-news-article__body">
-              <?php if (have_rows('news_sections')) : ?>
-                <?php while (have_rows('news_sections')) : the_row(); ?>
-                  <article class="p-news-article__section">
-                    <?php if ($subtitle = get_sub_field('subtitle')) : ?>
-                      <h5 class="p-news-article__subtitle" data-aos="fade-up">
-                        <?php echo esc_html($subtitle); ?>
-                      </h5>
-                    <?php endif; ?>
-                    <div class="p-news-article__text" data-aos="fade-up">
-                      <?php echo get_sub_field('text'); ?>
-                    </div>
-                  </article>
-                <?php endwhile; ?>
-              <?php endif; ?>
-            </section>
+
+            <!-- アイキャッチ -->
+            <?php if (has_post_thumbnail()) : ?>
+
+              <div class="p-info-article__thumbnail">
+                <?php the_post_thumbnail(); ?>
+              </div>
+
+            <?php endif; ?>
+
+
+            <!-- 本文 -->
+            <div class="p-info-article__body">
+
+              <?php the_content(); ?>
+
+            </div>
+
 
         <?php endwhile;
         endif; ?>
 
+
         <!-- 戻るボタン -->
         <div class="single__back-btn-wrap u-hover">
           <div class="single__back-btn inview">
-            <a href="<?php echo home_url('/news'); ?>" class="single__back-linkbtn">
+            <a href="<?php echo get_post_type_archive_link('info'); ?>" class="single__back-linkbtn">
               お知らせ一覧へ
             </a>
           </div>
         </div>
 
-      </section>
+      </div>
 
-
-    </div>
-
+    </section>
 
   </section>
 

@@ -3,7 +3,7 @@
 
 .p-recruit {
   background-color: v.$color-main-3;
-  background-image: url("../../img/recruit-bg.png");
+  background-image: url("../../img/recruit-bg.webp");
   background-size: cover;
   background-position: center;
   height: 63rem;
@@ -12,6 +12,7 @@
 
   @include mq(md) {
     height: 69.6rem;
+    background-image: url("../../img/recruit-bg-sp.webp");
   }
 
   &__inner {

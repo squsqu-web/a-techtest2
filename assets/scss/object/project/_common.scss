@@ -12,7 +12,7 @@
   z-index: 9999999;
 }
 
-body{
+body {
   font-family: v.$font-sub;
 }
 
@@ -21,8 +21,21 @@ body{
 // 共通背景用
 .l-page-bg {
   background-image: url("../../img/bg.png");
+
+  @include mq(md) {
+    background-image: url("../../img/sp-bg.png");
+  }
 }
 
+// ヘッダーとKVを重ねる為
+.l-main__front {
+  padding-top: 20rem;
+  position: relative;
+
+  @include mq(md) {
+    padding-top: 12.6rem;
+  }
+}
 
 
 // インビュー

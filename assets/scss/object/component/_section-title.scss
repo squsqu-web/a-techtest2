@@ -2,40 +2,54 @@
 @use '../../foundation/mixin' as *;
 
 .l-main-visual {
-  &__title {
-    font-size: 8rem;
-    letter-spacing: 0.1em;
-    line-height: calc(100 / 80);
-    color: v.$color-main;
-    font-family: v.$font-main;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    background-color: v.$color-bg-2;
-    font-weight: v.$Regular;
-    // padding: 9% 0;
-    // margin: 12% auto 0;
-    margin: 17.1rem auto 0;
-    padding: 13rem 0;
-    text-align: center;
-    width: 80%;
+  padding: 30.3rem 0 0;
+  margin-bottom: 12rem;
 
-    @media (max-width:767.98px){
-      font-size: 3.2rem;
-      margin: 8rem auto 0;
-      position: static;
-      padding: 22% 0%;
+  @include mq(md) {
+    padding: 18.6rem 0 0;
+    margin-bottom: 8.8rem;
+  }
+
+  &__title {
+    @include flex;
+    flex-direction: column;
+
+    width: 75%;
+    height: 16rem;
+    margin: 0 auto 1.2rem;
+
+    background-image: url("../../img/page-heading.png");
+    background-size: cover;
+    background-position: center;
+
+    @include mq(md) {
+      width: 92%;
+      height: 12rem;
+      background-image: url("../../img/page-heading-sp.png");
     }
   }
-}
 
-.l-main-visual img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1440/600;
+  &__title-ja {
+    font-size: 3.2rem;
+    letter-spacing: 0.1em;
+    color: v.$color-main;
+    font-family: v.$font-sub;
+    font-weight: v.$Regular;
 
-  @media (max-width:767.98px){
-    aspect-ratio: 375/300;
+    @include mq(md) {
+      font-size: 2rem;
+
+    }
+  }
+
+  &__title-en {
+    font-size: 1rem;
+    font-family: v.$font-main;
+    color: v.$color-main;
+    text-transform: capitalize;
+
+    @include mq(md) {
+      font-size: 1rem;
+    }
   }
 }

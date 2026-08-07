@@ -1,19 +1,14 @@
 <?php get_header(); ?>
 
-<main class="l-main">
+<main class="l-main__front">
 
   <!-- Hero -->
   <section class="p-hero">
     <picture class="p-hero__picture">
-      <source
-        srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg.webp"
-        type="image/webp">
-
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/img/fv_bg.png"
-        alt="園児が楽しく過ごしている様子"
-        class="p-hero__img"
-        fetchpriority="high">
+      <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.webp" type="image/webp">
+      <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.png">
+      <source srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg.webp" type="image/webp">
+      <img class="p-hero__img" src="<?php echo get_template_directory_uri(); ?>/img/fv_bg.png" alt="園児が楽しく遊んでいる様子" fetchpriority="high">
     </picture>
 
     <div class="p-hero__text" data-aos="fade-up">

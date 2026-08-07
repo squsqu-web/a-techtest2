@@ -12,6 +12,7 @@
 
 // Project / Objects
 @use 'object/project/common';
+@use 'object/project/info';
 
 // Layout
 @use 'layout/header';
@@ -26,8 +27,9 @@
 @use 'page/price-page' as price;
 @use 'page/salons-archive' as salons;
 @use 'page/salons-single' as salonsSingle;
-@use 'page/news-archive' as newsArchive;
 @use 'page/letter-archive' as letterArchive;
+@use 'page/info-archive' as infoArchive;
+@use 'page/info-single' as infoSingle;
 @use 'page/news-single' as newsSingle;
 @use 'page/reserve' as reserve;
 @use 'page/reserve-confirm' as reserve-confirm;
