@@ -13,6 +13,7 @@
     document.body.classList.toggle('no-scroll');
   });
 
+
   drawerLinks.forEach(drawerLink => {
     drawerLink.addEventListener('click', () => {
       hamburger.classList.remove('is-active');
@@ -21,12 +22,12 @@
     });
   });
 
+
   drawer.addEventListener('click', () => {
     hamburger.classList.remove('is-active');
     drawer.classList.remove('is-active');
     document.body.classList.remove('no-scroll');
   });
-
 
 
   // AOS
@@ -42,20 +43,23 @@
   });
 
 
-
-  //  inview
+  // inview
   jQuery(function ($) {
+
     $(".inview").on("inview", function (event, isInView) {
+
       if (isInView) {
         $(this).addClass("is-show");
       }
-    });
-  });
 
+    });
+
+  });
 
 
   // スムーズスクロール
   document.addEventListener('DOMContentLoaded', function () {
+
     const pageTop = document.querySelector('.page-top a');
 
     if (!pageTop) return;
@@ -64,31 +68,89 @@
 
     // スクロールで表示/非表示
     window.addEventListener('scroll', function () {
+
       if (window.scrollY > 100) {
         pageTop.style.display = 'flex';
       } else {
         pageTop.style.display = 'none';
       }
+
     });
+
 
     // クリックでトップにスムーズスクロール
     pageTop.addEventListener('click', function (e) {
+
       e.preventDefault();
+
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    });
-  });
 
+    });
+
+  });
 
 
   // 「.rellax」用パララックス
   if (document.querySelector('.rellax')) {
+
     new Rellax('.rellax', {
       speed: -5
     });
+
   }
+
+
+  // introduction タブ切り替え
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const tabs = document.querySelectorAll(
+      '.p-introduction-tab__button'
+    );
+
+    const panels = document.querySelectorAll(
+      '.p-introduction-filter'
+    );
+
+
+    tabs.forEach(function (tab) {
+
+      tab.addEventListener('click', function () {
+
+        const target = this.dataset.tab;
+
+
+        // タブのactiveを切り替え
+        tabs.forEach(function (tab) {
+          tab.classList.remove('is-active-introduction');
+        });
+
+        this.classList.add('is-active-introduction');
+
+
+        // パネルのactiveを切り替え
+        panels.forEach(function (panel) {
+          panel.classList.remove('is-active-introduction');
+        });
+
+
+        // 対応するパネルを表示
+        const targetPanel = document.querySelector(
+          '.p-introduction-filter[data-panel="' + target + '"]'
+        );
+
+        if (targetPanel) {
+          targetPanel.classList.add('is-active-introduction');
+        }
+
+      });
+
+    });
+
+  });
+
 
   // この下は消さない
 })(jQuery);

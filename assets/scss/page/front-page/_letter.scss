@@ -7,7 +7,9 @@
   margin: 0 auto;
   position: relative;
 
-  @include mq(md) {}
+  @include mq(md) {
+    background-image: url(../../img/top-letters__bg_sp.svg);
+  }
 
   &__inner {
     width: 75%;

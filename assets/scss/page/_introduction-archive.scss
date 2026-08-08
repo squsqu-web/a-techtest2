@@ -1,0 +1,307 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+
+/* ==============================
+各園のご紹介
+============================== */
+
+.contents-overlap-wrapper {
+  background-image: url(../../img/top-letters__bg.svg);
+
+  @include mq(md) {
+    background-image: url(../../img/top-letters__bg_sp.svg);
+  }
+}
+
+.l-introduction {
+
+  &__inner {
+    width: 75%;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 92%;
+    }
+  }
+
+  &__contents-wrap {
+    background-color: v.$color-white;
+    padding: 6rem 4rem 0;
+    border-radius: 40px;
+
+    @include mq(md) {}
+  }
+}
+
+
+.p-introduction-sec {
+  padding: 13.4rem 0 0;
+}
+
+/* ==============================
+検索タブ
+============================== */
+
+.p-introduction-tab {
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
+
+
+  &__button {
+    cursor: pointer;
+    @include flex();
+    width: 15rem;
+    height: 5rem;
+    background-color: v.$color-white;
+    color: v.$color-main-5;
+    border: 1px solid v.$color-main-5;
+    font-size: 1.6rem;
+    transition: .3s;
+    border-radius: 12px 12px 0 0;
+
+    &.is-active-introduction {
+      background-color: v.$color-main-5;
+      color: v.$color-white;
+    }
+
+    @include mq(md) {
+      font-size: 1.4rem;
+      padding: 1.2rem 1rem;
+    }
+  }
+}
+
+
+/* ==============================
+絞り込み
+============================== */
+
+.p-introduction-filter {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 0 0 3.2rem;
+
+  /* 都道府県タブなど、非表示パネル */
+  &:not(.is-active-introduction) {
+    display: none;
+  }
+
+  &__button {
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+    background-color: v.$color-white;
+    color: v.$color-text;
+    border: 1px solid v.$color-text;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 20rem;
+    height: 3.5rem;
+    @include flex();
+
+    &:hover {
+      background-color: v.$color-main-5;
+      color: v.$color-white;
+    }
+
+    @include mq(md) {
+      font-size: 1.4rem;
+      padding: .7rem 1.2rem;
+    }
+  }
+
+  @include mq(md) {
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+}
+
+
+/* ==============================
+園一覧
+============================== */
+
+.p-introduction-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
+
+  &__item {
+    width: 100%;
+    background-color: v.$color-main-4;
+    padding: 1.2rem;
+    border-radius: 20px;
+  }
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 3rem 2rem;
+
+    margin-bottom: 6rem;
+  }
+
+  @include mq(sm) {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    margin-bottom: 5rem;
+  }
+}
+
+
+/* ==============================
+園カード
+============================== */
+
+.p-introduction-card {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+
+  transition: .3s;
+
+  &:hover {
+    opacity: .7;
+  }
+
+
+  /* アイキャッチ */
+
+  &__thumbnail {
+    width: 100%;
+    aspect-ratio: 296 / 180;
+    margin-bottom: .8rem;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+
+
+  // カテゴリーボタンの箱
+  &__wrap {
+    display: flex;
+    gap: .8rem;
+    margin-bottom: .8rem;
+
+    @include mq(md) {}
+  }
+
+
+  /* 園の種類 */
+  &__type {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: v.$color-main;
+    background-color: v.$color-white;
+    padding: .4rem .8rem;
+    border-radius: .8rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+
+  /* 都道府県 */
+  &__area {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: v.$color-main;
+    background-color: v.$color-white;
+    padding: .4rem .8rem;
+    border-radius: .8rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* 園名 */
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: v.$color-main;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+  }
+
+}
+
+
+/* ==============================
+ページネーション
+============================== */
+
+.c-pagination {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 12.3rem;
+
+  @include mq(md) {
+    margin-bottom: 8rem;
+  }
+
+  .page-numbers {
+    background: v.$color-mtransparent;
+
+    border: 1px solid v.$color-mtransparent;
+
+    color: v.$color-main;
+
+    font-family: v.$font-main;
+
+    font-size: 1.6rem;
+
+    line-height: calc(40 / 32);
+
+    font-weight: 400;
+
+    padding: 6px 14px;
+
+
+    &.current {
+      background: none;
+      border: none;
+    }
+
+
+    &.next,
+    &.prev {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+
+/* ==============================
+Font Awesome
+============================== */
+
+.fa-chevron-right,
+.fa-chevron-left {
+  font-size: 2rem;
+
+  color: v.$color-main;
+
+  @include mq(md) {
+    font-size: 1.2rem;
+  }
+}

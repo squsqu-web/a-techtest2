@@ -1780,6 +1780,11 @@ body {
   margin: 0 auto;
   position: relative;
 }
+@media screen and (max-width: 767.98px) {
+  .p-letter {
+    background-image: url(../../img/top-letters__bg_sp.svg);
+  }
+}
 .p-letter__inner {
   width: 75%;
   margin: 0 auto;
@@ -1951,7 +1956,6 @@ body {
 .p-recruit__icon {
   width: 7.2rem;
   height: 7.2rem;
-  border-radius: 50%;
 }
 @media screen and (max-width: 767.98px) {
   .p-recruit__icon {
@@ -6527,13 +6531,70 @@ tr {
   }
 }
 
-.l-info__inner {
+.l-info-single__inner {
   width: 75%;
   margin-inline: auto;
+  background-color: #FFFFFF;
+  padding: 3.2rem 3.2rem 6.4rem;
+  border-radius: 40px;
+  margin: 12rem auto;
 }
 @media screen and (max-width: 767.98px) {
-  .l-info__inner {
+  .l-info-single__inner {
     width: 92%;
+    margin: 5.4rem auto 7.95rem;
+    padding: 3.2rem 1.5rem 6.4rem;
+  }
+}
+
+.p-info-article__date {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+.p-info-article__title {
+  font-size: 3.2rem;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-info-article__title {
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+.p-info-article__thumbnail img {
+  width: 59%;
+  height: auto;
+  border-radius: 40px;
+  margin: 0 auto 0.8rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-info-article__thumbnail img {
+    width: 100%;
+    height: 15.75rem;
+  }
+}
+
+.p-news-article__body {
+  margin-bottom: 6.4rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-news-article__body {
+    margin-bottom: 3.6rem;
+  }
+}
+.p-news-article__subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+.p-news-article__text {
+  font-size: 1.6rem;
+  margin-bottom: 3.6rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-news-article__text {
+    font-size: 1.4rem;
   }
 }
 
@@ -6569,6 +6630,12 @@ tr {
   border: none;
 }
 
+.single__back-btn-wrap {
+  text-align: center;
+}
+.single__back-linkbtn {
+  color: #55000C;
+}
 /* ==============================
   Font Awesome
 ============================== */
@@ -6584,237 +6651,269 @@ tr {
   }
 }
 
-.single__wrapper {
-  width: 72%;
-  display: flex;
-  gap: 11%;
-  margin: 8.5% 0 0 16%;
-  background-color: gainsboro;
-  border: 3px solid red;
+/* ==============================
+各園のご紹介
+============================== */
+.contents-overlap-wrapper {
+  background-image: url(../../img/top-letters__bg.svg);
 }
 @media screen and (max-width: 767.98px) {
-  .single__wrapper {
-    flex-direction: column;
+  .contents-overlap-wrapper {
+    background-image: url(../../img/top-letters__bg_sp.svg);
+  }
+}
+
+.l-introduction__inner {
+  width: 75%;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767.98px) {
+  .l-introduction__inner {
     width: 92%;
-    margin: 35% auto 0%;
-    padding: 0 0 12%;
   }
 }
-.single__back-btn-wrap {
-  width: 100%;
+.l-introduction__contents-wrap {
+  background-color: #FFFFFF;
+  padding: 6rem 4rem 0;
+  border-radius: 40px;
 }
-@media screen and (max-width: 767.98px) {
-  .single__back-btn-wrap {
-    margin: 0;
-  }
+.p-introduction-sec {
+  padding: 13.4rem 0 0;
 }
-.single__back-btn {
-  border-radius: 3rem;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3125;
-  text-align: center;
-  background-color: #949E33;
-  width: 20.2rem;
-  height: 4.1rem;
-  margin: 0 auto 26%;
+
+/* ==============================
+検索タブ
+============================== */
+.p-introduction-tab {
   display: flex;
-  align-items: center;
   justify-content: center;
+  gap: 0.8rem;
 }
-@media screen and (max-width: 767.98px) {
-  .single__back-btn {
-    margin: 0 auto 0;
-  }
-}
-.single__back-btn:hover {
-  opacity: 0.7;
-  transition: 0.5s;
-}
-.single__back-btn a {
-  color: #FFFFFF;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 600;
-}
-.single__back-btn-linkbtn {
-  color: #FFFFFF;
-  font-weight: 600;
-}
-@media screen and (max-width: 767.98px) {
-  .single__back-btn {
-    width: 20.2rem;
-    height: 4.1rem;
-    font-size: 1.6rem;
-  }
-}
-
-.p-news-article {
-  width: 66%;
-  margin: 0 auto;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article {
-    margin: 0 auto 0;
-    width: 100%;
-  }
-}
-.p-news-article__title {
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.2916666667;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  margin-bottom: 0.6rem;
-  font-weight: 400;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__title {
-    font-size: 1.8rem;
-    margin-bottom: 0.1rem;
-    line-height: 1.5;
-  }
-}
-.p-news-article__category {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  font-weight: 400;
-  text-transform: capitalize;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__category {
-    font-size: 1.2rem;
-  }
-}
-.p-news-article__category a {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__category a {
-    font-size: 1.2rem;
-  }
-}
-.p-news-article__date {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  font-weight: 400;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__date {
-    font-size: 1.2rem;
-  }
-}
-.p-news-article__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 5% 0 4%;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__img {
-    margin: 5% auto 13%;
-    aspect-ratio: 347/249;
-  }
-}
-.p-news-article__excerpt p, .p-news-article__text p {
+.p-introduction-tab__button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  background-color: #FFFFFF;
+  color: #EF8F9C;
+  border: 1px solid #EF8F9C;
   font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  width: 100%;
-  margin: 0 0 4%;
-  font-weight: 400;
+  transition: 0.3s;
+  border-radius: 12px 12px 0 0;
+}
+.p-introduction-tab__button.is-active-introduction {
+  background-color: #EF8F9C;
+  color: #FFFFFF;
 }
 @media screen and (max-width: 767.98px) {
-  .p-news-article__excerpt p, .p-news-article__text p {
+  .p-introduction-tab__button {
     font-size: 1.4rem;
-    margin: 0 auto 2.2rem;
-  }
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__excerpt p:last-child, .p-news-article__text p:last-child {
-    margin: 0 auto 7%;
-  }
-}
-.p-news-article__subtitle {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.2777777778;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  margin: 0 0 1.2%;
-  font-weight: 400;
-}
-@media screen and (max-width: 767.98px) {
-  .p-news-article__subtitle {
-    font-size: 1.6rem;
+    padding: 1.2rem 1rem;
   }
 }
 
-.newsContents-img img {
-  aspect-ratio: 691/250;
-}
-@media screen and (max-width: 767.98px) {
-  .newsContents-img img {
-    aspect-ratio: 347/249;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  main {
-    margin-bottom: 0;
-    position: relative;
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .l-single-news__wrapper {
-    padding-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .l-single-news__sidebar-title {
-    padding-top: 3.6rem;
-  }
-}
-
-@media screen and (max-width: 767.98px) {
-  .l-single-news__sidebar {
-    padding: 0 0 0 0.7rem;
-  }
-}
-@media screen and (max-width: 767.98px) {
-  .single__sidebar {
-    margin: 11% 0 1%;
-  }
-}
-
-.category-date {
+/* ==============================
+絞り込み
+============================== */
+.p-introduction-filter {
   display: flex;
   gap: 1.2rem;
-  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0 0 3.2rem;
+  /* 都道府県タブなど、非表示パネル */
 }
-.breadcrumb a {
-  color: #55000C;
+.p-introduction-filter:not(.is-active-introduction) {
+  display: none;
+}
+.p-introduction-filter__button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  background-color: #FFFFFF;
+  color: #EF8F9C;
+  border: 1px solid #EF8F9C;
+  text-decoration: none;
+  transition: 0.3s;
+  width: 20rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-introduction-filter__button:hover {
+  background-color: #EF8F9C;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction-filter__button {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction-filter {
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
 }
 
+/* ==============================
+園一覧
+============================== */
+.p-introduction-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+.p-introduction-list__item {
+  width: 100%;
+  background-color: #FFEDF0;
+  padding: 1.2rem;
+  border-radius: 20px;
+}
 @media screen and (max-width: 767.98px) {
-  .ctgt-back-btn {
-    margin: 13% auto 0%;
+  .p-introduction-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+    margin-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 699.98px) {
+  .p-introduction-list {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+}
+
+/* ==============================
+園カード
+============================== */
+.p-introduction-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.p-introduction-card:hover {
+  opacity: 0.7;
+}
+.p-introduction-card {
+  /* アイキャッチ */
+}
+.p-introduction-card__thumbnail {
+  width: 100%;
+  aspect-ratio: 296/180;
+  margin-bottom: 0.8rem;
+}
+.p-introduction-card__thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+.p-introduction-card__wrap {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.p-introduction-card {
+  /* 園の種類 */
+}
+.p-introduction-card__type {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #55000C;
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction-card__type {
+    font-size: 1.4rem;
+  }
+}
+.p-introduction-card {
+  /* 都道府県 */
+}
+.p-introduction-card__area {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #55000C;
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction-card__area {
+    font-size: 1.4rem;
+  }
+}
+.p-introduction-card {
+  /* 園名 */
+}
+.p-introduction-card__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #55000C;
+}
+@media screen and (max-width: 767.98px) {
+  .p-introduction-card__title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ==============================
+ページネーション
+============================== */
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12.3rem;
+}
+@media screen and (max-width: 767.98px) {
+  .c-pagination {
+    margin-bottom: 8rem;
+  }
+}
+.c-pagination .page-numbers {
+  background: rgba(255, 255, 255, 0.8980392157);
+  border: 1px solid rgba(255, 255, 255, 0.8980392157);
+  color: #55000C;
+  font-family: "Jost", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  font-weight: 400;
+  padding: 6px 14px;
+}
+.c-pagination .page-numbers.current {
+  background: none;
+  border: none;
+}
+.c-pagination .page-numbers.next, .c-pagination .page-numbers.prev {
+  background: none;
+  border: none;
+}
+
+/* ==============================
+Font Awesome
+============================== */
+.fa-chevron-right,
+.fa-chevron-left {
+  font-size: 2rem;
+  color: #55000C;
+}
+@media screen and (max-width: 767.98px) {
+  .fa-chevron-right,
+  .fa-chevron-left {
+    font-size: 1.2rem;
   }
 }
 

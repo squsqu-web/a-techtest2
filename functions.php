@@ -185,8 +185,8 @@ function create_post_types()
 {
   register_post_type('introduction', array(
     'labels' => array(
-      'name' => '施設紹介',
-      'singular_name' => '施設紹介',
+      'name' => '各園のご紹介',
+      'singular_name' => '各園のご紹介',
     ),
     'public' => true,
     'has_archive' => true,
@@ -273,12 +273,12 @@ function create_custom_taxonomies()
   );
 
 
-  // 施設紹介エリア
+  // 各園のご紹介 園の都道府県
   register_taxonomy(
     'introduction_area',
     'introduction',
     array(
-      'label' => '施設エリア',
+      'label' => '園の都道府県',
       'hierarchical' => true,
       'public' => true,
       'show_in_rest' => true,
@@ -287,6 +287,23 @@ function create_custom_taxonomies()
       ),
     )
   );
+
+  // 各園のご紹介 園の種類
+  register_taxonomy(
+    'introduction_type',
+    'introduction',
+    array(
+      'label' => '園の種類',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+      'rewrite' => array(
+        'slug' => 'introduction-type'
+      ),
+    )
+  );
+
+
 }
 
 add_action(
