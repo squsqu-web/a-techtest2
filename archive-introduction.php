@@ -4,34 +4,22 @@
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
-    <h1 class="l-main-visual__title-ja" data-aos="fade-up">
-      各園のご紹介
-    </h1>
-    <p class="l-main-visual__title-en">
-      introduction
-    </p>
+    <h1 class="l-main-visual__title-ja" data-aos="fade-up">各園のご紹介</h1>
+    <p class="l-main-visual__title-en">introduction</p>
   </div>
 </section>
 
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container u-hover" data-aos="fade-up">
   <nav class="breadcrumb">
-    <a href="<?php echo home_url('/'); ?>">
-      ホーム
-    </a>
-    <span class="sep" data-aos="fade-up">
-      &gt;
-    </span>
-    <span>
-      各園のご紹介
-    </span>
+    <a href="<?php echo home_url('/'); ?>">ホーム</a>
+    <span class="sep" data-aos="fade-up">&gt;</span>
+    <span>各園のご紹介</span>
   </nav>
 </div>
 
 
-
-
-
+<!-- メインコンテンツセクション -->
 <div class="contents-overlap-wrapper">
   <div class="l-introduction__inner">
     <section class="p-introduction-sec">
@@ -54,13 +42,10 @@
 
       </div>
 
+
       <div class="l-introduction__contents-wrap">
-
         <!-- 園の種類 -->
-        <div
-          class="p-introduction-filter is-active-introduction"
-          data-panel="type">
-
+        <div class="p-introduction-filter is-active-introduction" data-panel="type">
           <?php
           // introduction_type という分類箱の中に登録されているタームを全部持ってきて
           $terms = get_terms(array(
@@ -82,52 +67,37 @@
 
 
         <!-- 都道府県 -->
-        <div
-          class="p-introduction-filter"
-          data-panel="area">
+        <div class="p-introduction-filter" data-panel="area">
 
           <?php
           $terms = get_terms(array(
             'taxonomy' => 'introduction_area',
             'hide_empty' => true,
           ));
-
           if (!empty($terms) && !is_wp_error($terms)) :
-
             foreach ($terms as $term) :
           ?>
-
-              <a
-                href="<?php echo get_term_link($term); ?>"
+              <a href="<?php echo get_term_link($term); ?>"
                 class="p-introduction-filter__button">
-
                 <?php echo esc_html($term->name); ?>
-
               </a>
-
           <?php
             endforeach;
           endif;
           ?>
-
         </div>
 
 
         <!-- 園一覧 -->
         <?php if (have_posts()) : ?>
-
           <div class="p-introduction-list">
-
             <?php while (have_posts()) : the_post(); ?>
-
               <article
                 class="p-introduction-list__item"
                 data-aos="fade-up">
-
                 <a
                   class="p-introduction-card"
                   href="<?php the_permalink(); ?>">
-
 
                   <!-- アイキャッチ -->
                   <div class="p-introduction-card__thumbnail">
@@ -139,7 +109,6 @@
                         alt="<?php echo esc_attr(get_the_title()); ?>">
                     <?php endif; ?>
                   </div>
-
 
                   <!-- カテゴリーボタンの箱 -->
                   <div class="p-introduction-card__wrap">
@@ -155,7 +124,6 @@
                       <?php endif; ?>
                     </div>
 
-
                     <!-- 都道府県 -->
                     <div class="p-introduction-card__area">
                       <!-- 都道府県のパネル -->
@@ -166,46 +134,31 @@
                           <?php echo esc_html($terms[0]->name); ?>
                         </span>
                       <?php endif; ?>
-
                     </div>
                   </div>
 
                   <!-- 園名 -->
-                  <h2 class="p-introduction-card__title">
-                    <?php the_title(); ?>
-                  </h2>
-
-
+                  <h2 class="p-introduction-card__title"><?php the_title(); ?></h2>
                 </a>
 
               </article>
             <?php endwhile; ?>
           </div>
         <?php else : ?>
-
-          <p class="c-no-post" data-aos="fade-up">
-            投稿が見つかりませんでした。
-          </p>
-
+          <p class="c-no-post" data-aos="fade-up">投稿が見つかりませんでした。</p>
         <?php endif; ?>
 
 
         <!-- ページネーション -->
-        <div
-          class="c-pagination js-stagger"
-          id="introduction-pagi"
-          data-aos="fade-up">
-
+        <div class="c-pagination js-stagger" id="introduction-pagi" data-aos="fade-up">
           <?php the_posts_pagination(array(
             'mid_size'  => 2,
             'prev_text' => '<i class="fa-solid fa-chevron-left boby-fa introduction-arrow"></i>',
             'next_text' => '<i class="fa-solid fa-chevron-right boby-fa introduction-arrow"></i>',
           )); ?>
-
         </div>
       </div>
     </section>
-
 
   </div>
 </div>
@@ -234,16 +187,10 @@
 
     <!-- リンクボタン -->
     <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">
-        採用情報
-      </a>
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">
-        エントリー
-      </a>
+      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
+      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
     </div>
 
   </div>
-
 </section>
-
 <?php get_footer(); ?>

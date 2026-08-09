@@ -139,17 +139,13 @@
 
   @include mq(md) {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 3rem 2rem;
-
     margin-bottom: 6rem;
   }
 
   @include mq(sm) {
     grid-template-columns: 1fr;
-
     gap: 3rem;
-
     margin-bottom: 5rem;
   }
 }
@@ -161,19 +157,15 @@
 
 .p-introduction-card {
   display: block;
-
   color: inherit;
   text-decoration: none;
-
   transition: .3s;
 
   &:hover {
     opacity: .7;
   }
 
-
   /* アイキャッチ */
-
   &__thumbnail {
     width: 100%;
     aspect-ratio: 296 / 180;
@@ -251,36 +243,25 @@
 .c-pagination {
   display: flex;
   justify-content: center;
-
   margin-bottom: 12.3rem;
-
   @include mq(md) {
     margin-bottom: 8rem;
   }
 
   .page-numbers {
     background: v.$color-mtransparent;
-
     border: 1px solid v.$color-mtransparent;
-
     color: v.$color-main;
-
     font-family: v.$font-main;
-
     font-size: 1.6rem;
-
     line-height: calc(40 / 32);
-
     font-weight: 400;
-
     padding: 6px 14px;
-
 
     &.current {
       background: none;
       border: none;
     }
-
 
     &.next,
     &.prev {

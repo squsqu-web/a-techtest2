@@ -23,7 +23,7 @@
 
 
         <nav class="l-header__nav u-sp-none">
-          <ul class="l-header__list" data-aos="fade-up">
+          <ul class="l-header__list">
             <!-- about -->
             <li class="l-header__item u-hover">
               <a href="<?php echo home_url('/about/'); ?>" class="l-header__link u-hover">
@@ -64,7 +64,7 @@
 
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-                        alt="ロゴ画像" data-aos="fade-up">
+                        alt="ロゴ画像">
                     </picture>
                   </a>
                 </h1>
