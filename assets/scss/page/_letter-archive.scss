@@ -2,344 +2,406 @@
 @use '../foundation/mixin' as *;
 
 
-
+// ========================================
+// こもれびだより
+// ========================================
 
 .l-letter {
 
-
   &__wrapper {
-    background-color: rgb(196, 175, 175);
+    width: 91%;
+    margin: 12rem auto;
 
-    @include mq(md) {}
+    @include mq(md) {
+      width: 92%;
+      margin: 8rem auto;
+    }
   }
 
-  &__wrapper-innner{
-    display: flex;
+  &__wrapper-inner {
+    // display: flex;
+
     @include mq(md) {}
   }
 
 }
 
-.letter-list {
+
+// ========================================
+// こもれびだより一覧
+// ========================================
+
+.p-letter-archive {
+
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 96rem;
-  flex-wrap: wrap;
+  gap: 3.2rem;
 
   @include mq(md) {
     flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
   }
-}
-
-.letter-list__item {
-  width: 30rem;
-  height: 28rem;
-  background-color: pink;
-}
 
 
+  // ----------------------------------------
+  // 検索フォームと記事一覧
+  // ----------------------------------------
+
+  &__content {
+    width: 96rem;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
 
 
+  // ----------------------------------------
+  // 検索フォーム
+  // ----------------------------------------
 
+  &__search {
 
+    @include mq(md) {}
+  }
 
+  &__search-form {
 
+    @include mq(md) {}
+  }
 
+  &__search-title {
+    font-size: 2.4rem;
+    margin: 0 0 .8rem;
 
+    @include mq(md) {}
+  }
 
-
-
-.l-news {
-  &__wrapper {
+  &__search-select-wrap {
     display: flex;
-    width: 75%;
-    margin: 8.5% auto 0;
-    background-color: gainsboro;
-    border: 3px solid red;
+    align-items: center;
+    gap: .8rem;
+    margin: 0 0 1.2rem;
+
+    @include mq(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 0 3.2rem;
+    }
+  }
+
+  // 園を探すプルダウン
+  &__search-select {
+
+    select {
+      height: 3.6rem;
+      padding: 0 1.5rem;
+      border: 1px solid #ccc;
+      background-color: v.$color-white;
+      font-size: 1.6rem;
+      color: v.$color-main;
+      cursor: pointer;
+      border-radius: 8px;
+      border-bottom: 1px solid v.$color-main;
+    }
+
+    &--area {
+      width: 24rem;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &--school {
+      width: 20rem;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    @include mq(md) {}
+  }
+
+  // 検索ボタン
+  &__search-button {
+
+    button {
+      display: block;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 3.6rem;
+      height: auto;
+    }
+
+    @include mq(md) {}
+  }
+
+  // ----------------------------------------
+  // 一覧リスト
+  // ----------------------------------------
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include mq(md) {
+      gap: 2rem;
+      justify-content: center;
+    }
+  }
+
+
+  // ----------------------------------------
+  // 記事
+  // ----------------------------------------
+
+  &__item {
+    width: 30rem;
+    height: 28rem;
+    background-color: v.$color-white;
+    border-radius: 2rem;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // カード
+  // ----------------------------------------
+
+  &__card {
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // カードリンク
+  // ----------------------------------------
+
+  &__link {
+    font-size: 1.8rem;
+    color: v.$color-main;
+
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+  }
+
+
+  // ----------------------------------------
+  // カード内部
+  // ----------------------------------------
+
+  &__card-wrap {
+    padding: 1.2rem;
+    position: relative;
+    height: calc(28rem - 13.5rem);
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // アイキャッチ画像
+  // ----------------------------------------
+
+  &__image {
+    width: 100%;
+    height: 13.5rem;
+    border-radius: 2rem 2rem 0 0;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // カードタイトル
+  // ----------------------------------------
+
+  &__card-title {
+    font-size: 1.8rem;
+    color: v.$color-main;
+    margin: 0 0 1.1rem;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // 本文
+  // ----------------------------------------
+
+  &__text {
+    font-size: 1.6rem;
+    color: v.$color-main;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // 日付
+  // ----------------------------------------
+
+  &__date {
+    font-size: 1.4rem;
+    color: v.$color-main;
+
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1.2rem;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // リンクラップ
+  // ----------------------------------------
+
+  &__link-wrap {
+    text-align: center;
+
+    @include mq(md) {}
+  }
+
+
+  // ----------------------------------------
+  // 投稿なし
+  // ----------------------------------------
+
+  &__no-post {
+
+    @include mq(md) {}
+  }
+
+
+  // ========================================
+  // サイドバー
+  // ========================================
+
+  &__sidebar {
+    width: 32.8rem;
+    background-color: yellow;
+    border-left: 1px solid v.$color-main;
+    padding: 0 0 0 2.4rem;
+
+    @include mq(md) {}
+  }
+
+
+  // サイドバータイトル
+  &__sidebar-title {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+
+    @include mq(md) {
+      font-size: 2rem;
+
+    }
+  }
+
+
+  // アーカイブ年
+  &__archive-year {
+    font-size: 1.6rem;
+    border-left: 4px solid v.$color-text;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+
+    }
+  }
+
+
+  // アーカイブ一覧
+  &__archive-list {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+
+    @include mq(md) {}
+  }
+
+
+  // アーカイブ項目
+  &__archive-item {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    width: 6.2rem;
+    height: 2.2rem;
+    background-color: v.$color-white;
+    border-radius: 8px;
+    @include flex();
+
+    @include mq(md) {
+      font-size: 1.2rem;
+      width: 5.7rem;
+      height: 2rem;
+    }
+  }
+
+  &__search-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 
     @include mq(md) {
       display: block;
-      width: 90%;
-      margin: 0 auto;
-      padding: 27% 0 3.6rem;
     }
   }
 
-  &__sidebar {
-    border-left: 1px solid v.$color-main;
-    width: 16%;
-    padding: .5% 0 0 1%;
-    height: 10%;
 
-    @media screen and (max-width: 1400px) {
-      margin-left: 4%;
-    }
+  &__search-school-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-    @include mq(md) {
-      border-left: none;
-      width: 86%;
-      margin-left: 0;
-    }
+    @include mq(md) {}
+  }
 
-    &-title {
-      font-size: 3.2rem;
-      letter-spacing: 0.1em;
-      line-height: calc(40 / 32);
+
+  &__search-select {
+
+    select {
+      height: 5rem;
+      padding: 0 1.5rem;
+      border: 1px solid #ccc;
+      background-color: v.$color-white;
+      font-size: 1.6rem;
       color: v.$color-main;
-      font-family: v.$font-main;
-      padding: 0 0 15%;
-      text-transform: capitalize;
-      font-weight: v.$Regular;
+      cursor: pointer;
+    }
 
-      @include mq(md) {
-        font-size: 2.4rem;
-        margin: 0 0 6%;
-        padding: 0;
+    &--area {
+      width: 24rem;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &--school {
+      width: 20rem;
+
+      select {
+        width: 100%;
       }
     }
   }
 
-  &__category-item {
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-    line-height: calc(21 / 16);
-    color: v.$color-main;
-    font-family: v.$font-primary-gothic;
-    font-weight: v.$Regular;
 
-    @include mq(md) {
-      font-size: 1.4rem;
-      width: 15rem;
-    }
-  }
 
-  &__content {
-    flex: 1;
-    width: 100%;
-  }
-}
-
-.news__category-item-top,
-.news__category-item-bottom {
-  display: block;
-
-  @include mq(md) {
-    display: flex;
-  }
-}
-
-.p-news-card {
-  display: flex;
-  background-color: v.$color-bg-2;
-  margin: 0 0 2rem;
-  padding: 2.6% 0 1% 2.5%;
-  max-width: 86.4rem;
-  width: 100%;
-
-  @include mq(md) {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 3% 0 0;
-    max-width: none;
-    margin: 0;
-  }
-
-  &__date {
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-    line-height: calc(20 / 14);
-    color: v.$color-main;
-    font-family: v.$font-main;
-    font-weight: v.$Regular;
-
-    @include mq(md) {
-      font-size: 1.4rem;
-      width: 92%;
-      margin: 0 auto 2%;
-    }
-  }
-
-  &__title {
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-    line-height: calc(21 / 16);
-    color: v.$color-main;
-    font-family: v.$font-sub;
-    width: 66%;
-    margin-left: 1rem;
-    font-weight: v.$Regular;
-
-    @include mq(md) {
-      font-size: 1.4rem;
-      width: 93%;
-      margin: 0 auto;
-    }
-  }
-
-  &__category {
-    font-size: 3.2rem;
-    letter-spacing: 0.04em;
-    line-height: calc(40 / 32);
-    color: v.$color-accent-3;
-    font-family: v.$font-main;
-    margin-left: auto;
-    margin-right: 3%;
-    text-transform: capitalize;
-    font-weight: v.$Regular;
-
-    @media screen and (max-width: 1200px) {
-      font-size: 2rem;
-    }
-
-    @include mq(md) {
-      font-size: 1.8rem;
-      letter-spacing: 0.1em;
-      width: 92%;
-      text-align: end;
-      position: relative;
-      top: -.7rem;
-    }
-  }
-}
-
-.news-item {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pagination {
-  .nav-links {
-    .page-numbers {
-      background: v.$color-mtransparent;
-      border: 1px solid v.$color-mtransparent;
-      color: v.$color-main;
-      font-family: v.$font-main;
-      font-size: 3.2rem;
-      box-shadow: none;
-      letter-spacing: 0.1em;
-      line-height: calc(40 / 32);
-      font-weight: 400;
-
-      @include mq(md) {
-        font-size: 1.6rem;
-      }
-
-      &.current {
-        color: v.$color-main;
-        background: none;
-        border: none;
-      }
-
-      &.next {
-        color: v.$color-main;
-        background: none;
-        border: none;
-      }
-    }
-  }
-}
-
-.l-news__category-item.active {
-  opacity: 0.7;
-}
-
-.l-news__category-item {
-  cursor: pointer;
-  margin-bottom: .5rem;
-}
-
-.news-item {
-  margin-bottom: 2rem;
-
-  @include mq(md) {
-    margin-bottom: 1.3rem;
-  }
-}
-
-@include mq(md) {
-  .l-news__sidebar-title {
-    padding-top: 0 !important;
-
-    .l-news__content .pagination {
-      margin: 0 !important;
-    }
-
-    .l-news__sidebar .l-news__sidebar-title {
-      padding: 0 !important;
-    }
-
-    #news-pagi .pagination {
-      margin: 0 !important;
-    }
-  }
-}
-
-/* サイドバーのカテゴリーリスト */
-.l-news__category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* 各カテゴリー項目 */
-.l-news__category-item {
-  margin-bottom: 6%;
-  cursor: pointer;
-}
-
-@include mq(md) {
-  .l-news__category-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 0;
-    width: 100%;
-  }
-
-  .l-news__category-item {
-    margin-bottom: 0;
-    width: 50%;
-  }
-}
-
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 2rem;
-  color: v.$color-main;
-  background: v.$color-mtransparent;
-
-  @include mq(md) {
-    font-size: 1.2rem;
-  }
-}
-
-.pagination {
-  @include mq(md) {
-    margin: 0 0 11%;
-  }
-}
-
-@include mq(md) {
-  .l-news__wrapper .l-news__sidebar {
-    padding: 0 0 13% 0;
-  }
-}
-
-@include mq(md) {
-  main {
-    min-width: 32rem;
-  }
-}
-
-.news-arrow {
-  font-size: 1.5rem;
-  margin-left: .3rem;
-  font-weight: 600;
-
-  @include mq(md) {
-    margin: 0;
-  }
 }

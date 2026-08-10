@@ -319,6 +319,14 @@ add_action(
  *====================================*/
 function set_custom_posts_per_page_by_device($query)
 {
+  if (is_admin()) {
+    return;
+  }
+
+  if (!$query->is_main_query()) {
+    return;
+  }
+
   if (
     $query->is_post_type_archive('introduction') ||
     $query->is_post_type_archive('letter') ||

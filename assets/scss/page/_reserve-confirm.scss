@@ -98,13 +98,13 @@
   @include mq(md) {}
 }
 
-@media only screen and (max-width: 767.98px) {
+// @media only screen and (max-width: 767.98px) {
 
-  table th,
-  table td {
-    display: block;
-  }
-}
+//   table th,
+//   table td {
+//     display: block;
+//   }
+// }
 
 .confirm-table td,
 .confirm-table th {

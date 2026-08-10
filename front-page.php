@@ -30,7 +30,6 @@
         data-aos="fade-up">
     </div>
 
-
     <div class="p-about__heading">
       <h2 class="p-about__title">
         桜のこもれびキッズランドへ<br>
@@ -90,8 +89,6 @@
     </div>
   </section>
 
-
-
   <!-- こもれびだよりセクション -->
   <section class="p-letter">
     <div class="p-letter__inner">
@@ -110,7 +107,6 @@
       </div>
 
       <ul class="p-letter__list">
-
         <?php
         $args = array(
           'post_type' => 'letter',
@@ -125,7 +121,6 @@
           while ($letter_query->have_posts()) :
             $letter_query->the_post();
         ?>
-
             <li class="p-letter__item">
               <a href="<?php the_permalink(); ?>" class="p-letter__card">
 
@@ -141,35 +136,23 @@
                     class="p-letter__image">
                 <?php endif; ?>
 
-
                 <div class="p-letter__card-wrap">
-
                   <h3 class="p-letter__card-title">
                     <?php the_title(); ?>
                     <!-- <?php the_field('title'); ?> -->
                   </h3>
-
-                  <!-- <p class="p-letter__text"></p> -->
-
                   <time class="p-letter__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
                     <?php echo get_the_date('Y.m.d'); ?>
                   </time>
-
                 </div>
-
               </a>
             </li>
-
-
         <?php
           endwhile;
         endif;
-
         wp_reset_postdata();
         ?>
-
       </ul>
-
 
       <!-- リンクボタン -->
       <div class="inview p-letter__link-wrap">
@@ -178,9 +161,7 @@
         </a>
       </div>
     </div>
-
   </section>
-
 
 
   <!-- 採用情報セクション -->
@@ -200,7 +181,6 @@
           <h2 class="p-recruit__title">採用情報</h2>
           <p class="p-recruit__subtitle">recruit</p>
         </div>
-
         <p class="p-recruit__text">桜のこもれびキッズランドで働いてみませんか？</p>
       </div>
 
@@ -213,16 +193,8 @@
           エントリー
         </a>
       </div>
-
     </div>
-
   </section>
 
-
-
-
 </main>
-
-
-
 <?php get_footer(); ?>

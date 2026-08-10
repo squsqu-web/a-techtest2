@@ -1,9 +1,11 @@
+@use '../foundation/mixin' as *;
+
 // スマホだけ表示
 .sp_only {
   display: none;
 }
 
-@media screen and (max-width: 786px) {
+@include mq(md) {
   .sp_only {
     display: block;
   }
@@ -14,29 +16,9 @@
   display: block;
 }
 
-@media screen and (max-width: 786px) {
+@include mq(md) {
   .pc_only {
     display: none;
   }
 }
 
-/* 1200px以下専用 */
-.under1200_only {
-  display: block;
-}
-
-@media screen and (min-width: 1200px) {
-  .under1200_only {
-    display: none;
-  }
-}
-
-.over1200_only {
-  display: none;
-}
-
-@media screen and (min-width: 1201px) {
-  .over1200_only {
-    display: block;
-  }
-}
