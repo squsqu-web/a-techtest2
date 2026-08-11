@@ -10,7 +10,6 @@
     </div>
   </section>
 
-
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container u-hover" data-aos="fade-up">
     <nav class="breadcrumb">
@@ -32,35 +31,87 @@
 
           <!-- 園をさがす -->
           <section class="p-letter-archive__search">
-            <form class="p-letter-archive__search-form" action="">
+            <form
+              class="p-letter-archive__search-form"
+              action="<?php echo esc_url(get_post_type_archive_link('letter')); ?>"
+              method="get">
 
               <h3 class="p-letter-archive__search-title">
                 園をさがす
               </h3>
 
+
               <div class="p-letter-archive__search-select-wrap">
 
+                <!-- 都道府県 -->
                 <div class="p-letter-archive__search-select p-letter-archive__search-select--area">
                   <select name="area">
                     <option value="">都道府県をえらぶ</option>
-                    <option value="tokyo">東京都</option>
-                    <option value="fukuoka">福岡県</option>
-                    <option value="osaka">大阪府</option>
+
+                    <?php
+                    $areas = get_terms(array(
+                      'taxonomy'   => 'introduction_area',
+                      'hide_empty' => true,
+                    ));
+
+                    if (!is_wp_error($areas)) :
+                      foreach ($areas as $area) :
+                    ?>
+
+                        <option
+                          value="<?php echo esc_attr($area->slug); ?>"
+                          <?php selected(
+                            isset($_GET['area']) ? $_GET['area'] : '',
+                            $area->slug
+                          ); ?>>
+                          <?php echo esc_html($area->name); ?>
+                        </option>
+
+                    <?php
+                      endforeach;
+                    endif;
+                    ?>
+
                   </select>
                 </div>
 
 
+                <!-- 園 -->
                 <div class="p-letter-archive__search-school-wrap">
 
                   <div class="p-letter-archive__search-select p-letter-archive__search-select--school">
                     <select name="school">
+
                       <option value="">園をえらぶ</option>
-                      <option value="school-a">〇〇保育園</option>
-                      <option value="school-b">△△こども園</option>
-                      <option value="school-c">□□保育園</option>
+
+                      <?php
+                      $schools = get_posts(array(
+                        'post_type'      => 'introduction',
+                        'posts_per_page' => -1,
+                        'post_status'    => 'publish',
+                        'orderby'        => 'title',
+                        'order'          => 'ASC',
+                      ));
+
+                      foreach ($schools as $school) :
+                      ?>
+
+                        <option
+                          value="<?php echo esc_attr($school->ID); ?>"
+                          <?php selected(
+                            isset($_GET['school']) ? $_GET['school'] : '',
+                            $school->ID
+                          ); ?>>
+                          <?php echo esc_html(get_the_title($school->ID)); ?>
+                        </option>
+
+                      <?php endforeach; ?>
+
                     </select>
                   </div>
 
+
+                  <!-- 検索ボタン -->
                   <div class="p-letter-archive__search-button">
                     <button type="submit">
                       <img
@@ -72,7 +123,6 @@
                 </div>
 
               </div>
-
 
             </form>
           </section>
@@ -113,7 +163,7 @@
                         </h2>
 
                         <p class="p-letter-archive__text">
-                          <?php the_excerpt(); ?>
+                          <?php echo esc_html(get_field('letter_title')); ?>
                         </p>
 
                         <time
@@ -135,7 +185,7 @@
             <?php else : ?>
 
               <p class="p-letter-archive__no-post">
-                こもれびだよりはまだありません。
+                該当するこもれびだよりはまだありません。
               </p>
 
             <?php endif; ?>
@@ -156,43 +206,87 @@
 
         </div>
 
-
         <!-- サイドバー -->
         <aside class="p-letter-archive__sidebar">
+          <h4 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">アーカイブ</h4>
 
-          <h4 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">
-            アーカイブ
-          </h4>
+          <?php
+          // こもれびだよりの投稿日をすべて取得
+          $letter_dates = get_posts(array(
+            'post_type'      => 'letter',
+            'posts_per_page' => -1,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'fields'         => 'ids',
+          ));
 
-          <h5 class="p-letter-archive__archive-year">2023年</h5>
+          $archives = array();
+          if (!empty($letter_dates)) :
+            foreach ($letter_dates as $letter_id) :
+              $year  = get_the_date('Y', $letter_id);
+              $month = get_the_date('n', $letter_id);
 
-          <ul class="p-letter-archive__archive-list">
-            <li class="p-letter-archive__archive-item u-hover inview">4がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">5がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">6がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">7がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">8がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">9がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">10がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">11がつ</li>
-            <li class="p-letter-archive__archive-item u-hover inview">12がつ</li>
-          </ul>
+              if (!isset($archives[$year])) {
+                $archives[$year] = array();
+              }
 
+              if (!in_array($month, $archives[$year])) {
+                $archives[$year][] = $month;
+              }
+            endforeach;
 
-          <h5 class="p-letter-archive__archive-year">2024年</h5>
+            krsort($archives);
 
-          <ul class="p-letter-archive__archive-list">
-            <li class="p-letter-archive__archive-item u-hover inview">4がつ</li>
-          </ul>
+            foreach ($archives as $year => $months) :
+              rsort($months);
+          ?>
 
+              <h5 class="p-letter-archive__archive-year"><?php echo esc_html($year); ?>年</h5>
+
+              <ul class="p-letter-archive__archive-list">
+                <?php foreach ($months as $month) : ?>
+
+                  <?php
+                  $is_active =
+                    isset($_GET['letter_year'], $_GET['letter_month']) &&
+                    (int) $_GET['letter_year'] === (int) $year &&
+                    (int) $_GET['letter_month'] === (int) $month;
+                  ?>
+
+                  <li class="p-letter-archive__archive-item u-hover inview<?php echo $is_active ? ' is-active' : ''; ?>">
+                    <a
+                      href="<?php echo esc_url(
+                              add_query_arg(
+                                array(
+                                  'letter_year'  => $year,
+                                  'letter_month' => $month,
+                                ),
+                                get_post_type_archive_link('letter')
+                              )
+                            ); ?>">
+
+                      <?php echo esc_html($month); ?>月
+                    </a>
+                  </li>
+
+                <?php endforeach; ?>
+              </ul>
+            <?php
+            endforeach;
+          else :
+            ?>
+
+            <p class="p-letter-archive__no-archive">
+              アーカイブはありません。
+            </p>
+
+          <?php endif; ?>
         </aside>
-
 
       </div>
     </div>
   </div>
 </main>
-
-
 
 <?php get_footer(); ?>

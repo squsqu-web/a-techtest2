@@ -468,3 +468,138 @@ function auto_slug_to_ascii($data, $postarr)
 }
 
 add_filter('wp_insert_post_data', 'auto_slug_to_ascii', 10, 2);
+
+
+
+/**
+ * こもれびだより検索
+ */
+function letter_search_query($query)
+{
+    // 管理画面・メインクエリ以外は対象外
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    // こもれびだよりアーカイブのみ
+    if (!$query->is_post_type_archive('letter')) {
+        return;
+    }
+
+    // 園IDを取得
+    $school_id = isset($_GET['school'])
+        ? absint($_GET['school'])
+        : 0;
+
+    // 都道府県スラッグを取得
+    $area = isset($_GET['area'])
+        ? sanitize_text_field($_GET['area'])
+        : '';
+
+
+    /*
+     * ====================================
+     * 園を選択した場合
+     * ====================================
+     */
+    if ($school_id) {
+        $query->set('meta_query', array(
+            array(
+                'key'     => 'letter_school',
+                'value'   => $school_id,
+                'compare' => '=',
+            ),
+        ));
+        return;
+    }
+
+
+    /*
+     * ====================================
+     * 都道府県を選択した場合
+     * ====================================
+     */
+    if ($area) {
+        // 選択された都道府県に属する園を取得
+        $school_ids = get_posts(array(
+            'post_type'      => 'introduction',
+            'posts_per_page' => -1,
+            'post_status'    => 'publish',
+            'fields'         => 'ids',
+
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'introduction_area',
+                    'field'    => 'slug',
+                    'terms'     => $area,
+                ),
+            ),
+        ));
+
+
+        // 該当する園が存在する場合
+        if (!empty($school_ids)) {
+            $meta_query = array(
+                'relation' => 'OR',
+            );
+            foreach ($school_ids as $school_id) {
+                $meta_query[] = array(
+                    'key'     => 'letter_school',
+                    'value'   => $school_id,
+                    'compare' => '=',
+                );
+            }
+
+            $query->set('meta_query', $meta_query);
+        } else {
+            // 該当する園がなければ0件
+            $query->set('post__in', array(0));
+        }
+    }
+}
+
+add_action('pre_get_posts', 'letter_search_query');
+
+
+
+
+/**
+ * こもれびだより 月別アーカイブ
+ */
+function letter_archive_query($query)
+{
+    // 管理画面・メインクエリ以外は対象外
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    // こもれびだより一覧ページのみ
+    if (!$query->is_post_type_archive('letter')) {
+        return;
+    }
+
+    // 年
+    $year = isset($_GET['letter_year'])
+        ? absint($_GET['letter_year'])
+        : 0;
+
+    // 月
+    $month = isset($_GET['letter_month'])
+        ? absint($_GET['letter_month'])
+        : 0;
+
+    // 年月が指定されていなければ何もしない
+    if (!$year || !$month) {
+        return;
+    }
+
+    // 指定された年月の記事だけ取得
+    $query->set('date_query', array(
+        array(
+            'year'  => $year,
+            'month' => $month,
+        ),
+    ));
+}
+
+add_action('pre_get_posts', 'letter_archive_query');

@@ -34,10 +34,7 @@
 
 
     <section class="l-info-single">
-
       <div class="l-info-single__inner">
-
-
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -48,12 +45,10 @@
               </time>
             </div>
 
-
             <!-- 記事タイトル・カテゴリ・日付 -->
             <h1 class="p-info-article__title" data-aos="fade-up">
               <?php the_title(); ?>
             </h1>
-
 
             <!-- アイキャッチ -->
             <div class="p-info-article__thumbnail">
@@ -65,7 +60,6 @@
                   alt="No Image">
               <?php endif; ?>
             </div>
-
 
             <!-- ACFリピーターフィールド -->
             <section class="p-news-article__body">
@@ -83,12 +77,8 @@
               <?php endif; ?>
             </section>
 
-
-
-
         <?php endwhile;
         endif; ?>
-
 
         <!-- 戻るボタン -->
         <div class="single__back-btn-wrap u-hover">
@@ -100,14 +90,9 @@
         </div>
 
       </div>
-
     </section>
 
   </section>
-
 </main>
-
-
-
 
 <?php get_footer(); ?>

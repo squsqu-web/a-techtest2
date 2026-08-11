@@ -2,10 +2,6 @@
 @use '../foundation/mixin' as *;
 
 
-// ========================================
-// こもれびだより
-// ========================================
-
 .l-letter {
 
   &__wrapper {
@@ -280,6 +276,9 @@
   // ----------------------------------------
 
   &__no-post {
+    font-size: 2rem;
+    color: v.$color-main;
+    margin: 3rem 0;
 
     @include mq(md) {}
   }
@@ -291,7 +290,6 @@
 
   &__sidebar {
     width: 32.8rem;
-    background-color: yellow;
     border-left: 1px solid v.$color-main;
     padding: 0 0 0 2.4rem;
 
@@ -401,7 +399,6 @@
       }
     }
   }
-
 
 
 }
