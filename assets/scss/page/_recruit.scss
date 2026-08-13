@@ -1,0 +1,257 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.p-recruit-page {
+  &__icon-wrap {
+    width: 10.8rem;
+    height: 10.8rem;
+    background-color: v.$color-main-3;
+    @include flex;
+    margin: 0 auto 5rem;
+    border-radius: 50%;
+
+    @include mq(md) {
+      width: 8rem;
+      height: 8rem;
+      margin: 0 auto .8rem;
+    }
+
+  }
+
+  &__heading {
+    text-align: center;
+
+    @include mq(md) {}
+
+  }
+
+  &__icon {
+    width: 7.2rem;
+    height: 7.2rem;
+
+    @include mq(md) {
+      width: 5.3rem;
+      height: 5.3rem;
+    }
+
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    color: v.$color-main;
+    margin: 0 0 1rem;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: v.$color-main;
+    margin: 0 0 4.8rem;
+
+    @include mq(md) {}
+
+  }
+
+
+  // たいせつにしていることセクション
+  &__motto {
+    margin: 0 0 12rem;
+
+    @include mq(md) {
+      width: 92%;
+      margin: 0 auto 8rem;
+    }
+
+  }
+
+  &__motto-list {
+    max-width: 132rem;
+    margin-inline: auto;
+  }
+
+  &__motto-content {
+    flex: 1;
+    width: auto;
+
+    @include mq(md) {
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+  }
+
+  &__motto-item {
+    display: flex;
+    gap: 4.8rem;
+    justify-content: center;
+    margin-bottom: 3.2rem;
+
+    &.is-reverse {
+      flex-direction: row-reverse;
+    }
+
+    @include mq(md) {
+      flex-direction: column;
+      gap: 3.2rem;
+
+      &.is-reverse {
+        flex-direction: column;
+      }
+    }
+
+  }
+
+  &__motto-img {
+    width: 48rem;
+    height: 32rem;
+    border-radius: 40px;
+    overflow: hidden;
+
+    @include mq(md) {
+      width: 24rem;
+      height: 16rem;
+      margin: 0 auto;
+    }
+
+  }
+
+  &__motto-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__motto-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    color: v.$color-main;
+    margin-bottom: 2.4rem;
+    border-bottom: 1px solid v.$color-main;
+    padding: 1.4rem 8rem 0 0;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+      padding-bottom: 1.1rem;
+    }
+  }
+
+  &__motto-title-icon {
+    width: 2.4rem;
+    height: auto;
+    flex-shrink: 0;
+
+    @include mq(md) {
+      width: 2rem;
+    }
+  }
+
+  &__motto-text {
+    font-size: 1.6rem;
+    color: v.$color-main;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+
+  }
+
+
+  // 募集要項セクション
+  &__requirements {
+    margin: 0 0 12rem;
+
+    @include mq(md) {
+      margin: 0 auto 8rem;
+    }
+  }
+
+  &__requirements-table__inner {
+    width: 75%;
+    max-width: 1080px;
+    background-color: v.$color-white;
+    margin-inline: auto;
+    padding: 2.4rem;
+    border-radius: 20px;
+
+    @include mq(md) {
+      width: 92%;
+    }
+  }
+
+  &__req-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__req-item {
+    display: flex;
+    align-items: center;
+    padding: 3.2rem 0;
+    border-bottom: 1px dashed #e0a3ac; // 画像のピンクの点線に合わせて調整してください
+
+
+    @include mq(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+      padding: 0 0 2.4rem;
+    }
+  }
+
+  &__req-item-big-pb {
+    padding: 3.9rem 0;
+
+    @include mq(md) {
+      padding: 3.2rem 0;
+    }
+  }
+
+  &__req-term {
+    width: 20rem;
+    flex-shrink: 0;
+    background-color: #f38f9f; // 見出しのピンク色（適宜変数に変更してください）
+    color: v.$color-white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: .6rem 0;
+    border-radius: 50vh; // 綺麗なカプセル型
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+  &__req-desc {
+    flex-grow: 1;
+    padding-left: 2.5rem;
+    font-size: 1.6rem;
+    color: v.$color-main;
+    line-height: 1.8;
+
+    @include mq(md) {
+      padding-left: 0;
+      font-size: 1.4rem;
+      padding: 0 1.5rem;
+    }
+  }
+
+  &__req-note {
+    font-size: 1.3rem;
+    color: #666; // 注釈のグレー（適宜調整してください）
+
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+
+
+}

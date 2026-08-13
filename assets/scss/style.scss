@@ -34,9 +34,11 @@
 @use 'page/introduction-archive' as introductionArchive;
 @use 'page/introduction-single' as introductionSingle;
 @use 'page/reserve' as reserve;
+@use 'page/recruit' as recruit;
 @use 'page/reserve-confirm' as reserve-confirm;
 @use 'page/reserve-thanks' as reserve-thanks;
 @use 'page/page404' as page404;
+@use 'page/privacy-policy-page' as privacy-policy;
 
 
 // Utility

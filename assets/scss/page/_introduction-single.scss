@@ -19,8 +19,9 @@
 
 .p-introduction-single {
   &__thumbnail {
-    width: 74%;
-    aspect-ratio: calc(800/450);
+    // aspect-ratio: calc(800/450);
+    width: 80rem;
+    height: 45rem;
     margin: 0 auto 3.2rem;
     border-radius: 40px;
 
