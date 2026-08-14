@@ -271,7 +271,50 @@
 
   <!-- よくある質問アコーディオン -->
   <div class="p-recruit-page__faq-list">
-    よくある質問アコーディオン
+    <div class="p-recruit-page__faq-list__inner">
+
+      <div class="c-accordion">
+        <!-- アコーディオン１項目目 -->
+        <div class="u-hover">
+          <div class="c-accordion__item" data-aos="fade-up">
+            <button class="c-accordion__question accordion-header active">
+              スタッフの資格や経験について教えてください。
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="c-accordion__answer accordion-content">
+              <p>当園のスタッフは、保育士や幼稚園教諭など、保育に関する専門的な資格を持つ人材です。また、多彩な経験を持ち、子どもたちとの信頼関係を築きながら、安心して成長できる環境を提供しています。定期的な研修やワークショップを通じて、スキルや知識の向上に努めています。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- アコーディオン２項目目 -->
+        <div class="u-hover">
+          <div class="c-accordion__item" data-aos="fade-up">
+            <button class="c-accordion__question accordion-header">
+              子どもたちに提供される食事や健康管理について教えてください。
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="c-accordion__answer accordion-content">
+              <p>当園では、バランスの取れた食事や健康管理に特に配慮しています。栄養士の監修のもと、子どもたちの成長に必要な栄養を考慮した食事を提供しています。また、日々の健康管理や安全管理にも十分な配慮をし、保護者の皆様に安心してお子さまをお預けいただける環境を整えています。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- アコーディオン３項目目 -->
+        <div class="u-hover">
+          <div class="c-accordion__item" data-aos="fade-up">
+            <button class="c-accordion__question accordion-header">
+              保護者とのコミュニケーションはどのように行われていますか？
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="c-accordion__answer accordion-content">
+              <p>当園では、保護者との密なコミュニケーションを大切にしています。定期的な面談や保護者会、またはLINEやメールなどのSNSを通じて、子どもたちの様子や日々の過ごし方についての情報共有を行っています。保護者の皆様との信頼関係を築きながら、お子さまの成長を共にサポートしています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </section>
