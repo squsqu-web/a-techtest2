@@ -320,14 +320,264 @@
 </section>
 
 
+
 <!-- フォーム -->
 <section class="p-recruit-page__contact">
 
-  <div class="p-recruit-page__contact-form">
-    フォーム
+  <div class="p-recruit-page__contact-container" data-aos="fade-up">
+    <div class="p-recruit-page__contact-inner">
+
+      <!-- フォーム本体（例としてformタグを配置。Contact Form 7を使う場合はショートコードに置き換えてください） -->
+      <form action="" method="post" class="p-form">
+        <dl class="p-form__list">
+
+          <!-- お問い合わせ内容 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>お問い合わせ内容</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <div class="p-form__radio-group">
+                <label class="p-form__radio-label"><input type="radio" name="contact_content" value="園の見学をしたい"> 園の見学をしたい</label>
+                <label class="p-form__radio-label"><input type="radio" name="contact_content" value="採用試験に応募したい"> 採用試験に応募したい</label>
+                <label class="p-form__radio-label"><input type="radio" name="contact_content" value="その他"> その他</label>
+              </div>
+              <textarea name="contact_other_text" placeholder="" class="p-form__textarea p-form__textarea--small"></textarea>
+            </dd>
+          </div>
+
+          <!-- 卒業予定年月 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>卒業予定年月</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <div class="p-form__radio-group is-row">
+                <label class="p-form__radio-label"><input type="radio" name="graduate_year" value="2024年3月"> 2024年3月</label>
+                <label class="p-form__radio-label"><input type="radio" name="graduate_year" value="既卒"> 既卒</label>
+                <label class="p-form__radio-label"><input type="radio" name="graduate_year" value="その他"> その他</label>
+              </div>
+            </dd>
+          </div>
+
+          <!-- お名前 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>お名前</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="your_name" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- ふりがな -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>ふりがな</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="your_kana" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- 生年月日 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>生年月日</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="your_birthday" placeholder="例：1995年4月1日" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- 性別 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>性別</span>
+              <span class="p-form__badge is-optional">任意</span>
+            </dt>
+            <dd class="p-form__input">
+              <div class="p-form__radio-group is-row">
+                <label class="p-form__radio-label"><input type="radio" name="gender" value="男性"> 男性</label>
+                <label class="p-form__radio-label"><input type="radio" name="gender" value="女性"> 女性</label>
+                <label class="p-form__radio-label"><input type="radio" name="gender" value="その他"> その他</label>
+              </div>
+            </dd>
+          </div>
+
+          <!-- ご住所 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>ご住所</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input p-form__address-group">
+              <div class="p-form__address-row">
+                <span class="p-form__address-sublabel">郵便番号</span>
+                <input type="text" name="postal_code" placeholder="例：123-4567" class="p-form__text">
+              </div>
+              <div class="p-form__address-row">
+                <span class="p-form__address-sublabel">都道府県</span>
+                <input type="text" name="prefecture" class="p-form__text">
+              </div>
+              <div class="p-form__address-row">
+                <span class="p-form__address-sublabel">市区町村</span>
+                <input type="text" name="city" class="p-form__text">
+              </div>
+              <div class="p-form__address-row">
+                <span class="p-form__address-sublabel">番地、建物名</span>
+                <input type="text" name="address_rest" class="p-form__text">
+              </div>
+            </dd>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>電話番号</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="tel" name="tel" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>メールアドレス</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="email" name="email" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- 学校名 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>学校名</span>
+              <span class="p-form__badge is-optional">任意</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="school_name" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- 学科名 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>学科名</span>
+              <span class="p-form__badge is-optional">任意</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="department_name" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- 希望職種 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>希望職種</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <div class="p-form__radio-group">
+                <label class="p-form__radio-label"><input type="radio" name="job_type" value="保育士（保育士免許あり）"> 保育士（保育士免許あり）</label>
+                <label class="p-form__radio-label"><input type="radio" name="job_type" value="保育士（保育士免許なし）"> 保育士（保育士免許なし）</label>
+                <label class="p-form__radio-label"><input type="radio" name="job_type" value="栄養士もしくは調理師"> 栄養士もしくは調理師</label>
+                <label class="p-form__radio-label"><input type="radio" name="job_type" value="看護師"> 看護師</label>
+                <label class="p-form__radio-label"><input type="radio" name="job_type" value="事務"> 事務</label>
+              </div>
+            </dd>
+          </div>
+
+          <!-- 希望雇用形態 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>希望雇用形態</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <div class="p-form__radio-group">
+                <label class="p-form__radio-label"><input type="radio" name="employment_status" value="正社員"> 正社員</label>
+                <label class="p-form__radio-label"><input type="radio" name="employment_status" value="常勤パート"> 常勤パート</label>
+                <label class="p-form__radio-label"><input type="radio" name="employment_status" value="非常勤パート"> 非常勤パート</label>
+              </div>
+            </dd>
+          </div>
+
+          <!-- 希望就業エリア -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>希望就業エリア</span>
+              <span class="p-form__badge is-required">必須</span>
+            </dt>
+            <dd class="p-form__input">
+              <input type="text" name="work_area" class="p-form__text">
+            </dd>
+          </div>
+
+          <!-- ご要望・ご質問 -->
+          <div class="p-form__item">
+            <dt class="p-form__label">
+              <span>ご要望・ご質問</span>
+              <span class="p-form__badge is-optional">任意</span>
+            </dt>
+            <dd class="p-form__input">
+              <textarea name="message" class="p-form__textarea"></textarea>
+            </dd>
+          </div>
+
+        </dl>
+
+        <!-- プライバシーポリシー同意 -->
+        <div class="p-form__privacy">
+          <label class="p-form__privacy-label">
+            <input type="checkbox" name="privacy_consent" value="同意する">
+            <span>利用規約と個人情報の取り扱いについて同意する</span>
+          </label>
+          <span class="p-form__badge is-required">必須</span>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="p-form__submit-wrap">
+          <button type="submit" class="p-form__submit-btn">
+            <span>内容確認</span>
+            <span class="p-form__submit-arrow">&gt;</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
   </div>
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <?php the_content(); ?>
