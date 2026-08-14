@@ -77,16 +77,6 @@ button {
   cursor: pointer;
 }
 
-/* Form UI reset */
-input,
-textarea,
-select,
-button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
 /* Remove focus outline only when using mouse */
 :focus:not(:focus-visible) {
   outline: none;
@@ -327,7 +317,7 @@ img {
 .breadcrumb {
   cursor: pointer;
   color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-size: 1.8rem;
   z-index: 1;
   letter-spacing: 0.1em;
@@ -356,8 +346,8 @@ img {
   letter-spacing: 0.1em;
   line-height: 1.6;
   border: 1px solid #55000C;
-  background-color: #FFFFFF;
-  color: #FFFFFF;
+  background-color: #55000C;
+  color: #55000C;
   border-radius: 40px;
   cursor: pointer;
   display: flex;
@@ -427,12 +417,12 @@ img {
 }
 .p-recruit-page__contact-inner {
   background-color: #FFFFFF;
-  padding: 6rem 8rem;
-  border-radius: 20px;
+  padding: 6.4rem 14rem;
+  border-radius: 2rem;
 }
 @media (max-width: 767.98px) {
   .p-recruit-page__contact-inner {
-    padding: 3rem 1.6rem;
+    padding: 3.2rem 1.5rem;
   }
 }
 
@@ -442,49 +432,51 @@ img {
 }
 .p-form__item {
   display: flex;
-  align-items: flex-start;
-  padding: 3.2rem 0;
-  border-bottom: 1px solid rgba(85, 0, 12, 0.1);
+  align-items: center;
+  margin-bottom: 1.2rem;
 }
 .p-form__item:first-child {
   padding-top: 0;
+  margin-bottom: 1.6rem;
 }
 @media (max-width: 767.98px) {
   .p-form__item {
     flex-direction: column;
     gap: 1.6rem;
-    padding: 2.4rem 0;
+    margin-bottom: 1.6rem;
   }
 }
 .p-form__label {
-  width: 22rem;
+  width: 30rem;
   flex-shrink: 0;
   font-size: 1.6rem;
   color: #55000C;
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3.2rem;
   padding-top: 0.8rem;
 }
 @media (max-width: 767.98px) {
   .p-form__label {
     width: 100%;
-    padding-top: 0;
+    padding: 0.2rem 0;
+    gap: 1.2rem;
   }
 }
 .p-form__badge {
-  font-size: 1.1rem;
-  padding: 0.2rem 0.8rem;
-  border-radius: 4px;
-  font-weight: normal;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 400;
 }
 .p-form__badge.is-required {
-  background-color: #d97d7d;
+  background-color: #EF8F9C;
   color: #FFFFFF;
+  letter-spacing: 0.1em;
 }
 .p-form__badge.is-optional {
-  background-color: #707070;
+  background-color: #333333;
   color: #FFFFFF;
 }
 .p-form__input {
@@ -493,9 +485,9 @@ img {
 }
 .p-form__text {
   width: 100%;
-  height: 4.8rem;
+  height: 4rem;
   border: 1px solid #EF8F9C;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   padding: 0 1.6rem;
   font-size: 1.6rem;
   color: #55000C;
@@ -507,27 +499,37 @@ img {
 }
 .p-form__textarea {
   width: 100%;
-  height: 16rem;
-  border: 1px solid #EF8F9C;
-  border-radius: 8px;
+  height: 10rem;
+  border: 1px solid #333333;
   padding: 1.6rem;
   font-size: 1.6rem;
   color: #55000C;
-  background-color: #fff;
+  background-color: #FFFFFF;
   resize: vertical;
+  border-radius: 0.4rem;
+}
+@media (max-width: 767.98px) {
+  .p-form__textarea {
+    height: 20rem;
+  }
 }
 .p-form__textarea:focus {
   outline: none;
   border-color: #55000C;
 }
 .p-form__textarea--small {
-  height: 9rem;
-  margin-top: 1.2rem;
+  height: 10rem;
+  margin-top: 1rem;
 }
 .p-form__radio-group {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+@media (max-width: 767.98px) {
+  .p-form__radio-group {
+    gap: 1rem;
+  }
 }
 .p-form__radio-group.is-row {
   flex-direction: row;
@@ -539,12 +541,34 @@ img {
   align-items: center;
   gap: 0.8rem;
   font-size: 1.6rem;
-  color: #55000C;
+  color: #333333;
   cursor: pointer;
 }
 .p-form__radio-label input[type=radio] {
-  transform: scale(1.2);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid #333333;
+  border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.p-form__radio-label input[type=radio]:checked {
+  border-color: #55000C;
+}
+.p-form__radio-label input[type=radio]:checked::before {
+  content: "";
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #55000C;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .p-form__address-group {
   display: flex;
@@ -554,51 +578,68 @@ img {
 .p-form__address-row {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
-}
-@media (max-width: 767.98px) {
-  .p-form__address-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
+  gap: 1rem;
 }
 .p-form__address-sublabel {
-  width: 11rem;
-  font-size: 1.4rem;
-  color: #55000C;
+  width: 15rem;
+  font-size: 1.6rem;
+  color: #333333;
   flex-shrink: 0;
-}
-@media (max-width: 767.98px) {
-  .p-form__address-sublabel {
-    width: 100%;
-  }
 }
 .p-form__privacy {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
-  margin: 4rem 0;
+  gap: 1.2rem;
+  margin: 3.6rem 0 6.4rem;
 }
 @media (max-width: 767.98px) {
   .p-form__privacy {
     flex-direction: column;
-    gap: 1.2rem;
     align-items: flex-start;
+    gap: 0.8rem;
+    margin: 0 0 4.8rem;
   }
 }
 .p-form__privacy-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.8rem;
   font-size: 1.5rem;
   color: #55000C;
   cursor: pointer;
 }
 .p-form__privacy-label input[type=checkbox] {
-  transform: scale(1.2);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #55000C;
+  border-radius: 0.2rem;
   cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.p-form__privacy-label input[type=checkbox]:checked {
+  background-color: #55000C;
+}
+.p-form__privacy-label input[type=checkbox]:checked::before {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 1rem;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  transform: rotate(45deg);
+  top: 0.2rem;
+  left: 0.6rem;
+}
+.p-form__badge {
+  font-size: 1.1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: normal;
 }
 .p-form__submit-wrap {
   text-align: center;
@@ -608,14 +649,13 @@ img {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  width: 28rem;
-  height: 5.6rem;
+  width: 30rem;
+  height: 6rem;
   background-color: #FFFFFF;
   border: 1px solid #55000C;
-  border-radius: 30px;
+  border-radius: 3rem;
   color: #55000C;
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -632,9 +672,15 @@ img {
   font-size: 1.4rem;
 }
 
+@media (max-width: 767.98px) {
+  .badge-privacy {
+    margin-left: 2.8rem;
+  }
+}
+
 .l-main-visual {
   padding: 30.3rem 0 0;
-  margin-bottom: 12rem;
+  margin-bottom: 1.2rem;
 }
 @media (max-width: 767.98px) {
   .l-main-visual {
@@ -2017,7 +2063,7 @@ body {
   line-height: 1.5714285714;
   letter-spacing: 0.1em;
   color: #54372D;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-weight: 700;
 }
 @media screen and (max-width: 1100px) {
@@ -2065,7 +2111,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.1em;
   color: #54372D;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-weight: 700;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -2368,7 +2414,7 @@ body {
   font-size: 1.8rem;
   line-height: 2;
   letter-spacing: 0.1em;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   color: #54372D;
   font-weight: 400;
 }
@@ -2569,7 +2615,7 @@ body {
 }
 .p-feature__text {
   font-size: 1.8rem;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   line-height: 2;
   margin-bottom: 5.5rem;
   text-align: center;
@@ -2681,7 +2727,7 @@ body {
 
 .p-feature__item .p-feature__text {
   margin: 0 4.2rem 0 0;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
 }
 @media screen and (max-width: 1200px) {
   .p-feature__item .p-feature__text {
@@ -3122,483 +3168,6 @@ body {
   text-transform: initial;
 }
 
-.p-concept {
-  position: relative;
-  padding: 6.5% 0 5%;
-  width: 100%;
-  box-sizing: border-box;
-}
-@media (max-width: 767.98px) {
-  .p-concept {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 22% 0 9%;
-  }
-}
-.p-concept__title {
-  font-size: 8rem;
-  letter-spacing: 0.04em;
-  color: #55000C;
-  position: absolute;
-  top: 22rem;
-  left: 12rem;
-  font-family: "Jost", sans-serif;
-}
-.p-concept__title::after {
-  content: "Concept";
-  font-size: 12rem;
-  color: #333333;
-  font-family: "Parisienne", cursive;
-  position: absolute;
-  top: -3rem;
-  left: 6rem;
-  text-transform: capitalize;
-}
-.p-concept__title__center {
-  font-size: 4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  font-family: "Kosugi Maru", sans-serif;
-  color: #55000C;
-  position: absolute;
-  top: 20%;
-  left: 0%;
-  font-weight: 600;
-}
-@media screen and (max-width: 900px) {
-  .p-concept__title__center {
-    font-size: 3rem;
-    line-height: 2;
-    top: 12%;
-  }
-}
-@media (max-width: 767.98px) {
-  .p-concept__title__center {
-    font-size: 1.8rem;
-    line-height: 2;
-    position: static;
-    margin: 5% 0 5%;
-  }
-}
-.p-concept__picture {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.p-concept img {
-  width: 60%;
-  margin-left: auto;
-  display: block;
-  height: auto;
-  aspect-ratio: 720/405;
-}
-@media (max-width: 767.98px) {
-  .p-concept img {
-    width: 100%;
-    margin: 0 auto;
-    aspect-ratio: 315/177;
-  }
-}
-
-.concept-innerConcept {
-  width: 84%;
-  margin: 0 auto;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .concept-innerConcept {
-    width: 84%;
-  }
-}
-
-.concept-inner {
-  width: 84%;
-  margin: 0 auto;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .concept-inner {
-    width: 91%;
-  }
-}
-
-.page-concept {
-  background-color: #D4CEBE;
-  position: relative;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-
-.con__txt {
-  max-width: 120rem;
-  width: 100%;
-  margin: 5% auto 0%;
-  color: #55000C;
-}
-@media (max-width: 767.98px) {
-  .con__txt {
-    width: 100%;
-    font-size: 1.4rem;
-    margin: 0 auto 2rem;
-  }
-}
-
-.p-instagram {
-  width: 100%;
-  text-align: center;
-  padding: 11.5% 0 0%;
-  box-sizing: border-box;
-  background-color: #F9F8F6;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media (max-width: 767.98px) {
-  .p-instagram {
-    padding: 0;
-    margin: 0;
-    padding: 29% 0 2%;
-    margin: 0 0 26%;
-  }
-}
-.p-instagram__images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  width: 66%;
-  margin: 5% auto 4%;
-}
-@media (max-width: 767.98px) {
-  .p-instagram__images {
-    gap: 1.9rem;
-    width: 93%;
-    margin: 19% auto 9%;
-  }
-}
-.p-instagram__images img {
-  width: 100%;
-  height: auto;
-}
-.p-instagram__button {
-  font-family: "Kosugi Maru", sans-serif;
-}
-.p-instagram__button a {
-  color: #FFFFFF;
-}
-
-.c-section-header__en {
-  font-family: "Jost", sans-serif;
-  font-size: 8.4rem;
-  color: #55000C;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1.26;
-  position: relative;
-  text-align: left;
-}
-@media (max-width: 767.98px) {
-  .c-section-header__en {
-    font-size: 4.8rem;
-    margin: 0 auto;
-  }
-}
-.c-section-header__en::after {
-  content: "Instagram";
-  font-size: 12rem;
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: rgba(202, 127, 19, 0.078);
-  font-family: "Parisienne", cursive;
-  position: absolute;
-  top: -3rem;
-  left: 10.6rem;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .c-section-header__en::after {
-    font-size: 7.2rem;
-    margin: 0 auto;
-    left: 7.2rem;
-    left: 2.9rem;
-  }
-}
-.c-section-header__ja {
-  font-family: "Kosugi Maru", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #55000C;
-  text-align: left;
-}
-@media (max-width: 767.98px) {
-  .c-section-header__ja {
-    font-size: 1.2rem;
-  }
-}
-
-.p-company {
-  position: relative;
-  padding: 11.5% 0 8%;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #F9F8F6;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media (max-width: 767.98px) {
-  .p-company {
-    padding: 12% 0 32%;
-  }
-}
-.p-company__profile {
-  width: 100%;
-  aspect-ratio: 1080/540;
-}
-@media (max-width: 767.98px) {
-  .p-company__profile {
-    aspect-ratio: 343/200;
-  }
-}
-.p-company__profile img {
-  width: 90%;
-  height: auto;
-  margin: 5.1rem auto 6.05rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-  aspect-ratio: 1080/540;
-}
-@media (max-width: 767.98px) {
-  .p-company__profile img {
-    margin: 19% auto 4.1rem;
-    aspect-ratio: 343/200;
-    display: block;
-    width: 100%;
-  }
-}
-
-.company-profile {
-  margin: 0 auto;
-}
-.company-profile__title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.company-profile__list {
-  display: grid;
-  grid-template-columns: 1.9fr 3fr;
-  width: 90%;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .company-profile__list {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-}
-.company-profile__item {
-  display: flex;
-  align-items: center;
-  border-top: 0.1rem solid #55000C;
-  padding: 2.4rem 0.5rem 2.4rem 1.5rem;
-}
-@media (max-width: 767.98px) {
-  .company-profile__item {
-    flex: 0 0 100%;
-    padding: 8% 0.1rem 7.5%;
-    align-items: baseline;
-  }
-}
-.company-profile__item .cp__title {
-  color: #55000C;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3333333333;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 600;
-}
-@media (max-width: 767.98px) {
-  .company-profile__item .cp__title {
-    font-size: 1.4rem;
-    padding-left: 0.8rem;
-  }
-}
-.company-profile__item .cp__content {
-  color: #55000C;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3333333333;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .company-profile__item .cp__content {
-    font-size: 1.2rem;
-    padding-left: 8%;
-  }
-}
-.company-profile__term {
-  flex: 0 0 10rem;
-  font-weight: bold;
-  color: #55000C;
-}
-.company-profile__desc {
-  flex: 1;
-  color: #666;
-}
-/* 100%にする行 */
-.employee-item,
-.last-item {
-  grid-column: 1/-1;
-}
-
-@media (max-width: 767.98px) {
-  .u-sp-none {
-    display: none;
-  }
-}
-.cp__content a {
-  color: #55000C;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 500;
-}
-@media (max-width: 767.98px) {
-  .cp__content a {
-    font-size: 1.2rem;
-  }
-}
-
-#sb_instagram .sbi_photo img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-}
-#sb_instagram #sbi_images {
-  box-sizing: border-box;
-  display: grid;
-  width: 100%;
-  gap: 3.9rem 3.9rem !important;
-  padding: 0 0 2%;
-}
-@media (max-width: 767.98px) {
-  #sb_instagram #sbi_images {
-    padding: 0;
-    gap: 0 !important;
-  }
-}
-
-.p-instagram__button {
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.6;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  text-decoration: none;
-  justify-content: center;
-  font-weight: 600;
-  padding-right: 1.3em;
-}
-@media (max-width: 767.98px) {
-  .p-instagram__button {
-    font-size: 2rem;
-    width: 20rem;
-    height: 5rem;
-    gap: 0.9rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .p-instagram__button a {
-    gap: 0.9rem;
-    padding-right: 0.2rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  #sb_instagram .sbi_photo {
-    width: 48% !important;
-    margin-bottom: 4% !important;
-  }
-}
-@media (max-width: 767.98px) {
-  #sb_instagram #sbi_images {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 3% 4% !important;
-  }
-  #sb_instagram .sbi_photo {
-    width: 100% !important;
-  }
-}
-@media (max-width: 767.98px) {
-  .concept-company h2 {
-    margin-left: 0;
-  }
-}
-@media (max-width: 767.98px) {
-  .concept-company-sm {
-    margin-left: 0;
-  }
-}
-@media (max-width: 767.98px) {
-  .last-item {
-    border-top: 0.1rem solid #55000C;
-    border-bottom: 0.1rem solid #55000C;
-  }
-}
-@media (max-width: 767.98px) {
-  .tel-item {
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .bottom-money {
-    border-bottom: none;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .instagram-title {
-    font-size: 4rem;
-  }
-}
-
-.company-profile-after::after {
-  content: "Company profile";
-  font-size: 12rem;
-  color: #333333;
-  font-family: "Parisienne", cursive;
-  position: absolute;
-  top: -5.5rem;
-  left: 11.5rem;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .company-profile-after::after {
-    font-size: 7.2rem;
-    margin: 0 auto;
-    top: -2.5rem;
-    left: 6.7rem;
-  }
-}
-
-.tel-link {
-  pointer-events: none;
-  cursor: default;
-}
-
-@media (max-width: 767.98px) {
-  .tel-link {
-    pointer-events: auto;
-    cursor: pointer;
-  }
-}
 .sp_only {
   display: none;
 }
@@ -3657,7 +3226,7 @@ body {
   letter-spacing: 0.1em;
   line-height: 2;
   color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   text-align: left;
   opacity: 0.5;
   font-weight: 400;
@@ -3960,7 +3529,7 @@ body {
   letter-spacing: 0.1em;
   line-height: 2;
   color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-weight: 400;
 }
 @media (max-width: 767.98px) {
@@ -4159,7 +3728,7 @@ body {
 }
 .price__table th {
   border-bottom: 0.1rem solid #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   padding: 1% 1% 2%;
   padding-left: 3%;
   padding-right: 0%;
@@ -4232,7 +3801,7 @@ body {
     top: 3rem;
     font-weight: bold;
     color: #55000C;
-    font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   }
 }
 @media (max-width: 767.98px) and (max-width: 767.98px) {
@@ -4286,7 +3855,7 @@ body {
 }
 
 .price-guidance {
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-size: 1.2rem;
   color: #55000C;
   letter-spacing: 0.04em;
@@ -4313,7 +3882,7 @@ body {
 }
 .price__table th {
   border-bottom: 1px solid #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   padding: 1% 1% 2%;
   padding-left: 3%;
   padding-right: 0%;
@@ -4386,7 +3955,7 @@ body {
     top: 3rem;
     font-weight: bold;
     color: #55000C;
-    font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   }
 }
 @media (max-width: 767.98px) and (max-width: 767.98px) {
@@ -4440,7 +4009,7 @@ body {
 }
 
 .price-guidance {
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-size: 1.2rem;
   color: #55000C;
   letter-spacing: 0.04em;
@@ -4534,7 +4103,7 @@ body {
 }
 
 .price__table .table-gothic {
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   color: #55000C;
   font-size: 1.8rem;
   letter-spacing: 0.024em;
@@ -4545,7 +4114,7 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.04em;
   line-height: 1.125;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -4662,1055 +4231,6 @@ body {
   text-transform: initial;
 }
 
-.l-salons {
-  margin-bottom: 0;
-}
-
-.prefectures-wrapper {
-  width: 83%;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .prefectures-wrapper {
-    width: 100%;
-  }
-}
-
-.p-prefectures {
-  padding: 11% 0 0;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures {
-    padding: 0;
-    padding-top: 36%;
-  }
-}
-.p-prefectures__title {
-  font-size: 8.4rem;
-  letter-spacing: 0.04em;
-  line-height: 1.2619047619;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  overflow-x: clip;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures__title {
-    font-size: 4.8rem;
-    line-height: 1.25;
-    padding: 0 4.8rem 0 1.6rem;
-  }
-}
-@media screen and (max-width: 350px) {
-  .p-prefectures__title {
-    font-size: 4rem;
-  }
-}
-.p-prefectures__desc {
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures__desc {
-    font-size: 1.2rem;
-    padding: 0 0 21% 5%;
-  }
-}
-.p-prefectures__list {
-  width: 80%;
-  margin-left: 7.5%;
-  padding: 10% 0 5.5%;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures__list {
-    width: 77%;
-    max-width: none;
-    margin-left: 8%;
-    padding: 0;
-    margin-bottom: 17%;
-  }
-}
-
-.p-prefectures__title::after {
-  content: "Prefectures";
-  font-size: 12rem;
-  color: #333333;
-  font-family: "Parisienne", cursive;
-  position: absolute;
-  top: -3rem;
-  left: 10.1rem;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures__title::after {
-    font-size: 7.2rem;
-    margin: 0 auto;
-    top: -2.5rem;
-    left: 7.6rem;
-  }
-}
-
-.p-prefectures-list__item {
-  font-size: 4.8rem;
-  letter-spacing: 0.04em;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  margin-bottom: 0.6rem;
-  position: relative;
-}
-.p-prefectures-list__item a {
-  font-size: 4.8rem;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  margin-bottom: 2rem;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures-list__item a {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
-    margin-left: 1.5rem;
-  }
-}
-.p-prefectures-list__item a::before {
-  content: "▶";
-  color: #54372D;
-  font-size: 1.8rem;
-  position: absolute;
-  top: 1.4rem;
-  left: -3.6rem;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures-list__item a::before {
-    font-size: 0.8rem;
-    top: 0.8rem;
-    left: -1.5rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .p-prefectures-list__item {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-}
-.p-prefectures-list__top, .p-prefectures-list__center, .p-prefectures-list__bottom {
-  display: flex;
-  gap: 8.9rem;
-  padding-left: 9.7rem;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures-list__top, .p-prefectures-list__center, .p-prefectures-list__bottom {
-    display: block;
-    gap: 3.5rem;
-    width: 28.7rem;
-    padding-left: 0;
-    position: relative;
-  }
-}
-
-.p-area {
-  padding: 0 0 7%;
-  width: 100%;
-  margin: 0 auto;
-}
-.p-area:last-child {
-  padding-bottom: 9.5%;
-}
-@media (max-width: 767.98px) {
-  .p-area:last-child {
-    padding-bottom: 21%;
-  }
-}
-@media (max-width: 767.98px) {
-  .p-area {
-    padding: 0;
-    width: 84%;
-  }
-}
-.p-area__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-@media (max-width: 767.98px) {
-  .p-area__list {
-    flex-direction: column;
-    gap: 3.3rem;
-  }
-}
-.p-area .area-info {
-  display: flex;
-  flex-direction: column;
-  width: 47.5%;
-}
-@media (max-width: 767.98px) {
-  .p-area .area-info {
-    width: 100%;
-  }
-}
-
-.p-area__heading {
-  font-size: 4.8rem;
-  letter-spacing: 0.1em;
-  line-height: 2.5;
-  color: #FFFFFF;
-  font-family: "Jost", sans-serif;
-  background-color: #55000C;
-  max-width: 120rem;
-  height: 12rem;
-  text-align: center;
-  margin: 0 auto 6rem;
-  width: 100%;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-area__heading {
-    font-size: 2.4rem;
-    max-width: none;
-    height: 6rem;
-    margin: 24% 0 9%;
-  }
-}
-
-.p-shop-card__map {
-  position: relative;
-  width: 100%;
-  max-width: 57rem;
-  aspect-ratio: 570/360;
-  overflow: hidden;
-}
-@media (max-width: 767.98px) {
-  .p-shop-card__map {
-    max-width: none;
-    aspect-ratio: 300/200;
-  }
-}
-.p-shop-card__map iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: 0;
-}
-.p-shop-card__title {
-  font-size: 3.2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  padding: 1.5% 0 0;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-shop-card__title {
-    font-size: 2rem;
-    margin: 2% 0;
-  }
-}
-.p-shop-card__name {
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3125;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  padding: 0 0 1%;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-shop-card__name {
-    font-size: 1.4rem;
-    margin: 0 0 0.5rem;
-  }
-}
-.p-shop-card__address {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  color: #464646;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-@media (max-width: 767.98px) {
-  .p-shop-card__address {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-}
-
-.p-shop-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.p-shop-card__map iframe {
-  pointer-events: none;
-}
-
-.p-prefectures-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 8%;
-  width: 100%;
-}
-@media (max-width: 767.98px) {
-  .p-prefectures-list {
-    gap: 0 1.8rem;
-  }
-}
-
-.pref-en {
-  font-size: 4.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  margin-bottom: 2rem;
-  position: relative;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .pref-en {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
-  }
-}
-
-.pref-ja {
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  padding-left: 1.6rem;
-}
-@media (max-width: 767.98px) {
-  .pref-ja {
-    font-size: 1.2rem;
-    padding-left: 0;
-  }
-}
-
-.salons_single {
-  margin: 0;
-}
-@media (max-width: 767.98px) {
-  .salons_single {
-    padding: 0;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .salon-description {
-    padding: 0;
-    margin: 8rem auto 0;
-  }
-}
-.salon-description__text p {
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  max-width: 1080px;
-  width: 75%;
-  margin: 9% auto 0;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .salon-description__text p {
-    font-size: 1.4rem;
-    text-align: left;
-    max-width: none;
-    width: 84%;
-    margin: 26% auto 0;
-  }
-}
-
-.l-main-visual__title-single {
-  font-size: 8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.2875;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  padding: 16rem 0 10rem;
-  margin: 17.3rem auto 0;
-  background-color: #D4CEBE;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .l-main-visual__title-single {
-    font-size: 3.2rem;
-    padding: 26% 0 17%;
-    margin: 26% auto 0;
-  }
-}
-
-.l-main-visual__title-single::before {
-  content: "valentine rose";
-  font-size: 4.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  text-transform: uppercase;
-  position: absolute;
-  top: 9.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .l-main-visual__title-single::before {
-    width: 100%;
-    font-size: 2.4rem;
-    top: 30%;
-  }
-}
-
-.mainvisual__title img {
-  width: 144rem;
-  height: 60rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media (max-width: 767.98px) {
-  .mainvisual__title img {
-    width: 37.5rem;
-    height: 30rem;
-  }
-}
-
-.salon-flow {
-  width: 83%;
-  counter-reset: flow-step;
-  margin: 11% auto 8%;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .salon-flow {
-    width: 100%;
-    margin: 28% auto 10%;
-    padding: 0 8%;
-    overflow-x: clip;
-  }
-}
-.salon-flow__block {
-  display: flex;
-  gap: 3%;
-  justify-content: flex-start;
-  width: 67%;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__block {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-}
-.salon-flow__title {
-  font-size: 2.4rem;
-  letter-spacing: 0.04em;
-  line-height: 1.25;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 600;
-  margin: 0 2% 1.2rem;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__title {
-    text-align: center;
-    padding: 3% 0 0;
-    font-size: 1.8rem;
-    margin: 0 auto 1.3rem;
-  }
-}
-.salon-flow__text {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-  width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  box-sizing: border-box;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__text {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    margin: 0 auto;
-    font-weight: 400;
-  }
-}
-.salon-flow__item {
-  counter-increment: flow-step;
-  position: relative;
-  margin: 0 auto 3.2rem;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__item {
-    margin: 0 auto -4%;
-  }
-}
-.salon-flow__item:last-child {
-  margin-bottom: 4.1rem;
-}
-.salon-flow__item__content {
-  width: 50rem;
-  margin: 0 auto;
-  text-align: left;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__item__content {
-    width: 100%;
-  }
-}
-.salon-flow__item__img {
-  position: absolute;
-  top: 0;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.salon-flow__item__img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__item__img {
-    width: 6.4rem;
-    height: 6.4rem;
-  }
-}
-
-.salon-flow__greenNum {
-  width: 6rem;
-  height: 6rem;
-  background-color: #949E33;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #F9F8F6;
-  font-size: 3.2rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  font-family: "Jost", sans-serif;
-  flex-shrink: 0;
-}
-.salon-flow__greenNum::before {
-  content: counter(flow-step);
-}
-
-@media (max-width: 767.98px) {
-  .section-header {
-    margin-left: -4%;
-  }
-}
-.section-header__en {
-  font-family: "Marcellus", serif;
-  font-size: 8.4rem;
-  color: #55000C;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: capitalize;
-  line-height: 1.2619;
-  position: relative;
-  text-align: left;
-  text-transform: uppercase;
-}
-.section-header__en::after {
-  content: "Flow";
-  font-size: 12rem;
-  color: #FFF7B8;
-  font-family: "Parisienne", cursive;
-  position: absolute;
-  top: -2rem;
-  left: 6rem;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .section-header__en::after {
-    font-size: 7.2rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .section-header__en {
-    font-size: 4.8rem;
-  }
-}
-.section-header__ja {
-  font-family: "Kosugi Maru", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #55000C;
-  margin-bottom: 8.4rem;
-}
-@media (max-width: 767.98px) {
-  .section-header__ja {
-    font-size: 1.2rem;
-    margin-bottom: 20%;
-  }
-}
-
-.p-salon-single__staff {
-  background-color: #464646;
-  width: 100%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff {
-    padding: 10% 0 0;
-    text-align: center;
-  }
-}
-.p-salon-single__staff__wrapper {
-  width: 75%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 5.5% 0 6%;
-}
-@media screen and (max-width: 1000px) {
-  .p-salon-single__staff__wrapper {
-    width: 84%;
-    flex-direction: column;
-    padding: 5.5% 0 7%;
-  }
-}
-.p-salon-single__staff-img {
-  width: 45%;
-}
-@media screen and (max-width: 1000px) {
-  .p-salon-single__staff-img {
-    width: 75%;
-    margin: 0 auto;
-  }
-}
-.p-salon-single__staff-img img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1/1;
-}
-.p-salon-single__staff-title {
-  display: flex;
-  align-items: end;
-  padding: 9% 0 8%;
-  gap: 4%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff-title {
-    margin: 0 0 6%;
-    gap: 1.4rem;
-    padding: 0;
-  }
-}
-.p-salon-single__staff-title-en {
-  font-size: 4.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  font-weight: 400;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff-title-en {
-    font-size: 3.6rem;
-  }
-}
-.p-salon-single__staff-title-ja {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.9285714286;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-.p-salon-single__staff-text {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-  margin: 0 0 0.9rem;
-  width: 100%;
-  overflow-wrap: break-word;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff-text {
-    font-size: 1.4rem;
-    text-align: left;
-    margin: 0 0 0.8rem;
-  }
-}
-.p-salon-single__staff-name {
-  display: flex;
-  align-items: baseline;
-  gap: 1.6rem;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff-name {
-    gap: 1%;
-  }
-}
-.p-salon-single__staff-name-en {
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5833333333;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__staff-name-en {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 330px) {
-  .p-salon-single__staff-name-en {
-    text-align: left;
-  }
-}
-.p-salon-single__staff-name-ja {
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.6666666667;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media screen and (max-width: 330px) {
-  .p-salon-single__staff-name-ja {
-    font-size: 0.8rem;
-  }
-}
-.p-salon-single__map-info {
-  background-color: #D4CEBE;
-  align-items: center;
-  padding: 5.5% 0 5%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__map-info {
-    padding: 16% 0;
-    gap: 4rem;
-  }
-}
-.p-salon-single__map-info-embed iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 540/360;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__map-info-embed iframe {
-    aspect-ratio: 315/200;
-  }
-}
-.p-salon-single__map-info-store-profile {
-  display: flex;
-  border-bottom: 1px solid #55000C;
-  padding: 0.8rem 1.6rem;
-}
-.p-salon-single__map-info-store-profile-term {
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__map-info-store-profile-term {
-    font-size: 1.6rem;
-    line-height: 1.875;
-  }
-}
-.p-salon-single__map-info-store-profile-desc {
-  font-size: 1.4rem;
-  line-height: 2.1428571429;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__map-info-store-profile-desc {
-    font-size: 1.2rem;
-    line-height: 2.5;
-  }
-}
-
-.map-info-wrapper {
-  width: 75%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 767.98px) {
-  .map-info-wrapper {
-    flex-direction: column-reverse;
-    width: 84%;
-  }
-}
-
-.p-salon-single__staff-comment {
-  width: 50%;
-}
-@media screen and (max-width: 1000px) {
-  .p-salon-single__staff-comment {
-    padding: 6% 0 0;
-    width: 100%;
-  }
-}
-
-.p-salon-single__description {
-  width: 38%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__description {
-    width: 100%;
-    padding: 13% 0 0;
-  }
-}
-
-.p-salon-single__store-profile {
-  display: flex;
-  border-bottom: 1px solid #55000C;
-  width: 100%;
-  padding: 4% 0;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__store-profile {
-    padding: 1rem 0.7rem 1.5rem;
-  }
-}
-
-.p-salon-single__store-profile-term {
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 600;
-  width: 40%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__store-profile-term {
-    font-size: 1.6rem;
-    line-height: 1.875;
-  }
-}
-
-.p-salon-single__store-profile-desc,
-.no-map {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 2.1428571429;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-  width: 60%;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__store-profile-desc,
-  .no-map {
-    font-size: 1.2rem;
-    line-height: 2.5;
-  }
-}
-
-.store-name-info::before {
-  content: "VALENTINE ROSE ";
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 2.1428571429;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .store-name-info::before {
-    font-size: 1.2rem;
-    line-height: 2.5;
-  }
-}
-
-.p-salon-single__store-profile-desc a {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 2.1428571429;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__store-profile-desc a {
-    font-size: 1.2rem;
-    line-height: 2.5;
-  }
-}
-
-.p-salon-single__map-embed {
-  width: 50%;
-  aspect-ratio: 540/360;
-}
-@media (max-width: 767.98px) {
-  .p-salon-single__map-embed {
-    aspect-ratio: 315/200;
-    width: 100%;
-  }
-}
-.p-salon-single__map-embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.salon-flow__img img {
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__img img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.salon-flow__img--left {
-  width: 15rem;
-  position: absolute;
-  top: -35%;
-  left: -3%;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__img--left {
-    width: 8rem;
-    height: auto;
-    top: 2%;
-    left: 89%;
-  }
-}
-
-.salon-flow__img--right {
-  width: 18rem;
-  position: absolute;
-  top: -16%;
-  right: -4%;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__img--right {
-    width: 10rem;
-    height: 10rem;
-    top: -3%;
-    right: 80%;
-  }
-}
-
-.salon-flow__img--free {
-  width: 15rem;
-  height: 15rem;
-  border-radius: 50%;
-}
-@media (max-width: 767.98px) {
-  .salon-flow__img--free {
-    width: 9rem;
-    height: 9rem;
-    margin-left: -13%;
-  }
-}
-
-.salon-flow__img--free img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.salon-single__back {
-  padding: 8.5% 0;
-  text-align: center;
-}
-@media (max-width: 767.98px) {
-  .salon-single__back {
-    padding: 0;
-  }
-}
-
-.salon-single__back-link {
-  width: 16.6rem;
-  height: 4.1rem;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .salon-single__back-link {
-    width: 15.6rem;
-    height: 3.8rem;
-    margin: 21% auto;
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .salon-flow__content {
-    margin-bottom: 5.2rem;
-  }
-}
-
-.salon-description__text {
-  font-size: 1.6rem;
-  text-align: center;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  margin: 2rem 0 0;
-}
-@media (max-width: 767.98px) {
-  .salon-description__text {
-    font-size: 1.4rem;
-  }
-}
-
-.tel-link {
-  pointer-events: none;
-  cursor: default;
-}
-
-@media screen and (max-width: 767.98px) {
-  .tel-link {
-    pointer-events: auto;
-    cursor: pointer;
-  }
-}
 .l-letter__wrapper {
   width: 91%;
   margin: 12rem auto;
@@ -7478,656 +5998,6 @@ Font Awesome
   }
 }
 
-.wpcf7-form {
-  width: 75%;
-  margin: 0 auto;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-form {
-    padding: 0;
-    width: 84%;
-    margin: 0 auto 2.7rem;
-    padding-bottom: 0.1rem;
-  }
-}
-
-.form-blck {
-  background-color: #ede9e4;
-  padding: 6% 0 4.5%;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media (max-width: 767.98px) {
-  .form-blck {
-    padding: 5.5% 0 5%;
-  }
-}
-
-.p-reserve-input__wrapper {
-  padding: 8% 0 0;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__wrapper {
-    padding: 16% 0 0;
-  }
-}
-.p-reserve-input__block {
-  display: flex;
-  margin: 0 auto 3.2%;
-  align-items: center;
-  width: 94%;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__block {
-    display: block;
-    margin: 0 0 7%;
-    width: 100%;
-  }
-}
-.p-reserve-input__label {
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.75;
-  height: 5rem;
-  padding-left: 0.8rem;
-  box-sizing: border-box;
-  font-family: "Kosugi Maru", sans-serif;
-  color: #55000C;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__label {
-    font-size: 1.6rem;
-    padding-left: 0;
-  }
-}
-.p-reserve-input__required {
-  background-color: #54372D;
-  font-family: "Kosugi Maru", sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  line-height: 2.3333333333;
-  min-width: 6rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1.5rem;
-  height: 2.6rem;
-  margin-right: 1.7rem;
-  color: #F9F8F6;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__required {
-    margin-right: 6%;
-  }
-}
-.p-reserve-input__field {
-  width: 100%;
-  height: 5rem;
-  padding: 1.6rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-weight: 400;
-  color: #55000C;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__field {
-    width: 100%;
-  }
-}
-.p-reserve-input__checkbox-group .checkbox-top-day {
-  font-weight: bold;
-  font-size: 1.6rem;
-  margin: 0 0 1.2rem;
-  white-space: nowrap;
-}
-.p-reserve-input__checkbox-row label {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-size: 1.4rem;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  cursor: pointer;
-}
-.p-reserve-input__note {
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  line-height: 2.3333333333;
-  text-align: left;
-  margin-top: -10%;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__note {
-    margin: 0 auto;
-    text-align: justify;
-    margin: -14% auto 0;
-  }
-}
-.p-reserve-input__submit {
-  width: 16rem;
-  height: 4rem;
-  margin: 0 auto;
-  display: block;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.625;
-  border-radius: 3rem;
-  text-align: center;
-  font-weight: 600;
-  background-color: #949E33;
-  color: #FFFFFF;
-  font-family: "Kosugi Maru", sans-serif;
-  cursor: pointer;
-  margin-top: -1%;
-  border: none;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__submit {
-    margin: 10% auto 4%;
-    transition: 0.5s;
-  }
-}
-.p-reserve-input__submit:hover {
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.wpcf7-list-item-label {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-  margin-right: 6.6rem;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-list-item-label {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-}
-
-.wpcf7-list-item input {
-  width: 3rem;
-  height: 3rem;
-}
-
-.form-input-left {
-  width: 37.5%;
-}
-@media (max-width: 767.98px) {
-  .form-input-left {
-    width: 100%;
-  }
-}
-
-.form-input-right {
-  width: 62.5%;
-}
-@media (max-width: 767.98px) {
-  .form-input-right {
-    width: 100%;
-  }
-}
-
-.contact-times-weekday,
-.contact-times-holiday {
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  display: flex;
-  margin-bottom: 1.2rem;
-}
-@media (max-width: 767.98px) {
-  .contact-times-weekday,
-  .contact-times-holiday {
-    font-size: 1.4rem;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-bottom: 0;
-    row-gap: 1.2rem;
-  }
-}
-
-.contact-times-weekday span,
-.contact-times-holiday span {
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 767.98px) {
-  .contact-times-weekday span,
-  .contact-times-holiday span {
-    font-size: 1.4rem;
-    padding-right: 1rem;
-  }
-}
-
-.checkbox-label {
-  font-size: 1.4rem;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  color: #55000C;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  padding-left: 1%;
-}
-@media (max-width: 767.98px) {
-  .checkbox-label {
-    font-size: 1.4rem;
-    transform: none;
-  }
-}
-
-.wpcf7-form-control {
-  border: none;
-  font-size: 1.6rem;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-}
-
-.weekday-block {
-  display: flex;
-}
-@media (max-width: 767.98px) {
-  .weekday-block {
-    flex-direction: column;
-  }
-}
-
-.holiday-block {
-  display: flex;
-}
-@media (max-width: 767.98px) {
-  .holiday-block {
-    flex-direction: column;
-    padding: 6% 0 3%;
-  }
-}
-
-.p-reserve-input__block-contact p {
-  display: flex;
-  flex-direction: column;
-}
-
-.checkbox-items {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0%;
-}
-@media (max-width: 767.98px) {
-  .checkbox-items {
-    flex-direction: column;
-    padding-left: 0;
-    padding-bottom: 4%;
-    gap: 0.9rem 0;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .koumoku {
-    margin: 0 0 1%;
-  }
-}
-
-.checkbox-items .wpcf7-list-item {
-  width: 45%;
-}
-@media (max-width: 767.98px) {
-  .checkbox-items .wpcf7-list-item {
-    width: 100%;
-  }
-}
-
-.p-reserve-input__checkbox-group {
-  padding-left: 0%;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__checkbox-group {
-    width: 100%;
-    padding-left: 0%;
-  }
-}
-
-.p-reserve-input__checkbox-group-contact {
-  width: 100%;
-}
-@media screen and (max-width: 1200px) {
-  .p-reserve-input__checkbox-group-contact {
-    width: 100%;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .bottom-checkbox .wpcf7-list-item:first-child {
-    width: 100%;
-    padding-top: 0;
-    margin-top: -1rem;
-  }
-}
-
-.my-field-half {
-  width: 48%;
-  height: 5rem;
-  padding: 1.6rem;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-@media (max-width: 767.98px) {
-  .my-field-half {
-    width: 100%;
-    margin-top: 1.2rem;
-  }
-}
-
-.my-field-half-store {
-  width: 48%;
-  height: 5rem;
-  padding: 1.6rem;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-@media (max-width: 767.98px) {
-  .my-field-half-store {
-    background-color: #000;
-  }
-}
-
-.p-reserve-input__block__my-field-half p {
-  display: flex;
-  align-items: center;
-  width: 48%;
-  justify-content: space-between;
-  margin: 0 0 3.3rem;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__block__my-field-half p {
-    display: block;
-    margin: 0 0 -0.2rem;
-  }
-}
-
-.wpcf7-textarea {
-  width: 100%;
-  padding: 1em;
-  height: 12rem;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-textarea {
-    height: 20rem;
-  }
-}
-
-.p-reserve-input-bottom__block-bottom {
-  display: flex;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input-bottom__block-bottom {
-    display: block;
-  }
-}
-
-.form-fa {
-  font-size: 2.6rem;
-  padding: 0.5rem;
-  background-color: #55000C;
-  background-color: #d28016;
-  width: 5rem;
-  height: 5rem;
-  color: #FFFFFF;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-.p-reserve-input-text__block p {
-  display: flex;
-  margin: 0;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input-text__block p {
-    display: block;
-  }
-}
-
-.pc_only-form {
-  display: flex;
-}
-
-@media (max-width: 767.98px) {
-  .pc_only-form {
-    display: none;
-  }
-}
-.fa-calendar-days {
-  cursor: pointer;
-}
-
-.p-reserve-input__date-wrapper p {
-  display: flex;
-  align-items: center;
-  width: 48%;
-  min-width: 20rem;
-}
-@media (max-width: 767.98px) {
-  .p-reserve-input__date-wrapper p {
-    width: 100%;
-  }
-}
-.p-reserve-input__date-wrapper p span {
-  flex-grow: 1;
-  display: block;
-}
-
-.p-reserve-input__date-field {
-  width: 100%;
-  height: 5rem;
-  padding: 1.6rem;
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-}
-.p-reserve-input__optional {
-  color: #55000C;
-  background-color: #D4CEBE;
-}
-
-.wpcf7-form input[type=text],
-.wpcf7-form input[type=email],
-.wpcf7-form input[type=tel],
-.wpcf7-form input[type=date],
-.wpcf7-form textarea {
-  transition: border-color 0.25s ease, background-color 0.25s ease;
-}
-
-.wpcf7-form input:hover,
-.wpcf7-form textarea:hover {
-  border-color: #55000C;
-}
-
-.wpcf7-form input:focus,
-.wpcf7-form textarea:focus {
-  border-color: #55000C;
-  outline: none;
-}
-
-.p-reserve-input__block label {
-  transition: transform 0.25s ease, color 0.25s ease;
-}
-
-@media (max-width: 767.98px) {
-  .wpcf7-textarea {
-    margin-top: 1.2rem;
-  }
-}
-.wpcf7-list-item input[type=checkbox]:checked {
-  background-color: #55000C;
-}
-
-.wpcf7-list-item input[type=checkbox] {
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.2rem;
-  position: relative;
-  cursor: pointer;
-  background-color: #FFFFFF;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-list-item input[type=checkbox] {
-    margin-right: 0;
-  }
-}
-
-.wpcf7-list-item input[type=checkbox]:checked::after {
-  content: "";
-  position: absolute;
-  top: 18%;
-  left: 34%;
-  width: 1.1rem;
-  height: 1.6rem;
-  transform: rotate(45deg);
-  border: solid #FFFFFF;
-  border-width: 0 0.2rem 0.2rem 0;
-}
-
-.wpcf7-list-item input[type=radio]:checked {
-  background-color: #55000C;
-}
-
-.wpcf7-list-item input[type=radio] {
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.2rem;
-  position: relative;
-  cursor: pointer;
-  background-color: #FFFFFF;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-list-item input[type=radio] {
-    margin-right: 0;
-  }
-}
-
-.wpcf7-list-item input[type=radio]:checked::after {
-  content: "";
-  position: absolute;
-  top: 18%;
-  left: 34%;
-  width: 1.1rem;
-  height: 1.6rem;
-  transform: rotate(45deg);
-  border: solid #FFFFFF;
-  border-width: 0 0.2rem 0.2rem 0;
-}
-
-.input-mt45 {
-  margin-top: -0.5%;
-}
-
-.input-mt {
-  margin-top: 4%;
-}
-
-.input-textarea {
-  align-items: flex-start;
-}
-
-.textarea-text {
-  margin-top: 5%;
-}
-@media (max-width: 767.98px) {
-  .textarea-text {
-    margin-top: 12%;
-    margin-bottom: -3rem;
-  }
-}
-
-.wpcf7-list-item {
-  display: flex;
-}
-@media (max-width: 767.98px) {
-  .wpcf7-list-item {
-    margin: 0;
-  }
-}
-
-.p-reserve-input__field,
-.p-reserve-input__textarea {
-  font-size: 1.6rem;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-}
-
-.contact-times-weekday .wpcf7-list-item.last .wpcf7-list-item-label,
-.contact-times-holiday .wpcf7-list-item.last .wpcf7-list-item-label {
-  margin-right: 0;
-}
-
-.checkbox-items .wpcf7-list-item {
-  margin: 0;
-  margin-bottom: 1%;
-}
-
-.checkbox-items .wpcf7-list-item-label {
-  margin-right: 0;
-}
-
-@media (max-width: 767.98px) {
-  .req-store {
-    position: relative;
-    top: -0.5rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .req-store-input {
-    position: relative;
-    top: -1.5rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .req-visit1st {
-    margin-bottom: -2rem;
-    position: relative;
-    top: -1.5rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .req-visit1st-input {
-    margin: 0;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .req-visit2nd {
-    margin-top: 3rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .req-visit2nd-input {
-    margin: 0;
-  }
-}
-
 .p-recruit-page__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
@@ -8554,319 +6424,179 @@ Font Awesome
   padding: 0;
   width: 90%;
 }
-.p-reserve-input__block-comfirm p {
-  display: flex;
+.p-form__input__confirm-text {
+  margin-bottom: 6rem;
 }
-
-@media screen and (min-width: 700px) {
-  .p-reserve-input__block-comfirm .p-reserve-input__row {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .p-reserve-input__block-comfirm .p-reserve-input__row label {
-    white-space: nowrap;
-  }
-  .p-reserve-input__block-comfirm .p-reserve-input__row input,
-  .p-reserve-input__block-comfirm .p-reserve-input__row select,
-  .p-reserve-input__block-comfirm .p-reserve-input__row textarea {
-    flex: 1;
-    min-width: 0;
-  }
-}
-.p-reserve-input__block-comfirm p {
-  display: flex;
-  font-size: 1.6em;
-  color: #333333;
-}
-
-.p-reserve-input__label-text {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-  height: 5rem;
-  padding-left: 0.8rem;
-  box-sizing: border-box;
-  font-family: "Jost", sans-serif;
-  width: 38.8rem;
-}
-
-.confirm-table {
-  width: 94%;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .confirm-table {
-    width: 100%;
-  }
-}
-
-.confirm-table th {
-  width: 36%;
-  height: 3.6rem;
+.p-form__confirm-text {
   font-size: 1.6rem;
-  padding-left: 0.8rem;
-  font-family: "Kosugi Maru", sans-serif;
   color: #55000C;
-  font-weight: 400;
-}
-@media screen and (max-width: 950px) {
-  .confirm-table th {
-    font-size: 1.2rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .confirm-table th {
-    font-size: 1rem;
-  }
+  line-height: 1.8;
+  padding-top: 0.8rem;
 }
 @media (max-width: 767.98px) {
-  .confirm-table th {
-    width: 100%;
-    padding-left: 0;
-    font-size: 1.6rem;
-  }
-}
-
-.confirm-table td {
-  width: 64%;
-  font-size: 1.6rem;
-  padding-left: 2.5%;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  color: #333333;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .confirm-table td {
-    width: 100%;
-    padding-left: 0;
-  }
-}
-
-.contact-time {
-  display: flex;
-  gap: 2rem;
-}
-.confirm-table td,
-.confirm-table th {
-  padding-bottom: 3%;
-}
-@media (max-width: 767.98px) {
-  .confirm-table td,
-  .confirm-table th {
-    padding-bottom: 3rem;
-  }
-}
-
-.confirm-label p {
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.75;
-  font-weight: 400;
-  color: #55000C;
-}
-@media (max-width: 767.98px) {
-  .confirm-label p {
-    font-size: 1.6rem;
-    color: #55000C;
-  }
-}
-
-.confirm-input p {
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.75;
-  font-weight: 400;
-  color: #333333;
-}
-@media (max-width: 767.98px) {
-  .confirm-input p {
+  .p-form__confirm-text {
     font-size: 1.4rem;
-    line-height: 1.5714285714;
-    color: #55000C;
+    padding-top: 0;
   }
 }
 
-.confirm-table tr {
-  border-bottom: none;
-}
-.comfirm-mailform {
-  margin-bottom: 9.8rem;
+.l-main-visual-confirm {
+  margin-bottom: 12rem;
 }
 @media (max-width: 767.98px) {
-  .comfirm-mailform {
-    margin-bottom: 0;
+  .l-main-visual-confirm {
+    margin-bottom: 6rem;
   }
 }
 
-.p-reserve-input__comfirm-required {
-  background-color: #54372D;
-  font-family: "Kosugi Maru", sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  line-height: 2.3333333333;
-  min-width: 6rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1.5rem;
-  height: 2.6rem;
-  margin-right: 1.7rem;
-  color: #F9F8F6;
-  font-weight: 400;
-  margin-right: 2%;
+.p-contact__intro {
+  margin: 12rem 0 4.8rem;
 }
 @media (max-width: 767.98px) {
-  .p-reserve-input__comfirm-required {
-    margin-right: 3%;
+  .p-contact__intro {
+    width: 92%;
+    margin: 0 auto 4.8rem;
   }
 }
-
-.p-reserve-input__optional {
-  color: #55000C;
-  background-color: #D4CEBE;
-}
-
-.confirm-submit {
-  margin-top: 3%;
-}
-
-.confirm-contents {
-  margin-top: 3%;
-}
-
-.confirm-container {
-  text-align: justify;
-}
-@media (max-width: 767.98px) {
-  .confirm-container {
-    padding: 19% 0 0;
-  }
-}
-
-.second-visit {
-  padding-bottom: 4%;
-}
-@media (max-width: 767.98px) {
-  .second-visit {
-    padding: 0;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .p-reserve-formConfirm {
-    padding: 0 0 27%;
-  }
-}
-
-.sp_only {
-  display: none;
-}
-
-@media (max-width: 767.98px) {
-  .sp_only {
-    display: block;
-  }
-}
-.pc_only {
-  display: block;
-}
-
-@media (max-width: 767.98px) {
-  .pc_only {
-    display: none;
-  }
-}
-.c-form-thnaks {
-  color: #55000C;
-  padding: 4% 0 2%;
+.p-contact__intro-inner {
+  max-width: 1080px;
   width: 75%;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 @media (max-width: 767.98px) {
-  .c-form-thnaks {
-    padding: 6% 0 7%;
-    width: 84%;
-  }
-}
-.c-form-thnaks__title {
-  font-size: 3.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3055555556;
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
-  text-align: center;
-  font-weight: 400;
-}
-@media screen and (max-width: 900px) {
-  .c-form-thnaks__title {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .c-form-thnaks__title {
-    font-size: 2.4rem;
-    margin: 0 auto 1.3rem;
-    text-align: justify;
-    padding-right: 8%;
-    letter-spacing: 0.04em;
-    line-height: 1.5;
-  }
-}
-.c-form-thnaks__coments {
-  margin: 3.2rem auto 0;
-  width: 36%;
-}
-@media (max-width: 767.98px) {
-  .c-form-thnaks__coments {
-    margin: 0;
+  .p-contact__intro-inner {
     width: 100%;
   }
 }
-.c-form-thnaks__text {
-  font-size: 1.8rem;
-  letter-spacing: 0.04em;
-  line-height: 2;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
+.p-contact__intro-text {
+  font-size: 1.6rem;
+  color: #333333;
+  line-height: 1.8;
+  margin: 0 0 1.2rem;
 }
 @media (max-width: 767.98px) {
-  .c-form-thnaks__text {
+  .p-contact__intro-text {
     font-size: 1.4rem;
+    line-height: 1.8;
   }
 }
-.c-form-thnaks__link {
-  text-align: left;
-  margin: 0 auto;
-}
-@media (max-width: 767.98px) {
-  .c-form-thnaks__link {
-    margin: 0;
-  }
-}
-.c-form-thnaks__link a {
-  font-size: 1.8rem;
-  letter-spacing: 0.04em;
-  line-height: 2;
+.p-contact__intro-link {
+  font-size: 1.6rem;
   color: #55000C;
   text-decoration: underline;
-  text-decoration-color: #55000C;
-  cursor: pointer;
-  font-family: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-  font-weight: 400;
+  text-underline-offset: 0.3rem;
 }
 @media (max-width: 767.98px) {
-  .c-form-thnaks__link a {
+  .p-contact__intro-link {
     font-size: 1.4rem;
+  }
+}
+.p-contact__intro-link a:hover {
+  opacity: 0.7;
+}
+.p-contact__form {
+  margin: 0 0 11.8rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__form {
+    margin: 0 auto 8rem;
+  }
+  .p-contact__form .p-form__address-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .p-contact__form .p-form__address-sublabel {
     width: 100%;
-    line-height: 1;
+  }
+}
+.p-contact__form-container {
+  max-width: 1080px;
+  width: 75%;
+  margin-inline: auto;
+}
+@media (max-width: 767.98px) {
+  .p-contact__form-container {
+    width: 92%;
+  }
+}
+.p-contact__form-inner {
+  background-color: #FFFFFF;
+  padding: 6.4rem 14rem;
+  border-radius: 20px;
+}
+@media (max-width: 767.98px) {
+  .p-contact__form-inner {
+    padding: 4.8rem 1.5rem;
+  }
+}
+
+.p-form__text-contact {
+  height: 4rem;
+}
+
+.p-form__textarea-contact {
+  height: 20rem;
+}
+
+@media (max-width: 767.98px) {
+  .p-form__privacy-contact {
+    flex-direction: column-reverse;
   }
 }
 
 @media (max-width: 767.98px) {
-  .thanks-steps {
-    margin-bottom: 2.3rem;
+  .p-form__privacy-label-contact {
+    padding: 0 3.65rem;
   }
+}
+
+.p-thanks {
+  text-align: center;
+  margin: 0 auto 8rem;
+}
+@media (max-width: 767.98px) {
+  .p-thanks {
+    width: 92%;
+  }
+}
+@media (max-width: 767.98px) {
+  .p-thanks__title {
+    text-align: center;
+  }
+}
+.p-thanks__message {
+  font-size: 2rem;
+  margin: 0 0 12rem;
+}
+@media (max-width: 767.98px) {
+  .p-thanks__message {
+    font-size: 1.6rem;
+    margin: 6rem 0 8rem;
+    text-align: left;
+  }
+}
+.p-thanks__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 30rem;
+  height: 6rem;
+  background-color: #FFFFFF;
+  border: 1px solid #55000C;
+  border-radius: 3rem;
+  color: #55000C;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.p-thanks__button:hover {
+  background-color: #55000C;
+  color: #FFFFFF;
+}
+.p-thanks__button-arrow {
+  font-size: 1.4rem;
 }
 
 .page-404 {

@@ -1,0 +1,55 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.p-thanks {
+  text-align: center;
+  margin: 0 auto 8rem;
+
+  @include mq(md) {
+    width: 92%;
+  }
+
+  &__title {
+    @include mq(md) {
+      text-align: center;
+    }
+  }
+
+  &__message {
+    font-size: 2rem;
+    margin: 0 0 12rem;
+
+    @include mq(md) {
+      font-size: 1.6rem;
+      margin: 6rem 0 8rem;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 30rem;
+    height: 6rem;
+    background-color: v.$color-white;
+    border: 1px solid v.$color-main;
+    border-radius: 3rem;
+    color: v.$color-main;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: v.$color-main;
+      color: v.$color-white;
+    }
+
+    @include mq(md) {}
+  }
+
+  &__button-arrow {
+    font-size: 1.4rem;
+  }
+}

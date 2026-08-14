@@ -351,7 +351,7 @@
           <div class="p-form__item">
             <dt class="p-form__label">
               <span>卒業予定年月</span>
-              <span class="p-form__badge is-required">必須</span>
+              <span class="p-form__badge is-optional">任意</span>
             </dt>
             <dd class="p-form__input">
               <div class="p-form__radio-group is-row">
@@ -391,7 +391,7 @@
               <span class="p-form__badge is-required">必須</span>
             </dt>
             <dd class="p-form__input">
-              <input type="text" name="your_birthday" placeholder="例：1995年4月1日" class="p-form__text">
+              <input type="text" name="your_birthday" class="p-form__text">
             </dd>
           </div>
 
@@ -419,7 +419,7 @@
             <dd class="p-form__input p-form__address-group">
               <div class="p-form__address-row">
                 <span class="p-form__address-sublabel">郵便番号</span>
-                <input type="text" name="postal_code" placeholder="例：123-4567" class="p-form__text">
+                <input type="text" name="postal_code" class="p-form__text">
               </div>
               <div class="p-form__address-row">
                 <span class="p-form__address-sublabel">都道府県</span>
@@ -540,9 +540,13 @@
         <div class="p-form__privacy">
           <label class="p-form__privacy-label">
             <input type="checkbox" name="privacy_consent" value="同意する">
-            <span>利用規約と個人情報の取り扱いについて同意する</span>
+            <span class="p-form__privacy-text">
+              利用規約と個人情報の取り扱いについて<br class="sp_only">
+              同意する
+            </span>
           </label>
-          <span class="p-form__badge is-required">必須</span>
+
+          <span class="p-form__badge is-required badge-privacy">必須</span>
         </div>
 
         <!-- 送信ボタン -->

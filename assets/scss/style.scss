@@ -23,20 +23,17 @@
 @use 'page/front-page/index' as front;
 
 // 固定ページまとめ
-@use 'page/concept-page' as concept;
 @use 'page/price-page' as price;
-@use 'page/salons-archive' as salons;
-@use 'page/salons-single' as salonsSingle;
 @use 'page/letter-archive' as letterArchive;
 @use 'page/letter-single' as letterSingle;
 @use 'page/info-archive' as infoArchive;
 @use 'page/info-single' as infoSingle;
 @use 'page/introduction-archive' as introductionArchive;
 @use 'page/introduction-single' as introductionSingle;
-@use 'page/reserve' as reserve;
 @use 'page/recruit' as recruit;
-@use 'page/reserve-confirm' as reserve-confirm;
-@use 'page/reserve-thanks' as reserve-thanks;
+@use 'page/recruit-confirm' as recruit-confirm;
+@use 'page/contact' as contact;
+@use 'page/contact-thanks' as contact-thanks;
 @use 'page/page404' as page404;
 @use 'page/privacy-policy-page' as privacy-policy;
 

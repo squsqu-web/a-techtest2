@@ -1,0 +1,115 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.p-contact {
+
+  // ご案内
+  &__intro {
+    margin: 12rem 0 4.8rem;
+
+    @include mq(md) {
+      width: 92%;
+      margin: 0 auto 4.8rem;
+    }
+  }
+
+  &__intro-inner {
+    max-width: 1080px;
+    width: 75%;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+  &__intro-text {
+    font-size: 1.6rem;
+    color: v.$color-main-2;
+    line-height: 1.8;
+    margin: 0 0 1.2rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+      line-height: 1.8;
+    }
+  }
+
+  &__intro-link {
+    font-size: 1.6rem;
+    color: v.$color-main;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+
+  // フォームセクション
+  &__form {
+    margin: 0 0 11.8rem;
+
+    @include mq(md) {
+      margin: 0 auto 8rem;
+
+      // お問い合わせページの住所だけSPで縦並び
+      .p-form__address-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+
+      .p-form__address-sublabel {
+        width: 100%;
+      }
+    }
+  }
+
+  &__form-container {
+    max-width: 1080px;
+    width: 75%;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 92%;
+    }
+  }
+
+  &__form-inner {
+    background-color: v.$color-white;
+    padding: 6.4rem 14rem;
+    border-radius: 20px;
+
+    @include mq(md) {
+      padding: 4.8rem 1.5rem;
+    }
+  }
+}
+
+.p-form__text-contact {
+  height: 4rem;
+}
+
+.p-form__textarea-contact {
+  height: 20rem;
+}
+
+.p-form__privacy-contact {
+  @include mq(md) {
+    flex-direction: column-reverse;
+  }
+}
+
+.p-form__privacy-label-contact {
+  @include mq(md) {
+    padding: 0 3.65rem;
+  }
+}

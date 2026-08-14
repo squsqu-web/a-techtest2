@@ -76,16 +76,6 @@ button {
 	cursor: pointer;
 }
 
-/* Form UI reset */
-input,
-textarea,
-select,
-button {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-}
-
 /* Remove focus outline only when using mouse */
 :focus:not(:focus-visible) {
 	outline: none;
@@ -114,6 +104,6 @@ svg {
 	}
 }
 
-address{
+address {
 	font-style: normal;
 }
