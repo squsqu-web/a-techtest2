@@ -1,0 +1,155 @@
+<section class="p-form">
+  <dl class="p-form__list">
+
+    <!-- お名前 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お名前</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">[multiform your_name]</p>
+      </dd>
+    </div>
+
+
+    <!-- お子様のご年齢 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お子様のご年齢</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">[multiform child_age]</p>
+      </dd>
+    </div>
+
+
+    <!-- ご住所 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>ご住所</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input p-form__address-group">
+
+        <p class="p-form__confirm-text">
+          郵便番号：[multiform postal_code]
+        </p>
+
+        <p class="p-form__confirm-text">
+          都道府県：[multiform prefecture]
+        </p>
+
+        <p class="p-form__confirm-text">
+          市区町村：[multiform city]
+        </p>
+
+        <p class="p-form__confirm-text">
+          番地、建物名：[multiform address_rest]
+        </p>
+
+      </dd>
+    </div>
+
+
+    <!-- 電話番号 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>電話番号</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">
+          [multiform tel]
+        </p>
+      </dd>
+    </div>
+
+
+    <!-- メールアドレス -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>メールアドレス</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">
+          [multiform email]
+        </p>
+      </dd>
+    </div>
+
+
+    <!-- お問い合わせの保育園 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お問い合わせの保育園</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">
+          [multiform nursery_name]
+        </p>
+      </dd>
+    </div>
+
+
+    <!-- お問い合わせ内容 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お問い合わせ内容</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <p class="p-form__confirm-text">
+          [multiform contact_other_text]
+        </p>
+      </dd>
+    </div>
+
+  </dl>
+
+
+  <!-- プライバシーポリシー同意 -->
+  <div class="p-form__privacy p-form__privacy-contact">
+
+    <div class="p-form__privacy-label p-form__privacy-label-contact">
+      <span class="p-form__privacy-text">
+        利用規約と個人情報の<br class="sp_only">
+        取り扱いについて同意する
+      </span>
+    </div>
+
+    <span class="p-form__badge is-required badge-privacy">
+      必須
+    </span>
+
+  </div>
+
+
+  <!-- 戻る・送信ボタン -->
+  <div class="p-form__submit-wrap">
+
+    [previous "戻る"]
+
+    [submit class:p-form__submit-btn "送信"]
+
+  </div>
+
+
+  <!-- Multi-Step 本番用最終ステップ -->
+   <!-- テスト用 -->
+  [multistep multistep-863 last_step send_email "contact-thanks"]
+
+  <!-- 本番用 -->
+  [multistep multistep-675 last_step send_email "/wp-test/contact-thanks"]
+
+</section>

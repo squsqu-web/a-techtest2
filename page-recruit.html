@@ -1,0 +1,290 @@
+<section class="p-form">
+  <dl class="p-form__list">
+
+    <!-- お問い合わせ内容 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お問い合わせ内容</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <div class="p-form__radio-group">
+          [radio recruit_contact_content use_label_element
+          "園の見学をしたい"
+          "採用試験に応募したい"
+          "その他"]
+        </div>
+
+        [textarea recruit_contact_other_text
+        class:p-form__textarea
+        class:p-form__textarea--small]
+      </dd>
+    </div>
+
+
+    <!-- 卒業予定年月 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>卒業予定年月</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <div class="p-form__radio-group is-row">
+          [radio recruit_graduate_year use_label_element
+          "2024年3月"
+          "既卒"
+          "その他"]
+        </div>
+      </dd>
+    </div>
+
+
+    <!-- お名前 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>お名前</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text* recruit_name class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- ふりがな -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>ふりがな</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text* recruit_kana class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- 生年月日 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>生年月日</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text* recruit_birthday class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- 性別 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>性別</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <div class="p-form__radio-group is-row">
+          [radio recruit_gender use_label_element
+          "男性"
+          "女性"
+          "その他"]
+        </div>
+      </dd>
+    </div>
+
+
+    <!-- ご住所 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>ご住所</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input p-form__address-group">
+
+        <div class="p-form__address-row">
+          <span class="p-form__address-sublabel">郵便番号</span>
+          [text* recruit_postal_code class:p-form__text]
+        </div>
+
+        <div class="p-form__address-row">
+          <span class="p-form__address-sublabel">都道府県</span>
+          [text* recruit_prefecture class:p-form__text]
+        </div>
+
+        <div class="p-form__address-row">
+          <span class="p-form__address-sublabel">市区町村</span>
+          [text* recruit_city class:p-form__text]
+        </div>
+
+        <div class="p-form__address-row">
+          <span class="p-form__address-sublabel">番地、建物名</span>
+          [text* recruit_address_rest class:p-form__text]
+        </div>
+
+      </dd>
+    </div>
+
+
+    <!-- 電話番号 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>電話番号</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [tel* recruit_tel class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- メールアドレス -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>メールアドレス</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [email* recruit_email class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- 学校名 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>学校名</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text recruit_school_name class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- 学科名 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>学科名</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text recruit_department_name class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- 希望職種 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>希望職種</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <div class="p-form__radio-group">
+          [radio recruit_job_type use_label_element
+          "保育士（保育士免許あり）"
+          "保育士（保育士免許なし）"
+          "栄養士もしくは調理師"
+          "看護師"
+          "事務"]
+        </div>
+      </dd>
+    </div>
+
+
+    <!-- 希望雇用形態 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>希望雇用形態</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        <div class="p-form__radio-group">
+          [radio recruit_employment_status use_label_element
+          "正社員"
+          "常勤パート"
+          "非常勤パート"]
+        </div>
+      </dd>
+    </div>
+
+
+    <!-- 希望就業エリア -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>希望就業エリア</span>
+        <span class="p-form__badge is-required">必須</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [text* recruit_work_area class:p-form__text]
+      </dd>
+    </div>
+
+
+    <!-- ご要望・ご質問 -->
+    <div class="p-form__item">
+      <dt class="p-form__label">
+        <span>ご要望・ご質問</span>
+        <span class="p-form__badge is-optional">任意</span>
+      </dt>
+
+      <dd class="p-form__input">
+        [textarea recruit_message class:p-form__textarea]
+      </dd>
+    </div>
+
+  </dl>
+
+
+  <!-- プライバシーポリシー同意 -->
+  <div class="p-form__privacy">
+
+    <label class="p-form__privacy-label">
+
+      [acceptance recruit_privacy_consent]
+      <span class="p-form__privacy-text">
+        利用規約と個人情報の取り扱いについて<br class="sp_only">
+        同意する
+      </span>
+      [/acceptance]
+
+    </label>
+
+    <span class="p-form__badge is-required badge-privacy">
+      必須
+    </span>
+
+  </div>
+
+
+  <!-- 確認ボタン -->
+  <div class="p-form__submit-wrap">
+
+    [submit class:p-form__submit-btn "内容確認"]
+
+    <span class="p-form__submit-arrow">&gt;</span>
+
+  </div>
+
+
+  <!-- Multi-Step -->
+  <!-- テスト用 -->
+  [multistep multistep-recruit first_step "/recruit-confirm"]
+
+  <!-- 本番用 -->
+  [multistep multistep-336 first_step "/wp-test/recruit-confirm"]
+
+</section>
