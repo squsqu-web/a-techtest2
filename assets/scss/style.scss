@@ -34,8 +34,10 @@
 @use 'page/recruit-confirm' as recruit-confirm;
 @use 'page/contact' as contact;
 @use 'page/contact-thanks' as contact-thanks;
-@use 'page/page404' as page404;
 @use 'page/privacy-policy-page' as privacy-policy;
+@use 'page/sitemap' as sitemap;
+@use 'page/page404' as page404;
+
 
 
 // Utility

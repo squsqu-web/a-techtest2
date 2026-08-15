@@ -25,7 +25,7 @@
         <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/recruit/'); ?>" class="footer__nav-link">採用情報</a></li>
         <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/info/'); ?>" class="footer__nav-link">お知らせ</a></li>
         <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/contact/'); ?>" class="footer__nav-link">お問い合わせ</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/site-map/'); ?>" class="footer__nav-link">サイトマップ</a></li>
+        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/sitemap/'); ?>" class="footer__nav-link">サイトマップ</a></li>
         <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link">プライバシーポリシー</a></li>
       </ul>
     </nav>

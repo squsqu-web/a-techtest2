@@ -1,0 +1,29 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as *;
+
+.p-form {
+
+  &__input__confirm-text {
+    margin-bottom: 6rem;
+  }
+
+  &__confirm-text {
+    font-size: 1.6rem;
+    color: v.$color-main;
+    line-height: 1.8;
+    padding-top: 0.8rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+      padding-top: 0;
+    }
+  }
+}
+
+.l-main-visual-confirm {
+  margin-bottom: 12rem;
+
+  @include mq(md) {
+    margin-bottom: 6rem;
+  }
+}

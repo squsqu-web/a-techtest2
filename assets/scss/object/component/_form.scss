@@ -2,7 +2,8 @@
 @use '../../foundation/mixin' as *;
 
 // フォームセクション
-.p-recruit-page {
+.p-recruit-page,
+.p-contact {
   &__contact {
     margin: 0 0 12rem;
 
@@ -310,8 +311,8 @@
   }
 }
 
-.badge-privacy{
-   @include mq(md) {
-        margin-left: 2.8rem;
-      }
+.badge-privacy {
+  @include mq(md) {
+    margin-left: 6.5rem;
+  }
 }

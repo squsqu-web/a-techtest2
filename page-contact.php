@@ -184,36 +184,25 @@
 
         <!-- プライバシーポリシー同意 -->
         <div class="p-form__privacy p-form__privacy-contact">
-
           <label class="p-form__privacy-label p-form__privacy-label-contact">
-
             <input
               type="checkbox"
               name="privacy_consent"
               value="同意する">
 
-            <span class="p-form__privacy-text">
-              利用規約と個人情報の<br class="sp_only">取り扱いについて同意する
-            </span>
-
+            <span class="p-form__privacy-text">利用規約と個人情報の<br class="sp_only">取り扱いについて同意する</span>
           </label>
-
-          <span class="p-form__badge is-required badge-privacy">
-            必須
-          </span>
-
+          <span class="p-form__badge is-required badge-privacy">必須</span>
         </div>
 
         <!-- 送信ボタン -->
         <div class="p-form__submit-wrap">
-
           <button
             type="submit"
             class="p-form__submit-btn">
             <span>内容確認</span>
             <span class="p-form__submit-arrow">&gt;</span>
           </button>
-
         </div>
 
       </form>
