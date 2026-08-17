@@ -13,6 +13,7 @@
 // Project / Objects
 @use 'object/project/common';
 @use 'object/project/info';
+@use 'object/project/contact-recruit';
 
 // Layout
 @use 'layout/header';
@@ -23,7 +24,7 @@
 @use 'page/front-page/index' as front;
 
 // 固定ページまとめ
-@use 'page/price-page' as price;
+@use 'page/about-page' as about;
 @use 'page/letter-archive' as letterArchive;
 @use 'page/letter-single' as letterSingle;
 @use 'page/info-archive' as infoArchive;

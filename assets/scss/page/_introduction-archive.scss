@@ -34,7 +34,6 @@
   }
 }
 
-
 .p-introduction-sec {
   padding: 13.4rem 0 0;
 }
@@ -48,16 +47,20 @@
   justify-content: center;
   gap: .8rem;
 
-
   &__button {
     cursor: pointer;
     @include flex();
+    flex-direction: column;
     width: 15rem;
     height: 5rem;
     background-color: v.$color-white;
     color: v.$color-main-5;
     border: 1px solid v.$color-main-5;
     font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
+
     transition: .3s;
     border-radius: 12px 12px 0 0;
 
@@ -69,6 +72,15 @@
     @include mq(md) {
       font-size: 1.4rem;
       padding: 1.2rem 1rem;
+    }
+
+    & span {
+      display: block;
+      font-size: 1.4rem;
+
+      @include mq(md) {
+        font-size: 1.2rem;
+      }
     }
   }
 }
@@ -94,6 +106,10 @@
     font-size: 1.6rem;
     border-radius: 0.8rem;
     background-color: v.$color-white;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
+
     color: v.$color-text;
     border: 1px solid v.$color-text;
     text-decoration: none;
@@ -194,15 +210,14 @@
   /* 園の種類 */
   &__type {
     font-size: 1.4rem;
-    line-height: 1.5;
     color: v.$color-main;
     background-color: v.$color-white;
     padding: .4rem .8rem;
     border-radius: .8rem;
 
-    @include mq(md) {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
   }
 
 
@@ -215,24 +230,24 @@
     padding: .4rem .8rem;
     border-radius: .8rem;
 
-    @include mq(md) {
-      font-size: 1.4rem;
-    }
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
   }
 
   /* 園名 */
   &__title {
     margin-bottom: 1rem;
     font-size: 2rem;
-    font-weight: 700;
     line-height: 1.5;
     color: v.$color-main;
+    letter-spacing: 0.1em;
+    font-weight: v.$Regular;
 
     @include mq(md) {
       font-size: 1.8rem;
     }
   }
-
 }
 
 
@@ -244,6 +259,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 12.3rem;
+
   @include mq(md) {
     margin-bottom: 8rem;
   }

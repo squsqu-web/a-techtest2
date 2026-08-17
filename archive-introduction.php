@@ -30,14 +30,15 @@
           type="button"
           class="p-introduction-tab__button is-active-introduction"
           data-tab="type">
-          園の種類<br>から探す
+          園の種類<br><span>から探す</span>
         </button>
 
         <button
           type="button"
           class="p-introduction-tab__button"
           data-tab="area">
-          都道府県<br>から探す
+          都道府県<br><span>から探す</span>
+        </button>
         </button>
 
       </div>

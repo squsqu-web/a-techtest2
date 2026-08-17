@@ -156,7 +156,7 @@
     <!-- セクションタイトル -->
     <div class="p-introduction-about-nursery__heading">
       <h2 class="p-introduction-about-nursery__title">園の概要</h2>
-      <p class="p-introduction-about-nursery__subtitle">About Nursery</p>
+      <p class="p-introduction-about-nursery__subtitle">about nursery</p>
     </div>
 
     <!-- 園の概要の表 -->
@@ -236,7 +236,7 @@
 
         <div class="p-introduction-single-overview__row">
           <dt class="p-introduction-single-overview__term">入園日</dt>
-          <dd class="p-introduction-single-overview__desc"><?php echo wp_kses_post($overview_admission); ?></dd>
+          <dd class="p-introduction-single-overview__desc p-introduction-single-overview__desc-lh"><?php echo wp_kses_post($overview_admission); ?></dd>
         </div>
 
         <div class="p-introduction-single-overview__row">

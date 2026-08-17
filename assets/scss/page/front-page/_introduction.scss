@@ -38,17 +38,12 @@
 
   }
 
-  &__heading {
-    font-size: 2.4rem;
-    color: v.$color-main;
-
-    @include mq(md) {}
-
-  }
-
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
     margin: 0 auto 1rem;
 
     @include mq(md) {
@@ -62,6 +57,11 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    text-transform: capitalize;
+    font-family: v.$font-sub;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    font-weight: v.$Black;
     margin: 0 auto 7.2rem;
 
     @include mq(md) {
@@ -82,15 +82,22 @@
   }
 
   &__prefectures-item {
-    font-size: 1.8rem;
-    color: v.$color-main;
+    font-size: 2.4rem;
+    color: v.$color-main-2;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
     background-color: v.$color-white;
+
     width: 32rem;
     height: 6rem;
     @include flex;
     border-radius: 2rem;
+    border: 2px solid v.$color-main-4;
 
     @include mq(md) {
+      font-size: 1.8rem;
+
       width: 24rem;
       height: 4rem;
       border-radius: 1.2rem;
@@ -102,11 +109,23 @@
     font-size: 1.8rem;
     color: v.$color-main;
 
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+    }
+
     @include mq(md) {
       font-size: 1.6rem;
       width: 20rem;
       height: 5rem;
     }
-
   }
 }

@@ -2,7 +2,6 @@
 @use '../../foundation/mixin' as *;
 
 .p-letter {
-  // background-color: v.$color-main-2;
   background-image: url("../../img/top-letters__bg.svg");
   margin: 0 auto;
   position: relative;
@@ -55,14 +54,14 @@
 
   &__heading {
     text-align: center;
-
-    @include mq(md) {}
-
   }
 
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
     margin: 0 auto 1rem;
 
     @include mq(md) {
@@ -75,6 +74,11 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    text-transform: capitalize;
+    font-family: v.$font-sub;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    font-weight: v.$Black;
     margin: 0 auto 6.2rem;
 
     @include mq(md) {
@@ -129,32 +133,33 @@
 
   &__card-title {
     font-size: 1.8rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     margin: 0 0 1.1rem;
-
-    @include mq(md) {}
-
   }
 
   &__text {
     font-size: 1.6rem;
-    color: v.$color-main;
-
-    @include mq(md) {}
-
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
   }
 
 
   &__date {
     font-size: 1.4rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     position: absolute;
     right: 1.2rem;
     bottom: 1.2rem;
-
-    @include mq(md) {}
-
   }
 
   &__link-wrap {
@@ -165,9 +170,23 @@
     font-size: 1.8rem;
     color: v.$color-main;
 
-    @include mq(md) {
-      font-size: 1.6rem;
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
     }
 
+    @include mq(md) {
+      font-size: 1.6rem;
+      width: 20rem;
+      height: 5rem;
+    }
   }
 }

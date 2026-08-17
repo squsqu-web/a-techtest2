@@ -33,7 +33,7 @@ $breakpoints: (
 // ボタン用スタイル
 @mixin button-base($bg,
   $color,
-  $radius: 40px) {
+  $radius: 3rem) {
 
   background-color: $bg;
   color: $color;

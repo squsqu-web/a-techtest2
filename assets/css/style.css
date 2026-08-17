@@ -319,15 +319,13 @@ img {
   color: #55000C;
   font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-size: 1.8rem;
-  z-index: 1;
   letter-spacing: 0.1em;
-  line-height: 2;
+  line-height: 1.5;
   font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .breadcrumb {
     font-size: 1.4rem;
-    letter-spacing: 1.4px;
   }
 }
 
@@ -340,15 +338,15 @@ img {
 }
 
 .c-button {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 400;
   font-family: "Kosugi Maru", sans-serif;
   letter-spacing: 0.1em;
-  line-height: 1.6;
-  border: 1px solid #55000C;
-  background-color: #55000C;
+  line-height: 1;
+  border: 2px solid #55000C;
+  background-color: #FFFFFF;
   color: #55000C;
-  border-radius: 40px;
+  border-radius: 3rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -356,8 +354,8 @@ img {
   display: inline-flex;
   gap: 0.5em;
   text-decoration: none;
-  width: 20rem;
-  height: 5rem;
+  width: 24rem;
+  height: 6rem;
   transition: 0.4s;
 }
 .c-button:hover {
@@ -816,6 +814,152 @@ body {
   }
 }
 
+.p-contact {
+  background-color: #FFF7B8;
+  background-image: url("../../img/contact-bg.webp");
+  background-size: cover;
+  background-position: center;
+  height: 63rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .p-contact {
+    height: 69.6rem;
+    background-image: url("../../img/contact-bg-sp.webp");
+  }
+}
+.p-contact__inner {
+  width: 75%;
+  margin-inline: auto;
+  background-color: rgba(255, 255, 255, 0.8980392157);
+  text-align: center;
+  padding: 6.4rem 33rem;
+  border-radius: 40px;
+}
+@media (max-width: 767.98px) {
+  .p-contact__inner {
+    width: 92%;
+    padding: 6.4rem 0;
+  }
+}
+.p-contact__icon-wrap {
+  width: 10.8rem;
+  height: 10.8rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 5rem;
+  border-radius: 50%;
+}
+@media (max-width: 767.98px) {
+  .p-contact__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
+.p-contact__icon {
+  width: 7.2rem;
+  height: 7.2rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
+}
+.p-contact__title {
+  font-size: 2.4rem;
+  color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0 auto 1rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__title {
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+  }
+}
+.p-contact__subtitle {
+  font-size: 1rem;
+  color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
+  margin: 0 auto 4.8rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__subtitle {
+    margin: 0 auto 4.8rem;
+  }
+}
+.p-contact__text {
+  font-size: 1.8rem;
+  color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  font-weight: 400;
+  margin: 0 auto 3.9rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__text {
+    font-size: 1.6rem;
+    margin: 0 auto 3.2rem;
+  }
+}
+.p-contact__link-wrap {
+  text-align: center;
+}
+.p-contact__link {
+  font-size: 1.8rem;
+  color: #55000C;
+  position: relative;
+}
+.p-contact__link::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__link {
+    font-size: 1.6rem;
+    width: 20rem;
+    height: 5rem;
+  }
+}
+.p-contact__link-info {
+  color: #55000C;
+  width: 24rem;
+  height: 6rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__link-info {
+    font-size: 1.8rem;
+  }
+}
+.p-contact__link-entry {
+  color: #55000C;
+  background-color: #FFF7B8;
+  width: 24rem;
+  height: 6rem;
+}
+@media (max-width: 767.98px) {
+  .p-contact__link-entry {
+    font-size: 1.8rem;
+  }
+}
+
 .l-header {
   width: 100%;
   height: 25rem;
@@ -899,11 +1043,21 @@ body {
   flex-shrink: 0;
 }
 .l-header__link-ja {
-  margin: 0 0 0.4rem;
   font-size: 1.6rem;
+  color: #55000C;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0 0 0.4rem;
 }
 .l-header__link-en {
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 1rem;
+  color: #55000C;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-weight: 900;
 }
 .l-header__icon {
   width: 4.8rem;
@@ -933,15 +1087,6 @@ body {
   .l-header__logo img {
     width: 100%;
   }
-}
-.l-header__title {
-  font-size: 2.8rem;
-  font-family: "Jost", sans-serif;
-  color: #54372D;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  line-height: 1.25;
-  font-weight: 400;
 }
 
 .l-header__item:nth-child(4) {
@@ -1047,6 +1192,15 @@ body {
   top: -3.5rem;
 }
 
+.u-sp-none {
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .u-sp-none {
+    display: none;
+  }
+}
 /* 背景固定用 */
 .no-scroll {
   position: fixed;
@@ -1105,26 +1259,6 @@ body {
   }
 }
 
-.u-sp-none {
-  display: block;
-}
-
-.u-sp-show {
-  display: none;
-}
-
-@media (max-width: 767.98px) {
-  .u-sp-none {
-    display: none;
-  }
-  .u-sp-show {
-    display: block;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    z-index: 99999;
-  }
-}
 .fa-calendar-days {
   padding-right: 1.6rem;
 }
@@ -1144,7 +1278,6 @@ body {
 .footer__menu {
   text-align: center;
   padding: 4.8rem 0 1.2rem;
-  border: 3px solid red;
 }
 @media (max-width: 767.98px) {
   .footer__menu {
@@ -1174,23 +1307,6 @@ body {
   .footer__logo img {
     width: 20rem;
     height: auto;
-  }
-}
-.footer__logo-title {
-  font-size: 2.8rem;
-  font-family: "Jost", sans-serif;
-  letter-spacing: 0.2em;
-  line-height: 1.25;
-  color: #54372D;
-  margin: 0;
-  text-align: left;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .footer__logo-title {
-    font-size: 2rem;
-    text-align: left;
-    padding-right: 7rem;
   }
 }
 .footer__nav {
@@ -1223,14 +1339,12 @@ body {
 }
 .footer__nav-link {
   font-size: 1.6rem;
-  font-family: "Jost", sans-serif;
-  color: #54372D;
+  color: #55000C;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-weight: 400;
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  text-transform: capitalize;
-  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .footer__nav-link {
@@ -1247,19 +1361,20 @@ body {
 }
 @media (max-width: 767.98px) {
   .footer__nav-item {
-    text-align: center;
+    text-align: left;
   }
 }
 .footer__copyright-text {
   font-size: 1.4rem;
-  line-height: 1.25;
-  color: #54372D;
-  font-family: "Jost", sans-serif;
-  text-align: center;
+  color: #333333;
   letter-spacing: 0.1em;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
 }
 @media (max-width: 767.98px) {
   .footer__copyright-text {
+    font-size: 1.2rem;
     padding-bottom: 0.8rem;
   }
 }
@@ -1415,9 +1530,12 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  text-align: center;
-  line-height: 1.8;
+  text-align: left;
+  letter-spacing: 0.1em;
+  line-height: 2;
   font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  color: #55000C;
 }
 @media (max-width: 767.98px) {
   .p-hero__text-comment {
@@ -1456,13 +1574,12 @@ body {
     height: 5.3rem;
   }
 }
-.p-about__heading {
-  font-size: 2.4rem;
-  color: #55000C;
-}
 .p-about__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0 auto 1rem;
 }
 @media (max-width: 767.98px) {
@@ -1474,6 +1591,11 @@ body {
 .p-about__subtitle {
   font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
   margin: 0 auto 6.4rem;
 }
 @media (max-width: 767.98px) {
@@ -1492,180 +1614,15 @@ body {
 .p-about__text {
   font-size: 1.8rem;
   color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 2;
+  font-weight: 400;
   margin: 1.6rem 0;
 }
 @media (max-width: 767.98px) {
   .p-about__text {
     font-size: 1.4rem;
     margin: 1.6rem 0 3.1rem;
-  }
-}
-
-.p-yearly-program {
-  text-align: center;
-}
-.p-yearly-program__inner {
-  width: 75%;
-  margin-inline: auto;
-  margin: 8rem auto 11.8rem;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__inner {
-    width: 92%;
-    margin: 6rem auto 8rem;
-  }
-}
-.p-yearly-program {
-  /* ==============================
-  アイコン
-  ============================== */
-}
-.p-yearly-program__icon-wrap {
-  width: 10.8rem;
-  height: 10.8rem;
-  background-color: #FFF7B8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 5rem;
-  border-radius: 50%;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__icon-wrap {
-    width: 8rem;
-    height: 8rem;
-    margin: 0 auto 0.8rem;
-  }
-}
-.p-yearly-program__icon {
-  width: 7.2rem;
-  height: 7.2rem;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__icon {
-    width: 5.3rem;
-    height: 5.3rem;
-  }
-}
-.p-yearly-program {
-  /* ==============================
-  見出し
-  ============================== */
-}
-.p-yearly-program__heading {
-  font-size: 2.4rem;
-  color: #55000C;
-}
-.p-yearly-program__title {
-  font-size: 2.4rem;
-  color: #55000C;
-  margin: 0 auto 1rem;
-}
-.p-yearly-program__subtitle {
-  font-size: 1rem;
-  color: #55000C;
-  margin: 0 auto 3.2rem;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__subtitle {
-    margin: 0 auto 3.2rem;
-  }
-}
-.p-yearly-program {
-  /* ==============================
-  園一覧
-  ============================== */
-}
-.p-yearly-program__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  text-align: left;
-  background: #FFFFFF;
-  padding: 6rem 4rem;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__list {
-    flex-direction: column;
-    gap: 3rem 2rem;
-    padding: 6rem 1.25rem;
-  }
-}
-.p-yearly-program__item {
-  background-color: #FFEDF0;
-  border-radius: 20px;
-}
-.p-yearly-program {
-  /* ==============================
-  園カード
-  ============================== */
-}
-.p-yearly-program__card {
-  display: block;
-  width: 32rem;
-  height: auto;
-  height: 26.4rem;
-  color: inherit;
-  text-decoration: none;
-  transition: 0.3s;
-  padding: 1.2rem;
-}
-.p-yearly-program__card:hover {
-  opacity: 0.7;
-}
-.p-yearly-program {
-  /* アイキャッチ */
-}
-.p-yearly-program__thumbnail {
-  width: 100%;
-  aspect-ratio: 296/180;
-  margin-bottom: 0.8rem;
-}
-.p-yearly-program__thumbnail img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 20px;
-}
-.p-yearly-program {
-  /* カテゴリーボタンの箱 */
-}
-.p-yearly-program__wrap {
-  display: flex;
-  gap: 0.8rem;
-  margin-bottom: 0.8rem;
-}
-.p-yearly-program {
-  /* 園の種類 */
-}
-.p-yearly-program__type {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  color: #55000C;
-  background-color: #FFFFFF;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.8rem;
-}
-.p-yearly-program__card-month {
-  font-size: 2rem;
-  line-height: 1.5;
-  color: #55000C;
-  margin-bottom: 0.8rem;
-}
-.p-yearly-program__card-title {
-  font-size: 1.4rem;
-  color: #55000C;
-}
-.p-yearly-program__card-note {
-  font-size: 1.6rem;
-  color: #55000C;
-  margin-top: 1.2rem;
-}
-@media (max-width: 767.98px) {
-  .p-yearly-program__card-note {
-    font-size: 1.4rem;
   }
 }
 
@@ -1707,13 +1664,12 @@ body {
     height: 5.3rem;
   }
 }
-.p-introduction__heading {
-  font-size: 2.4rem;
-  color: #55000C;
-}
 .p-introduction__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0 auto 1rem;
 }
 @media (max-width: 767.98px) {
@@ -1725,6 +1681,11 @@ body {
 .p-introduction__subtitle {
   font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
   margin: 0 auto 7.2rem;
 }
 @media (max-width: 767.98px) {
@@ -1740,8 +1701,11 @@ body {
   margin: 0 0 5.4rem;
 }
 .p-introduction__prefectures-item {
-  font-size: 1.8rem;
-  color: #55000C;
+  font-size: 2.4rem;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
   background-color: #FFFFFF;
   width: 32rem;
   height: 6rem;
@@ -1749,9 +1713,11 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
+  border: 2px solid #FFEDF0;
 }
 @media (max-width: 767.98px) {
   .p-introduction__prefectures-item {
+    font-size: 1.8rem;
     width: 24rem;
     height: 4rem;
     border-radius: 1.2rem;
@@ -1760,6 +1726,17 @@ body {
 .p-introduction__link {
   font-size: 1.8rem;
   color: #55000C;
+  position: relative;
+}
+.p-introduction__link::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 @media (max-width: 767.98px) {
   .p-introduction__link {
@@ -1825,6 +1802,9 @@ body {
 .p-letter__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0 auto 1rem;
 }
 @media (max-width: 767.98px) {
@@ -1836,6 +1816,11 @@ body {
 .p-letter__subtitle {
   font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
   margin: 0 auto 6.2rem;
 }
 @media (max-width: 767.98px) {
@@ -1874,16 +1859,25 @@ body {
 }
 .p-letter__card-title {
   font-size: 1.8rem;
-  color: #55000C;
+  color: #333333;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0 0 1.1rem;
 }
 .p-letter__text {
   font-size: 1.6rem;
-  color: #55000C;
+  color: #333333;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  font-weight: 400;
 }
 .p-letter__date {
   font-size: 1.4rem;
-  color: #55000C;
+  color: #333333;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  font-weight: 400;
   position: absolute;
   right: 1.2rem;
   bottom: 1.2rem;
@@ -1894,15 +1888,27 @@ body {
 .p-letter__link {
   font-size: 1.8rem;
   color: #55000C;
+  position: relative;
+}
+.p-letter__link::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 @media (max-width: 767.98px) {
   .p-letter__link {
     font-size: 1.6rem;
+    width: 20rem;
+    height: 5rem;
   }
 }
 
 .p-recruit {
-  background-color: #FFF7B8;
   background-image: url("../../img/recruit-bg.webp");
   background-size: cover;
   background-position: center;
@@ -1927,7 +1933,7 @@ body {
 @media (max-width: 767.98px) {
   .p-recruit__inner {
     width: 92%;
-    padding: 6.4rem 4.4rem;
+    padding: 6.4rem 4.2rem;
   }
 }
 .p-recruit__icon-wrap {
@@ -1960,6 +1966,9 @@ body {
 .p-recruit__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0 auto 1rem;
 }
 @media (max-width: 767.98px) {
@@ -1971,6 +1980,11 @@ body {
 .p-recruit__subtitle {
   font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
   margin: 0 auto 4.8rem;
 }
 @media (max-width: 767.98px) {
@@ -1981,6 +1995,9 @@ body {
 .p-recruit__text {
   font-size: 1.8rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  font-weight: 400;
   margin: 0 auto 3.9rem;
 }
 @media (max-width: 767.98px) {
@@ -1998,6 +2015,19 @@ body {
     align-items: center;
     gap: 2.4rem;
   }
+}
+.p-recruit__link-wrap a {
+  position: relative;
+}
+.p-recruit__link-wrap a::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 .p-recruit__link {
   font-size: 1.8rem;
@@ -3191,1049 +3221,211 @@ body {
     display: none;
   }
 }
-.price_menu {
-  padding: 0 0 0;
+.p-about-page {
+  margin: 12rem 0 5rem;
 }
 @media (max-width: 767.98px) {
-  .price_menu {
-    padding: 0;
-  }
-}
-
-/* メニューナビ */
-.price__nav {
-  padding: 8rem 0 0;
-  text-align: center;
-  display: flex;
-  width: 84%;
-  margin: 0 auto;
-  justify-content: space-between;
-  background-color: #F9F8F6;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media screen and (max-width: 1200px) {
-  .price__nav {
-    flex-direction: column-reverse;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__nav {
-    margin: 14% auto 0;
-    padding: 0;
-  }
-}
-
-.price__nav-text {
-  width: 50%;
-  padding: 0 0 10%;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  text-align: left;
-  opacity: 0.5;
-  font-weight: 400;
-}
-@media screen and (max-width: 1200px) {
-  .price__nav-text {
-    width: 100%;
-    padding: 3.3rem 0.9rem 7.7rem 2.8rem;
-    font-size: 1.4rem;
-    line-height: 2;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__nav-text {
-    width: 100%;
-    padding: 9% 0 25%;
-    font-size: 1.4rem;
-    line-height: 2;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .p-price__row {
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-.p-price__row--top {
-  display: flex;
-  border-bottom: 0.1rem solid #55000C;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .p-price__row--top {
-    display: block;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .price_top {
-    display: block;
-  }
-}
-@media (max-width: 767.98px) {
-  .p-price__content {
-    margin: 13% 0 0;
-  }
-}
-
-.price__nav-list {
-  width: 46.25%;
-}
-@media screen and (max-width: 1200px) {
-  .price__nav-list {
-    width: 100%;
-  }
-}
-
-.p-price__content__title {
-  font-size: 3.3rem;
-  letter-spacing: 0.04em;
-  line-height: 1.2424242424;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  padding: 1rem;
-  padding-left: 0.8rem;
-  text-align: left;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media screen and (max-width: 1400px) {
-  .p-price__content__title {
-    font-size: 2.6rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .p-price__content__title {
-    font-size: 2rem;
-    width: 100%;
-    padding: 1rem 0 0.2rem 1.4rem;
-  }
-}
-
-.price__detail {
-  background-color: #D4CEBE;
-  padding: 4% 0 0.1rem;
-  margin-bottom: 7rem;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media (max-width: 767.98px) {
-  .price__detail {
-    padding: 16% 0 0.1rem;
-    margin: 0 auto;
-  }
-}
-
-.price__detail-heading {
-  font-size: 8.4rem;
-  letter-spacing: 0.04em;
-  line-height: 1.2619047619;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  text-align: center;
-  margin: 0 0 3%;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .price__detail-heading {
-    margin-bottom: 5.5rem;
-    margin-left: 5%;
-  }
-}
-
-.price__item {
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .price__item {
-    padding: 0 0 14%;
-  }
-}
-
-.price__item-title {
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.3333333333;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  text-align: center;
-  margin-bottom: 2.8rem;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .price__item-title {
-    font-size: 1.8rem;
-    line-height: 1.7777777778;
-    margin-bottom: 5%;
-  }
-}
-
-.price__item-description {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.7777777778;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  width: 41%;
-  margin: 0 auto 3%;
-  text-align: center;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .price__item-description {
+  .p-about-page__text-wrap {
+    width: 92%;
+    margin-inline: auto;
     text-align: left;
-    margin: 0 auto 4.8%;
-    font-size: 1.4rem;
-    line-height: 2.2857142857;
-    width: 91%;
   }
 }
-
-.price__item-times {
-  display: flex;
-  width: 80rem;
-  margin: 0 0 0 64rem;
+.p-about-page__text {
+  font-size: 1.8rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 3;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
-  .price__item-times {
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
+  .p-about-page__text {
+    font-size: 1.6rem;
   }
 }
 
-.price__item-times li {
-  font-size: 1.8rem;
-  letter-spacing: 0.4em;
-  line-height: 1.6666666667;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
+.p-yearly-program {
+  text-align: center;
 }
-
-.price__item-prices {
-  display: flex;
-  width: 80.25rem;
-  margin: 0 auto;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .price__item-prices {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-  }
-}
-
-.price__item-prices::before {
-  content: "1箇所";
-  font-size: 1.8rem;
-  color: #55000C;
-  font-family: "Jost", sans-serif;
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
-  text-transform: capitalize;
-}
-
-.price__item-prices li {
-  font-size: 1.8rem;
-  color: #55000C;
-  font-family: "Kosugi Maru", sans-serif;
-  border-top: 0.1rem solid #55000C;
-  border-bottom: 0.1rem solid #55000C;
-  padding: 1rem 4.7rem 1rem 12.8rem;
-}
-
-/* Custom */
-.price__custom {
-  display: flex;
+.p-yearly-program__inner {
   width: 75%;
-  margin: 0 auto;
-  justify-content: space-between;
-  padding: 0 0 6%;
-  background-color: #F9F8F6;
-  background-color: gainsboro;
-  border: 3px solid red;
-}
-@media screen and (max-width: 1200px) {
-  .price__custom {
-    display: block;
-    width: 84%;
-    padding: 22% 0 0%;
-    margin: 0 auto;
-  }
-}
-
-.price__custom-image {
-  width: 44%;
-}
-@media screen and (max-width: 1200px) {
-  .price__custom-image {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  }
-}
-
-.price__custom-image img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1/1;
-}
-@media screen and (max-width: 1200px) {
-  .price__custom-image img {
-    width: 75%;
-    margin: 0 auto;
-  }
-}
-
-.price__custom-description {
-  width: 50%;
-}
-@media screen and (max-width: 1200px) {
-  .price__custom-description {
-    margin: 0 auto;
-    padding: 0 0 10%;
-  }
+  margin-inline: auto;
+  margin: 8rem auto 11.8rem;
 }
 @media (max-width: 767.98px) {
-  .price__custom-description {
-    width: 100%;
-    padding: 0 0 24%;
+  .p-yearly-program__inner {
+    width: 92%;
+    margin: 6rem auto 8rem;
   }
 }
-
-.price__custom-title {
-  font-size: 4.8rem;
-  letter-spacing: 0.1em;
-  line-height: 1.7777777778;
+.p-yearly-program {
+  /* ==============================
+  アイコン
+  ============================== */
+}
+.p-yearly-program__icon-wrap {
+  width: 10.8rem;
+  height: 10.8rem;
+  background-color: #FFF7B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 5rem;
+  border-radius: 50%;
+}
+@media (max-width: 767.98px) {
+  .p-yearly-program__icon-wrap {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 0.8rem;
+  }
+}
+.p-yearly-program__icon {
+  width: 7.2rem;
+  height: 7.2rem;
+}
+@media (max-width: 767.98px) {
+  .p-yearly-program__icon {
+    width: 5.3rem;
+    height: 5.3rem;
+  }
+}
+.p-yearly-program {
+  /* ==============================
+  見出し
+  ============================== */
+}
+.p-yearly-program__heading {
+  font-size: 2.4rem;
   color: #55000C;
-  font-family: "Jost", sans-serif;
-  margin-bottom: 6%;
+}
+.p-yearly-program__title {
+  font-size: 2.4rem;
+  color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
   font-weight: 400;
+  margin: 0 auto 1rem;
+}
+.p-yearly-program__subtitle {
+  font-size: 1rem;
+  color: #55000C;
   text-transform: capitalize;
-}
-@media (max-width: 767.98px) {
-  .price__custom-title {
-    margin-top: 15%;
-    margin-bottom: -0.7rem;
-  }
-}
-
-.price__custom-text {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  color: #55000C;
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-@media (max-width: 767.98px) {
-  .price__custom-text {
-    font-size: 1.4rem;
-    line-height: 2;
-  }
-}
-
-.p-price__content__title__ja {
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #55000C;
   font-family: "Kosugi Maru", sans-serif;
-  position: absolute;
-  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
+  margin: 0 auto 3.2rem;
 }
 @media (max-width: 767.98px) {
-  .p-price__content__title__ja {
-    font-size: 1.2rem;
+  .p-yearly-program__subtitle {
+    margin: 0 auto 3.2rem;
   }
 }
-
-.price__body {
-  top: 54%;
-  left: 9.8rem;
+.p-yearly-program {
+  /* ==============================
+  園一覧
+  ============================== */
 }
-@media screen and (max-width: 1400px) {
-  .price__body {
-    left: 8.5rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__body {
-    top: 1.6rem;
-    left: 6.8rem;
-  }
-}
-
-.price__vio {
-  top: 54%;
-  left: 11.2rem;
-}
-@media screen and (max-width: 1400px) {
-  .price__vio {
-    left: 10rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__vio {
-    top: 1.4rem;
-    left: 8.1rem;
-  }
-}
-
-.price__custom-ja {
-  top: 61%;
-  left: 13.7rem;
-}
-@media screen and (max-width: 1400px) {
-  .price__custom-ja {
-    left: 11.8rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__custom-ja {
-    top: 1.7rem;
-    left: 9.6rem;
-  }
-}
-
-.price__set {
-  top: 54%;
-  left: 6.6rem;
-}
-@media screen and (max-width: 1400px) {
-  .price__set {
-    left: 6rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__set {
-    top: 1.4rem;
-    left: 5.2rem;
-  }
-}
-
-.price__all {
-  top: 54%;
-  left: 6.3rem;
-}
-@media screen and (max-width: 1400px) {
-  .price__all {
-    left: 5.2rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__all {
-    top: 1.3rem;
-    left: 4.9rem;
-  }
-}
-
-.p-price__row--center {
+.p-yearly-program__list {
   display: flex;
-  border-bottom: 0.1rem solid #55000C;
-  position: relative;
-  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: left;
+  background: #FFFFFF;
+  padding: 6rem 4rem;
 }
 @media (max-width: 767.98px) {
-  .p-price__row--center {
-    display: flex;
-    flex-direction: column-reverse;
+  .p-yearly-program__list {
+    flex-direction: column;
+    gap: 3rem 2rem;
+    padding: 6rem 1.25rem;
   }
 }
-
-.p-price__row--bottom {
-  display: flex;
-  position: relative;
+.p-yearly-program__item {
+  background-color: #FFEDF0;
+  border-radius: 20px;
 }
-
-.p-price__row--top__left,
-.p-price__row--bottom__left {
-  border-right: 0.1rem solid #55000C;
-  width: 50%;
+.p-yearly-program {
+  /* ==============================
+  園カード
+  ============================== */
 }
-@media (max-width: 767.98px) {
-  .p-price__row--top__left,
-  .p-price__row--bottom__left {
-    width: 100%;
-    border-right: none;
-    border-bottom: 0.1rem solid #55000C;
-  }
+.p-yearly-program__card {
+  display: block;
+  width: 32rem;
+  height: auto;
+  height: 26.4rem;
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 1.2rem;
 }
-
-.p-price__row--top__right,
-.p-price__row--bottom__right {
-  width: 50%;
+.p-yearly-program__card:hover {
+  opacity: 0.7;
 }
-@media (max-width: 767.98px) {
-  .p-price__row--top__right,
-  .p-price__row--bottom__right {
-    width: 100%;
-  }
+.p-yearly-program {
+  /* アイキャッチ */
 }
-
-.p-price__row--bottom__right {
-  width: 50%;
+.p-yearly-program__thumbnail {
+  width: 100%;
+  aspect-ratio: 296/180;
+  margin-bottom: 0.8rem;
 }
-@media (max-width: 767.98px) {
-  .p-price__row--bottom__right {
-    width: 100%;
-    border-bottom: 0.1rem solid #55000C;
-  }
-}
-
-.p-price__row a {
+.p-yearly-program__thumbnail img {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
 }
-
-.p-price__row--center__right {
-  border-right: 0.1rem solid #55000C;
-  width: 50%;
+.p-yearly-program {
+  /* カテゴリーボタンの箱 */
 }
-@media (max-width: 767.98px) {
-  .p-price__row--center__right {
-    width: 100%;
-    border-right: none;
-    border-bottom: 0.1rem solid #55000C;
-  }
+.p-yearly-program__wrap {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
 }
-
-.p-price__row--center__left {
-  width: 50%;
+.p-yearly-program {
+  /* 園の種類 */
 }
-@media (max-width: 767.98px) {
-  .p-price__row--center__left {
-    width: 100%;
-    border-bottom: none;
-  }
-}
-
-.price__table-wrapper {
-  width: 57%;
-  margin: 0 auto 5%;
-}
-/* 料金表テーブル */
-.price__table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto 1%;
-  text-align: center;
-}
-.price__table th {
-  border-bottom: 0.1rem solid #55000C;
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  padding: 1% 1% 2%;
-  padding-left: 3%;
-  padding-right: 0%;
-  font-size: 1.8rem;
-  line-height: 1.6666666667;
-  letter-spacing: 0.04em;
-  color: #55000C;
-  font-weight: 400;
-}
-/* スマホ表示用 */
-@media (max-width: 767.98px) {
-  .price__table,
-  .price__table thead,
-  .price__table tbody,
-  .price__table th,
-  .price__table td,
-  .price__table tr {
-    display: block;
-  }
-  .price__table thead {
-    display: none;
-  }
-  .price__table tr {
-    margin-bottom: 1.5em;
-    border: 0.1rem solid #ccc;
-    padding: 1em;
-  }
-  .price__table td {
-    border: none;
-    border-bottom: 0.1rem solid #55000C;
-    position: relative;
-    padding-left: 63%;
-    padding-top: 1.4rem;
-    padding-bottom: 3.3rem;
-    text-align: center;
-    font-size: 1.6rem;
-    font-family: "Kosugi Maru", sans-serif;
-    font-weight: 400;
-  }
-  .price__table td {
-    border-bottom: 0.1rem solid #55000C;
-    font-family: "Kosugi Maru", sans-serif;
-    font-size: 2.4rem;
-    color: #55000C;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td:first-child {
-    border-bottom: 0.1rem solid #55000C;
-    font-family: "Kosugi Maru", sans-serif;
-    font-size: 2.4rem;
-    color: #55000C;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td:first-child {
-    font-size: 1.6rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0.7rem;
-    top: 3rem;
-    font-weight: bold;
-    color: #55000C;
-    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td::before {
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td:first-child {
-    padding-left: 1em;
-    border-bottom: none;
-    letter-spacing: 0.04em;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td:first-child {
-    font-size: 1.8rem;
-  }
-}
-.table-price {
-  font-weight: bolder;
-  color: #55000C;
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  font-family: "Kosugi Maru", sans-serif;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 7.5%;
-  position: relative;
-  width: 28%;
-  font-weight: 600;
-}
-@media screen and (max-width: 1050px) {
-  .table-price {
-    font-size: 1.6rem;
-  }
-}
-
-.table-price::after {
-  content: "円";
-  color: #55000C;
-  font-size: 1.8rem;
-  padding-left: 4%;
-}
-@media screen and (max-width: 1050px) {
-  .table-price::after {
-    font-size: 1.6rem;
-  }
-}
-
-.price-guidance {
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  font-size: 1.2rem;
-  color: #55000C;
-  letter-spacing: 0.04em;
-  line-height: 2.5;
-  text-align: end;
-}
-
-@media (max-width: 767.98px) {
-  .price-guidance {
-    text-align: start;
-    line-height: 1.5;
-    padding-top: 3%;
-  }
-}
-.price__table-wrapper {
-  width: 57%;
-  margin: 0 auto 5%;
-}
-.price__table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto 1%;
-  text-align: center;
-}
-.price__table th {
-  border-bottom: 1px solid #55000C;
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  padding: 1% 1% 2%;
-  padding-left: 3%;
-  padding-right: 0%;
-  font-size: 1.8rem;
-  line-height: 1.6666666667;
-  letter-spacing: 0.04em;
-  color: #55000C;
-  font-weight: 400;
-}
-
-@media (max-width: 767.98px) {
-  .price__table,
-  .price__table thead,
-  .price__table tbody,
-  .price__table th,
-  .price__table td,
-  .price__table tr {
-    display: block;
-  }
-  .price__table thead {
-    display: none;
-  }
-  .price__table tr {
-    margin-bottom: 1.5em;
-    border: 1px solid #ccc;
-    padding: 1em;
-  }
-  .price__table td {
-    border: none;
-    border-bottom: 1px solid #55000C;
-    position: relative;
-    padding-left: 63%;
-    padding-top: 1.4rem;
-    padding-bottom: 3.3rem;
-    text-align: center;
-    font-size: 1.6rem;
-    font-family: "Kosugi Maru", sans-serif;
-    font-weight: 400;
-  }
-  .price__table td {
-    border-bottom: 1px solid #55000C;
-    font-family: "Kosugi Maru", sans-serif;
-    font-size: 2.4rem;
-    color: #55000C;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td:first-child {
-    border-bottom: 1px solid #55000C;
-    font-family: "Kosugi Maru", sans-serif;
-    font-size: 2.4rem;
-    color: #55000C;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td:first-child {
-    font-size: 1.6rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0.7rem;
-    top: 3rem;
-    font-weight: bold;
-    color: #55000C;
-    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td::before {
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-}
-@media (max-width: 767.98px) {
-  .price__table td:first-child {
-    padding-left: 1em;
-    border-bottom: none;
-    letter-spacing: 0.04em;
-  }
-}
-@media (max-width: 767.98px) and (max-width: 767.98px) {
-  .price__table td:first-child {
-    font-size: 1.8rem;
-  }
-}
-.table-price {
-  font-weight: bolder;
-  color: #55000C;
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  font-family: "Kosugi Maru", sans-serif;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 4rem;
-  position: relative;
-  width: 28%;
-  font-weight: 600;
-}
-@media screen and (max-width: 1050px) {
-  .table-price {
-    font-size: 1.6rem;
-  }
-}
-
-.table-price::after {
-  content: "円";
-  color: #55000C;
-  font-size: 1.8rem;
-  padding-left: 4%;
-}
-@media screen and (max-width: 1050px) {
-  .table-price::after {
-    font-size: 1.6rem;
-  }
-}
-
-.price-guidance {
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  font-size: 1.2rem;
-  color: #55000C;
-  letter-spacing: 0.04em;
-  line-height: 2.5;
-  text-align: end;
-}
-
-@media (max-width: 767.98px) {
-  .price-guidance {
-    text-align: start;
-    line-height: 1.5;
-    padding-top: 3%;
-  }
-}
-.p-price__row .boby-fa {
-  color: #55000C;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: absolute !important;
-  top: 20%;
-  left: 44%;
-}
-@media (max-width: 767.98px) {
-  .p-price__row .boby-fa {
-    font-size: 1.1rem;
-    top: 0.9rem;
-    left: 92%;
-  }
-}
-
-.p-price__row .vio-fa {
-  color: #55000C;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: absolute !important;
-  top: 20%;
-  left: 92%;
-}
-@media (max-width: 767.98px) {
-  .p-price__row .vio-fa {
-    font-size: 1.1rem;
-    top: 4.6rem;
-  }
-}
-
-.p-price__row .custom-fa {
-  color: #55000C;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: absolute !important;
-  top: 20%;
-  left: 92%;
-}
-@media (max-width: 767.98px) {
-  .p-price__row .custom-fa {
-    font-size: 1.1rem;
-    top: 4.6rem;
-  }
-}
-
-.p-price__row .set-fa {
-  color: #55000C;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: absolute !important;
-  top: 20%;
-  left: 44%;
-}
-@media (max-width: 767.98px) {
-  .p-price__row .set-fa {
-    font-size: 1.1rem;
-    top: 0.9rem;
-    left: 92%;
-  }
-}
-
-.p-price__row .all-fa {
-  color: #55000C;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: absolute !important;
-  top: 20%;
-  left: 44%;
-}
-@media (max-width: 767.98px) {
-  .p-price__row .all-fa {
-    font-size: 1.1rem;
-    top: 0.9rem;
-    left: 92%;
-  }
-}
-
-.price__table .table-gothic {
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  color: #55000C;
-  font-size: 1.8rem;
-  letter-spacing: 0.024em;
-  line-height: 1.6666666667;
-}
-
-.price__table .table-price-title {
-  font-size: 1.6rem;
-  letter-spacing: 0.04em;
-  line-height: 1.125;
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-  font-weight: 400;
-}
-
-.price-table-row1st p {
-  font-family: "Kosugi Maru", sans-serif;
-  position: relative;
-  font-weight: 400;
-}
-
-.price-table-row1st p::after {
-  content: "円";
-  color: #55000C;
+.p-yearly-program__type {
   font-size: 1.4rem;
-  position: absolute;
-  top: 0.3rem;
-  right: -2.4rem;
+  line-height: 1.5;
+  color: #55000C;
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
 }
-
-.heading-vio {
-  margin-top: 7%;
-  margin-bottom: 3%;
-  text-transform: initial;
+.p-yearly-program__card-month {
+  font-size: 2rem;
+  color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
 }
-
-.heading-set {
-  margin: 7% 0 3%;
-}
-
-.priceTitle {
+.p-yearly-program__card-title {
+  font-size: 1.4rem;
+  color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1;
   font-weight: 400;
 }
-
-@media (max-width: 767.98px) {
-  .price-sp {
-    padding: 1% 0;
-    width: 91%;
-    margin: 0 auto;
-  }
-  .price-sp-row1st {
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-between;
-    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-    font-size: 1.8rem;
-    color: #55000C;
-    border-bottom: 1px solid #55000C;
-    padding: 9% 0 9%;
-    padding-left: 14%;
-    padding-right: 11%;
-    font-weight: 400;
-  }
-  .price-sp-title h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    letter-spacing: 0.04em;
-    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-    color: #55000C;
-    font-weight: 400;
-  }
-  .price-table-row1st {
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-between;
-    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-    font-size: 1.8rem;
-    color: #55000C;
-    border-bottom: 1px solid #55000C;
-    padding: 6.5% 0 6.5%;
-    padding-right: 6%;
-    font-weight: 400;
-  }
-  .price-table-row1st p {
-    font-weight: 700;
-    font-family: "Kosugi Maru", sans-serif;
-    position: relative;
-    letter-spacing: 0.1em;
-  }
-  .price-table-row1st p::after {
-    content: "円";
-    color: #55000C;
-    font-size: 1.4rem;
-    position: static;
-  }
-  .price-table-row1st h4 {
-    font-size: 1.6rem;
-    letter-spacing: 0.04em;
-    line-height: 1.875;
-    font-weight: 400;
-  }
-  .add-part {
-    margin: 14% auto 0;
-  }
-  .heading-set {
-    margin: 6% 0 11%;
-  }
-  .heading-body {
-    margin: 0 0 15%;
-  }
-  .parts-m {
-    margin: 0 0 5%;
-  }
-  .parts-l {
-    margin: 0 0 5%;
-  }
-  .heading-vio {
-    margin-top: 6%;
-    margin-bottom: 12%;
-  }
-  .price-guidance {
-    text-align: start;
-  }
+.p-yearly-program__card-note {
+  font-size: 1.6rem;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-top: 1.2rem;
 }
-.vvv-line {
-  text-transform: initial;
+@media (max-width: 767.98px) {
+  .p-yearly-program__card-note {
+    font-size: 1.4rem;
+  }
 }
 
 .l-letter__wrapper {
@@ -4895,12 +4087,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 15rem;
   height: 5rem;
   background-color: #FFFFFF;
   color: #EF8F9C;
   border: 1px solid #EF8F9C;
   font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  font-weight: 400;
   transition: 0.3s;
   border-radius: 12px 12px 0 0;
 }
@@ -4912,6 +4108,15 @@ body {
   .p-introduction-tab__button {
     font-size: 1.4rem;
     padding: 1.2rem 1rem;
+  }
+}
+.p-introduction-tab__button span {
+  display: block;
+  font-size: 1.4rem;
+}
+@media (max-width: 767.98px) {
+  .p-introduction-tab__button span {
+    font-size: 1.2rem;
   }
 }
 
@@ -4933,6 +4138,9 @@ body {
   font-size: 1.6rem;
   border-radius: 0.8rem;
   background-color: #FFFFFF;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  font-weight: 400;
   color: #EF8F9C;
   border: 1px solid #EF8F9C;
   text-decoration: none;
@@ -5028,16 +4236,13 @@ body {
 }
 .p-introduction-card__type {
   font-size: 1.4rem;
-  line-height: 1.5;
   color: #55000C;
   background-color: #FFFFFF;
   padding: 0.4rem 0.8rem;
   border-radius: 0.8rem;
-}
-@media (max-width: 767.98px) {
-  .p-introduction-card__type {
-    font-size: 1.4rem;
-  }
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
 }
 .p-introduction-card {
   /* 都道府県 */
@@ -5049,11 +4254,9 @@ body {
   background-color: #FFFFFF;
   padding: 0.4rem 0.8rem;
   border-radius: 0.8rem;
-}
-@media (max-width: 767.98px) {
-  .p-introduction-card__area {
-    font-size: 1.4rem;
-  }
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
 }
 .p-introduction-card {
   /* 園名 */
@@ -5061,9 +4264,10 @@ body {
 .p-introduction-card__title {
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-weight: 700;
   line-height: 1.5;
   color: #55000C;
+  letter-spacing: 0.1em;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-introduction-card__title {
@@ -5150,19 +4354,29 @@ Font Awesome
 }
 .p-introduction-single__title {
   font-size: 2rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
   margin-bottom: 1.6rem;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single__title {
     font-size: 1.8rem;
+    line-height: 1.5;
     margin-bottom: 1.2rem;
   }
 }
 .p-introduction-single__text {
   font-size: 1.8rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 2;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single__text {
+    font-size: 1.6rem;
     text-align: left;
   }
 }
@@ -5224,6 +4438,9 @@ Font Awesome
 .p-introduction-single-gallery__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (max-width: 767.98px) {
@@ -5240,6 +4457,12 @@ Font Awesome
 @media (max-width: 767.98px) {
   .p-introduction-single-gallery__subtitle {
     font-size: 1rem;
+    color: #55000C;
+    text-transform: capitalize;
+    font-family: "Kosugi Maru", sans-serif;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    font-weight: 900;
   }
 }
 .p-introduction-single-gallery__gallery {
@@ -5307,6 +4530,9 @@ Font Awesome
 .p-introduction-single-message__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (max-width: 767.98px) {
@@ -5316,9 +4542,13 @@ Font Awesome
   }
 }
 .p-introduction-single-message__subtitle {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-message__subtitle {
@@ -5380,8 +4610,10 @@ Font Awesome
 }
 .p-introduction-single-message__text {
   font-size: 1.6rem;
+  color: #55000C;
   line-height: 2;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
   width: 46.8rem;
 }
 @media (max-width: 767.98px) {
@@ -5410,6 +4642,9 @@ Font Awesome
 .p-introduction-about-nursery__title {
   font-size: 2.4rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (max-width: 767.98px) {
@@ -5419,14 +4654,14 @@ Font Awesome
   }
 }
 .p-introduction-about-nursery__subtitle {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1rem;
   color: #55000C;
-}
-@media (max-width: 767.98px) {
-  .p-introduction-about-nursery__subtitle {
-    font-size: 1rem;
-  }
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
+  color: #55000C;
 }
 .p-introduction-about-nursery__icon-wrap {
   width: 10.8rem;
@@ -5503,6 +4738,9 @@ Font Awesome
 .p-introduction-single-overview__term {
   font-size: 1.8rem;
   color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
   padding-top: 0.2rem;
   background-color: #FFFFFF;
   display: flex;
@@ -5511,42 +4749,57 @@ Font Awesome
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__term {
-    background-color: #FFFFFF;
-    color: #55000C;
     text-align: center;
     padding: 1.7rem 0;
     border-radius: 0.3rem;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 }
 .p-introduction-single-overview__desc {
   margin: 0;
   font-size: 1.6rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
   padding: 2.2rem 0;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__desc {
-    font-size: 1.3rem;
     padding: 1.8rem 1.2rem;
   }
 }
+.p-introduction-single-overview__desc-lh {
+  line-height: 1.5;
+}
 .p-introduction-single-overview__sub-title {
   font-size: 1.6rem;
-  margin: 0 0 0.8rem;
   color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0 0 0.8rem;
 }
 .p-introduction-single-overview__sub-title:not(:first-child) {
   margin-top: 1.8rem;
 }
+@media (max-width: 767.98px) {
+  .p-introduction-single-overview__sub-title {
+    font-size: 1.4rem;
+  }
+}
 .p-introduction-single-overview__note {
   margin: 1rem 0 0;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__note {
-    font-size: 1.2rem;
-    letter-spacing: 0.2em;
+    font-size: 1.4rem;
   }
 }
 .p-introduction-single-overview__table {
@@ -5584,6 +4837,11 @@ Font Awesome
   width: 15rem;
   white-space: nowrap;
   padding: 1.6rem 1.9rem;
+  font-size: 1.6rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__table--time th {
@@ -5599,6 +4857,11 @@ Font Awesome
 }
 .p-introduction-single-overview .p-introduction-single-overview__table--time td {
   width: 45rem;
+  font-size: 1.6rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview .p-introduction-single-overview__table--time td {
@@ -5635,13 +4898,18 @@ Font Awesome
   justify-content: center;
   background-color: #FFEDF0;
   padding: 0.6rem 1.6rem;
-  line-height: 1.3;
+  font-size: 1.6rem;
+  color: #55000C;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  font-weight: 400;
   text-align: center;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__badge {
     width: 7.5rem;
     padding: 1.2rem 0;
+    font-size: 1.4rem;
   }
 }
 
@@ -5653,6 +4921,7 @@ Font Awesome
 
 .p-introduction-single-overview__note-staff {
   font-size: 1.6rem;
+  line-height: 1.5;
 }
 @media (max-width: 767.98px) {
   .p-introduction-single-overview__note-staff {
@@ -5832,121 +5101,6 @@ Font Awesome
 @media (max-width: 767.98px) {
   .p-introduction-single-letter__link {
     font-size: 1.6rem;
-  }
-}
-
-.p-contact {
-  background-color: #FFF7B8;
-  background-image: url("../../img/contact-bg.webp");
-  background-size: cover;
-  background-position: center;
-  height: 63rem;
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 767.98px) {
-  .p-contact {
-    height: 69.6rem;
-    background-image: url("../../img/contact-bg-sp.webp");
-  }
-}
-.p-contact__inner {
-  width: 75%;
-  margin-inline: auto;
-  background-color: rgba(255, 255, 255, 0.8980392157);
-  text-align: center;
-  padding: 6.4rem 28rem;
-  border-radius: 40px;
-}
-@media (max-width: 767.98px) {
-  .p-contact__inner {
-    width: 92%;
-    padding: 6.4rem 0;
-  }
-}
-.p-contact__icon-wrap {
-  width: 10.8rem;
-  height: 10.8rem;
-  background-color: #FFF7B8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 5rem;
-  border-radius: 50%;
-}
-@media (max-width: 767.98px) {
-  .p-contact__icon-wrap {
-    width: 8rem;
-    height: 8rem;
-    margin: 0 auto 0.8rem;
-  }
-}
-.p-contact__icon {
-  width: 7.2rem;
-  height: 7.2rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__icon {
-    width: 5.3rem;
-    height: 5.3rem;
-  }
-}
-.p-contact__title {
-  font-size: 2.4rem;
-  color: #55000C;
-  margin: 0 auto 1rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__title {
-    font-size: 1.8rem;
-    margin: 0 auto 1rem;
-  }
-}
-.p-contact__subtitle {
-  font-size: 1rem;
-  color: #55000C;
-  margin: 0 auto 4.8rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__subtitle {
-    margin: 0 auto 4.8rem;
-  }
-}
-.p-contact__text {
-  font-size: 1.8rem;
-  color: #55000C;
-  margin: 0 auto 3.9rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__text {
-    margin: 0 auto 3.2rem;
-  }
-}
-.p-contact__link-wrap {
-  text-align: center;
-}
-.p-contact__link {
-  font-size: 1.8rem;
-}
-.p-contact__link-info {
-  color: #55000C;
-  width: 24rem;
-  height: 6rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__link-info {
-    font-size: 1.8rem;
-  }
-}
-.p-contact__link-entry {
-  color: #55000C;
-  background-color: #FFF7B8;
-  width: 24rem;
-  height: 6rem;
-}
-@media (max-width: 767.98px) {
-  .p-contact__link-entry {
-    font-size: 1.8rem;
   }
 }
 

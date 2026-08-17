@@ -64,14 +64,16 @@
     align-items: center;
 
     font-size: 4rem;
-    text-align: center;
-    line-height: 1.8;
+    text-align: left;
+    letter-spacing: 0.1em;
+    line-height: 2;
     font-family: v.$font-accent;
+    font-weight: v.$Regular;
+    color: v.$color-main;
+
 
     @include mq(md) {
       font-size: 2.4rem;
     }
   }
 }
-
-

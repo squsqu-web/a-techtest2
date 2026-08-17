@@ -181,7 +181,7 @@
           <h2 class="p-recruit__title">採用情報</h2>
           <p class="p-recruit__subtitle">recruit</p>
         </div>
-        <p class="p-recruit__text">桜のこもれびキッズランドで働いてみませんか？</p>
+        <p class="p-recruit__text">桜のこもれびキッズランドで<br class="sp_only">働いてみませんか？</p>
       </div>
 
       <!-- リンクボタン -->

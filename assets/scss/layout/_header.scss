@@ -117,14 +117,24 @@
 
 
   &__link-ja {
-    margin: 0 0 0.4rem;
     font-size: 1.6rem;
+    color: v.$color-main;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
+    margin: 0 0 0.4rem;
 
     @include mq(md) {}
   }
 
   &__link-en {
+    text-transform: capitalize;
+    font-family: v.$font-sub;
     font-size: 1rem;
+    color: v.$color-main;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    font-weight: v.$Black;
 
     @include mq(md) {}
   }
@@ -136,40 +146,6 @@
 
     @include mq(md) {}
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   &__logo {
     display: flex;
@@ -203,18 +179,6 @@
       }
     }
   }
-
-  &__title {
-    font-size: 2.8rem;
-    font-family: v.$font-main;
-    color: v.$color-accent-1;
-    text-transform: uppercase;
-    letter-spacing: calc(5.6 / 28 * 1em);
-    line-height: calc(35 / 28);
-    font-weight: v.$Regular;
-  }
-
-
 
 }
 
@@ -336,7 +300,16 @@
   top: -3.5rem;
 }
 
+// SP表示切替
+.u-sp-none {
+  display: block;
+}
 
+@include mq(md) {
+  .u-sp-none {
+    display: none;
+  }
+}
 
 
 /* 背景固定用 */
@@ -398,30 +371,6 @@
       color: v.$color-main;
       font-family: v.$font-main;
     }
-  }
-}
-
-
-// SP表示切替
-.u-sp-none {
-  display: block;
-}
-
-.u-sp-show {
-  display: none;
-}
-
-@include mq(md) {
-  .u-sp-none {
-    display: none;
-  }
-
-  .u-sp-show {
-    display: block;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    z-index: 99999;
   }
 }
 

@@ -1,36 +1,35 @@
 // Colors
-// Brand
 $color-main: #55000C;
 $color-main-2: #333333;
 $color-main-3: #FFF7B8;
 $color-main-4: #FFEDF0;
 $color-main-5: #EF8F9C;
+$color-text: #EF8F9C;
 $color-main-6: #FFF9CB;
 
 // Background
 $color-white: #FFFFFF;
 $color-black: #000000;
 
-// Text
-$color-text: #EF8F9C;
-
 // Fonts
 $font-main: "Jost", sans-serif;
 $font-sub: "Kosugi Maru", sans-serif;
 $font-accent: "Yusei Magic", sans-serif;
-
-// 日本語フォントのフォールバック
-$font-primary-gothic: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-$font-primary-display: "Yusei Magic", "Yu Gothic", "游ゴシック体", sans-serif;
 
 // font-weight
 $Light: 300;
 $Regular: 400;
 $Demibold: 600;
 $Bold: 700;
+$Black: 900;
 
 
 
+
+
+// 日本語フォントのフォールバック
+$font-primary-gothic: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
+$font-primary-display: "Yusei Magic", "Yu Gothic", "游ゴシック体", sans-serif;
 
 // 消す👇
 $color-shadow: rgba(0, 0, 0, 0.2);
@@ -52,7 +51,6 @@ $color-bg-2: #D4CEBE;
 $color-bg-3: #464646;
 $color-bg-4: #aea9a9;
 
-
 // accent
 $color-accent-1: #54372D;
 $color-accent-2: #949E33;
@@ -64,8 +62,6 @@ $color-accent-7: #e6e6e6;
 $color-accent-8: #091A73;
 $color-accent-9: #f0f0f0;
 
-
 // Fonts// 消す👇
 $font-sub-cursive: "Parisienne", cursive;
 $font-primary-gothic: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif;
-

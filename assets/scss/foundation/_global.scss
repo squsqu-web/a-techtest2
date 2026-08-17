@@ -8,7 +8,7 @@
   border: 3px solid red;
 
   @include mq(md) {
-      width: 92%;
+    width: 92%;
   }
 }
 
@@ -18,14 +18,12 @@
   color: v.$color-main;
   font-family: v.$font-primary-gothic;
   font-size: 1.8rem;
-  z-index: 1;
   letter-spacing: 0.1em;
-  line-height: calc(36 / 18);
+  line-height: 1.5;
   font-weight: v.$Regular;
 
   @include mq(md) {
     font-size: 1.4rem;
-    letter-spacing: 1.4px;
   }
 }
 
