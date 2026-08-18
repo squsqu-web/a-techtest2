@@ -9,13 +9,12 @@
       <p class="l-main-visual__title-en">info</p>
     </div>
 
-
     <!-- カスタムパンくずリスト -->
     <div class="breadcrumb-container u-hover" data-aos="fade-up">
       <nav class="breadcrumb">
         <a href="<?php echo home_url('/'); ?>">ホーム</a>
         <span class="sep" data-aos="fade-up">&gt;</span>
-        <span>お知らせ一覧</span>
+        <span>お知らせ</span>
       </nav>
     </div>
   </section>

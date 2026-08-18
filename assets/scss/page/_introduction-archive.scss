@@ -250,11 +250,9 @@
   }
 }
 
-
 /* ==============================
 ページネーション
 ============================== */
-
 .c-pagination {
   display: flex;
   justify-content: center;
@@ -265,14 +263,11 @@
   }
 
   .page-numbers {
-    background: v.$color-mtransparent;
-    border: 1px solid v.$color-mtransparent;
     color: v.$color-main;
     font-family: v.$font-main;
     font-size: 1.6rem;
     line-height: calc(40 / 32);
     font-weight: 400;
-    padding: 6px 14px;
 
     &.current {
       background: none;

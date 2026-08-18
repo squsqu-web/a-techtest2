@@ -12,23 +12,11 @@
     <!-- カスタムパンくずリスト -->
     <div class="breadcrumb-container u-hover" data-aos="fade-up">
       <nav class="breadcrumb">
-
-        <a href="<?php echo home_url('/'); ?>">
-          ホーム
-        </a>
-
+        <a href="<?php echo home_url('/'); ?>">ホーム</a>
         <span class="sep">&gt;</span>
-
-        <a href="<?php echo get_post_type_archive_link('info'); ?>">
-          お知らせ一覧
-        </a>
-
+        <a href="<?php echo get_post_type_archive_link('info'); ?>">お知らせ一覧</a>
         <span class="sep">&gt;</span>
-
-        <span>
-          <?php the_title(); ?>
-        </span>
-
+        <span><?php the_title(); ?></span>
       </nav>
     </div>
 

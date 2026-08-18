@@ -78,10 +78,8 @@
 
                 <!-- 園 -->
                 <div class="p-letter-archive__search-school-wrap">
-
                   <div class="p-letter-archive__search-select p-letter-archive__search-select--school">
                     <select name="school">
-
                       <option value="">園をえらぶ</option>
 
                       <?php
@@ -106,10 +104,8 @@
                         </option>
 
                       <?php endforeach; ?>
-
                     </select>
                   </div>
-
 
                   <!-- 検索ボタン -->
                   <div class="p-letter-archive__search-button">
@@ -119,11 +115,8 @@
                         alt="検索開始">
                     </button>
                   </div>
-
                 </div>
-
               </div>
-
             </form>
           </section>
 
@@ -133,63 +126,38 @@
 
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
-
                 <article class="p-letter-archive__item">
-
                   <div class="p-letter-archive__card">
-
                     <a href="<?php the_permalink(); ?>" class="p-letter-archive__link">
-
                       <?php if (has_post_thumbnail()) : ?>
-
                         <?php the_post_thumbnail('large', [
                           'class' => 'p-letter-archive__image'
                         ]); ?>
-
                       <?php else : ?>
 
                         <img
                           src="<?php echo get_template_directory_uri(); ?>/img/letter_top-pc.jpg"
                           alt="<?php the_title_attribute(); ?>"
                           class="p-letter-archive__image">
-
                       <?php endif; ?>
 
-
                       <div class="p-letter-archive__card-wrap">
-
-                        <h2 class="p-letter-archive__card-title">
-                          <?php the_title(); ?>
-                        </h2>
-
-                        <p class="p-letter-archive__text">
-                          <?php echo esc_html(get_field('letter_title')); ?>
-                        </p>
-
+                        <h2 class="p-letter-archive__card-title"><?php the_title(); ?></h2>
+                        <p class="p-letter-archive__text"><?php echo esc_html(get_field('letter_title')); ?></p>
                         <time
                           class="p-letter-archive__date"
                           datetime="<?php echo get_the_date('c'); ?>">
                           <?php echo get_the_date('Y年nがつj日'); ?>
                         </time>
-
                       </div>
-
                     </a>
-
                   </div>
-
                 </article>
-
               <?php endwhile; ?>
 
             <?php else : ?>
-
-              <p class="p-letter-archive__no-post">
-                該当するこもれびだよりはまだありません。
-              </p>
-
+              <p class="p-letter-archive__no-post">該当するこもれびだよりはまだありません。</p>
             <?php endif; ?>
-
 
             <!-- ページネーション -->
             <div class="c-pagination">
@@ -201,9 +169,7 @@
               ));
               ?>
             </div>
-
           </section>
-
         </div>
 
         <!-- サイドバー -->

@@ -1,7 +1,6 @@
 @use '../foundation/variables' as v;
 @use '../foundation/mixin' as *;
 
-
 .l-letter {
 
   &__wrapper {
@@ -19,16 +18,10 @@
 
     @include mq(md) {}
   }
-
 }
 
-
-// ========================================
 // こもれびだより一覧
-// ========================================
-
 .p-letter-archive {
-
   display: flex;
   gap: 3.2rem;
 
@@ -36,11 +29,7 @@
     flex-direction: column;
   }
 
-
-  // ----------------------------------------
   // 検索フォームと記事一覧
-  // ----------------------------------------
-
   &__content {
     width: 96rem;
 
@@ -49,11 +38,7 @@
     }
   }
 
-
-  // ----------------------------------------
   // 検索フォーム
-  // ----------------------------------------
-
   &__search {
 
     @include mq(md) {}
@@ -66,9 +51,16 @@
 
   &__search-title {
     font-size: 2.4rem;
+    color: v.$color-main;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
+
     margin: 0 0 .8rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 2rem;
+    }
   }
 
   &__search-select-wrap {
@@ -86,7 +78,6 @@
 
   // 園を探すプルダウン
   &__search-select {
-
     select {
       height: 3.6rem;
       padding: 0 1.5rem;
@@ -120,7 +111,6 @@
 
   // 検索ボタン
   &__search-button {
-
     button {
       display: block;
       padding: 0;
@@ -138,10 +128,7 @@
     @include mq(md) {}
   }
 
-  // ----------------------------------------
   // 一覧リスト
-  // ----------------------------------------
-
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -154,11 +141,7 @@
     }
   }
 
-
-  // ----------------------------------------
   // 記事
-  // ----------------------------------------
-
   &__item {
     width: 30rem;
     height: 28rem;
@@ -168,21 +151,13 @@
     @include mq(md) {}
   }
 
-
-  // ----------------------------------------
   // カード
-  // ----------------------------------------
-
   &__card {
 
     @include mq(md) {}
   }
 
-
-  // ----------------------------------------
   // カードリンク
-  // ----------------------------------------
-
   &__link {
     font-size: 1.8rem;
     color: v.$color-main;
@@ -192,11 +167,7 @@
     }
   }
 
-
-  // ----------------------------------------
   // カード内部
-  // ----------------------------------------
-
   &__card-wrap {
     padding: 1.2rem;
     position: relative;
@@ -205,11 +176,7 @@
     @include mq(md) {}
   }
 
-
-  // ----------------------------------------
   // アイキャッチ画像
-  // ----------------------------------------
-
   &__image {
     width: 100%;
     height: 13.5rem;
@@ -219,62 +186,56 @@
   }
 
 
-  // ----------------------------------------
   // カードタイトル
-  // ----------------------------------------
-
   &__card-title {
     font-size: 1.8rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
     margin: 0 0 1.1rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
   }
 
-
-  // ----------------------------------------
   // 本文
-  // ----------------------------------------
-
   &__text {
     font-size: 1.6rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     @include mq(md) {}
   }
 
-
-  // ----------------------------------------
   // 日付
-  // ----------------------------------------
-
   &__date {
     font-size: 1.4rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     position: absolute;
     right: 1.2rem;
     bottom: 1.2rem;
 
-    @include mq(md) {}
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
   }
 
-
-  // ----------------------------------------
   // リンクラップ
-  // ----------------------------------------
-
   &__link-wrap {
     text-align: center;
 
     @include mq(md) {}
   }
 
-
-  // ----------------------------------------
   // 投稿なし
-  // ----------------------------------------
-
   &__no-post {
     font-size: 2rem;
     color: v.$color-main;
@@ -283,11 +244,7 @@
     @include mq(md) {}
   }
 
-
-  // ========================================
   // サイドバー
-  // ========================================
-
   &__sidebar {
     width: 32.8rem;
     border-left: 1px solid v.$color-main;
@@ -296,32 +253,37 @@
     @include mq(md) {}
   }
 
-
   // サイドバータイトル
   &__sidebar-title {
     font-size: 2.4rem;
+    color: v.$color-main;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     margin-bottom: 1rem;
 
     @include mq(md) {
       font-size: 2rem;
-
     }
   }
-
 
   // アーカイブ年
   &__archive-year {
     font-size: 1.6rem;
+    color: v.$color-main;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     border-left: 4px solid v.$color-text;
     margin-bottom: 1rem;
     padding-left: 1rem;
 
     @include mq(md) {
       font-size: 1.4rem;
-
     }
   }
-
 
   // アーカイブ一覧
   &__archive-list {
@@ -333,15 +295,18 @@
     @include mq(md) {}
   }
 
-
   // アーカイブ項目
   &__archive-item {
     font-size: 1.4rem;
+    color: v.$color-main;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
     margin-bottom: 1.2rem;
     width: 6.2rem;
     height: 2.2rem;
     background-color: v.$color-white;
-    border-radius: 8px;
+    border-radius: .8rem;
     @include flex();
 
     @include mq(md) {
@@ -361,7 +326,6 @@
     }
   }
 
-
   &__search-school-wrap {
     display: flex;
     align-items: center;
@@ -370,16 +334,14 @@
     @include mq(md) {}
   }
 
-
   &__search-select {
-
     select {
-      height: 5rem;
+      height: 3.6rem;
       padding: 0 1.5rem;
-      border: 1px solid #ccc;
+      border: 1px solid v.$color-main-2;
       background-color: v.$color-white;
       font-size: 1.6rem;
-      color: v.$color-main;
+      color: v.$color-main-2;
       cursor: pointer;
     }
 
@@ -399,6 +361,4 @@
       }
     }
   }
-
-
 }

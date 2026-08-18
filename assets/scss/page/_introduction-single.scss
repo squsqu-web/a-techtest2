@@ -448,7 +448,6 @@
     @include mq(md) {
       text-align: center;
       padding: 1.7rem 0;
-      border-radius: .3rem;
       font-size: 1.6rem;
     }
   }
@@ -510,11 +509,15 @@
     border-collapse: collapse;
     // 一旦解除しておく
     // width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    color: v.$color-main;
+    line-height: 1;
+    font-weight: v.$Regular;
+
 
     @include mq(md) {
       width: 100%;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
     }
 
     th,
@@ -528,8 +531,17 @@
     }
 
     th {
-      font-weight: 700;
+      font-size: 1.6rem;
+      color: v.$color-main;
+      line-height: 1;
+      font-weight: v.$Regular;
+      margin-right: 1.6rem;
+
       white-space: nowrap;
+
+      @include mq(md) {
+        font-size: 1.4rem;
+      }
     }
 
     &--time {
@@ -614,7 +626,7 @@
     align-items: center;
     justify-content: center;
     background-color: v.$color-main-4;
-    padding: .6rem 1.6rem;
+    padding: .6rem 0;
 
     font-size: 1.6rem;
     color: v.$color-main;
@@ -636,7 +648,12 @@
 .p-introduction-single-overview__table--census th,
 .p-introduction-single-overview__table--census td {
   text-align: center;
-  padding: 0;
+  padding-right: 1.6rem;
+
+  @include mq(md) {
+    padding-right: 0;
+    padding: 0;
+  }
 }
 
 .p-introduction-single-overview {
@@ -644,10 +661,14 @@
   // 職員用テキスト
   &__note-staff {
     font-size: 1.6rem;
-    line-height: 1.5;
+    color: v.$color-main;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
 
     @include mq(md) {
       font-size: 1.4rem;
+      line-height: 1.5;
       letter-spacing: 0.2em;
     }
   }
@@ -707,10 +728,12 @@
   &__title {
     font-size: 2.4rem;
     color: v.$color-main;
-    margin: 0 auto 1rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     @include mq(md) {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
   }
@@ -718,6 +741,11 @@
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
+    text-transform: capitalize;
+    font-family: v.$font-sub;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    font-weight: v.$Black;
     margin: 0 auto 6.2rem;
 
     @include mq(md) {
@@ -805,7 +833,10 @@
   // タイトル
   &__card-title {
     font-size: 1.8rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
     margin: 0 0 1.1rem;
 
     @include mq(md) {
@@ -816,7 +847,11 @@
   // 日付
   &__date {
     font-size: 1.4rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     position: absolute;
     right: 1.2rem;
     bottom: 1.2rem;
@@ -835,6 +870,19 @@
   &__link {
     font-size: 1.8rem;
     color: v.$color-main;
+
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+    }
 
     @include mq(md) {
       font-size: 1.6rem;
@@ -856,14 +904,13 @@
   }
 
   .page-numbers {
-    background: v.$color-mtransparent;
-    border: 1px solid v.$color-mtransparent;
     color: v.$color-main;
     font-family: v.$font-main;
     font-size: 1.6rem;
     line-height: calc(40 / 32);
     font-weight: 400;
-    padding: 6px 14px;
+    width: 3.6rem;
+    height: 3.6rem;
 
     &.current {
       background: none;

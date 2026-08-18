@@ -48,6 +48,14 @@
                 <header class="letter-contents__letter-heading">
 
                   <h2 class="letter-contents__title">
+                    <span>
+                      <img
+                        src="<?php echo get_template_directory_uri(); ?>/img/letter-pen.png"
+                        alt=""
+                        class="letter-contents__icon"
+                        loading="lazy"
+                        data-aos="fade-up">
+                    </span>
                     <?php the_title(); ?>
                   </h2>
 
@@ -90,9 +98,9 @@
 
 
                     <?php if (get_sub_field('text')) : ?>
-                      <p class="letter-contents__section-text">
+                      <div class="letter-contents__section-text">
                         <?php echo wp_kses_post(get_sub_field('text')); ?>
-                      </p>
+                    </div>
                     <?php endif; ?>
 
                   </section>

@@ -20,25 +20,28 @@
   flex-wrap: wrap;
   gap: .8rem;
   margin-bottom: 6.4rem;
+  padding: 12rem 0 0;
   justify-content: center;
 
   @include mq(md) {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 2rem;
+    padding: 8.8rem 0 0;
   }
 
   &__button {
     cursor: pointer;
     font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    font-weight: v.$Regular;
+
     padding: .85rem 1.6rem;
     border-radius: .8rem;
     background-color: v.$color-white;
     color: v.$color-main-5;
     border: 1px solid v.$color-main-5;
-
-    @include mq(md) {}
-
   }
 }
 
@@ -111,7 +114,7 @@
     width: 12rem;
     height: 12rem;
 
-    background-color: #ffb6c1;
+    background-color: v.$color-main-7;
     border-radius: 8px;
 
     display: flex;
@@ -130,8 +133,13 @@
 
     span {
       font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.2;
+      color: v.$color-white;
+      line-height: 1.5;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 1.08rem;
+      }
     }
 
     @include mq(md) {
@@ -152,7 +160,10 @@
   &__date {
     grid-area: date;
     font-size: 1.6rem;
-    color: #888;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     @include mq(md) {
       font-size: 1.4rem;
@@ -162,8 +173,10 @@
   &__title {
     grid-area: title;
     font-size: 2rem;
-    font-weight: bold;
     color: v.$color-main;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     @include mq(md) {
       font-size: 1.8rem;
@@ -173,7 +186,10 @@
   &__lead {
     grid-area: lead;
     font-size: 1.6rem;
-    color: #333;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
 
     @include mq(md) {
       font-size: 1.4rem;
@@ -194,14 +210,10 @@
   }
 
   .page-numbers {
-    background: v.$color-mtransparent;
-    border: 1px solid v.$color-mtransparent;
     color: v.$color-main;
     font-family: v.$font-main;
     font-size: 1.6rem;
     line-height: calc(40 / 32);
-    font-weight: 400;
-    padding: 6px 14px;
 
     &.current {
       background: none;
