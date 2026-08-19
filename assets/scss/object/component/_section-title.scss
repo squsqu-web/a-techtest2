@@ -39,7 +39,6 @@
 
     @include mq(md) {
       font-size: 2rem;
-
     }
   }
 
@@ -48,6 +47,10 @@
     font-family: v.$font-main;
     color: v.$color-main;
     text-transform: capitalize;
+    
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Black;
 
     @include mq(md) {
       font-size: 1rem;

@@ -9,8 +9,12 @@
 
   &__confirm-text {
     font-size: 1.6rem;
+
     color: v.$color-main;
-    line-height: 1.8;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     padding-top: 0.8rem;
 
     @include mq(md) {

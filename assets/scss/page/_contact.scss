@@ -26,18 +26,24 @@
   &__intro-text {
     font-size: 1.6rem;
     color: v.$color-main-2;
-    line-height: 1.8;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     margin: 0 0 1.2rem;
 
     @include mq(md) {
       font-size: 1.4rem;
-      line-height: 1.8;
     }
   }
 
   &__intro-link {
     font-size: 1.6rem;
-    color: v.$color-main;
+    color: v.$color-main-2;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     text-decoration: underline;
     text-underline-offset: 0.3rem;
 
@@ -102,14 +108,23 @@
   height: 20rem;
 }
 
-.p-form__privacy-contact {
+.p-form__privacy-contact p {
   @include mq(md) {
     flex-direction: column-reverse;
+    gap: 0;
   }
 }
 
 .p-form__privacy-label-contact {
   @include mq(md) {
-    padding: 0 3.65rem;
+    // padding: 0 3.65rem;
   }
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}
+
+.contact-confirm-btn {
+  margin: 4.8rem 0 0;
 }

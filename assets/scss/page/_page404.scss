@@ -2,7 +2,6 @@
 @use '../foundation/mixin' as *;
 
 .p-404-message {
-
   width: 75%;
   margin: 12rem auto 0;
 
@@ -10,7 +9,6 @@
     width: 92%;
     margin: 8rem auto 12rem;
   }
-
 
   &__inner {
     width: 100%;
@@ -22,14 +20,14 @@
     & p {
       font-size: 2rem;
       color: v.$color-black;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      font-weight: v.$Regular;
       margin-bottom: 2.4rem;
 
       @include mq(md) {
         font-size: 1.7rem;
-
       }
-
     }
-
   }
 }

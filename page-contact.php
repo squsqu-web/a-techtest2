@@ -29,7 +29,7 @@
     </p>
 
     <p class="p-contact__intro-link">
-      <a href="<?php echo esc_url(get_privacy_policy_url()); ?>">
+      <a href="<?php echo home_url('/privacy-policy/'); ?>">
         弊社への登録に際して、お預かりする個人情報の扱いについて
       </a>
     </p>

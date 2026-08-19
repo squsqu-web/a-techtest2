@@ -129,7 +129,10 @@
     color: v.$color-main;
     text-decoration: none;
     font-size: 2rem;
-    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     transition: opacity 0.3s;
     padding: 0 1.2rem;
 

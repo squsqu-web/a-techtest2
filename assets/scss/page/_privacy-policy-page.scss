@@ -11,13 +11,13 @@
   &__inner {
     width: 75%;
     background-color: v.$color-white;
-    margin: 80px auto;
+    margin: 8rem auto;
     padding: 3.6rem 4.8rem;
-    border-radius: 40px;
+    border-radius: 4rem;
 
     @include mq(md) {
       width: 92%;
-      margin: 60px auto;
+      margin: 6rem auto;
       padding: 3.2rem 1.5rem 1.8rem;
     }
   }
@@ -32,12 +32,23 @@
     font-size: 2rem;
     color: v.$color-main;
     border: 1px solid v.$color-main-2;
-    border-radius: 12px;
+
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
+
+    border-radius: 1.2rem;
     margin-bottom: 1.2rem;
 
     // 左側の棒を配置するため
     position: relative;
     padding: 0.8rem 1.6rem 0.8rem 2.4rem;
+
+    @include mq(md) {
+      margin-bottom: 1.6rem;
+      padding: 1.2rem 2.4rem;
+      line-height: 1.2;
+    }
 
     &::before {
       content: "";
@@ -55,32 +66,38 @@
         left: 1.6rem;
       }
     }
-
-    @include mq(md) {
-      margin-bottom: 1.6rem;
-      padding: 1.2rem 2.4rem;
-      line-height: 1.2;
-    }
   }
 
   &__article p {
     font-size: 1.6rem;
     color: v.$color-main-2;
-    margin-bottom: .8rem;
 
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
+    margin-bottom: .8rem;
 
     @include mq(md) {
       font-size: 1.4rem;
     }
-
   }
 
   &__article h3 {
     font-size: 1.6rem;
     color: v.$color-main-2;
+
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     margin-bottom: .8rem;
     position: relative;
     padding: 0.8rem 1.6rem 0.8rem 2.4rem;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
 
     &::before {
       content: "";
@@ -96,23 +113,21 @@
         left: 0;
       }
     }
-
-    @include mq(md) {
-      font-size: 1.4rem;
-    }
   }
-
-
 
   &__item h4 {
     font-size: 1.6rem;
     color: v.$color-main-2;
+
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     margin-bottom: .8rem;
 
     @include mq(md) {
       font-size: 1.4rem;
     }
-
   }
 
   &__list {
@@ -120,7 +135,6 @@
     counter-reset: number;
 
     @include mq(md) {}
-
   }
 
   &__list li {
@@ -142,7 +156,6 @@
       left: -2.5rem;
       top: 0;
     }
-
   }
 
   &__info {
@@ -150,7 +163,6 @@
     text-align: right;
 
     @include mq(md) {}
-
   }
 
   &__info p {
@@ -161,7 +173,6 @@
     @include mq(md) {
       font-size: 1.4rem;
     }
-
   }
 
   &__article-bottom {
@@ -173,6 +184,4 @@
       gap: 0;
     }
   }
-
-
 }
