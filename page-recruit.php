@@ -157,7 +157,7 @@
 
         <div class="p-recruit-page__req-item">
           <dt class="p-recruit-page__req-term">勤務時間</dt>
-          <dd class="p-recruit-page__req-desc">
+          <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             7:00～18:30のシフト制（延長時間あり）<br>
             9h拘束、実働8時間<br>
             出勤する時間と曜日で基本給が変わります
@@ -200,14 +200,14 @@
 
         <div class="p-recruit-page__req-item p-recruit-page__req-item-big-pb">
           <dt class="p-recruit-page__req-term">保険</dt>
-          <dd class="p-recruit-page__req-desc">
+          <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             厚生年金・健康保険・雇用保険・労災保険 完備
           </dd>
         </div>
 
         <div class="p-recruit-page__req-item">
           <dt class="p-recruit-page__req-term">手当</dt>
-          <dd class="p-recruit-page__req-desc">
+          <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             延長保育手当・皆勤手当・担当手当など
           </dd>
         </div>
@@ -221,14 +221,14 @@
 
         <div class="p-recruit-page__req-item">
           <dt class="p-recruit-page__req-term">休暇</dt>
-          <dd class="p-recruit-page__req-desc">
+          <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             年末年始・産前産後休暇・育児休暇・看護休暇制度あり
           </dd>
         </div>
 
         <div class="p-recruit-page__req-item">
           <dt class="p-recruit-page__req-term">その他</dt>
-          <dd class="p-recruit-page__req-desc">
+          <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             交通費全額支給。予防接種補助など福利厚生充実。
           </dd>
         </div>
@@ -254,7 +254,7 @@
 
   <div class="p-recruit-page__heading">
     <h2 class="p-recruit-page__title">よくある質問</h2>
-    <p class="p-recruit-page__subtitle">FAQ</p>
+    <p class="p-recruit-page__subtitle p-recruit-page__subtitle-textup">faq</p>
   </div>
 
   <!-- よくある質問アコーディオン -->

@@ -445,6 +445,11 @@ img {
   align-items: center;
   margin-bottom: 1.2rem;
 }
+@media (max-width: 767.98px) {
+  .p-form__item {
+    align-items: start;
+  }
+}
 .p-form__item:first-child {
   padding-top: 0;
   margin-bottom: 1.6rem;
@@ -456,19 +461,20 @@ img {
     margin-bottom: 1.6rem;
   }
 }
-.p-form__label {
+.p-form__label p {
   width: 30rem;
   flex-shrink: 0;
   font-size: 1.6rem;
   color: #55000C;
-  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
-  padding-top: 0.8rem;
+  gap: 1.2rem;
 }
 @media (max-width: 767.98px) {
-  .p-form__label {
+  .p-form__label p {
     width: 100%;
     padding: 0.2rem 0;
     gap: 1.2rem;
@@ -483,7 +489,6 @@ img {
 .p-form__badge.is-required {
   background-color: #EF8F9C;
   color: #FFFFFF;
-  letter-spacing: 0.1em;
 }
 .p-form__badge.is-optional {
   background-color: #333333;
@@ -531,30 +536,26 @@ img {
   height: 10rem;
   margin-top: 1rem;
 }
-.p-form__radio-group {
+.p-form__radio-group .wpcf7-form-control.wpcf7-radio {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
-@media (max-width: 767.98px) {
-  .p-form__radio-group {
-    gap: 1rem;
-  }
+.p-form__radio-group .wpcf7-list-item {
+  margin: 0;
 }
-.p-form__radio-group.is-row {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2.4rem;
-}
-.p-form__radio-label {
+.p-form__radio-group .wpcf7-list-item label {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   font-size: 1.6rem;
   color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   cursor: pointer;
 }
-.p-form__radio-label input[type=radio] {
+.p-form__radio-group input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -566,10 +567,10 @@ img {
   position: relative;
   flex-shrink: 0;
 }
-.p-form__radio-label input[type=radio]:checked {
+.p-form__radio-group input[type=radio]:checked {
   border-color: #55000C;
 }
-.p-form__radio-label input[type=radio]:checked::before {
+.p-form__radio-group input[type=radio]:checked::before {
   content: "";
   position: absolute;
   width: 0.8rem;
@@ -579,6 +580,16 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media (max-width: 767.98px) {
+  .p-form__radio-group .wpcf7-form-control.wpcf7-radio {
+    gap: 1rem;
+  }
+}
+.p-form__radio-group.is-row .wpcf7-form-control.wpcf7-radio {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.4rem;
 }
 .p-form__address-group {
   display: flex;
@@ -615,8 +626,11 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  font-size: 1.5rem;
-  color: #55000C;
+  font-size: 1.6rem;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   cursor: pointer;
 }
 .p-form__privacy-label input[type=checkbox] {
@@ -646,13 +660,34 @@ img {
   left: 0.6rem;
 }
 .p-form__badge {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
-  font-weight: normal;
 }
 .p-form__submit-wrap {
   text-align: center;
+  position: relative;
+  text-align: center;
+}
+.p-form__submit-wrap::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: calc(50% - 12rem + 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #55000C;
+  pointer-events: none;
+}
+@media (max-width: 767.98px) {
+  .p-form__submit-wrap::after {
+    right: 2rem;
+  }
 }
 .p-form__submit-btn {
   display: inline-flex;
@@ -666,6 +701,9 @@ img {
   border-radius: 3rem;
   color: #55000C;
   font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -678,14 +716,15 @@ img {
     width: 100%;
   }
 }
-.p-form__submit-arrow {
-  font-size: 1.4rem;
-}
 
 @media (max-width: 767.98px) {
   .badge-privacy {
     margin-left: 6.5rem;
   }
+}
+
+.wpcf7-spinner {
+  display: none;
 }
 
 .l-main-visual {
@@ -1590,7 +1629,7 @@ body {
 }
 @media (max-width: 767.98px) {
   .p-about__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 auto 0.8rem;
   }
 }
@@ -5349,17 +5388,28 @@ Font Awesome
 .p-recruit-page__title {
   font-size: 2.4rem;
   color: #55000C;
-  margin: 0 0 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0 auto 1rem;
 }
 @media (max-width: 767.98px) {
   .p-recruit-page__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 .p-recruit-page__subtitle {
   font-size: 1rem;
   color: #55000C;
+  text-transform: capitalize;
+  font-family: "Kosugi Maru", sans-serif;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 900;
   margin: 0 0 4.8rem;
+}
+.p-recruit-page__subtitle-textup {
+  text-transform: uppercase;
 }
 .p-recruit-page__motto {
   margin: 0 0 12rem;
@@ -5426,6 +5476,9 @@ Font Awesome
   gap: 1rem;
   font-size: 2rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
   margin-bottom: 2.4rem;
   border-bottom: 1px solid #55000C;
   padding: 1.4rem 8rem 0 0;
@@ -5449,6 +5502,9 @@ Font Awesome
 .p-recruit-page__motto-text {
   font-size: 1.6rem;
   color: #55000C;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-recruit-page__motto-text {
@@ -5507,7 +5563,9 @@ Font Awesome
   background-color: #EF8F9C;
   color: #FFFFFF;
   font-size: 1.8rem;
-  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: 400;
   text-align: center;
   padding: 0.6rem 0;
   border-radius: 15px;
@@ -5522,14 +5580,20 @@ Font Awesome
   flex-grow: 1;
   padding-left: 2.5rem;
   font-size: 1.6rem;
-  color: #55000C;
-  line-height: 1.8;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  font-weight: 400;
 }
 @media (max-width: 767.98px) {
   .p-recruit-page__req-desc {
     padding-left: 0;
     font-size: 1.4rem;
     padding: 0 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .p-recruit-page__req-desc-fs16 {
+    font-size: 1.6rem;
   }
 }
 .p-recruit-page__req-note {
@@ -5632,8 +5696,9 @@ Font Awesome
   max-width: 108rem;
   font-size: 1.8rem;
   color: #55000C;
-  letter-spacing: 0.04em;
-  line-height: 1.2777777778;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: 400;
   padding: 2rem 0;
   display: flex;
   align-items: center;
@@ -5655,13 +5720,12 @@ Font Awesome
 .c-accordion__question::before {
   content: "q";
   text-transform: uppercase;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   letter-spacing: 0.04em;
   margin-right: 2rem;
 }
 @media (max-width: 767.98px) {
   .c-accordion__question::before {
-    font-size: 1.8rem;
     font-weight: 400;
     padding-left: 1%;
     margin-right: 3.2rem;
@@ -5673,8 +5737,9 @@ Font Awesome
   max-width: 108rem;
   font-size: 1.6rem;
   color: #55000C;
-  letter-spacing: 0.04em;
-  line-height: 1.2777777778;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
   display: flex;
   align-items: flex-start;
   cursor: pointer;
@@ -5690,13 +5755,13 @@ Font Awesome
 }
 .c-accordion__answer::before {
   content: "a";
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-right: 2rem;
 }
 @media (max-width: 767.98px) {
   .c-accordion__answer::before {
-    font-size: 1.8rem;
     margin-right: 1.5rem;
     margin-left: 0.2rem;
     font-weight: 400;
@@ -5757,7 +5822,9 @@ Font Awesome
     padding-top: 0;
   }
 }
-
+.p-form__label p {
+  padding: 0;
+}
 .l-main-visual-confirm {
   margin-bottom: 12rem;
 }
@@ -5765,6 +5832,10 @@ Font Awesome
   .l-main-visual-confirm {
     margin-bottom: 6rem;
   }
+}
+
+.recruit-confirm-btn {
+  margin: 4.8rem 0 0;
 }
 
 .p-contact__intro {

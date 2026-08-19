@@ -45,6 +45,10 @@
     align-items: center;
     margin-bottom: 1.2rem;
 
+    @include mq(md) {
+      align-items: start;
+    }
+
     &:first-child {
       padding-top: 0;
       margin-bottom: 1.6rem;
@@ -57,16 +61,20 @@
     }
   }
 
-  &__label {
+  &__label p {
     width: 30rem;
     flex-shrink: 0;
+
     font-size: 1.6rem;
     color: v.$color-main;
-    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     display: flex;
     align-items: center;
-    gap: 3.2rem;
-    padding-top: 0.8rem;
+    gap: 1.2rem;
+    // padding-top: 0.8rem;
 
     @include mq(md) {
       width: 100%;
@@ -84,7 +92,6 @@
     &.is-required {
       background-color: v.$color-main-5;
       color: v.$color-white;
-      letter-spacing: 0.1em;
     }
 
     &.is-optional {
@@ -140,30 +147,88 @@
     }
   }
 
+  // &__radio-group {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 1.2rem;
+
+  //   @include mq(md) {
+  //     gap: 1rem;
+  //   }
+
+  //   &.is-row {
+  //     flex-direction: row;
+  //     flex-wrap: wrap;
+  //     gap: 2.4rem;
+  //   }
+  // }
+
+  // &__radio-label {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 0.8rem;
+  //   font-size: 1.6rem;
+  //   color: v.$color-main-2;
+  //   cursor: pointer;
+
+  //   input[type="radio"] {
+  //     appearance: none;
+  //     width: 1.6rem;
+  //     height: 1.6rem;
+  //     border: 1px solid v.$color-main-2;
+  //     border-radius: 50%;
+  //     cursor: pointer;
+  //     position: relative;
+  //     flex-shrink: 0;
+
+  //     &:checked {
+  //       border-color: v.$color-main;
+
+  //       &::before {
+  //         content: "";
+  //         position: absolute;
+  //         width: 0.8rem;
+  //         height: 0.8rem;
+  //         background-color: v.$color-main;
+  //         border-radius: 50%;
+  //         top: 50%;
+  //         left: 50%;
+  //         transform: translate(-50%, -50%);
+  //       }
+  //     }
+  //   }
+  // }
+
   &__radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
 
-    @include mq(md) {
-      gap: 1rem;
+    // CF7のラジオ全体
+    .wpcf7-form-control.wpcf7-radio {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
 
-    &.is-row {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 2.4rem;
+    // ラジオ1項目
+    .wpcf7-list-item {
+      margin: 0;
     }
-  }
 
-  &__radio-label {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 1.6rem;
-    color: v.$color-main-2;
-    cursor: pointer;
+    // ラベル
+    .wpcf7-list-item label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
 
+      font-size: 1.6rem;
+      color: v.$color-main-2;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      font-weight: v.$Regular;
+
+      cursor: pointer;
+    }
+
+    // ラジオボタン
     input[type="radio"] {
       appearance: none;
       width: 1.6rem;
@@ -188,6 +253,21 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
+      }
+    }
+
+    @include mq(md) {
+      .wpcf7-form-control.wpcf7-radio {
+        gap: 1rem;
+      }
+    }
+
+    // 横並びにするもの
+    &.is-row {
+      .wpcf7-form-control.wpcf7-radio {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2.4rem;
       }
     }
   }
@@ -234,8 +314,13 @@
     display: flex;
     align-items: flex-start;
     gap: 0.8rem;
-    font-size: 1.5rem;
-    color: v.$color-main;
+
+    font-size: 1.6rem;
+    color: v.$color-main-2;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
     cursor: pointer;
 
     input[type="checkbox"] {
@@ -267,10 +352,12 @@
   }
 
   &__badge {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
     padding: 0.4rem 0.8rem;
     border-radius: .4rem;
-    font-weight: normal;
 
     @include mq(md) {}
   }
@@ -279,6 +366,27 @@
 
   &__submit-wrap {
     text-align: center;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: calc(50% - 12rem + 2rem);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: v.$color-main;
+      pointer-events: none;
+    }
+
+    @include mq(md) {
+      &::after {
+        right: 2rem;
+      }
+    }
   }
 
   &__submit-btn {
@@ -291,8 +399,13 @@
     background-color: v.$color-white;
     border: 1px solid v.$color-main;
     border-radius: 3rem;
+
     color: v.$color-main;
     font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-weight: v.$Regular;
+
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -305,14 +418,14 @@
       width: 100%;
     }
   }
-
-  &__submit-arrow {
-    font-size: 1.4rem;
-  }
 }
 
 .badge-privacy {
   @include mq(md) {
     margin-left: 6.5rem;
   }
+}
+
+.wpcf7-spinner {
+  display: none;
 }

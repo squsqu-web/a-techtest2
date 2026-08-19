@@ -18,6 +18,12 @@
       padding-top: 0;
     }
   }
+
+  &__label p {
+    padding: 0;
+
+    @include mq(md) {}
+  }
 }
 
 .l-main-visual-confirm {
@@ -26,4 +32,8 @@
   @include mq(md) {
     margin-bottom: 6rem;
   }
+}
+
+.recruit-confirm-btn {
+  margin: 4.8rem 0 0;
 }
