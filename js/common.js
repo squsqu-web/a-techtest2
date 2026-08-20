@@ -194,3 +194,29 @@
 
   // この下は消さない
 })(jQuery);
+
+
+// TOPページお知らせ用
+document.addEventListener('DOMContentLoaded', function () {
+  const hero = document.querySelector('.p-hero');
+  const heroNews = document.querySelector('.p-hero-news');
+
+  if (!hero || !heroNews) return;
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      const entry = entries[0];
+
+      if (entry.isIntersecting) {
+        heroNews.classList.remove('is-hidden');
+      } else {
+        heroNews.classList.add('is-hidden');
+      }
+    },
+    {
+      threshold: 0
+    }
+  );
+
+  observer.observe(hero);
+});

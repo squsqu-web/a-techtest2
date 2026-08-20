@@ -18,6 +18,43 @@
 
   </section>
 
+  <!-- お知らせボタン -->
+<?php
+$info_query = new WP_Query(array(
+  'post_type'      => 'info',
+  'posts_per_page' => 1,
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+));
+
+if ($info_query->have_posts()) :
+  $info_query->the_post();
+?>
+
+  <!-- お知らせボタン -->
+  <div class="p-hero-news">
+    <a href="<?php the_permalink(); ?>" class="p-hero-news__link">
+      <span class="p-hero-news__category">お知らせ</span>
+
+      <h2 class="p-hero-news__title">
+        <?php the_title(); ?>
+      </h2>
+
+      <time
+        class="p-hero-news__date"
+        datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
+      >
+        <?php echo esc_html(get_the_date('Y年n月j日')); ?>
+      </time>
+    </a>
+  </div>
+
+<?php
+endif;
+
+wp_reset_postdata();
+?>
+
 
   <!-- Aboutセクション -->
   <section class="p-about">
@@ -189,7 +226,7 @@
         <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">
           採用情報
         </a>
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">
+        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button u-hover">
           エントリー
         </a>
       </div>

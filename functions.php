@@ -11,16 +11,6 @@ function mysass_temp_enqueue_styles()
     '1.0.0'
   );
 
-  // reserveページだけ flatpickr CSS
-  if (is_page('reserve')) {
-    wp_enqueue_style(
-      'flatpickr-css',
-      'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css',
-      array(),
-      null
-    );
-  }
-
   // フロントページ限定で Slick CSS
   if (is_front_page()) {
     wp_enqueue_style(
@@ -140,8 +130,17 @@ function mysass_temp_enqueue_scripts()
     );
   }
 
-  // reserve flatpickr form.js
-  if (is_page('reserve')) {
+
+
+  // カレンダー用
+  if (is_page('recruit')) {
+    wp_enqueue_style(
+      'flatpickr-css',
+      'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css',
+      array(),
+      null
+    );
+
     wp_enqueue_script(
       'flatpickr-js',
       'https://cdn.jsdelivr.net/npm/flatpickr',
@@ -150,7 +149,6 @@ function mysass_temp_enqueue_scripts()
       true
     );
 
-    // flatpickr 日本語化
     wp_enqueue_script(
       'flatpickr-ja',
       'https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js',
@@ -159,11 +157,10 @@ function mysass_temp_enqueue_scripts()
       true
     );
 
-    // form.js（flatpickr初期化）
     wp_enqueue_script(
-      'reserve-form-js',
+      'form-js',
       get_template_directory_uri() . '/js/form.js',
-      array('jquery', 'flatpickr-js', 'flatpickr-ja'),
+      array('flatpickr-js', 'flatpickr-ja'),
       null,
       true
     );
@@ -357,12 +354,15 @@ function my_breadcrumb()
 add_filter('wpcf7_validate_text*', 'validate_hiragana_kana', 20, 2);
 function validate_hiragana_kana($result, $tag)
 {
-  if ($tag->name === 'your-kana') {
-    $value = isset($_POST['your-kana']) ? $_POST['your-kana'] : '';
+  if ($tag->name === 'recruit_kana') {
+    $value = isset($_POST['recruit_kana']) ? $_POST['recruit_kana'] : '';
 
-    // ひらがなのみ（長音ー含む）
-    if (!preg_match('/^[ぁ-んー]+$/u', $value)) {
-      $result->invalidate($tag, 'ふりがなは「ひらがな」で入力してください。');
+    // ふりがな：ひらがな・長音・全角/半角スペースを許可
+    if (!preg_match('/^[ぁ-んー 　]+$/u', $value)) {
+      $result->invalidate(
+        $tag,
+        'ふりがなは「ひらがな」で入力してください。'
+      );
     }
   }
 
