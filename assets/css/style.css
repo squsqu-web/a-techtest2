@@ -224,16 +224,13 @@ img {
   gap: 0.8rem;
   justify-content: center;
 }
-@media (max-width: 767.98px) {
-  .pagination .nav-links {
-    gap: 20%;
-    margin-left: 0%;
-  }
-}
 .pagination .nav-links .page-numbers {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
   border-radius: 0.8rem;
   font-size: 1.6rem;
   color: #EF8F9C;
@@ -241,7 +238,6 @@ img {
   line-height: 1.2;
   font-weight: 400;
   background-color: #FFFFFF;
-  padding: 3.5rem;
   border: 1px solid #EF8F9C;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -255,11 +251,6 @@ img {
 .pagination .nav-links .page-numbers.current {
   background-color: #EF8F9C;
   color: #FFFFFF;
-  padding: 3.5rem;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  font-weight: 400;
 }
 .pagination .nav-links .page-numbers.dots {
   background: none;
@@ -269,14 +260,15 @@ img {
   color: #aaa;
 }
 .pagination .nav-links .page-numbers.prev, .pagination .nav-links .page-numbers.next {
-  width: auto;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
   font-size: 1.6rem;
   color: #EF8F9C;
   letter-spacing: 0.1em;
   line-height: 1.2;
   font-weight: 400;
   background-color: #FFFFFF;
-  padding: 3.5rem;
   border: 1px solid #EF8F9C;
 }
 .pagination .nav-links .page-numbers.prev:hover, .pagination .nav-links .page-numbers.next:hover {
@@ -2520,15 +2512,15 @@ body {
   height: auto;
 }
 .p-letter-archive__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
   gap: 2rem;
 }
 @media (max-width: 767.98px) {
   .p-letter-archive__list {
-    gap: 2rem;
+    grid-template-columns: 30rem;
     justify-content: center;
+    gap: 2rem;
   }
 }
 .p-letter-archive__item {
@@ -2536,6 +2528,12 @@ body {
   height: 28rem;
   background-color: #FFFFFF;
   border-radius: 2rem;
+}
+@media (max-width: 767.98px) {
+  .p-letter-archive__item {
+    width: 30rem;
+    height: 28rem;
+  }
 }
 .p-letter-archive__link {
   font-size: 1.8rem;
@@ -3299,16 +3297,10 @@ body {
 }
 @media (max-width: 767.98px) {
   .p-introduction-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 2rem;
-    margin-bottom: 6rem;
-  }
-}
-@media (max-width: 699.98px) {
-  .p-introduction-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 30rem;
+    justify-content: center;
     gap: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
   }
 }
 

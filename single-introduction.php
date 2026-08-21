@@ -112,33 +112,35 @@
     </div>
 
     <div class="p-introduction-single-message__content">
+      <!-- 園長の写真ACF -->
+      <?php
+      $principal_image = get_field('introduction_principal_image');
+
+      if ($principal_image) {
+        $principal_image_url = $principal_image;
+      } else {
+        $principal_image_url = get_template_directory_uri() . '/img/staff/introduction-message.png';
+      }
+      ?>
+
       <div class="p-introduction-single-message__img">
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/staff/introduction-message.png"
-          alt=""
+          src="<?php echo esc_url($principal_image_url); ?>"
+          alt="<?php echo esc_attr(get_the_title()); ?> 園長"
           class="p-introduction-single-message__text-img"
           loading="lazy"
           data-aos="fade-up">
       </div>
 
-      <p class="p-introduction-single-message__text">
-        桜のこもれびしぶや園の今年度のテーマは<br>
-        「運動と音楽のコラボレーション・自然と食の融合」<br>
-        です。<br>体操資格、リトミック資格を持った職員を中心に音楽に合わせて体を動かし個々に持っている潜在的な基礎能力の発達を促し、心身の健康の基礎となる食に関する活動を取り入れ、生活と遊びの中で自然に触れさせ意欲的に活動できるように支援していきます。<br>普段の園の様子は定期的にこもれびだよりに掲載しています。<br>月1回保育園の開放も行っています。<br>職員一同お待ちしていますのでぜひ見学にいらしてください。
-      </p>
+      <!-- 園長からのメッセージACF -->
+      <?php if (get_field('introduction_message')) : ?>
+        <p class="p-introduction-single-message__text">
+          <?php the_field('introduction_message'); ?>
+        </p>
+      <?php endif; ?>
     </div>
 
   </section>
-
-
-
-
-
-
-
-
-
-
 
 
   <!-- 園の概要セクションAbout Nursery -->

@@ -129,15 +129,15 @@
                 <article class="p-letter-archive__item">
                   <div class="p-letter-archive__card">
                     <a href="<?php the_permalink(); ?>" class="p-letter-archive__link">
+
                       <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('large', [
                           'class' => 'p-letter-archive__image'
                         ]); ?>
                       <?php else : ?>
-
                         <img
-                          src="<?php echo get_template_directory_uri(); ?>/img/letter_top-pc.jpg"
-                          alt="<?php the_title_attribute(); ?>"
+                          src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
+                          alt="<?php echo esc_attr(get_the_title()); ?>"
                           class="p-letter-archive__image">
                       <?php endif; ?>
 
@@ -159,17 +159,20 @@
               <p class="p-letter-archive__no-post">該当するこもれびだよりはまだありません。</p>
             <?php endif; ?>
 
-            <!-- ページネーション -->
-            <div class="c-pagination">
-              <?php
-              the_posts_pagination(array(
-                'mid_size'  => 2,
-                'prev_text' => '&lt;',
-                'next_text' => '&gt;',
-              ));
-              ?>
-            </div>
+
           </section>
+
+          <!-- ページネーション -->
+          <div class="c-pagination">
+            <?php
+            the_posts_pagination(array(
+              'mid_size'  => 2,
+              'prev_text' => '&lt;',
+              'next_text' => '&gt;',
+            ));
+            ?>
+          </div>
+
         </div>
 
         <!-- サイドバー -->
