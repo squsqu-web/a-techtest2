@@ -32,7 +32,7 @@
     <section class="p-introduction-sec">
 
       <!-- タブ -->
-      <div class="p-introduction-tab">
+      <div class="p-introduction-tab inview">
         <button
           type="button"
           class="p-introduction-tab__button is-active-introduction u-hover"
@@ -50,7 +50,7 @@
 
 
       <!-- 検索・園一覧 -->
-      <div class="l-introduction__contents-wrap">
+      <div class="l-introduction__contents-wrap inview">
         <!-- 園の種類 -->
         <div
           class="p-introduction-filter is-active-introduction"
@@ -75,7 +75,7 @@
 
 
         <!-- 都道府県 -->
-        <div class="p-introduction-filter" data-panel="area">
+        <div class="p-introduction-filter u-hover" data-panel="area">
           <?php
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_area',

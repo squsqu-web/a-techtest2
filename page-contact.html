@@ -2,41 +2,34 @@
   <dl class="p-form__list">
 
     <!-- お名前 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>お名前</span>
         <span class="p-form__badge is-required">必須</span>
       </dt>
-
       <dd class="p-form__input">[text* your_name class:p-form__text class:p-form__text-contact]</dd>
     </div>
 
-
     <!-- お子様のご年齢 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>お子様のご年齢</span>
         <span class="p-form__badge is-optional">任意</span>
       </dt>
-
       <dd class="p-form__input">[text child_age class:p-form__text]</dd>
     </div>
 
-
     <!-- ご住所 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>ご住所</span>
         <span class="p-form__badge is-optional">任意</span>
       </dt>
-
       <dd class="p-form__input p-form__address-group">
-
         <div class="p-form__address-row">
           <span class="p-form__address-sublabel">郵便番号</span>
           [text* recruit_postal_code class:p-form__text inputmode:numeric placeholder "例：1234567"]
         </div>
-
         <div class="p-form__address-row">
           <span class="p-form__address-sublabel">都道府県</span>
           [select* prefecture class:p-form__select
@@ -104,53 +97,46 @@
 
 
     <!-- 電話番号 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>電話番号</span>
         <span class="p-form__badge is-required">必須</span>
       </dt>
-
       <dd class="p-form__input">[tel* tel class:p-form__text]</dd>
     </div>
 
     <!-- メールアドレス -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>メールアドレス</span>
         <span class="p-form__badge is-required">必須</span>
       </dt>
-
       <dd class="p-form__input">[email* email class:p-form__text]</dd>
     </div>
 
-
     <!-- お問い合わせの保育園 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>お問い合わせの保育園</span>
         <span class="p-form__badge is-required">必須</span>
       </dt>
-
       <dd class="p-form__input">[text* nursery_name class:p-form__text]</dd>
     </div>
 
-
     <!-- お問い合わせ内容 -->
-    <div class="p-form__item">
+    <div class="p-form__item inview">
       <dt class="p-form__label">
         <span>お問い合わせ内容</span>
         <span class="p-form__badge is-required">必須</span>
       </dt>
-
       <dd class="p-form__input">[textarea* contact_other_text class:p-form__textarea class:p-form__textarea--small
         class:p-form__textarea-contact]</dd>
     </div>
-
   </dl>
 
 
   <!-- プライバシーポリシー同意 -->
-  <div class="p-form__privacy p-form__privacy-contact">
+  <div class="p-form__privacy p-form__privacy-contact inview">
     <label class="p-form__privacy-label p-form__privacy-label-contact">
       [acceptance privacy_consent]
       <span class="p-form__privacy-text">利用規約と個人情報の<br class="sp_only">取り扱いについて同意する</span>
@@ -159,9 +145,8 @@
     <span class="p-form__badge is-required badge-privacy">必須</span>
   </div>
 
-
   <!-- 送信ボタン -->
-  <div class="p-form__submit-wrap">[submit class:p-form__submit-btn "内容確認"]</div>
+  <div class="p-form__submit-wrap inview">[submit class:p-form__submit-btn u-hover "内容確認"]</div>
 
 </section>
 

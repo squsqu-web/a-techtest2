@@ -3,42 +3,39 @@
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
-    <h1 class="l-main-visual__title-ja" data-aos="fade-up">採用情報</h1>
-    <p class="l-main-visual__title-en">Recruit</p>
+    <h1 class="l-main-visual__title-ja inview">採用情報</h1>
+    <p class="l-main-visual__title-en inview">Recruit</p>
   </div>
 </section>
 
 <!-- カスタムパンくずリスト -->
-<div class="breadcrumb-container u-hover" data-aos="fade-up">
-  <nav class="breadcrumb">
+<div class="breadcrumb-container inview">
+  <nav class="breadcrumb u-hover">
     <a href="<?php echo home_url('/'); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>採用情報</span>
   </nav>
 </div>
 
-
 <!-- たいせつにしていることセクション -->
 <section class="p-recruit-page__motto">
-
-  <div class="p-recruit-page__icon-wrap">
+  <div class="p-recruit-page__icon-wrap inview">
     <img
       src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
       alt=""
       class="p-recruit-page__icon"
-      loading="lazy"
-      data-aos="fade-up">
+      loading="lazy">
   </div>
 
   <div class="p-recruit-page__heading">
-    <h2 class="p-recruit-page__title">たいせつにしていること</h2>
-    <p class="p-recruit-page__subtitle">Motto</p>
+    <h2 class="p-recruit-page__title inview">たいせつにしていること</h2>
+    <p class="p-recruit-page__subtitle inview">Motto</p>
   </div>
 
   <div class="p-recruit-page__motto-list">
 
     <!-- テレコ１個目 -->
-    <article class="p-recruit-page__motto-item">
+    <article class="p-recruit-page__motto-item inview">
       <div class="p-recruit-page__motto-img">
         <img
           src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img1.webp"
@@ -66,7 +63,7 @@
 
 
     <!-- テレコ２個目 -->
-    <article class="p-recruit-page__motto-item is-reverse">
+    <article class="p-recruit-page__motto-item is-reverse inview">
       <div class="p-recruit-page__motto-img">
         <img
           src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img2.webp"
@@ -94,7 +91,7 @@
 
 
     <!-- テレコ３個目 -->
-    <article class="p-recruit-page__motto-item">
+    <article class="p-recruit-page__motto-item inview">
       <div class="p-recruit-page__motto-img">
         <img
           src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img3.webp"
@@ -121,25 +118,22 @@
     </article>
 
   </div>
-
 </section>
-
 
 <!-- 募集要項セクション -->
 <section class="p-recruit-page__requirements">
 
-  <div class="p-recruit-page__icon-wrap">
+  <div class="p-recruit-page__icon-wrap inview">
     <img
       src="<?php echo get_template_directory_uri(); ?>/img/svg/light.svg"
       alt=""
       class="p-recruit-page__icon"
-      loading="lazy"
-      data-aos="fade-up">
+      loading="lazy">
   </div>
 
   <div class="p-recruit-page__heading">
-    <h2 class="p-recruit-page__title">募集要項</h2>
-    <p class="p-recruit-page__subtitle">Requirements</p>
+    <h2 class="p-recruit-page__title inview">募集要項</h2>
+    <p class="p-recruit-page__subtitle inview">Requirements</p>
   </div>
 
   <!-- 募集要項の表 -->
@@ -147,7 +141,7 @@
     <div class="p-recruit-page__requirements-table__inner">
       <dl class="p-recruit-page__req-list">
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">勤務地</dt>
           <dd class="p-recruit-page__req-desc">
             桜のこもれびキッズランドの各園のいずれか<br>
@@ -155,7 +149,7 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">勤務時間</dt>
           <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             7:00～18:30のシフト制（延長時間あり）<br>
@@ -164,7 +158,7 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">応募資格</dt>
           <dd class="p-recruit-page__req-desc">
             資格をお持ちの方。<br>
@@ -172,7 +166,7 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">処遇</dt>
           <dd class="p-recruit-page__req-desc">
             月給 20万～25万（各種手当含む）<br>
@@ -181,7 +175,7 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">賞与</dt>
           <dd class="p-recruit-page__req-desc">
             年2回※月給制の方に限ります。<br>
@@ -189,7 +183,7 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">休日</dt>
           <dd class="p-recruit-page__req-desc">
             土日祝日<br>
@@ -198,35 +192,35 @@
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item p-recruit-page__req-item-big-pb">
+        <div class="p-recruit-page__req-item inview p-recruit-page__req-item-big-pb">
           <dt class="p-recruit-page__req-term">保険</dt>
           <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             厚生年金・健康保険・雇用保険・労災保険 完備
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">手当</dt>
           <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             延長保育手当・皆勤手当・担当手当など
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">昇給</dt>
           <dd class="p-recruit-page__req-desc">
             年一回（業績評価による）
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">休暇</dt>
           <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             年末年始・産前産後休暇・育児休暇・看護休暇制度あり
           </dd>
         </div>
 
-        <div class="p-recruit-page__req-item">
+        <div class="p-recruit-page__req-item inview">
           <dt class="p-recruit-page__req-term">その他</dt>
           <dd class="p-recruit-page__req-desc p-recruit-page__req-desc-fs16">
             交通費全額支給。予防接種補助など福利厚生充実。
@@ -239,22 +233,21 @@
 
 </section>
 
-
 <!-- よくある質問セクション -->
 <section class="p-recruit-page__faq">
 
-  <div class="p-recruit-page__icon-wrap">
+  <div class="p-recruit-page__icon-wrap inview">
     <img
       src="<?php echo get_template_directory_uri(); ?>/img/svg/question-mark.svg"
       alt=""
       class="p-recruit-page__icon"
       loading="lazy"
-      data-aos="fade-up">
+      >
   </div>
 
   <div class="p-recruit-page__heading">
-    <h2 class="p-recruit-page__title">よくある質問</h2>
-    <p class="p-recruit-page__subtitle p-recruit-page__subtitle-textup">faq</p>
+    <h2 class="p-recruit-page__title inview">よくある質問</h2>
+    <p class="p-recruit-page__subtitle inview p-recruit-page__subtitle-textup">faq</p>
   </div>
 
   <!-- よくある質問アコーディオン -->
@@ -264,7 +257,7 @@
       <div class="c-accordion">
         <!-- アコーディオン１項目目 -->
         <div class="u-hover">
-          <div class="c-accordion__item" data-aos="fade-up">
+          <div class="c-accordion__item inview">
             <button class="c-accordion__question accordion-header active">
               スタッフの資格や経験について教えてください。
               <span class="accordion-icon">▼</span>
@@ -277,7 +270,7 @@
 
         <!-- アコーディオン２項目目 -->
         <div class="u-hover">
-          <div class="c-accordion__item" data-aos="fade-up">
+          <div class="c-accordion__item inview">
             <button class="c-accordion__question accordion-header">
               子どもたちに提供される食事や健康管理について教えてください。
               <span class="accordion-icon">▼</span>
@@ -290,7 +283,7 @@
 
         <!-- アコーディオン３項目目 -->
         <div class="u-hover">
-          <div class="c-accordion__item" data-aos="fade-up">
+          <div class="c-accordion__item inview">
             <button class="c-accordion__question accordion-header">
               保護者とのコミュニケーションはどのように行われていますか？
               <span class="accordion-icon">▼</span>
@@ -310,15 +303,11 @@
 
 <!-- フォーム -->
 <section class="p-recruit-page__contact">
-
-  <div class="p-recruit-page__contact-container" data-aos="fade-up">
+  <div class="p-recruit-page__contact-container">
     <div class="p-recruit-page__contact-inner">
-
       <?php the_content(); ?>
-
     </div>
   </div>
-
 </section>
 
 <?php get_footer(); ?>

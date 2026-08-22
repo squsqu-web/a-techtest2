@@ -4,17 +4,17 @@
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
-    <h1 class="l-main-visual__title-ja" data-aos="fade-up">
+    <h1 class="l-main-visual__title-ja inview">
       お探しのページが<br class="sp_only">見あたりません。
     </h1>
-    <p class="l-main-visual__title-en">Page Not Found</p>
+    <p class="l-main-visual__title-en inview">Page Not Found</p>
   </div>
 </section>
 
 
 <!-- カスタムパンくずリスト -->
-<div class="breadcrumb-container u-hover" data-aos="fade-up">
-  <nav class="breadcrumb">
+<div class="breadcrumb-container inview">
+  <nav class="breadcrumb u-hover">
     <a href="<?php echo home_url('/'); ?>">ホーム</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>404</span>
@@ -26,24 +26,21 @@
 <section class="p-404-message">
   <div class="p-404-message__inner">
 
-    <p>
+    <p class="inview">
       申し訳ございません。<br>
       お探しのページは見つかりませんでした。<br>
       以下の可能性がございます。
     </p>
 
-    <p>
+    <p class="inview">
       ・URLが変更された<br>
       ・ページが存在しない
     </p>
 
-    <p>
-      恐れ入りますが、以下のリンクからお探しのページにお入りください。
-    </p>
+    <p class="inview">恐れ入りますが、以下のリンクからお探しのページにお入りください。</p>
 
   </div>
 </section>
-
 
 <!-- サイトマップセクション -->
 <section class="p-sitemap">
@@ -54,9 +51,8 @@
       <img
         src="<?php echo get_template_directory_uri(); ?>/img/svg/sitemap.svg"
         alt=""
-        class="p-sitemap__icon"
-        loading="lazy"
-        data-aos="fade-up">
+        class="p-sitemap__icon inview"
+        loading="lazy">
     </div>
 
 
@@ -64,90 +60,65 @@
     <div class="l-sitemap">
       <div class="c-sitemap-card">
 
-        <!-- 左カラム -->
         <div class="c-sitemap-col">
-          <ul class="c-sitemap-list">
-
-            <li>
+          <ul class="c-sitemap-list inview">
+            <li class="u-hover">
               <a href="<?php echo home_url('/'); ?>">
-                <span class="dot"></span>
-                TOP
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>TOP<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/about/'); ?>">
-                <span class="dot"></span>
-                わたしたちのこと
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>わたしたちのこと<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/introduction/'); ?>">
-                <span class="dot"></span>
-                各園のご紹介
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>各園のご紹介<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/letter/'); ?>">
-                <span class="dot"></span>
-                こもれびだより
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>こもれびだより<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/info/'); ?>">
-                <span class="dot"></span>
-                お知らせ
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>お知らせ<span class="arrow">&gt;</span>
               </a>
             </li>
-
           </ul>
         </div>
 
-
-        <!-- 右カラム -->
         <div class="c-sitemap-col">
-          <ul class="c-sitemap-list">
-
-            <li>
+          <ul class="c-sitemap-list inview">
+            <li class="u-hover">
               <a href="<?php echo home_url('/recruit/'); ?>">
-                <span class="dot"></span>
-                採用情報
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>採用情報<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/contact/'); ?>">
-                <span class="dot"></span>
-                お問い合わせ
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>お問い合わせ<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/sitemap/'); ?>">
-                <span class="dot"></span>
-                サイトマップ
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>サイトマップ<span class="arrow">&gt;</span>
               </a>
             </li>
 
-            <li>
+            <li class="u-hover">
               <a href="<?php echo home_url('/privacy-policy/'); ?>">
-                <span class="dot"></span>
-                プライバシーポリシー
-                <span class="arrow">&gt;</span>
+                <span class="dot"></span>プライバシーポリシー<span class="arrow">&gt;</span>
               </a>
             </li>
-
           </ul>
         </div>
 
@@ -156,6 +127,5 @@
 
   </div>
 </section>
-
 
 <?php get_footer(); ?>

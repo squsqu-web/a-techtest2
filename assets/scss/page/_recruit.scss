@@ -69,13 +69,12 @@
 
   // たいせつにしていることセクション
   &__motto {
-    margin: 0 0 12rem;
+    margin: 12rem 0 12rem;
 
     @include mq(md) {
       width: 92%;
       margin: 0 auto 8rem;
     }
-
   }
 
   &__motto-list {

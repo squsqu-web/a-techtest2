@@ -5,14 +5,14 @@
   <!-- Main Visual -->
   <section class="l-main-visual">
     <div class="l-main-visual__title">
-      <h1 class="l-main-visual__title-ja" data-aos="fade-up">各園のご紹介</h1>
-      <p class="l-main-visual__title-en">introduction</p>
+      <h1 class="l-main-visual__title-ja inview">各園のご紹介</h1>
+      <p class="l-main-visual__title-en inview">introduction</p>
     </div>
   </section>
 
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container">
-    <nav class="breadcrumb  u-hover" data-aos="fade-up">
+    <nav class="breadcrumb u-hover">
       <a href="<?php echo home_url('/'); ?>">ホーム</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <a href="<?php echo home_url('/introduction'); ?>">各園のご紹介</a>
@@ -35,20 +35,20 @@
         <img
           src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
           alt="<?php echo esc_attr(get_the_title()); ?>"
-          class="p-introduction-single__thumbnail">
+          class="p-introduction-single__thumbnail inview">
       <?php endif; ?>
 
 
       <!-- 紹介文 -->
       <div class="p-introduction-single__content">
         <?php if (get_field('introduction_title')) : ?>
-          <h2 class="p-introduction-single__title">
+          <h2 class="p-introduction-single__title inview">
             <?php the_field('introduction_title'); ?>
           </h2>
         <?php endif; ?>
 
         <?php if (get_field('introduction_text')) : ?>
-          <p class="p-introduction-single__text">
+          <p class="p-introduction-single__text inview">
             <?php the_field('introduction_text'); ?>
           </p>
         <?php endif; ?>
@@ -73,52 +73,54 @@
 
     <!-- セクションタイトル -->
     <div class="p-introduction-single-gallery__heading">
-      <h2 class="p-introduction-single-gallery__title">園の様子</h2>
-      <p class="p-introduction-single-gallery__subtitle">inside</p>
+      <h2 class="p-introduction-single-gallery__title inview">園の様子</h2>
+      <p class="p-introduction-single-gallery__subtitle inview">inside</p>
     </div>
 
     <!-- 無限ループ表示エリア -->
-    <div class="p-introduction-single-gallery__track">
+    <div class="p-introduction-single-gallery__gallery">
+      <div class="p-introduction-single-gallery__track">
 
-      <?php
-      // 各園ごとの登録画像
-      $introduction_gallery = get_field('introduction_gallery');
+        <?php
+        // 各園ごとの登録画像
+        $introduction_gallery = get_field('introduction_gallery');
 
-      if ($introduction_gallery) :
-        foreach ($introduction_gallery as $image) :
-      ?>
+        if ($introduction_gallery) :
+          foreach ($introduction_gallery as $image) :
+        ?>
+            <img
+              src="<?php echo esc_url($image['url']); ?>"
+              alt="<?php echo esc_attr($image['alt']); ?>"
+              loading="lazy"
+              data-aos="fade-up">
+        <?php
+          endforeach;
+        endif;
+        ?>
+
+
+        <?php
+
+        //  全園共通の固定画像
+        $gallery_default_images = [
+          'recruit-bg.webp',
+          'loop-Inside1.webp',
+          'loop-Inside2.webp',
+          'loop-Inside3.webp',
+          'loop-Inside4.webp',
+          'loop-Inside5.webp',
+        ];
+
+        foreach ($gallery_default_images as $image) :
+        ?>
           <img
-            src="<?php echo esc_url($image['url']); ?>"
-            alt="<?php echo esc_attr($image['alt']); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/img/' . $image); ?>"
+            alt=""
             loading="lazy"
             data-aos="fade-up">
-      <?php
-        endforeach;
-      endif;
-      ?>
+        <?php endforeach; ?>
 
-
-      <?php
-      
-      //  全園共通の固定画像
-      $gallery_default_images = [
-        'recruit-bg.webp',
-        'loop-Inside1.webp',
-        'loop-Inside2.webp',
-        'loop-Inside3.webp',
-        'loop-Inside4.webp',
-        'loop-Inside5.webp',
-      ];
-
-      foreach ($gallery_default_images as $image) :
-      ?>
-        <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/img/' . $image); ?>"
-          alt=""
-          loading="lazy"
-          data-aos="fade-up">
-      <?php endforeach; ?>
-
+      </div>
     </div>
 
   </section>
@@ -128,19 +130,18 @@
   <section class="p-introduction-single-message">
 
     <!-- アイコン -->
-    <div class="p-introduction-single-message__icon-wrap">
+    <div class="p-introduction-single-message__icon-wrap inview">
       <img
         src="<?php echo get_template_directory_uri(); ?>/img/svg/mail-open.svg"
         alt="アイコン"
         class="p-introduction-single__icon"
-        loading="lazy"
-        data-aos="fade-up">
+        loading="lazy">
     </div>
 
     <!-- セクションタイトル -->
     <div class="p-introduction-single-message__heading">
-      <h2 class="p-introduction-single-message__title">園長からのメッセージ</h2>
-      <p class="p-introduction-single-message__subtitle">message</p>
+      <h2 class="p-introduction-single-message__title inview">園長からのメッセージ</h2>
+      <p class="p-introduction-single-message__subtitle inview">message</p>
     </div>
 
     <div class="p-introduction-single-message__content">
@@ -159,14 +160,13 @@
         <img
           src="<?php echo esc_url($principal_image_url); ?>"
           alt="<?php echo esc_attr(get_the_title()); ?> 園長"
-          class="p-introduction-single-message__text-img"
-          loading="lazy"
-          data-aos="fade-up">
+          class="p-introduction-single-message__text-img inview"
+          loading="lazy">
       </div>
 
       <!-- 園長からのメッセージACF -->
       <?php if (get_field('introduction_message')) : ?>
-        <p class="p-introduction-single-message__text">
+        <p class="p-introduction-single-message__text inview">
           <?php the_field('introduction_message'); ?>
         </p>
       <?php endif; ?>
@@ -178,19 +178,18 @@
   <!-- 園の概要セクションAbout Nursery -->
   <section class="p-introduction-single-overview">
     <!-- アイコン -->
-    <div class="p-introduction-single-message__icon-wrap about-Nursery-heading">
+    <div class="p-introduction-single-message__icon-wrap about-Nursery-heading inview">
       <img
         src="<?php echo get_template_directory_uri(); ?>/img/svg/bell.svg"
         alt="アイコン"
         class="p-introduction-single__icon"
-        loading="lazy"
-        data-aos="fade-up">
+        loading="lazy">
     </div>
 
     <!-- セクションタイトル -->
     <div class="p-introduction-about-nursery__heading">
-      <h2 class="p-introduction-about-nursery__title">園の概要</h2>
-      <p class="p-introduction-about-nursery__subtitle">about nursery</p>
+      <h2 class="p-introduction-about-nursery__title inview">園の概要</h2>
+      <p class="p-introduction-about-nursery__subtitle inview">about nursery</p>
     </div>
 
     <!-- 園の概要の表 -->
@@ -249,33 +248,33 @@
       $overview_staff_note = get_field('overview_staff_note') ?: '※嘱託医　1名<br>※保育士は認可保育所の基準に準じます<br>※保育児童数・年齢に応じたシフトにより、職員を増減します。';
       ?>
 
-      <dl class="p-introduction-single-overview__list" data-aos="fade-up">
+      <dl class="p-introduction-single-overview__list">
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">所在地</dt>
-          <dd class="p-introduction-single-overview__desc"><?php echo esc_html($overview_address); ?></dd>
+          <dt class="p-introduction-single-overview__term inview">所在地</dt>
+          <dd class="p-introduction-single-overview__desc inview"><?php echo esc_html($overview_address); ?></dd>
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">TEL / FAX</dt>
-          <dd class="p-introduction-single-overview__desc">
+          <dt class="p-introduction-single-overview__term inview">TEL / FAX</dt>
+          <dd class="p-introduction-single-overview__desc inview">
             <?php echo esc_html($overview_tel); ?> / <?php echo esc_html($overview_fax); ?>
           </dd>
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">対象</dt>
-          <dd class="p-introduction-single-overview__desc"><?php echo wp_kses_post($overview_target); ?></dd>
+          <dt class="p-introduction-single-overview__term inview">対象</dt>
+          <dd class="p-introduction-single-overview__desc inview"><?php echo wp_kses_post($overview_target); ?></dd>
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">入園日</dt>
-          <dd class="p-introduction-single-overview__desc p-introduction-single-overview__desc-lh"><?php echo wp_kses_post($overview_admission); ?></dd>
+          <dt class="p-introduction-single-overview__term inview">入園日</dt>
+          <dd class="p-introduction-single-overview__desc inview p-introduction-single-overview__desc-lh"><?php echo wp_kses_post($overview_admission); ?></dd>
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">開園日</dt>
-          <dd class="p-introduction-single-overview__desc">
+          <dt class="p-introduction-single-overview__term inview">開園日</dt>
+          <dd class="p-introduction-single-overview__desc inview">
             <table class="p-introduction-single-overview__table p-introduction-single-overview__table--week">
               <!-- <caption class="u-visually-hidden">曜日ごとの開園状況</caption> -->
               <thead>
@@ -308,9 +307,9 @@
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">保育時間</dt>
-          <dd class="p-introduction-single-overview__desc">
-            <h3 class="p-introduction-single-overview__sub-title">保育標準時間認定の方</h3>
+          <dt class="p-introduction-single-overview__term inview">保育時間</dt>
+          <dd class="p-introduction-single-overview__desc inview">
+            <h3 class="p-introduction-single-overview__sub-title inview">保育標準時間認定の方</h3>
             <table class="p-introduction-single-overview__table p-introduction-single-overview__table--time">
               <tbody>
                 <tr>
@@ -341,9 +340,9 @@
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">定員</dt>
+          <dt class="p-introduction-single-overview__term inview">定員</dt>
 
-          <dd class="p-introduction-single-overview__desc">
+          <dd class="p-introduction-single-overview__desc inview">
 
             <div class="p-introduction-single-overview__capacity">
               <div class="p-introduction-single-overview__badge-wrap">
@@ -390,9 +389,9 @@
         </div>
 
         <div class="p-introduction-single-overview__row">
-          <dt class="p-introduction-single-overview__term">職員</dt>
+          <dt class="p-introduction-single-overview__term inview">職員</dt>
 
-          <dd class="p-introduction-single-overview__desc">
+          <dd class="p-introduction-single-overview__desc inview">
 
             <div class="p-introduction-single-overview__capacity">
 
@@ -460,8 +459,8 @@
 
     <!-- セクションタイトル -->
     <div class="p-introduction-single-letter__heading">
-      <h2 class="p-introduction-single-letter__title">こもれびだより</h2>
-      <p class="p-introduction-single-letter__subtitle">letter</p>
+      <h2 class="p-introduction-single-letter__title inview">こもれびだより</h2>
+      <p class="p-introduction-single-letter__subtitle inview">letter</p>
     </div>
 
     <!-- サブクエリ表示エリア -->
@@ -482,10 +481,10 @@
             $letter_query->the_post();
         ?>
 
-            <li class="p-introduction-single-letter__item">
+            <li class="p-introduction-single-letter__item inview">
               <a
                 href="<?php the_permalink(); ?>"
-                class="p-introduction-single-letter__card">
+                class="p-introduction-single-letter__card u-hover">
 
                 <?php if (has_post_thumbnail()) : ?>
 
@@ -522,7 +521,7 @@
       </ul>
 
       <!-- リンクボタン -->
-      <div class="p-introduction-single-letter__link-wrap">
+      <div class="p-introduction-single-letter__link-wrap inview">
         <a
           href="<?php echo esc_url(home_url('/letter')); ?>"
           class="p-introduction-single-letter__link c-button u-hover">
@@ -539,25 +538,22 @@
     <div class="p-contact__inner">
       <div class="p-contact__inner-wrap">
         <!-- アイコン -->
-        <div class="p-contact__icon-wrap">
+        <div class="p-contact__icon-wrap inview">
           <img
             src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg"
             alt=""
             class="p-contact__icon"
-            loading="lazy"
-            data-aos="fade-up">
+            loading="lazy">
         </div>
 
         <!-- セクションタイトル -->
         <div class="p-contact__heading">
-          <h2 class="p-contact__title">お問い合わせ</h2>
-          <p class="p-contact__subtitle">contact</p>
+          <h2 class="p-contact__title inview">お問い合わせ</h2>
+          <p class="p-contact__subtitle inview">contact</p>
         </div>
 
         <!-- 説明文 -->
-        <p class="p-contact__text">
-          入園のお申込み、<br class="sp_only">見学のご相談はこちらから！
-        </p>
+        <p class="p-contact__text inview">入園のお申込み、<br class="sp_only">見学のご相談はこちらから！</p>
 
         <!-- リンクボタン -->
         <div class="p-contact__link-wrap inview">

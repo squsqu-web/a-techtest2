@@ -212,19 +212,19 @@ img {
 }
 
 /* ページネーション */
-.pagination {
+.c-pagination {
   width: 100%;
   display: flex;
   justify-content: center;
   margin: 4% 0 13%;
 }
-.pagination .nav-links {
+.c-pagination .nav-links {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   justify-content: center;
 }
-.pagination .nav-links .page-numbers {
+.c-pagination .nav-links .page-numbers {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -240,26 +240,25 @@ img {
   background-color: #FFFFFF;
   border: 1px solid #EF8F9C;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  position: relative;
-  top: 0;
+  transform: translateY(0) scale(1);
+  transition: transform 0.4s ease;
 }
-.pagination .nav-links .page-numbers:hover {
-  top: -2px;
+.c-pagination .nav-links .page-numbers:hover {
+  transform: translateY(-3px) scale(1.03);
 }
-.pagination .nav-links .page-numbers.current {
+.c-pagination .nav-links .page-numbers.current {
   background-color: #EF8F9C;
   color: #FFFFFF;
 }
-.pagination .nav-links .page-numbers.dots {
+.c-pagination .nav-links .page-numbers.dots {
   background: none;
   box-shadow: none;
   border: none;
   cursor: default;
   color: #aaa;
 }
-.pagination .nav-links .page-numbers.prev, .pagination .nav-links .page-numbers.next {
+.c-pagination .nav-links .page-numbers.prev, .c-pagination .nav-links .page-numbers.next {
   width: 3.6rem;
   height: 3.6rem;
   padding: 0;
@@ -271,8 +270,8 @@ img {
   background-color: #FFFFFF;
   border: 1px solid #EF8F9C;
 }
-.pagination .nav-links .page-numbers.prev:hover, .pagination .nav-links .page-numbers.next:hover {
-  top: -2px;
+.c-pagination .nav-links .page-numbers.prev:hover, .c-pagination .nav-links .page-numbers.next:hover {
+  transform: translateY(-3px);
 }
 
 /* スマホ版 */
@@ -2012,6 +2011,13 @@ body {
   line-height: 1.5;
   font-weight: 400;
   margin: 0 0 1.1rem;
+}
+.p-letter__card-text {
+  font-size: 1.6rem;
+  color: #333333;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  font-weight: 400;
 }
 .p-letter__text {
   font-size: 1.6rem;
@@ -4372,7 +4378,7 @@ Font Awesome
   text-transform: uppercase;
 }
 .p-recruit-page__motto {
-  margin: 0 0 12rem;
+  margin: 12rem 0 12rem;
 }
 @media (max-width: 767.98px) {
   .p-recruit-page__motto {

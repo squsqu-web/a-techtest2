@@ -199,6 +199,12 @@
                     <?php the_title(); ?>
                     <!-- <?php the_field('title'); ?> -->
                   </h3>
+
+                  <!-- テキスト -->
+                  <div class="p-letter__card-text">
+                    <?php the_field('letter_title'); ?>
+                  </div>
+
                   <time class="p-letter__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
                     <?php echo get_the_date('Y.m.d'); ?>
                   </time>

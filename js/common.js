@@ -130,11 +130,20 @@
   // introduction 園の様子 無限ループ
   document.addEventListener('DOMContentLoaded', function () {
     const galleries = document.querySelectorAll(
-      '.p-introduction-single-gallery__track'
+      '.p-introduction-single-gallery__gallery'
     );
-    galleries.forEach(function (track) {
+
+    galleries.forEach(function (gallery) {
+      const track = gallery.querySelector(
+        '.p-introduction-single-gallery__track'
+      );
+
+      if (!track) return;
+
       const images = Array.from(track.children);
+
       if (images.length === 0) return;
+
       // 元画像を複製
       images.forEach(function (image) {
         track.appendChild(image.cloneNode(true));

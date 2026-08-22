@@ -6,14 +6,14 @@
   <!-- Main Visual -->
   <section class="l-main-visual">
     <div class="l-main-visual__title">
-      <h1 class="l-main-visual__title-ja" data-aos="fade-up">こもれびだより</h1>
-      <p class="l-main-visual__title-en">letter</p>
+      <h1 class="l-main-visual__title-ja inview">こもれびだより</h1>
+      <p class="l-main-visual__title-en inview">letter</p>
     </div>
   </section>
 
   <!-- カスタムパンくずリスト -->
-  <div class="breadcrumb-container">
-    <nav class="breadcrumb  u-hover" data-aos="fade-up">
+  <div class="breadcrumb-container inview">
+    <nav class="breadcrumb u-hover">
       <a href="<?php echo home_url('/'); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <a href="<?php echo home_url('/letter'); ?>">こもれびだより一覧</a>
@@ -29,38 +29,29 @@
 
       <div class="p-letter-archive">
 
-        <!-- 検索フォームと記事一覧　👇不要か確認する -->
+        <!-- 検索フォームと記事一覧 -->
         <div class="p-letter-archive__content">
-
-
-          <!-- 一覧リスト　👇不要か確認する -->
           <section class="p-letter-archive__list ">
 
-
-
-            <!-- これからここにコンテンツ -->
             <!-- 記事本体 -->
             <article class="letter-contents">
 
               <!-- 記事ヘッダー -->
               <div class="letter-contents__inner">
-
                 <header class="letter-contents__letter-heading">
-
-                  <h2 class="letter-contents__title">
+                  <h2 class="letter-contents__title inview">
                     <span>
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/letter-pen.png"
                         alt=""
                         class="letter-contents__icon"
-                        loading="lazy"
-                        data-aos="fade-up">
+                        loading="lazy">
                     </span>
                     <?php the_title(); ?>
                   </h2>
 
                   <time
-                    class="letter-contents__date"
+                    class="letter-contents__date inview"
                     datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
                     <?php echo esc_html(get_the_date('Y年n月j日')); ?>
                   </time>
@@ -69,14 +60,14 @@
 
 
                 <!-- 記事タイトル -->
-                <h3 class="letter-contents__heading">
+                <h3 class="letter-contents__heading inview">
                   <?php echo esc_html(get_field('letter_title')); ?>
                 </h3>
 
                 <!-- アイキャッチ -->
                 <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail('full', array(
-                    'class' => 'letter-contents__thumbnail'
+                    'class' => 'letter-contents__thumbnail inview'
                   )); ?>
                 <?php endif; ?>
 
@@ -85,22 +76,19 @@
 
               <!-- ACF繰り返しフィールド -->
               <?php if (have_rows('letter_sections')) : ?>
-
                 <?php while (have_rows('letter_sections')) : the_row(); ?>
-
                   <section class="letter-contents__section">
-
                     <?php if (get_sub_field('subtitle')) : ?>
-                      <h4 class="letter-contents__section-heading">
+                      <h4 class="letter-contents__section-heading inview">
                         <?php echo esc_html(get_sub_field('subtitle')); ?>
                       </h4>
                     <?php endif; ?>
 
 
                     <?php if (get_sub_field('text')) : ?>
-                      <div class="letter-contents__section-text">
+                      <div class="letter-contents__section-text inview">
                         <?php echo wp_kses_post(get_sub_field('text')); ?>
-                    </div>
+                      </div>
                     <?php endif; ?>
 
                   </section>
@@ -120,34 +108,12 @@
               </div>
 
             </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </section>
-
         </div>
-
 
         <!-- サイドバー -->
         <aside class="p-letter-archive__sidebar">
-          <h4 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">アーカイブ</h4>
+          <h4 class="p-letter-archive__sidebar-title inview" id="letter-cat">アーカイブ</h4>
 
           <?php
           // こもれびだよりの投稿日をすべて取得
@@ -181,8 +147,7 @@
               rsort($months);
           ?>
 
-              <h5 class="p-letter-archive__archive-year"><?php echo esc_html($year); ?>年</h5>
-
+              <h5 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>年</h5>
               <ul class="p-letter-archive__archive-list">
                 <?php foreach ($months as $month) : ?>
 
@@ -194,7 +159,7 @@
                   ?>
 
                   <li class="p-letter-archive__archive-item u-hover inview<?php echo $is_active ? ' is-active' : ''; ?>">
-                    <a
+                    <a class="u-hover"
                       href="<?php echo esc_url(
                               add_query_arg(
                                 array(
@@ -216,25 +181,13 @@
           else :
             ?>
 
-            <p class="p-letter-archive__no-archive">
-              アーカイブはありません。
-            </p>
+            <p class="p-letter-archive__no-archive">アーカイブはありません。</p>
 
           <?php endif; ?>
         </aside>
-
-
       </div>
     </div>
   </div>
 
-
-
-
-
 </main>
-
-
-
-
 <?php get_footer(); ?>

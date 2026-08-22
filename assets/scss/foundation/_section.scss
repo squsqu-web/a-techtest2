@@ -90,7 +90,7 @@
 }
 
 /* ページネーション */
-.pagination {
+.c-pagination {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -123,15 +123,13 @@
       border: 1px solid v.$color-text;
 
       text-decoration: none;
-      transition: all 0.2s ease-in-out;
       cursor: pointer;
-      position: relative;
-      top: 0;
 
-      @include mq(md) {}
+      transform: translateY(0) scale(1);
+      transition: transform .4s ease;
 
       &:hover {
-        top: -2px;
+        transform: translateY(-3px) scale(1.03);
       }
 
       &.current {
@@ -158,11 +156,12 @@
         letter-spacing: 0.1em;
         line-height: 1.2;
         font-weight: v.$Regular;
+
         background-color: v.$color-white;
         border: 1px solid v.$color-text;
 
         &:hover {
-          top: -2px;
+          transform: translateY(-3px);
         }
       }
     }

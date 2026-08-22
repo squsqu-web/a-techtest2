@@ -32,17 +32,17 @@
     <section class="p-introduction-sec">
 
       <!-- タブ -->
-      <div class="p-introduction-tab">
+      <div class="p-introduction-tab inview">
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction inview"
+          class="p-introduction-tab__button is-active-introduction u-hover"
           data-tab="type">
           園の種類<br>から探す
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button inview"
+          class="p-introduction-tab__button u-hover"
           data-tab="area">
           都道府県<br>から探す
         </button>
@@ -50,7 +50,7 @@
 
 
       <!-- 検索・園一覧 -->
-      <div class="l-introduction__contents-wrap">
+      <div class="l-introduction__contents-wrap inview">
         <!-- 園の種類 -->
         <div
           class="p-introduction-filter is-active-introduction"
@@ -66,7 +66,7 @@
           ?>
 
               <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button inview">
+                class="p-introduction-filter__button u-hover">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
@@ -75,7 +75,7 @@
 
 
         <!-- 都道府県 -->
-        <div class="p-introduction-filter" data-panel="area">
+        <div class="p-introduction-filter u-hover" data-panel="area">
           <?php
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_area',
@@ -87,7 +87,7 @@
           ?>
 
               <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button">
+                class="p-introduction-filter__button u-hover">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;

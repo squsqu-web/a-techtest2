@@ -24,7 +24,7 @@
   <div class="l-introduction__inner">
     <section class="p-introduction-sec">
       <!-- タブ -->
-      <div class="p-introduction-tab">
+      <div class="p-introduction-tab inview">
 
         <button
           type="button"
@@ -43,7 +43,7 @@
       </div>
 
 
-      <div class="l-introduction__contents-wrap">
+      <div class="l-introduction__contents-wrap inview">
         <!-- 園の種類 -->
         <div class="p-introduction-filter is-active-introduction" data-panel="type">
           <?php
@@ -90,13 +90,13 @@
 
         <!-- 園一覧 -->
         <?php if (have_posts()) : ?>
-          <div class="p-introduction-list u-hover">
+          <div class="p-introduction-list">
             <?php while (have_posts()) : the_post(); ?>
               <article
                 class="p-introduction-list__item"
                 data-aos="fade-up">
                 <a
-                  class="p-introduction-card"
+                  class="p-introduction-card u-hover"
                   href="<?php the_permalink(); ?>">
 
                   <!-- アイキャッチ -->

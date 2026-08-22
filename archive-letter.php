@@ -5,14 +5,14 @@
   <!-- Main Visual -->
   <section class="l-main-visual">
     <div class="l-main-visual__title">
-      <h1 class="l-main-visual__title-ja" data-aos="fade-up">こもれびだより</h1>
-      <p class="l-main-visual__title-en">letter</p>
+      <h1 class="l-main-visual__title-ja inview">こもれびだより</h1>
+      <p class="l-main-visual__title-en inview">letter</p>
     </div>
   </section>
 
   <!-- カスタムパンくずリスト -->
-  <div class="breadcrumb-container u-hover" data-aos="fade-up">
-    <nav class="breadcrumb">
+  <div class="breadcrumb-container inview">
+    <nav class="breadcrumb u-hover">
       <a href="<?php echo home_url('/'); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <span>こもれびだより</span>
@@ -36,15 +36,11 @@
               action="<?php echo esc_url(get_post_type_archive_link('letter')); ?>"
               method="get">
 
-              <h3 class="p-letter-archive__search-title">
-                園をさがす
-              </h3>
-
-
+              <h3 class="p-letter-archive__search-title inview">園をさがす</h3>
               <div class="p-letter-archive__search-select-wrap">
 
                 <!-- 都道府県 -->
-                <div class="p-letter-archive__search-select p-letter-archive__search-select--area">
+                <div class="p-letter-archive__search-select p-letter-archive__search-select--area inview">
                   <select name="area">
                     <option value="">都道府県をえらぶ</option>
 
@@ -78,7 +74,7 @@
 
                 <!-- 園 -->
                 <div class="p-letter-archive__search-school-wrap">
-                  <div class="p-letter-archive__search-select p-letter-archive__search-select--school">
+                  <div class="p-letter-archive__search-select p-letter-archive__search-select--school inview">
                     <select name="school">
                       <option value="">園をえらぶ</option>
 
@@ -108,7 +104,7 @@
                   </div>
 
                   <!-- 検索ボタン -->
-                  <div class="p-letter-archive__search-button">
+                  <div class="p-letter-archive__search-button inview">
                     <button type="submit">
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/search.webp"
@@ -122,12 +118,12 @@
 
 
           <!-- 一覧リスト -->
-          <section class="p-letter-archive__list ">
+          <section class="p-letter-archive__list inview">
 
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
                 <article class="p-letter-archive__item">
-                  <div class="p-letter-archive__card">
+                  <div class="p-letter-archive__card u-hover">
                     <a href="<?php the_permalink(); ?>" class="p-letter-archive__link">
 
                       <?php if (has_post_thumbnail()) : ?>
@@ -163,7 +159,7 @@
           </section>
 
           <!-- ページネーション -->
-          <div class="c-pagination">
+          <div class="c-pagination ">
             <?php
             the_posts_pagination(array(
               'mid_size'  => 2,
@@ -211,7 +207,7 @@
               rsort($months);
           ?>
 
-              <h5 class="p-letter-archive__archive-year"><?php echo esc_html($year); ?>年</h5>
+              <h5 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>年</h5>
 
               <ul class="p-letter-archive__archive-list">
                 <?php foreach ($months as $month) : ?>
@@ -223,8 +219,8 @@
                     (int) $_GET['letter_month'] === (int) $month;
                   ?>
 
-                  <li class="p-letter-archive__archive-item u-hover inview<?php echo $is_active ? ' is-active' : ''; ?>">
-                    <a
+                  <li class="p-letter-archive__archive-item inview<?php echo $is_active ? ' is-active' : ''; ?>">
+                    <a class="u-hover"
                       href="<?php echo esc_url(
                               add_query_arg(
                                 array(
