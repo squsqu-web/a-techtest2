@@ -4,14 +4,14 @@
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
-    <h1 class="l-main-visual__title-ja" data-aos="fade-up">各園のご紹介</h1>
-    <p class="l-main-visual__title-en">introduction</p>
+    <h1 class="l-main-visual__title-ja inview">各園のご紹介</h1>
+    <p class="l-main-visual__title-en inview">introduction</p>
   </div>
 </section>
 
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container u-hover" data-aos="fade-up">
-  <nav class="breadcrumb">
+  <nav class="breadcrumb u-hover">
     <a href="<?php echo home_url('/'); ?>">ホーム</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>各園のご紹介</span>
@@ -28,17 +28,16 @@
 
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction"
+          class="p-introduction-tab__button is-active-introduction u-hover"
           data-tab="type">
           園の種類<br><span>から探す</span>
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button"
+          class="p-introduction-tab__button u-hover"
           data-tab="area">
           都道府県<br><span>から探す</span>
-        </button>
         </button>
 
       </div>
@@ -58,7 +57,7 @@
           ?>
               <a
                 href="<?php echo get_term_link($term); ?>"
-                class="p-introduction-filter__button">
+                class="p-introduction-filter__button u-hover">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
@@ -91,7 +90,7 @@
 
         <!-- 園一覧 -->
         <?php if (have_posts()) : ?>
-          <div class="p-introduction-list">
+          <div class="p-introduction-list u-hover">
             <?php while (have_posts()) : the_post(); ?>
               <article
                 class="p-introduction-list__item"
@@ -139,7 +138,7 @@
                   </div>
 
                   <!-- 園名 -->
-                  <h2 class="p-introduction-card__title"><?php the_title(); ?></h2>
+                  <h2 class="p-introduction-card__title inview"><?php the_title(); ?></h2>
                 </a>
 
               </article>
@@ -169,21 +168,20 @@
 <section class="p-recruit">
   <div class="p-recruit__inner">
     <div class="p-recruit__inner-wrap">
-      <div class="p-recruit__icon-wrap">
+      <div class="p-recruit__icon-wrap inview">
         <img
           src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
           alt=""
           class="p-recruit__icon"
-          loading="lazy"
-          data-aos="fade-up">
+          loading="lazy">
       </div>
 
       <div class="p-recruit__heading">
-        <h2 class="p-recruit__title">採用情報</h2>
-        <p class="p-recruit__subtitle">recruit</p>
+        <h2 class="p-recruit__title inview">採用情報</h2>
+        <p class="p-recruit__subtitle inview">recruit</p>
       </div>
 
-      <p class="p-recruit__text">桜のこもれびキッズランドで働いてみませんか？</p>
+      <p class="p-recruit__text inview">桜のこもれびキッズランドで働いてみませんか？</p>
     </div>
 
     <!-- リンクボタン -->

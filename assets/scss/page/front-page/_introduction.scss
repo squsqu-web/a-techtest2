@@ -81,29 +81,34 @@
 
   }
 
-  &__prefectures-item {
-    font-size: 2.4rem;
-    color: v.$color-main-2;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    font-weight: v.$Regular;
-    background-color: v.$color-white;
+&__prefectures-item {
+  font-size: 2.4rem;
+  color: v.$color-main-2;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: v.$Regular;
+  background-color: v.$color-white;
 
-    width: 32rem;
-    height: 6rem;
+  width: 32rem;
+  height: 6rem;
+  border-radius: 2rem;
+  border: 2px solid v.$color-main-4;
+
+  a {
+    width: 100%;
+    height: 100%;
     @include flex;
-    border-radius: 2rem;
-    border: 2px solid v.$color-main-4;
-
-    @include mq(md) {
-      font-size: 1.8rem;
-
-      width: 24rem;
-      height: 4rem;
-      border-radius: 1.2rem;
-    }
-
+    color: inherit;
+    text-decoration: none;
   }
+
+  @include mq(md) {
+    font-size: 1.8rem;
+    width: 24rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+  }
+}
 
   &__link {
     font-size: 1.8rem;

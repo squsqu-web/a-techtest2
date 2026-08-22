@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Kosugi+Maru&family=Yusei+Magic&display=swap" rel="stylesheet">
-
+  <link rel="icon" href="<?php echo esc_url(get_template_directory_uri() . '/img/favicon.ico'); ?>">
+  <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri() . '/img/apple-touch-icon.png'); ?>">
   <?php wp_head(); ?>
 </head>
 
@@ -25,7 +26,7 @@
         <nav class="l-header__nav u-sp-none">
           <ul class="l-header__list">
             <!-- about -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/about/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">わたしたちのこと</span>
@@ -34,7 +35,7 @@
             </li>
 
             <!-- introduction -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/introduction/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">各園のご紹介</span>
@@ -43,7 +44,7 @@
             </li>
 
             <!-- letter -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/letter/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">こもれびだより</span>
@@ -52,7 +53,7 @@
             </li>
 
             <!-- ロゴ -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item u-hover inview">
               <!-- 条件分岐 -->
               <?php if (is_front_page() || is_home()) : ?>
                 <h1 class="l-header__logo u-hover">
@@ -86,7 +87,7 @@
             </li>
 
             <!-- info -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/info/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">お知らせ</span>
@@ -95,7 +96,7 @@
             </li>
 
             <!-- recruit -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/recruit/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">採用情報</span>
@@ -104,7 +105,7 @@
             </li>
 
             <!-- contact -->
-            <li class="l-header__item u-hover">
+            <li class="l-header__item inview">
               <a href="<?php echo home_url('/contact/'); ?>" class="l-header__link u-hover">
                 <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
                 <span class="l-header__link-ja">お問い合わせ</span>
@@ -117,63 +118,110 @@
 
 
         <!-- ハンバーガーメニュー -->
-<!-- SPヘッダー -->
-<div class="l-header__sp">
+        <!-- SPヘッダー -->
+        <div class="l-header__sp">
 
-  <!-- ロゴ -->
-  <div class="l-header__logo">
-    <a href="<?php echo home_url('/'); ?>">
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-        alt="桜のこもれびキッズランド">
-    </a>
-  </div>
+          <!-- ロゴ -->
+          <div class="l-header__logo">
+            <a href="<?php echo home_url('/'); ?>">
+              <img
+                src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
+                alt="桜のこもれびキッズランド">
+            </a>
+          </div>
 
 
-  <!-- ハンバーガー -->
-  <div class="u-hover">
-    <div class="c-button c-hamburger js-hamburger">
-      <span class="c-hamburger__text">メニュー</span>
+          <!-- ハンバーガー -->
+          <div class="u-hover">
+            <div class="c-button c-hamburger js-hamburger">
+              <span class="c-hamburger__text">メニュー</span>
 
-      <span class="c-hamburger__line-container">
-        <span class="c-hamburger__line"></span>
-        <span class="c-hamburger__line"></span>
-        <span class="c-hamburger__line"></span>
-      </span>
+              <span class="c-hamburger__line-container">
+                <span class="c-hamburger__line"></span>
+                <span class="c-hamburger__line"></span>
+                <span class="c-hamburger__line"></span>
+              </span>
 
-    </div>
-  </div>
+            </div>
+          </div>
 
-</div>
+        </div>
 
         <!-- ドロワーメニュー -->
         <div class="drawer js-drawer">
           <div class="drawer__inner">
             <nav class="drawer__nav">
               <ul class="drawer__list">
+
+                <!-- home -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/'); ?>" class="drawer__link inview">home</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/')); ?>"
+                    class="drawer__link inview">
+                    home
+                  </a>
                 </li>
+
+                <!-- わたしたちのこと -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/concept'); ?>" class="drawer__link inview">salon concept</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/about/')); ?>"
+                    class="drawer__link inview">
+                    わたしたちのこと
+                  </a>
                 </li>
+
+                <!-- 各園のご紹介 -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/price'); ?>" class="drawer__link inview">price menu</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/introduction/')); ?>"
+                    class="drawer__link inview">
+                    各園のご紹介
+                  </a>
                 </li>
+
+                <!-- こもれびだより -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/salons'); ?>" class="drawer__link inview">salons</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/letter/')); ?>"
+                    class="drawer__link inview">
+                    こもれびだより
+                  </a>
                 </li>
+
+                <!-- お知らせ -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/letter'); ?>" class="drawer__link inview">letter</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/info/')); ?>"
+                    class="drawer__link inview">
+                    お知らせ
+                  </a>
                 </li>
+
+                <!-- 採用情報 -->
                 <li class="drawer__item u-hover">
-                  <a href="<?php echo home_url('/reserve'); ?>" class="drawer__link inview">reserve</a>
+                  <a
+                    href="<?php echo esc_url(home_url('/recruit/')); ?>"
+                    class="drawer__link inview">
+                    採用情報
+                  </a>
                 </li>
+
+                <!-- お問い合わせ -->
+                <li class="drawer__item u-hover">
+                  <a
+                    href="<?php echo esc_url(home_url('/contact/')); ?>"
+                    class="drawer__link inview">
+                    お問い合わせ
+                  </a>
+                </li>
+
               </ul>
             </nav>
           </div>
         </div>
-        <!-- ハンバーガーメニューここまで -->
+        <!-- ドロワーメニューここまで -->
+
       </div>
 
     </header>

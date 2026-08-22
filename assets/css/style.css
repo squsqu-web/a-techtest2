@@ -970,7 +970,7 @@ body {
   }
 }
 .p-contact__text {
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 0.956rem + 0.19vw, 1.125rem);
   color: #55000C;
   letter-spacing: 0.1em;
   line-height: 2;
@@ -979,7 +979,6 @@ body {
 }
 @media (max-width: 767.98px) {
   .p-contact__text {
-    font-size: 1.6rem;
     margin: 0 auto 3.2rem;
   }
 }
@@ -1852,11 +1851,17 @@ body {
   background-color: #FFFFFF;
   width: 32rem;
   height: 6rem;
+  border-radius: 2rem;
+  border: 2px solid #FFEDF0;
+}
+.p-introduction__prefectures-item a {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
-  border: 2px solid #FFEDF0;
+  color: inherit;
+  text-decoration: none;
 }
 @media (max-width: 767.98px) {
   .p-introduction__prefectures-item {
@@ -2322,19 +2327,25 @@ body {
   園一覧
   ============================== */
 }
-.p-yearly-program__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  text-align: left;
+.p-yearly-program__list-wraper {
   background: #FFFFFF;
   padding: 6rem 4rem;
+  text-align: left;
+}
+@media (max-width: 767.98px) {
+  .p-yearly-program__list-wraper {
+    padding: 6rem 1.25rem;
+  }
+}
+.p-yearly-program__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 @media (max-width: 767.98px) {
   .p-yearly-program__list {
-    flex-direction: column;
-    gap: 3rem 2rem;
-    padding: 6rem 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
 .p-yearly-program__item {
@@ -2348,8 +2359,7 @@ body {
 }
 .p-yearly-program__card {
   display: block;
-  width: 32rem;
-  height: auto;
+  width: 100%;
   height: 26.4rem;
   color: inherit;
   text-decoration: none;

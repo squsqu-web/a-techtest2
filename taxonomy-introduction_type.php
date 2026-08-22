@@ -16,7 +16,7 @@
   class="breadcrumb-container u-hover"
   data-aos="fade-up">
 
-  <nav class="breadcrumb">
+  <nav class="breadcrumb u-hover">
     <a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a>
     <span class="sep">&gt;</span>
     <a href="<?php echo esc_url(get_post_type_archive_link('introduction')); ?>">各園のご紹介</a>
@@ -35,14 +35,14 @@
       <div class="p-introduction-tab">
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction"
+          class="p-introduction-tab__button is-active-introduction u-hover"
           data-tab="type">
           園の種類<br>から探す
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button"
+          class="p-introduction-tab__button u-hover"
           data-tab="area">
           都道府県<br>から探す
         </button>
@@ -180,37 +180,28 @@
 <section class="p-recruit">
   <div class="p-recruit__inner">
     <div class="p-recruit__inner-wrap">
-
-      <!-- アイコン -->
-      <div class="p-recruit__icon-wrap">
+      <div class="p-recruit__icon-wrap inview">
         <img
-          src="<?php echo esc_url(
-                  get_template_directory_uri() . '/img/svg/recruit.svg'
-                ); ?>"
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
           alt=""
           class="p-recruit__icon"
-          loading="lazy"
-          data-aos="fade-up">
+          loading="lazy">
       </div>
 
-
-      <!-- 見出し -->
       <div class="p-recruit__heading">
-        <h2 class="p-recruit__title">採用情報</h2>
-        <p class="p-recruit__subtitle">recruit</p>
+        <h2 class="p-recruit__title inview">採用情報</h2>
+        <p class="p-recruit__subtitle inview">recruit</p>
       </div>
 
-      <!-- テキスト -->
-      <p class="p-recruit__text">桜のこもれびキッズランドで働いてみませんか？</p>
-
+      <p class="p-recruit__text inview">桜のこもれびキッズランドで働いてみませんか？</p>
     </div>
-
 
     <!-- リンクボタン -->
     <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
-      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
+      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
+      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
     </div>
+
   </div>
 </section>
 

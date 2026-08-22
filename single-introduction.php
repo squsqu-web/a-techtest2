@@ -78,15 +78,47 @@
     </div>
 
     <!-- 無限ループ表示エリア -->
-    <div class="p-introduction-single-gallery__gallery">
-      <div class="p-introduction-single-gallery__track">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/recruit-bg.webp" alt="" loading="lazy" data-aos="fade-up">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/loop-Inside1.webp" alt="" loading="lazy" data-aos="fade-up">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/loop-Inside2.webp" alt="" loading="lazy" data-aos="fade-up">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/loop-Inside3.webp" alt="" loading="lazy" data-aos="fade-up">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/loop-Inside4.webp" alt="" loading="lazy" data-aos="fade-up">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/loop-Inside5.webp" alt="" loading="lazy" data-aos="fade-up">
-      </div>
+    <div class="p-introduction-single-gallery__track">
+
+      <?php
+      // 各園ごとの登録画像
+      $introduction_gallery = get_field('introduction_gallery');
+
+      if ($introduction_gallery) :
+        foreach ($introduction_gallery as $image) :
+      ?>
+          <img
+            src="<?php echo esc_url($image['url']); ?>"
+            alt="<?php echo esc_attr($image['alt']); ?>"
+            loading="lazy"
+            data-aos="fade-up">
+      <?php
+        endforeach;
+      endif;
+      ?>
+
+
+      <?php
+      
+      //  全園共通の固定画像
+      $gallery_default_images = [
+        'recruit-bg.webp',
+        'loop-Inside1.webp',
+        'loop-Inside2.webp',
+        'loop-Inside3.webp',
+        'loop-Inside4.webp',
+        'loop-Inside5.webp',
+      ];
+
+      foreach ($gallery_default_images as $image) :
+      ?>
+        <img
+          src="<?php echo esc_url(get_template_directory_uri() . '/img/' . $image); ?>"
+          alt=""
+          loading="lazy"
+          data-aos="fade-up">
+      <?php endforeach; ?>
+
     </div>
 
   </section>

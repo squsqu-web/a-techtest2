@@ -110,18 +110,24 @@
   園一覧
   ============================== */
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    text-align: left;
+  &__list-wraper {
     background: v.$color-white;
     padding: 6rem 4rem;
+    text-align: left;
 
     @include mq(md) {
-      flex-direction: column;
-      gap: 3rem 2rem;
       padding: 6rem 1.25rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include mq(md) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
   }
 
@@ -140,8 +146,7 @@
 
   &__card {
     display: block;
-    width: 32rem;
-    height: auto;
+    width: 100%;
     height: 26.4rem;
     color: inherit;
     text-decoration: none;
@@ -151,8 +156,6 @@
     &:hover {
       opacity: .7;
     }
-
-    @include mq(md) {}
   }
 
   /* アイキャッチ */

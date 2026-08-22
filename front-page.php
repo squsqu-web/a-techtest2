@@ -3,7 +3,7 @@
 <main class="l-main__front">
 
   <!-- Hero -->
-  <section class="p-hero">
+  <section class="p-hero inview">
     <picture class="p-hero__picture">
       <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.webp" type="image/webp">
       <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.png">
@@ -19,69 +19,67 @@
   </section>
 
   <!-- お知らせボタン -->
-<?php
-$info_query = new WP_Query(array(
-  'post_type'      => 'info',
-  'posts_per_page' => 1,
-  'orderby'        => 'date',
-  'order'          => 'DESC',
-));
+  <?php
+  $info_query = new WP_Query(array(
+    'post_type'      => 'info',
+    'posts_per_page' => 1,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ));
 
-if ($info_query->have_posts()) :
-  $info_query->the_post();
-?>
+  if ($info_query->have_posts()) :
+    $info_query->the_post();
+  ?>
 
-  <!-- お知らせボタン -->
-  <div class="p-hero-news">
-    <a href="<?php the_permalink(); ?>" class="p-hero-news__link">
-      <span class="p-hero-news__category">お知らせ</span>
+    <!-- お知らせボタン -->
+    <div class="p-hero-news inview">
+      <a href="<?php the_permalink(); ?>" class="p-hero-news__link u-hover">
+        <span class="p-hero-news__category">お知らせ</span>
 
-      <h2 class="p-hero-news__title">
-        <?php the_title(); ?>
-      </h2>
+        <h2 class="p-hero-news__title">
+          <?php the_title(); ?>
+        </h2>
 
-      <time
-        class="p-hero-news__date"
-        datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
-      >
-        <?php echo esc_html(get_the_date('Y年n月j日')); ?>
-      </time>
-    </a>
-  </div>
+        <time
+          class="p-hero-news__date"
+          datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+          <?php echo esc_html(get_the_date('Y年n月j日')); ?>
+        </time>
+      </a>
+    </div>
 
-<?php
-endif;
+  <?php
+  endif;
 
-wp_reset_postdata();
-?>
+  wp_reset_postdata();
+  ?>
 
 
   <!-- Aboutセクション -->
   <section class="p-about">
-    <div class="p-about__icon-wrap">
+    <div class="p-about__icon-wrap inview">
       <img
         src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
         alt=""
         class="p-about__icon"
-        loading="lazy"
-        data-aos="fade-up">
+        loading="lazy">
     </div>
 
     <div class="p-about__heading">
-      <h2 class="p-about__title">
+      <h2 class="p-about__title inview">
         桜のこもれびキッズランドへ<br>
         ようこそ
       </h2>
-      <p class="p-about__subtitle">welcome</p>
+      <p class="p-about__subtitle inview">welcome</p>
     </div>
 
     <div class="p-about__text-wrap">
-      <p class="p-about__text">
+      <p class="p-about__text inview">
         「こもれび」とは<br>
         風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
         それはその瞬間に一度だけ存在します。
       </p>
-      <p class="p-about__text">
+      <p class="p-about__text inview">
         桜のこもれびキッズランドは、<br>
         子どもたち一人ひとりが独自の輝きを放つように、<br>
         大切な個性を伸ばす場所です。<br>
@@ -95,28 +93,52 @@ wp_reset_postdata();
 
   <!-- 各園のご紹介セクション -->
   <section class="p-introduction">
-    <div class="p-introduction__icon-wrap">
+    <div class="p-introduction__icon-wrap inview">
       <img
         src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
         alt=""
         class="p-introduction__icon"
-        loading="lazy"
-        data-aos="fade-up">
+        loading="lazy">
     </div>
 
     <div class="p-introduction__heading">
-      <h2 class="p-introduction__title">各園のご紹介</h2>
-      <p class="p-introduction__subtitle">introduction</p>
+      <h2 class="p-introduction__title inview">各園のご紹介</h2>
+      <p class="p-introduction__subtitle inview">introduction</p>
     </div>
 
-    <ul class="p-introduction__prefectures-list">
-      <li class="p-introduction__prefectures-item">東京都</li>
-      <li class="p-introduction__prefectures-item">神奈川県</li>
-      <li class="p-introduction__prefectures-item">埼玉県</li>
-      <li class="p-introduction__prefectures-item">千葉県</li>
-      <li class="p-introduction__prefectures-item">大阪府</li>
-      <li class="p-introduction__prefectures-item">京都府</li>
+
+    <!-- 各都道府県へのリンク -->
+    <?php
+    $prefectures = [
+      '東京都',
+      '神奈川県',
+      '埼玉県',
+      '千葉県',
+      '大阪府',
+      '京都府',
+    ];
+    ?>
+
+    <ul class="p-introduction__prefectures-list inview">
+      <?php foreach ($prefectures as $prefecture) : ?>
+        <?php
+        $term = get_term_by('name', $prefecture, 'introduction_area');
+
+        if ($term) :
+        ?>
+          <li class="p-introduction__prefectures-item u-hover">
+            <a href="<?php echo esc_url(get_term_link($term)); ?>">
+              <?php echo esc_html($prefecture); ?>
+            </a>
+          </li>
+        <?php endif; ?>
+      <?php endforeach; ?>
     </ul>
+
+
+
+
+
 
     <!-- リンクボタン -->
     <div class="inview">
@@ -133,17 +155,16 @@ wp_reset_postdata();
         <img
           src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg"
           alt=""
-          class="p-letter__icon"
-          loading="lazy"
-          data-aos="fade-up">
+          class="p-letter__icon inview"
+          loading="lazy">
       </div>
 
       <div class="p-letter__heading">
-        <h2 class="p-letter__title">こもれびだより</h2>
-        <p class="p-letter__subtitle">letter</p>
+        <h2 class="p-letter__title inview">こもれびだより</h2>
+        <p class="p-letter__subtitle inview">letter</p>
       </div>
 
-      <ul class="p-letter__list">
+      <ul class="p-letter__list inview">
         <?php
         $args = array(
           'post_type' => 'letter',
@@ -158,7 +179,7 @@ wp_reset_postdata();
           while ($letter_query->have_posts()) :
             $letter_query->the_post();
         ?>
-            <li class="p-letter__item">
+            <li class="p-letter__item u-hover">
               <a href="<?php the_permalink(); ?>" class="p-letter__card">
 
                 <?php if (has_post_thumbnail()) : ?>
@@ -215,10 +236,10 @@ wp_reset_postdata();
         </div>
 
         <div class="p-recruit__heading">
-          <h2 class="p-recruit__title">採用情報</h2>
-          <p class="p-recruit__subtitle">recruit</p>
+          <h2 class="p-recruit__title inview">採用情報</h2>
+          <p class="p-recruit__subtitle inview">recruit</p>
         </div>
-        <p class="p-recruit__text">桜のこもれびキッズランドで<br class="sp_only">働いてみませんか？</p>
+        <p class="p-recruit__text inview">桜のこもれびキッズランドで<br class="sp_only">働いてみませんか？</p>
       </div>
 
       <!-- リンクボタン -->
