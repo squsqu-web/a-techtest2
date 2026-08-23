@@ -152,9 +152,8 @@
               <?php endwhile; ?>
 
             <?php else : ?>
-              <p class="p-letter-archive__no-post">該当するこもれびだよりはまだありません。</p>
+              <p class="p-letter-archive__no-post">該当するこもれびだよりは<br class="sp_only">まだありません。</p>
             <?php endif; ?>
-
 
           </section>
 

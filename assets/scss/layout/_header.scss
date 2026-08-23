@@ -266,38 +266,32 @@
 
   @include mq(md) {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    height: 15rem;
     padding: 1.5rem 2rem;
+    position: relative;
   }
 }
 
-.l-header__sp .l-header__logo img {
+.l-header__sp .l-header__logo {
+  position: static;
+}
 
+.l-header__sp .l-header__logo img {
   @include mq(md) {
     width: 20rem;
     height: auto;
   }
-
 }
-
-.l-header__sp {
-  position: relative;
-}
-
-.l-header__sp .l-header__logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
 
 .c-hamburger {
-  position: absolute;
-  right: -33rem;
-  top: -6.5rem;
+  @include mq(md) {
+    position: absolute;
+    right: -8rem;
+    top: -6rem;
+  }
 }
 
 // SP表示切替
