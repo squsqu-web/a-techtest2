@@ -57,20 +57,27 @@
               <a class="p-info-card u-hover" href="<?php the_permalink(); ?>">
 
                 <!-- カテゴリバッジ -->
-                <div class="p-info-card__badge">
+                <?php
+                $terms = get_the_terms(
+                  get_the_ID(),
+                  'info_category'
+                );
+
+                $category_class = '';
+
+                if ($terms && !is_wp_error($terms)) {
+                  $category_class = 'is-' . $terms[0]->slug;
+                }
+                ?>
+
+                <div class="p-info-card__badge <?php echo esc_attr($category_class); ?>">
                   <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
                     <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
                     <path d="M13.7 21a2 2 0 01-3.4 0" />
                   </svg>
 
-                  <?php
-                  $terms = get_the_terms(
-                    get_the_ID(),
-                    'info_category'
-                  );
-                  if ($terms && !is_wp_error($terms)):
-                  ?>
-                    <span><?php echo $terms[0]->name; ?></span>
+                  <?php if ($terms && !is_wp_error($terms)): ?>
+                    <span><?php echo esc_html($terms[0]->name); ?></span>
                   <?php endif; ?>
                 </div>
 

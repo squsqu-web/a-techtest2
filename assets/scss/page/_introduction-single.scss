@@ -898,7 +898,6 @@
 .c-pagination {
   display: flex;
   justify-content: center;
-  margin-bottom: 12.3rem;
 
   @include mq(md) {
     margin-bottom: 8rem;
@@ -939,19 +938,4 @@
   color: v.$color-main;
 
   @include mq(md) {}
-}
-
-
-
-/* ==============================
-  Font Awesome
-============================== */
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 2rem;
-  color: v.$color-main;
-
-  @include mq(md) {
-    font-size: 1.2rem;
-  }
 }

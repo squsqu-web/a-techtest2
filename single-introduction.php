@@ -444,6 +444,7 @@
     <!-- ここまで表 -->
   </section>
 
+
   <!-- こもれびだよりセクション -->
   <section class="p-introduction-single-letter">
 
@@ -467,11 +468,24 @@
     <div class="p-introduction-single-letter__content">
       <ul class="p-introduction-single-letter__list">
         <?php
+        // 現在表示している園の投稿ID
+        $current_school_id = get_the_ID();
+
         $args = array(
           'post_type'      => 'letter',
           'posts_per_page' => 3,
           'orderby'        => 'date',
           'order'          => 'DESC',
+
+          // 「対象の園」が現在の園になっている記事だけ取得
+          'meta_query' => array(
+            array(
+              'key'     => 'letter_school',
+              'value'   => $current_school_id,
+              'compare' => '=',
+              'type'    => 'NUMERIC',
+            ),
+          ),
         );
 
         $letter_query = new WP_Query($args);
@@ -494,36 +508,49 @@
                   )); ?>
 
                 <?php else : ?>
+
                   <img
                     src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.png'); ?>"
                     alt=""
                     class="p-introduction-single-letter__image">
+
                 <?php endif; ?>
 
                 <div class="p-introduction-single-letter__card-wrap">
-                  <h3 class="p-introduction-single-letter__card-title"><?php the_title(); ?></h3>
+
+                  <h3 class="p-introduction-single-letter__card-title">
+                    <?php the_title(); ?>
+                  </h3>
 
                   <time
                     class="p-introduction-single-letter__date"
                     datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
                     <?php echo esc_html(get_the_date('Y.m.d')); ?>
                   </time>
+
                 </div>
+
               </a>
             </li>
 
         <?php
           endwhile;
         endif;
+
         wp_reset_postdata();
         ?>
-
       </ul>
 
       <!-- リンクボタン -->
       <div class="p-introduction-single-letter__link-wrap inview">
         <a
-          href="<?php echo esc_url(home_url('/letter')); ?>"
+          href="<?php echo esc_url(
+                  add_query_arg(
+                    'school',
+                    get_the_ID(),
+                    get_post_type_archive_link('letter')
+                  )
+                ); ?>"
           class="p-introduction-single-letter__link c-button u-hover">
           もっとみる
         </a>

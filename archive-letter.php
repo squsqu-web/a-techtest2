@@ -143,7 +143,7 @@
                         <time
                           class="p-letter-archive__date"
                           datetime="<?php echo get_the_date('c'); ?>">
-                          <?php echo get_the_date('Y年nがつj日'); ?>
+                          <?php echo get_the_date('Y'); ?>ねん<?php echo get_the_date('n'); ?>がつ<?php echo get_the_date('j'); ?>にち
                         </time>
                       </div>
                     </a>

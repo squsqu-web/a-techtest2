@@ -1,3 +1,4 @@
+
 (function ($) {
 
   // ハンバーガーメニュー
@@ -11,22 +12,36 @@
 
     // 背景スクロール固定トグル
     document.body.classList.toggle('no-scroll');
+
+    // MENU / CLOSE 切り替え
+    const hamburgerText = hamburger.querySelector('.c-hamburger__text');
+
+    if (hamburger.classList.contains('is-active')) {
+      hamburgerText.textContent = 'closed';
+    } else {
+      hamburgerText.textContent = 'menu';
+    }
   });
 
 
+  // ドロワー内のリンクをクリックしたら閉じる
   drawerLinks.forEach(drawerLink => {
     drawerLink.addEventListener('click', () => {
       hamburger.classList.remove('is-active');
       drawer.classList.remove('is-active');
       document.body.classList.remove('no-scroll');
+
+      hamburger.querySelector('.c-hamburger__text').textContent = 'MENU';
     });
   });
 
-
+  // ドロワー背景をクリックしたら閉じる
   drawer.addEventListener('click', () => {
     hamburger.classList.remove('is-active');
     drawer.classList.remove('is-active');
     document.body.classList.remove('no-scroll');
+
+    hamburger.querySelector('.c-hamburger__text').textContent = 'MENU';
   });
 
 

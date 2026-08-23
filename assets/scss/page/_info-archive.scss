@@ -124,7 +124,17 @@
 
     gap: 4px;
 
-    color: #fff;
+    color: v.$color-white;
+
+    // 活動記録：青
+    &.is-active-news {
+      background-color: v.$color-accent-1;
+    }
+
+    // メディア情報：黄色
+    &.is-media-info {
+      background-color: v.$color-accent-2;
+    }
 
     svg {
       width: 4.8rem;
@@ -203,7 +213,6 @@
 .c-pagination {
   display: flex;
   justify-content: center;
-  margin-bottom: 12.3rem;
 
   @include mq(md) {
     margin-bottom: 8rem;
@@ -225,18 +234,5 @@
       background: none;
       border: none;
     }
-  }
-}
-
-/* ==============================
-  Font Awesome
-============================== */
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 2rem;
-  color: v.$color-main;
-
-  @include mq(md) {
-    font-size: 1.2rem;
   }
 }

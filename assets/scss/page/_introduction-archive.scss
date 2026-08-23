@@ -8,6 +8,7 @@
 
 .contents-overlap-wrapper {
   background-image: url(../../img/top-letters__bg.svg);
+  position: relative;
 
   @include mq(md) {
     background-image: url(../../img/top-letters__bg_sp.svg);
@@ -19,6 +20,7 @@
   &__inner {
     width: 75%;
     margin-inline: auto;
+    padding: 0 0 8rem;
 
     @include mq(md) {
       width: 92%;
@@ -35,7 +37,15 @@
 }
 
 .p-introduction-sec {
-  padding: 13.4rem 0 0;
+  padding: 11.4rem 0 0;
+  margin: 13.4rem 0 0;
+}
+
+.p-page-introduction__icon {
+  position: absolute;
+  top: 0rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ==============================
@@ -250,7 +260,6 @@
 .c-pagination {
   display: flex;
   justify-content: center;
-  margin-bottom: 12.3rem;
 
   @include mq(md) {
     margin-bottom: 8rem;
@@ -273,21 +282,5 @@
       background: none;
       border: none;
     }
-  }
-}
-
-
-/* ==============================
-Font Awesome
-============================== */
-
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 2rem;
-
-  color: v.$color-main;
-
-  @include mq(md) {
-    font-size: 1.2rem;
   }
 }

@@ -206,7 +206,7 @@
                   </div>
 
                   <time class="p-letter__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                    <?php echo get_the_date('Y.m.d'); ?>
+                    <?php echo get_the_date('Y'); ?>ねん<?php echo get_the_date('n'); ?>がつ<?php echo get_the_date('j'); ?>にち
                   </time>
                 </div>
               </a>

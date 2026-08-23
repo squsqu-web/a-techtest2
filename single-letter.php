@@ -53,7 +53,7 @@
                   <time
                     class="letter-contents__date inview"
                     datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
-                    <?php echo esc_html(get_the_date('Y年n月j日')); ?>
+                    <?php echo esc_html(get_the_date('Y')); ?>ねん<?php echo esc_html(get_the_date('n')); ?>がつ<?php echo esc_html(get_the_date('j')); ?>にち
                   </time>
 
                 </header>

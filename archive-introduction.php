@@ -21,6 +21,16 @@
 
 <!-- メインコンテンツセクション -->
 <div class="contents-overlap-wrapper">
+
+  <!-- アイコン -->
+  <div class="p-introduction__icon-wrap p-page-introduction__icon">
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
+      alt=""
+      class="p-introduction__icon inview"
+      loading="lazy">
+  </div>
+
   <div class="l-introduction__inner">
     <section class="p-introduction-sec">
       <!-- タブ -->

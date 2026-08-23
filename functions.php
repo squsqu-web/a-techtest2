@@ -488,41 +488,41 @@ function letter_search_query($query)
     return;
   }
 
-  // 園IDを取得
+  // 園ID
   $school_id = isset($_GET['school'])
     ? absint($_GET['school'])
     : 0;
 
-  // 都道府県スラッグを取得
+  // 都道府県スラッグ
   $area = isset($_GET['area'])
     ? sanitize_text_field($_GET['area'])
     : '';
 
 
-  /*
-     * ====================================
-     * 園を選択した場合
-     * ====================================
-     */
+  /*====================================
+   * 園を選択した場合
+   *====================================*/
   if ($school_id) {
+
     $query->set('meta_query', array(
       array(
         'key'     => 'letter_school',
         'value'   => $school_id,
         'compare' => '=',
+        'type'    => 'NUMERIC',
       ),
     ));
+
     return;
   }
 
 
-  /*
-     * ====================================
-     * 都道府県を選択した場合
-     * ====================================
-     */
+  /*====================================
+   * 都道府県を選択した場合
+   *====================================*/
   if ($area) {
-    // 選択された都道府県に属する園を取得
+
+    // 都道府県に属する園を取得
     $school_ids = get_posts(array(
       'post_type'      => 'introduction',
       'posts_per_page' => -1,
@@ -539,21 +539,26 @@ function letter_search_query($query)
     ));
 
 
-    // 該当する園が存在する場合
+    // 該当する園がある場合
     if (!empty($school_ids)) {
+
       $meta_query = array(
         'relation' => 'OR',
       );
+
       foreach ($school_ids as $school_id) {
+
         $meta_query[] = array(
           'key'     => 'letter_school',
           'value'   => $school_id,
           'compare' => '=',
+          'type'    => 'NUMERIC',
         );
       }
 
       $query->set('meta_query', $meta_query);
     } else {
+
       // 該当する園がなければ0件
       $query->set('post__in', array(0));
     }
@@ -561,7 +566,6 @@ function letter_search_query($query)
 }
 
 add_action('pre_get_posts', 'letter_search_query');
-
 
 
 
