@@ -13,13 +13,11 @@
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container inview">
     <nav class="breadcrumb u-hover">
-      <a href="<?php echo home_url('/'); ?>">TOP</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <span>こもれびだより</span>
     </nav>
   </div>
-
-
 
   <!-- 記事リスト -->
   <div class="l-letter__wrapper">
@@ -43,17 +41,14 @@
                 <div class="p-letter-archive__search-select p-letter-archive__search-select--area inview">
                   <select name="area">
                     <option value="">都道府県をえらぶ</option>
-
                     <?php
                     $areas = get_terms(array(
                       'taxonomy'   => 'introduction_area',
                       'hide_empty' => true,
                     ));
-
                     if (!is_wp_error($areas)) :
                       foreach ($areas as $area) :
                     ?>
-
                         <option
                           value="<?php echo esc_attr($area->slug); ?>"
                           <?php selected(
@@ -62,12 +57,10 @@
                           ); ?>>
                           <?php echo esc_html($area->name); ?>
                         </option>
-
                     <?php
                       endforeach;
                     endif;
                     ?>
-
                   </select>
                 </div>
 
@@ -116,7 +109,6 @@
             </form>
           </section>
 
-
           <!-- 一覧リスト -->
           <section class="p-letter-archive__list inview">
 
@@ -154,7 +146,6 @@
             <?php else : ?>
               <p class="p-letter-archive__no-post">該当するこもれびだよりは<br class="sp_only">まだありません。</p>
             <?php endif; ?>
-
           </section>
 
           <!-- ページネーション -->
@@ -173,7 +164,6 @@
         <!-- サイドバー -->
         <aside class="p-letter-archive__sidebar">
           <h4 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">アーカイブ</h4>
-
           <?php
           // こもれびだよりの投稿日をすべて取得
           $letter_dates = get_posts(array(

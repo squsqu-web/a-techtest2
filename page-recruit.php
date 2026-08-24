@@ -11,7 +11,7 @@
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container inview">
   <nav class="breadcrumb u-hover">
-    <a href="<?php echo home_url('/'); ?>">TOP</a>
+    <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>採用情報</span>
   </nav>
@@ -20,8 +20,9 @@
 <!-- たいせつにしていることセクション -->
 <section class="p-recruit-page__motto">
   <div class="p-recruit-page__icon-wrap inview">
+    <!-- cherry-tree.svg -->
     <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
+      src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/cherry-tree.svg'); ?>"
       alt=""
       class="p-recruit-page__icon"
       loading="lazy">
@@ -37,16 +38,19 @@
     <!-- テレコ１個目 -->
     <article class="p-recruit-page__motto-item inview">
       <div class="p-recruit-page__motto-img">
+        <!-- motto-img1.webp -->
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img1.webp"
+          src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/motto-img1.webp'); ?>"
           alt="子ども主体の保育の様子"
-          class="p-recruit-page__motto-image">
+          class="p-recruit-page__motto-image"
+          width="480"
+          height="320">
       </div>
 
       <div class="p-recruit-page__motto-content">
         <h3 class="p-recruit-page__motto-title">
           <img
-            src="<?php echo get_template_directory_uri(); ?>/img/recruit/title-cherry.webp"
+            src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
             alt=""
             class="p-recruit-page__motto-title-icon">
           <span>子ども主体の保育</span>
@@ -66,15 +70,18 @@
     <article class="p-recruit-page__motto-item is-reverse inview">
       <div class="p-recruit-page__motto-img">
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img2.webp"
+          src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/motto-img2.webp'); ?>"
           alt="自由な風土を表す様子"
-          class="p-recruit-page__motto-image">
+          class="p-recruit-page__motto-image"
+          loading="lazy"
+          width="480"
+          height="320">
       </div>
 
       <div class="p-recruit-page__motto-content">
         <h3 class="p-recruit-page__motto-title">
           <img
-            src="<?php echo get_template_directory_uri(); ?>/img/recruit/title-cherry.webp"
+            src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
             alt=""
             class="p-recruit-page__motto-title-icon">
           <span>自由な風土</span>
@@ -94,15 +101,18 @@
     <article class="p-recruit-page__motto-item inview">
       <div class="p-recruit-page__motto-img">
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/recruit/motto-img3.webp"
+          src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/motto-img3.webp'); ?>"
           alt="ワークライフバランスを大切にしている様子"
-          class="p-recruit-page__motto-image">
+          class="p-recruit-page__motto-image"
+          loading="lazy"
+          width="480"
+          height="320">
       </div>
 
       <div class="p-recruit-page__motto-content">
         <h3 class="p-recruit-page__motto-title">
           <img
-            src="<?php echo get_template_directory_uri(); ?>/img/recruit/title-cherry.webp"
+            src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
             alt=""
             class="p-recruit-page__motto-title-icon">
           <span>ワークライフバランス</span>
@@ -125,7 +135,7 @@
 
   <div class="p-recruit-page__icon-wrap inview">
     <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/light.svg"
+      src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/light.svg'); ?>"
       alt=""
       class="p-recruit-page__icon"
       loading="lazy">
@@ -238,11 +248,10 @@
 
   <div class="p-recruit-page__icon-wrap inview">
     <img
-      src="<?php echo get_template_directory_uri(); ?>/img/svg/question-mark.svg"
+      src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/question-mark.svg'); ?>"
       alt=""
       class="p-recruit-page__icon"
-      loading="lazy"
-      >
+      loading="lazy">
   </div>
 
   <div class="p-recruit-page__heading">
@@ -258,7 +267,7 @@
         <!-- アコーディオン１項目目 -->
         <div class="u-hover">
           <div class="c-accordion__item inview">
-            <button class="c-accordion__question accordion-header active">
+            <button type="button" class="c-accordion__question accordion-header active">
               スタッフの資格や経験について教えてください。
               <span class="accordion-icon">▼</span>
             </button>
@@ -271,7 +280,7 @@
         <!-- アコーディオン２項目目 -->
         <div class="u-hover">
           <div class="c-accordion__item inview">
-            <button class="c-accordion__question accordion-header">
+            <button type="button" class="c-accordion__question accordion-header">
               子どもたちに提供される食事や健康管理について教えてください。
               <span class="accordion-icon">▼</span>
             </button>
@@ -284,7 +293,7 @@
         <!-- アコーディオン３項目目 -->
         <div class="u-hover">
           <div class="c-accordion__item inview">
-            <button class="c-accordion__question accordion-header">
+            <button type="button" class="c-accordion__question accordion-header">
               保護者とのコミュニケーションはどのように行われていますか？
               <span class="accordion-icon">▼</span>
             </button>

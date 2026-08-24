@@ -102,16 +102,11 @@
     border-radius: 2rem;
   }
 
-  &__card {
-    @include mq(md) {}
-  }
-
   &__card-wrap {
     padding: 1.2rem;
     position: relative;
     height: calc(28rem - 13.5rem);
   }
-
 
   &__image {
     width: 100%;

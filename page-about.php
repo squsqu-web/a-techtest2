@@ -13,7 +13,7 @@
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container" data-aos="fade-up">
     <nav class="breadcrumb u-hover">
-      <a href="<?php echo home_url('/'); ?>">TOP</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <span>わたしたちのこと</span>
     </nav>
@@ -73,7 +73,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/apr-program.webp'); ?>" alt="4がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/apr-program.webp'); ?>" alt="4がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -88,7 +88,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/may-program.webp'); ?>" alt="5がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/may-program.webp'); ?>" alt="5がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -103,7 +103,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jun-program.webp'); ?>" alt="6がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jun-program.webp'); ?>" alt="6がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -118,7 +118,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jul-program.webp'); ?>" alt="7がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jul-program.webp'); ?>" alt="7がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -133,7 +133,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/aug-program.webp'); ?>" alt="8がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/aug-program.webp'); ?>" alt="8がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -148,7 +148,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/sep-program.webp'); ?>" alt="9がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/sep-program.webp'); ?>" alt="9がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -163,7 +163,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/oct-program.webp'); ?>" alt="10がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/oct-program.webp'); ?>" alt="10がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -178,7 +178,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/nov-program.webp'); ?>" alt="11がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/nov-program.webp'); ?>" alt="11がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -193,7 +193,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/nov-program.webp'); ?>" alt="12がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/dec-program.webp'); ?>" alt="12がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -208,7 +208,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jun-program.webp'); ?>" alt="1がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jan-program.webp'); ?>" alt="1がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -223,7 +223,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/feb-program.webp'); ?>" alt="2がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/feb-program.webp'); ?>" alt="2がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -238,7 +238,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/mar-program.webp'); ?>" alt="3がつの行事">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/mar-program.webp'); ?>" alt="3がつの行事" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->

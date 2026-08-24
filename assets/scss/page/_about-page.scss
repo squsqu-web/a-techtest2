@@ -197,9 +197,6 @@
     background-color: v.$color-white;
     padding: .4rem .8rem;
     border-radius: .8rem;
-
-    @include mq(md) {}
-
   }
 
   &__card-month {

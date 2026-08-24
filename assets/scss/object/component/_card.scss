@@ -1,1 +1,137 @@
 @use '../../foundation/mixin' as *;
+
+/* ==============================
+  記事カード
+============================== */
+
+.p-info-card {
+  /* ==================
+    SP（デフォルト）
+    縦に積み上がるレイアウト
+  ================== */
+  display: grid;
+  // SP・PC共通で左側にバッジ、右側にテキスト群を配置
+  grid-template-columns: 14.4rem 1fr;
+  grid-template-areas:
+    "badge date"
+    "badge title"
+    "badge lead";
+  column-gap: 12px; // SP時のバッジとテキストの隙間
+  row-gap: 4px;
+  align-items: start;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+
+  @include mq(md) {
+    /* ==================
+      PC
+      アイコンの右側に日付、その下にタイトルと本文が回り込むレイアウト
+    ================== */
+    grid-template-columns: 8.2rem 1fr;
+    grid-template-areas:
+      "badge date"
+      "title title"
+      "lead lead";
+    column-gap: 20px;
+    row-gap: 8px;
+    align-items: center;
+  }
+
+  &__badge {
+    grid-area: badge;
+
+    width: 12rem;
+    height: 12rem;
+
+    background-color: v.$color-main-7;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    color: v.$color-white;
+
+    // 活動記録：青
+    &.is-active-news {
+      background-color: v.$color-accent-1;
+    }
+
+    // メディア情報：黄色
+    &.is-media-info {
+      background-color: v.$color-accent-2;
+    }
+
+    svg {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    span {
+      font-size: 1.8rem;
+      color: v.$color-white;
+      line-height: 1.5;
+      font-weight: v.$Regular;
+
+      @include mq(md) {
+        font-size: 1.08rem;
+      }
+    }
+
+    @include mq(md) {
+      width: 7.2rem;
+      height: 7.2rem;
+
+      svg {
+        width: 2.88rem;
+        height: 2.88rem;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__date {
+    grid-area: date;
+    font-size: 1.6rem;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 2rem;
+    color: v.$color-main;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__lead {
+    grid-area: lead;
+    font-size: 1.6rem;
+    color: v.$color-main-2;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: v.$Regular;
+
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+}

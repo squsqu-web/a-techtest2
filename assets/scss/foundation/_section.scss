@@ -67,25 +67,8 @@
   &__no-post {
     text-align: center;
     font-size: 1.6rem;
-    color: v.$color-main3;
+    color: v.$color-main;
     padding: 5rem 0;
-  }
-}
-
-/* トップへ戻るボタン */
-.link-button {
-  background-color: v.$color-accent-6;
-  width: 22rem;
-  height: 6rem;
-  border-radius: 3rem;
-  font-size: 2rem;
-  margin: 5rem auto 5rem;
-  text-align: center;
-  line-height: 6rem;
-
-  &__link {
-    color: v.$color-white;
-    font-weight: 900;
   }
 }
 
@@ -141,7 +124,7 @@
         box-shadow: none;
         border: none;
         cursor: default;
-        color: v.$color-main5;
+        color: v.$color-main;
       }
 
       &.prev,

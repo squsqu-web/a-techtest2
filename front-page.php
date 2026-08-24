@@ -8,7 +8,7 @@
       <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.webp" type="image/webp">
       <source media="(max-width: 767.98px)" srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg-sp.png">
       <source srcset="<?php echo get_template_directory_uri(); ?>/img/fv_bg.webp" type="image/webp">
-      <img class="p-hero__img" src="<?php echo get_template_directory_uri(); ?>/img/fv_bg.png" alt="園児が楽しく遊んでいる様子" fetchpriority="high">
+      <img class="p-hero__img" src="<?php echo get_template_directory_uri(); ?>/img/fv_bg.png" alt="園児が楽しく遊んでいる様子" fetchpriority="high" width="1280" height="540">
     </picture>
 
     <div class="p-hero__text" data-aos="fade-up">
@@ -18,7 +18,7 @@
 
   </section>
 
-  <!-- お知らせボタン -->
+  <!-- お知らせ -->
   <?php
   $info_query = new WP_Query(array(
     'post_type'      => 'info',
@@ -184,28 +184,30 @@
 
                 <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail('large', array(
-                    'class' => 'p-letter__image',
-                    'alt' => get_the_title()
+                    'class'   => 'p-letter__image',
+                    'alt'     => get_the_title(),
+                    'loading' => 'lazy'
                   )); ?>
                 <?php else : ?>
                   <img
-                    src="<?php echo get_template_directory_uri(); ?>/img/no-image.png"
+                    src="<?php echo get_template_directory_uri(); ?>/img/no-image.webp"
                     alt=""
-                    class="p-letter__image">
+                    class="p-letter__image"
+                    loading="lazy"
+                    width="640"
+                    height="320">
                 <?php endif; ?>
 
                 <div class="p-letter__card-wrap">
                   <h3 class="p-letter__card-title">
                     <?php the_title(); ?>
-                    <!-- <?php the_field('title'); ?> -->
                   </h3>
 
-                  <!-- テキスト -->
                   <div class="p-letter__card-text">
-                    <?php the_field('letter_title'); ?>
+                    <?php echo esc_html(get_field('letter_title')); ?>
                   </div>
 
-                  <time class="p-letter__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                  <time class="p-letter__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
                     <?php echo get_the_date('Y'); ?>ねん<?php echo get_the_date('n'); ?>がつ<?php echo get_the_date('j'); ?>にち
                   </time>
                 </div>

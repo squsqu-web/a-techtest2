@@ -25,14 +25,17 @@
         <span>ご住所</span>
         <span class="p-form__badge is-optional">任意</span>
       </dt>
-      <dd class="p-form__input p-form__address-group">
+
+      <dd class="p-form__input p-form__address-group p-form__address-group--contact">
+
         <div class="p-form__address-row">
           <span class="p-form__address-sublabel">郵便番号</span>
-          [text* recruit_postal_code class:p-form__text inputmode:numeric placeholder "例：1234567"]
+          [text postal_code class:p-form__text class:p-form__text-contact inputmode:numeric placeholder "例：1234567"]
         </div>
+
         <div class="p-form__address-row">
           <span class="p-form__address-sublabel">都道府県</span>
-          [select* prefecture class:p-form__select
+          [select prefecture class:p-form__select
           "北海道"
           "青森県"
           "岩手県"

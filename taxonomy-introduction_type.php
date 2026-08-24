@@ -1,4 +1,3 @@
-```php
 <?php get_header(); ?>
 
 
@@ -17,7 +16,7 @@
   data-aos="fade-up">
 
   <nav class="breadcrumb u-hover">
-    <a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a>
+    <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep">&gt;</span>
     <a href="<?php echo esc_url(get_post_type_archive_link('introduction')); ?>">各園のご紹介</a>
     <span class="sep">&gt;</span>
@@ -75,7 +74,7 @@
 
 
         <!-- 都道府県 -->
-        <div class="p-introduction-filter u-hover" data-panel="area">
+        <div class="p-introduction-filter" data-panel="area">
           <?php
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_area',
@@ -86,8 +85,9 @@
             foreach ($terms as $term) :
           ?>
 
-              <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button">
+              <a
+                href="<?php echo esc_url(get_term_link($term)); ?>"
+                class="p-introduction-filter__button u-hover">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
@@ -107,10 +107,16 @@
                   <!-- アイキャッチ -->
                   <div class="p-introduction-card__thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail(); ?>
+                      <?php the_post_thumbnail('large', array(
+                        'class'   => 'p-introduction-card__image',
+                        'alt'     => get_the_title(),
+                        'loading' => 'lazy'
+                      )); ?>
                     <?php else : ?>
 
-                      <img src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                      <img src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy"
+                        width="640"
+                        height="320">
                     <?php endif; ?>
                   </div>
 
@@ -198,8 +204,8 @@
 
     <!-- リンクボタン -->
     <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
+      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
+      <a href="<?php echo esc_url(home_url('/recruit#recruit-entry')); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
     </div>
 
   </div>

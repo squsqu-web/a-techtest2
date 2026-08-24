@@ -132,8 +132,8 @@
   z-index: 1000;
 
   @include mq(md) {
-    right: 2.5rem;
-    bottom: 2rem;
+    right: 0.5rem;
+    bottom: 7rem;
   }
 
   &__link {

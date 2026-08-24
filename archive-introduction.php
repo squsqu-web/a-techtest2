@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
@@ -12,7 +11,7 @@
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container u-hover" data-aos="fade-up">
   <nav class="breadcrumb u-hover">
-    <a href="<?php echo home_url('/'); ?>">ホーム</a>
+    <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>各園のご紹介</span>
   </nav>
@@ -22,7 +21,6 @@
 <!-- メインコンテンツセクション -->
 <div class="contents-overlap-wrapper">
 
-  <!-- アイコン -->
   <div class="p-introduction__icon-wrap p-page-introduction__icon">
     <img
       src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
@@ -33,9 +31,7 @@
 
   <div class="l-introduction__inner">
     <section class="p-introduction-sec">
-      <!-- タブ -->
       <div class="p-introduction-tab inview">
-
         <button
           type="button"
           class="p-introduction-tab__button is-active-introduction u-hover"
@@ -49,15 +45,11 @@
           data-tab="area">
           都道府県<br><span>から探す</span>
         </button>
-
       </div>
 
-
       <div class="l-introduction__contents-wrap inview">
-        <!-- 園の種類 -->
         <div class="p-introduction-filter is-active-introduction" data-panel="type">
           <?php
-          // introduction_type という分類箱の中に登録されているタームを全部持ってきて
           $terms = get_terms(array(
             'taxonomy' => 'introduction_type',
             'hide_empty' => true,
@@ -65,16 +57,13 @@
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
           ?>
-              <a
-                href="<?php echo get_term_link($term); ?>"
+              <a href="<?php echo esc_url(get_term_link($term)); ?>"
                 class="p-introduction-filter__button u-hover">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
           endif; ?>
-
         </div>
-
 
         <!-- 都道府県 -->
         <div class="p-introduction-filter" data-panel="area">
@@ -87,7 +76,7 @@
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
           ?>
-              <a href="<?php echo get_term_link($term); ?>"
+              <a href="<?php echo esc_url(get_term_link($term)); ?>"
                 class="p-introduction-filter__button">
                 <?php echo esc_html($term->name); ?>
               </a>
@@ -109,22 +98,25 @@
                   class="p-introduction-card u-hover"
                   href="<?php the_permalink(); ?>">
 
-                  <!-- アイキャッチ -->
                   <div class="p-introduction-card__thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail(); ?>
+                      <?php the_post_thumbnail('large', array(
+                        'class'   => 'p-introduction-card__image',
+                        'alt'     => get_the_title(),
+                        'loading' => 'lazy'
+                      )); ?>
                     <?php else : ?>
                       <img
                         src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
-                        alt="<?php echo esc_attr(get_the_title()); ?>">
+                        alt="<?php echo esc_attr(get_the_title()); ?>"
+                        loading="lazy"
+                        width="640"
+                        height="320">
                     <?php endif; ?>
                   </div>
 
-                  <!-- カテゴリーボタンの箱 -->
                   <div class="p-introduction-card__wrap">
-                    <!-- 園の種類 -->
                     <div class="p-introduction-card__type">
-                      <!-- 園の種類のパネル -->
                       <?php $terms = get_the_terms(get_the_ID(), 'introduction_type');
                       if ($terms && !is_wp_error($terms)):
                       ?>
@@ -134,9 +126,7 @@
                       <?php endif; ?>
                     </div>
 
-                    <!-- 都道府県 -->
                     <div class="p-introduction-card__area">
-                      <!-- 都道府県のパネル -->
                       <?php $terms = get_the_terms(get_the_ID(), 'introduction_area');
                       if ($terms && !is_wp_error($terms)):
                       ?>
@@ -146,11 +136,8 @@
                       <?php endif; ?>
                     </div>
                   </div>
-
-                  <!-- 園名 -->
                   <h2 class="p-introduction-card__title inview"><?php the_title(); ?></h2>
                 </a>
-
               </article>
             <?php endwhile; ?>
           </div>
@@ -173,7 +160,6 @@
   </div>
 </div>
 
-
 <!-- 採用情報セクション -->
 <section class="p-recruit">
   <div class="p-recruit__inner">
@@ -194,10 +180,9 @@
       <p class="p-recruit__text inview">桜のこもれびキッズランドで働いてみませんか？</p>
     </div>
 
-    <!-- リンクボタン -->
     <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
-      <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
+      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
+      <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
     </div>
 
   </div>

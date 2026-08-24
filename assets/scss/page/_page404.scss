@@ -17,7 +17,8 @@
 
     @include mq(md) {}
 
-    & p {
+    & p,
+    & ul {
       font-size: 2rem;
       color: v.$color-black;
       letter-spacing: 0.1em;

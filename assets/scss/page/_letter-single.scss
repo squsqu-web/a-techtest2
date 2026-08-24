@@ -10,6 +10,7 @@
   @include mq(md) {
     width: 100%;
     padding: 3.2rem 1.5rem 6.4rem;
+    border-radius: 3rem;
   }
 
   &__letter-heading {
@@ -135,5 +136,19 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2rem;
+  }
+}
+
+// 調整用調整用
+.l-single-letter {
+
+  .p-letter-archive__content,
+  .p-letter-archive__list,
+  .letter-contents {
+    width: 100%;
+  }
+
+  .p-letter-archive__list {
+    display: block;
   }
 }

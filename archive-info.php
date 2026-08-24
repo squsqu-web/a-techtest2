@@ -8,16 +8,17 @@
       <h1 class="l-main-visual__title-ja inview">お知らせ</h1>
       <p class="l-main-visual__title-en inview">info</p>
     </div>
-
-    <!-- カスタムパンくずリスト -->
-    <div class="breadcrumb-container inview">
-      <nav class="breadcrumb u-hover">
-        <a href="<?php echo home_url('/'); ?>">ホーム</a>
-        <span class="sep" data-aos="fade-up">&gt;</span>
-        <span>お知らせ</span>
-      </nav>
-    </div>
   </section>
+  
+  <!-- カスタムパンくずリスト -->
+  <div class="breadcrumb-container inview">
+    <nav class="breadcrumb u-hover">
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
+      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span>お知らせ</span>
+    </nav>
+  </div>
+
 
   <!-- 記事セクション全体 -->
   <section class="l-info">
@@ -26,7 +27,7 @@
       <!-- カテゴリタブ -->
       <div class="p-info-filter inview">
 
-        <a href="<?php echo get_post_type_archive_link('info'); ?>"
+        <a href="<?php echo esc_url(get_post_type_archive_link('info')); ?>"
           class="p-info-filter__button is-active u-hover">
           すべて
         </a>
@@ -39,7 +40,7 @@
         if (!empty($terms) && !is_wp_error($terms)) :
           foreach ($terms as $term) :
         ?>
-            <a href="<?php echo get_term_link($term); ?>"
+            <a href="<?php echo esc_url(get_term_link($term)); ?>"
               class="p-info-filter__button u-hover">
               <?php echo esc_html($term->name); ?>
             </a>

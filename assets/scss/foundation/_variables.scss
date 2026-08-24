@@ -8,15 +8,20 @@ $color-text: #EF8F9C;
 $color-main-6: #FFF9CB;
 $color-main-7: #FFC9DE;
 
-// accent
-$color-accent-1: #A4C8FF;
-$color-accent-2: #FFC657;
-
 // Background
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-mtransparent: #FFFFFFCC;
+$color-mtransparent2-top: #FFFEF3;
+$color-mtransparent2-bottom: #FFF7B8;
 
+// accent
+$color-accent-1: #A4C8FF;
+$color-accent-2: #FFC657;
+$color-accent-3: #e8cdb0;
+
+// page-top用
+$color-shadow: rgba(0, 0, 0, 0.2);
 
 // Fonts
 $font-main: "Jost", sans-serif;
@@ -29,30 +34,3 @@ $Regular: 400;
 $Demibold: 600;
 $Bold: 700;
 $Black: 900;
-
-// 日本語フォントのフォールバック
-$font-primary-gothic: "Kosugi Maru", "Yu Gothic", "游ゴシック体", "Hiragino Sans", sans-serif;
-$font-primary-display: "Yusei Magic", "Yu Gothic", "游ゴシック体", sans-serif;
-
-
-
-// 消す👇
-$color-shadow: rgba(0, 0, 0, 0.2);
-
-// 消す👇
-$color-main3: #666;
-$color-main4: #ccc;
-$color-main5: #aaa;
-
-$color-mtransparent2: #FFF7B8;
-$color-mtransparent2-top: #FFFEF3;
-$color-mtransparent2-bottom: #FFF7B8;
-
-// 消す👇
-$color-bg-1: #F9F8F6;
-$color-bg-2: #D4CEBE;
-$color-bg-3: #464646;
-$color-bg-4: #aea9a9;
-
-$color-accent-6: #c0e2ee;
-$color-accent-9: #f0f0f0;

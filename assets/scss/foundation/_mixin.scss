@@ -17,8 +17,6 @@ $breakpoints: (
 }
 
 
-
-
 // 中央配置パーツ
 @mixin flex($justify: center,
   $align: center) {
@@ -26,8 +24,6 @@ $breakpoints: (
   justify-content: $justify;
   align-items: $align;
 }
-
-
 
 
 // ボタン用スタイル
@@ -74,7 +70,6 @@ $breakpoints: (
     opacity: $opacity;
     transform: translateY($move);
   }
-
 }
 
 // <!-- テストボタン -->

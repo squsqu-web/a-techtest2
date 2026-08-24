@@ -14,9 +14,9 @@
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container inview">
     <nav class="breadcrumb u-hover">
-      <a href="<?php echo home_url('/'); ?>">TOP</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
-      <a href="<?php echo home_url('/letter'); ?>">こもれびだより一覧</a>
+      <a href="<?php echo esc_url(get_post_type_archive_link('letter')); ?>">こもれびだより一覧</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <span data-aos="fade-up"><?php the_title(); ?>『<?php echo esc_html(get_field('letter_title')); ?>』</span>
     </nav>
@@ -66,9 +66,21 @@
 
                 <!-- アイキャッチ -->
                 <?php if (has_post_thumbnail()) : ?>
+
                   <?php the_post_thumbnail('full', array(
                     'class' => 'letter-contents__thumbnail inview'
                   )); ?>
+
+                <?php else : ?>
+
+                  <img
+                    src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
+                    alt="<?php echo esc_attr(get_the_title()); ?>"
+                    class="letter-contents__thumbnail inview"
+                    loading="lazy"
+                    width="640"
+                    height="320">
+
                 <?php endif; ?>
 
               </div>
@@ -101,7 +113,9 @@
               <!-- 戻るボタン -->
               <div class="single__back-btn-wrap u-hover">
                 <div class="single__back-btn inview">
-                  <a href="<?php echo get_post_type_archive_link('letter'); ?>" class="single__back-linkbtn c-button letter-single-back-btn">
+                  <a
+                    href="<?php echo esc_url(get_post_type_archive_link('letter')); ?>"
+                    class="single__back-linkbtn c-button letter-single-back-btn">
                     こもれびだより一覧へ
                   </a>
                 </div>

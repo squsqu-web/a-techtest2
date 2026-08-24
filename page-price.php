@@ -21,7 +21,7 @@
         <!-- カスタムパンくずリスト -->
         <div class="breadcrumb-container">
           <nav class="breadcrumb  u-hover" data-aos="fade-up">
-            <a href="<?php echo home_url('/'); ?>">ホーム</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a>
             <span class="sep" data-aos="fade-up">｜</span>
             <span href="<?php echo home_url('/price'); ?>">メニュー料金</span>
           </nav>

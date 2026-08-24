@@ -17,7 +17,7 @@
 
     <!-- TOPにもどるボタン -->
     <div class="p-thanks__button-wrap inview">
-      <a href="<?php echo home_url('/'); ?>" class="p-thanks__button">
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="p-thanks__button">
         <span>TOPにもどる</span>
         <span class="p-thanks__button-arrow">&gt;</span>
       </a>

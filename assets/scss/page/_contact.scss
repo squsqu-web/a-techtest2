@@ -29,7 +29,6 @@
     letter-spacing: 0.1em;
     line-height: 1.5;
     font-weight: v.$Regular;
-
     margin: 0 0 1.2rem;
 
     @include mq(md) {
@@ -43,7 +42,6 @@
     letter-spacing: 0.1em;
     line-height: 1.5;
     font-weight: v.$Regular;
-
     text-decoration: underline;
     text-underline-offset: 0.3rem;
 
@@ -66,15 +64,36 @@
     @include mq(md) {
       margin: 0 auto 8rem;
 
-      // お問い合わせページの住所だけSPで縦並び
-      .p-form__address-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
+      // ==========================================
+      // お問い合わせページの住所
+      // SPではラベル → 入力欄の縦並び
+      // ==========================================
 
-      .p-form__address-sublabel {
-        width: 100%;
+      .p-form__address-group--contact {
+
+        // CF7によって生成されたpを縦並びにする
+        .p-form__address-row p {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.4rem;
+        }
+
+        // ラベル
+        .p-form__address-sublabel {
+          width: 100%;
+        }
+
+        // CF7の入力欄を100%にする
+        .wpcf7-form-control-wrap {
+          width: 100%;
+          flex: none;
+        }
+
+        .p-form__text,
+        .p-form__select {
+          width: 100%;
+        }
       }
     }
   }

@@ -13,9 +13,9 @@
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container">
     <nav class="breadcrumb u-hover">
-      <a href="<?php echo home_url('/'); ?>">ホーム</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
-      <a href="<?php echo home_url('/introduction'); ?>">各園のご紹介</a>
+      <a href="<?php echo esc_url(home_url('/introduction')); ?>">各園のご紹介</a>
       <span class="sep" data-aos="fade-up">&gt;</span>
       <span data-aos="fade-up"><?php the_title(); ?></span>
     </nav>
@@ -29,7 +29,9 @@
       <!-- アイキャッチ -->
       <?php if (has_post_thumbnail()) : ?>
         <?php the_post_thumbnail('full', array(
-          'class' => 'p-introduction-single__thumbnail'
+          'class'   => 'p-introduction-single__thumbnail',
+          'alt'     => get_the_title(),
+          'loading' => 'lazy'
         )); ?>
       <?php else : ?>
         <img
@@ -152,7 +154,7 @@
       if ($principal_image) {
         $principal_image_url = $principal_image;
       } else {
-        $principal_image_url = get_template_directory_uri() . '/img/staff/introduction-message.png';
+        $principal_image_url = get_template_directory_uri() . '/img/staff/introduction-message.webp';
       }
       ?>
 
@@ -198,9 +200,9 @@
       // ------------------------------------------------------------
       // ACFフィールド想定（未設定でも初期表示が崩れないようフォールバック値を用意）
       // ------------------------------------------------------------
-      $overview_address   = get_field('overview_address') ?: '東京都渋谷区渋谷○-○-○';
-      $overview_tel       = get_field('overview_tel') ?: '0120-107-929';
-      $overview_fax       = get_field('overview_fax') ?: '0120-107-929';
+      $overview_address = get_field('overview_address');
+      $overview_tel     = get_field('overview_tel');
+      $overview_fax     = get_field('overview_fax');
       $overview_target    = get_field('overview_target') ?: '1歳児から小学校就学前までの乳幼児<br class="sp_only">（1歳児〜5歳児）';
       $overview_admission = get_field('overview_admission');
       if (!$overview_admission) {
@@ -252,13 +254,29 @@
 
         <div class="p-introduction-single-overview__row">
           <dt class="p-introduction-single-overview__term inview">所在地</dt>
-          <dd class="p-introduction-single-overview__desc inview"><?php echo esc_html($overview_address); ?></dd>
+
+          <dd class="p-introduction-single-overview__desc inview">
+            <address class="p-introduction-single-overview__address">
+              <?php echo esc_html($overview_address); ?>
+            </address>
+          </dd>
         </div>
 
         <div class="p-introduction-single-overview__row">
           <dt class="p-introduction-single-overview__term inview">TEL / FAX</dt>
+
           <dd class="p-introduction-single-overview__desc inview">
-            <?php echo esc_html($overview_tel); ?> / <?php echo esc_html($overview_fax); ?>
+
+            <a
+              href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $overview_tel)); ?>"
+              class="tel-link u-hover">
+              <?php echo esc_html($overview_tel); ?>
+            </a>
+
+            <span> / </span>
+
+            <?php echo esc_html($overview_fax); ?>
+
           </dd>
         </div>
 
@@ -510,9 +528,12 @@
                 <?php else : ?>
 
                   <img
-                    src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.png'); ?>"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
                     alt=""
-                    class="p-introduction-single-letter__image">
+                    class="p-introduction-single-letter__image"
+                    loading="lazy"
+                    width="640"
+                    height="320">
 
                 <?php endif; ?>
 

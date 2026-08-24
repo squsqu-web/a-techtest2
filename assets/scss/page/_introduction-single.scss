@@ -110,7 +110,7 @@
   // アイコンの基準
   position: relative;
   padding-bottom: 12rem;
-  
+
 
   @include mq(md) {
     padding-bottom: 8rem;
@@ -938,4 +938,12 @@
   color: v.$color-main;
 
   @include mq(md) {}
+}
+
+
+.tel-link {
+  @include mq(md) {
+    pointer-events: none;
+    cursor: default;
+  }
 }

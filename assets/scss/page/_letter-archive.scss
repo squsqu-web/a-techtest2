@@ -81,7 +81,7 @@
     select {
       height: 3.6rem;
       padding: 0 1.5rem;
-      border: 1px solid #ccc;
+      border: 1px solid v.$color-main-2;
       background-color: v.$color-white;
       font-size: 1.6rem;
       color: v.$color-main;
@@ -153,12 +153,6 @@
     height: 28rem;
   }
 }
-
-  // カード
-  &__card {
-
-    @include mq(md) {}
-  }
 
   // カードリンク
   &__link {

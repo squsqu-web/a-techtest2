@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <!-- Main Visual -->
 <section class="l-main-visual">
   <div class="l-main-visual__title">
@@ -9,16 +8,14 @@
   </div>
 </section>
 
-
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container inview">
   <nav class="breadcrumb u-hover">
-    <a href="<?php echo home_url('/'); ?>">ホーム</a>
+    <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>プライバシーポリシー</span>
   </nav>
 </div>
-
 
 <section class="l-privacy-policy">
   <div class="l-privacy-policy__inner">

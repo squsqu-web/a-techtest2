@@ -191,24 +191,8 @@ img {
 .section__no-post {
   text-align: center;
   font-size: 1.6rem;
-  color: #666;
+  color: #55000C;
   padding: 5rem 0;
-}
-
-/* トップへ戻るボタン */
-.link-button {
-  background-color: #c0e2ee;
-  width: 22rem;
-  height: 6rem;
-  border-radius: 3rem;
-  font-size: 2rem;
-  margin: 5rem auto 5rem;
-  text-align: center;
-  line-height: 6rem;
-}
-.link-button__link {
-  color: #FFFFFF;
-  font-weight: 900;
 }
 
 /* ページネーション */
@@ -255,7 +239,7 @@ img {
   box-shadow: none;
   border: none;
   cursor: default;
-  color: #aaa;
+  color: #55000C;
 }
 .c-pagination .nav-links .page-numbers.prev, .c-pagination .nav-links .page-numbers.next {
   width: 3.6rem;
@@ -366,7 +350,7 @@ img {
   }
 }
 .c-button--primary {
-  background-color: #c0e2ee;
+  background-color: #55000C;
   color: #FFFFFF;
 }
 
@@ -1280,7 +1264,7 @@ body {
   left: 0;
   width: 100%;
   height: 72.1rem;
-  background: #D4CEBE;
+  background: #55000C;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.3s;
@@ -1468,8 +1452,8 @@ body {
 }
 @media (max-width: 767.98px) {
   .page-top {
-    right: 2.5rem;
-    bottom: 2rem;
+    right: 0.5rem;
+    bottom: 7rem;
   }
 }
 .page-top__link {
@@ -1524,30 +1508,6 @@ body {
 
 .footer__nav [data-aos=fade-up].aos-animate {
   transform: translateY(0);
-}
-
-.l-hero {
-  background-color: #f0f0f0;
-  padding: 6rem 2rem;
-  text-align: center;
-}
-.l-hero__title {
-  font-size: 3rem;
-  font-weight: bold;
-}
-.l-hero__subtitle {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: #666;
-}
-.l-hero__btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background-color: #55000C;
-  color: #FFFFFF;
-  text-decoration: none;
-  border-radius: 4px;
 }
 
 .p-hero {
@@ -2508,7 +2468,7 @@ body {
 .p-letter-archive__search-select select {
   height: 3.6rem;
   padding: 0 1.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #333333;
   background-color: #FFFFFF;
   font-size: 1.6rem;
   color: #55000C;
@@ -2734,6 +2694,7 @@ body {
   .letter-contents {
     width: 100%;
     padding: 3.2rem 1.5rem 6.4rem;
+    border-radius: 3rem;
   }
 }
 .letter-contents__letter-heading {
@@ -2854,6 +2815,15 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.2rem;
+}
+
+.l-single-letter .p-letter-archive__content,
+.l-single-letter .p-letter-archive__list,
+.l-single-letter .letter-contents {
+  width: 100%;
+}
+.l-single-letter .p-letter-archive__list {
+  display: block;
 }
 
 .l-info__inner {
@@ -4302,6 +4272,13 @@ body {
 .single__back-linkbtn {
   color: #55000C;
 }
+@media (max-width: 767.98px) {
+  .tel-link {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
 .p-recruit-page__icon-wrap {
   width: 10.8rem;
   height: 10.8rem;
@@ -4844,12 +4821,21 @@ body {
   .p-contact__form {
     margin: 0 auto 8rem;
   }
-  .p-contact__form .p-form__address-row {
+  .p-contact__form .p-form__address-group--contact .p-form__address-row p {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
   }
-  .p-contact__form .p-form__address-sublabel {
+  .p-contact__form .p-form__address-group--contact .p-form__address-sublabel {
+    width: 100%;
+  }
+  .p-contact__form .p-form__address-group--contact .wpcf7-form-control-wrap {
+    width: 100%;
+    flex: none;
+  }
+  .p-contact__form .p-form__address-group--contact .p-form__text,
+  .p-contact__form .p-form__address-group--contact .p-form__select {
     width: 100%;
   }
 }
@@ -5202,7 +5188,6 @@ body {
   padding: 0;
 }
 
-/* 最後にもボーダーを入れる場合 */
 .c-sitemap-list li {
   background-image: repeating-linear-gradient(to right, #55000C 0, #55000C 2.4px, transparent 2.4px, transparent 12.4px);
   background-position: bottom;
@@ -5266,7 +5251,7 @@ body {
   max-width: 1440px;
   margin-inline: auto;
 }
-.p-404-message__inner p {
+.p-404-message__inner p, .p-404-message__inner ul {
   font-size: 2rem;
   color: #000000;
   letter-spacing: 0.1em;
@@ -5275,7 +5260,7 @@ body {
   margin-bottom: 2.4rem;
 }
 @media (max-width: 767.98px) {
-  .p-404-message__inner p {
+  .p-404-message__inner p, .p-404-message__inner ul {
     font-size: 1.7rem;
   }
 }
