@@ -1,11 +1,6 @@
 @use '../../foundation/variables' as v;
 @use '../../foundation/mixin' as *;
 
-
-* {
-  outline: 2px dashed green;
-}
-
 // リキャプチャを最前面に
 .grecaptcha-badge {
   z-index: 9999999;

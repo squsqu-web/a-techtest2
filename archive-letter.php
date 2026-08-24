@@ -34,7 +34,13 @@
               action="<?php echo esc_url(get_post_type_archive_link('letter')); ?>"
               method="get">
 
-              <h3 class="p-letter-archive__search-title inview">園をさがす</h3>
+              <div class="p-letter-archive__search-title-wrap">
+                <img
+                  src="<?php echo esc_url(get_template_directory_uri() . '/img/letter-search.png'); ?>"
+                  alt=""
+                  class="p-letter-archive__search-title-icon inview">
+                <h3 class="p-letter-archive__search-title inview">園をさがす</h3>
+              </div>
               <div class="p-letter-archive__search-select-wrap">
 
                 <!-- 都道府県 -->
@@ -149,7 +155,7 @@
           </section>
 
           <!-- ページネーション -->
-          <div class="c-pagination ">
+          <div class="c-pagination inview c-pagination-letter-archive">
             <?php
             the_posts_pagination(array(
               'mid_size'  => 2,
@@ -196,7 +202,7 @@
               rsort($months);
           ?>
 
-              <h5 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>年</h5>
+              <h5 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>ねん</h5>
 
               <ul class="p-letter-archive__archive-list">
                 <?php foreach ($months as $month) : ?>
@@ -220,7 +226,7 @@
                               )
                             ); ?>">
 
-                      <?php echo esc_html($month); ?>月
+                      <?php echo esc_html($month); ?>がつ
                     </a>
                   </li>
 

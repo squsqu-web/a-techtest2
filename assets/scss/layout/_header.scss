@@ -50,53 +50,52 @@
 
 
   &__item {
-    position: relative; // 上下の丸ポッチの基準位置
+    position: relative;
     flex-shrink: 0;
 
-    /* ロゴ（4番目）以外のすべての項目に「左側の点線」を引く */
+    /* ロゴ（4番目）以外 */
     &:not(:nth-child(4)) {
       border-left: 1px dotted v.$color-main;
+      border-right: 1px dotted v.$color-main;
 
-      /* 点線の上下にある丸いポッチ（ドット） */
-      &::before,
-      &::after {
+      /* 左側の上下ポッチ */
+      &::before {
         content: "";
         position: absolute;
-        left: 0;
+        left: -3px;
+        top: 0;
         width: 6px;
-        /* 丸の大きさ */
-        height: 6px;
-        background-color: v.$color-main;
-        border-radius: 50%;
-        transform: translateX(-50%);
+        height: 100%;
+        background:
+          radial-gradient(circle,
+            v.$color-main 0 3px,
+            transparent 3.1px) top center / 6px 6px no-repeat,
+          radial-gradient(circle,
+            v.$color-main 0 3px,
+            transparent 3.1px) bottom center / 6px 6px no-repeat;
+        pointer-events: none;
         z-index: 10;
       }
 
-      &::before {
-        top: 0;
-        /* 上のポッチ */
-      }
-
+      /* 右側の上下ポッチ */
       &::after {
-        bottom: 0;
-        /* 下のポッチ */
+        content: "";
+        position: absolute;
+        right: -3px;
+        top: 0;
+        width: 6px;
+        height: 100%;
+        background:
+          radial-gradient(circle,
+            v.$color-main 0 3px,
+            transparent 3.1px) top center / 6px 6px no-repeat,
+          radial-gradient(circle,
+            v.$color-main 0 3px,
+            transparent 3.1px) bottom center / 6px 6px no-repeat;
+        pointer-events: none;
+        z-index: 10;
       }
     }
-
-    /* 【重要】一番右（お問い合わせ：7番目）の「さらに右側」にも線を出したい場合 */
-    /* ※デザイン見本でお問い合わせの右端にも線が必要な場合は、以下のコメントアウトを外してください */
-
-    // &:last-child {
-    //   border-right: 1px dotted v.$color-main;
-
-    //   &::before,
-    //   &::after {
-    //     right: 0;
-    //     left: auto;
-    //     transform: translateX(50%);
-    //   }
-    // }
-
   }
 
   &__link {
@@ -104,15 +103,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 15rem;
-    flex-shrink: 0;
-
-    // border-left: 1px dotted v.$color-main;
-    // border-right: 1px dotted v.$color-main;
-    @include mq(md) {}
-
+    width: 16.5rem;
+    padding: 1.25rem 0;
   }
-
 
   &__link-ja {
     font-size: 1.6rem;
@@ -140,7 +133,7 @@
   &__icon {
     width: 4.8rem;
     height: 4.8rem;
-    margin: 0 0 3.4rem;
+    margin: 0 0 1.2rem;
 
     @include mq(md) {}
   }
@@ -289,8 +282,8 @@
 .c-hamburger {
   @include mq(md) {
     position: absolute;
-    right: -8rem;
-    top: -6rem;
+    right: -6.5rem;
+    top: -6.5rem;
   }
 }
 

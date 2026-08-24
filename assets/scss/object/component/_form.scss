@@ -23,6 +23,7 @@
   }
 
   &__contact-inner {
+    max-width: 1080px;
     background-color: v.$color-white;
     padding: 6.4rem 14rem;
     border-radius: 2rem;
@@ -406,7 +407,8 @@
       right: calc(50% - 12rem + 2rem);
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.2rem;
+      // right: 3rem;
+      font-size: 1.6rem;
       color: v.$color-main;
       pointer-events: none;
     }

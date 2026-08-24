@@ -38,10 +38,8 @@
 
   &__text {
     position: absolute;
-    top: 13%;
-    left: 12%;
-    // transform: translate(-50%, -50%);
-
+    top: 21%;
+    left: 8.5%;
     width: 51.6rem;
 
     img {
@@ -52,6 +50,8 @@
 
     @include mq(md) {
       width: 27rem;
+      top: 2%;
+      left: 10.5%;
     }
   }
 

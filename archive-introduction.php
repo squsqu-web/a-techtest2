@@ -14,6 +14,8 @@
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>各園のご紹介</span>
+    <span class="sep" data-aos="fade-up">&gt;</span>
+    <span>園の種類から探す</span>
   </nav>
 </div>
 

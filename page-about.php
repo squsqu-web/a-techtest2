@@ -21,24 +21,26 @@
 
   <!-- わたしたちの想いセクション -->
   <section class="p-about p-about-page">
-    <div class="p-about__icon-wrap inview">
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
-        alt=""
-        class="p-about__icon inview"
-        loading="lazy">
-    </div>
+    <div class="p-about-page__inner">
+      <div class="p-about__icon-wrap inview">
+        <img
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
+          alt=""
+          class="p-about__icon inview"
+          loading="lazy">
+      </div>
 
 
-    <div class="p-about__heading">
-      <h2 class="p-about__title inview">わたしたちの想い</h2>
-      <p class="p-about__subtitle inview">Philosophy</p>
-    </div>
+      <div class="p-about__heading">
+        <h2 class="p-about__title inview">わたしたちの想い</h2>
+        <p class="p-about__subtitle inview">Philosophy</p>
+      </div>
 
-    <div class="p-about__text-wrap p-about-page__text-wrap">
-      <p class="p-about__text p-about-page__text inview">
-        桜のこもれびキッズランドは、<br>子どもたち一人ひとりが独自の輝きを放つように、大切な個性を<br class="sp_only">伸ばす場所です。<br>風に揺れる木々の葉が織りなす光と影の美しい揺らめきのように、<br>子どもたちのそれぞれの魅力を見つけ出し、大切に育てます。<br>自然とのふれあいを通じて、<br>子どもたちの好奇心や想像力を育み、<br>明るく豊かな未来への一歩を<br class="sp_only">共に歩んでいきます。<br>温かく包み込むような雰囲気の中で、<br>安心して成長できる環境を提供し、<br>笑顔あふれる毎日をお約束します。
-      </p>
+      <div class="p-about__text-wrap p-about-page__text-wrap">
+        <p class="p-about__text p-about-page__text inview">
+          桜のこもれびキッズランドは、<br>子どもたち一人ひとりが独自の輝きを放つように、大切な個性を<br class="sp_only">伸ばす場所です。<br>風に揺れる木々の葉が織りなす光と影の美しい揺らめきのように、<br>子どもたちのそれぞれの魅力を見つけ出し、大切に育てます。<br>自然とのふれあいを通じて、<br>子どもたちの好奇心や想像力を育み、<br>明るく豊かな未来への一歩を<br class="sp_only">共に歩んでいきます。<br>温かく包み込むような雰囲気の中で、<br>安心して成長できる環境を提供し、<br>笑顔あふれる毎日をお約束します。
+        </p>
+      </div>
     </div>
 
   </section>

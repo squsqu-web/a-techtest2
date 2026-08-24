@@ -26,7 +26,6 @@
   <!-- 記事リスト -->
   <div class="l-letter__wrapper">
     <div class="l-letter__wrapper-inner">
-
       <div class="p-letter-archive">
 
         <!-- 検索フォームと記事一覧 -->

@@ -12,11 +12,12 @@
 
   &__inner {
     width: 75%;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 6.2rem 0 12rem;
 
     @include mq(md) {
-      padding: 6.2rem 0 8rem;
+      padding: 4.2rem 0 8rem;
     }
   }
 
@@ -75,10 +76,10 @@
     letter-spacing: 0.2em;
     line-height: 1;
     font-weight: v.$Black;
-    margin: 0 auto 6.2rem;
+    margin: 0 auto 4rem;
 
     @include mq(md) {
-      margin: 0 auto 7.1rem;
+      margin: 0 auto 6rem;
     }
   }
 
@@ -168,10 +169,10 @@
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
-      right: 2rem;
-      top: 50%;
       transform: translateY(-50%);
-      font-size: 1.2rem;
+      right: 3rem;
+      top: 50%;
+      font-size: 1.6rem;
     }
 
     @include mq(md) {

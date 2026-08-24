@@ -19,6 +19,7 @@
 
   &__inner {
     width: 75%;
+    max-width: 1080px;
     margin-inline: auto;
     padding: 0 0 8rem;
 
@@ -32,13 +33,19 @@
     padding: 6rem 4rem 0;
     border-radius: 40px;
 
-    @include mq(md) {}
+    @include mq(md) {
+      padding: 3rem 1.2rem 0;
+    }
   }
 }
 
 .p-introduction-sec {
   padding: 11.4rem 0 0;
   margin: 13.4rem 0 0;
+
+  @include mq(md) {
+    margin: 8rem 0 0;
+  }
 }
 
 .p-page-introduction__icon {
@@ -82,6 +89,8 @@
     @include mq(md) {
       font-size: 1.4rem;
       padding: 1.2rem 1rem;
+      width: 12rem;
+      height: 4rem;
     }
 
     & span {
@@ -135,7 +144,9 @@
 
     @include mq(md) {
       font-size: 1.4rem;
-      padding: .7rem 1.2rem;
+      width: 15rem;
+      height: 3.3rem;
+      padding: 0;
     }
   }
 

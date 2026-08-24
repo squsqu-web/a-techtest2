@@ -4,6 +4,7 @@
 .l-introduction-single {
   &__inner {
     width: 75%;
+    max-width: 1080px;
     margin-inline: auto;
     padding: 0 0 17.4rem;
     margin: 8rem auto 0;
@@ -23,12 +24,14 @@
     width: 80rem;
     height: 45rem;
     margin: 0 auto 3.2rem;
-    border-radius: 40px;
+    border-radius: 4rem;
 
     @include mq(md) {
       width: 100%;
-      aspect-ratio: calc(345/194);
+      height: 19.4rem;
+      // aspect-ratio: calc(345/194);
       margin: 0 auto 2.4rem;
+      border-radius: 2rem;
     }
   }
 
@@ -117,6 +120,15 @@
     background-image: url("../../img/top-letters__bg_sp.svg");
   }
 
+  &__inner {
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
   &__heading {
     text-align: center;
     margin-bottom: 6.6rem;
@@ -143,19 +155,14 @@
   }
 
   &__subtitle {
-    font-size: 1.6rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1;
     color: v.$color-main;
-
-    @include mq(md) {
-      font-size: 1rem;
-      color: v.$color-main;
-      text-transform: capitalize;
-      font-family: v.$font-sub;
-      letter-spacing: 0.2em;
-      line-height: 1;
-      font-weight: v.$Black;
-    }
+    text-transform: capitalize;
+    font-family: v.$font-sub;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    font-weight: v.$Black;
   }
 
   &__gallery {
@@ -211,13 +218,23 @@
     padding: 8rem 0;
   }
 
+  &__inner {
+    max-width: 800px;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+
   &__heading {
     text-align: center;
     margin: 0 0 6.6rem;
 
     @include mq(md) {
       margin-bottom: 2.2rem;
-      padding: 4.8rem 0 0;
+      padding: 0;
     }
   }
 
@@ -255,7 +272,7 @@
     height: 10.8rem;
     background-color: v.$color-main-3;
     @include flex;
-    margin: 0 auto 5rem;
+    margin: 0 auto 1rem;
     border-radius: 50%;
 
     @include mq(md) {
@@ -321,7 +338,11 @@
 
 // 園の概要セクション
 .about-Nursery-heading {
-  margin: 0 auto 6.4rem;
+  margin: 0 auto 1rem;
+
+  @include mq(md) {
+    margin: 0 auto;
+  }
 }
 
 // セクションタイトル
@@ -331,8 +352,8 @@
     margin: 0 0 6.6rem;
 
     @include mq(md) {
-      margin-bottom: 2.2rem;
-      padding: 4.8rem 0 0;
+      margin-bottom: 6.4rem;
+      padding: 0;
     }
   }
 
@@ -367,7 +388,7 @@
     height: 10.8rem;
     background-color: v.$color-main-3;
     @include flex;
-    margin: 0 auto 5rem;
+    margin: 0 auto 1rem;
     border-radius: 50%;
 
     @include mq(md) {
@@ -403,9 +424,19 @@
     padding: 8rem 0 15.4rem;
   }
 
+  &__inner {
+    max-width: 1080px;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+
   &__list {
-    width: 80rem;
-    max-width: 100%;
+    width: 75%;
+    max-width: 108rem;
     margin: 0 auto;
 
     @include mq(md) {
@@ -415,7 +446,7 @@
 
   &__row {
     display: grid;
-    grid-template-columns: 16rem 1fr;
+    grid-template-columns: 20rem 1fr;
     column-gap: 2.5rem;
     // padding: 2.2rem 0;
     border-top: 1px dashed v.$color-main-3;
@@ -461,7 +492,7 @@
     line-height: 1;
     font-weight: v.$Regular;
 
-    padding: 2.2rem 0;
+    padding: 3.2rem 0;
 
     @include mq(md) {
       padding: 1.8rem 1.2rem;
@@ -688,6 +719,15 @@
     background-image: url("../../img/top-letters__bg_sp.svg");
   }
 
+  &__inner {
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
   // アイコン
   &__icon-wrap {
     width: 10.8rem;
@@ -758,11 +798,11 @@
   &__content {
     width: 75%;
     margin: 0 auto;
-    padding: 0 0 12rem;
+    padding: 0 0 8rem;
 
     @include mq(md) {
       width: 92%;
-      padding-bottom: 8rem;
+      padding-bottom: 5rem;
     }
   }
 
@@ -827,7 +867,6 @@
 
     @include mq(md) {
       height: auto;
-      aspect-ratio: 16 / 9;
     }
   }
 
@@ -879,14 +918,16 @@
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
-      right: 2rem;
+      right: 3rem;
       top: 50%;
+      font-size: 1.6rem;
       transform: translateY(-50%);
-      font-size: 1.2rem;
     }
 
     @include mq(md) {
       font-size: 1.6rem;
+      width: 24rem;
+      height: 6rem;
     }
   }
 }
@@ -942,7 +983,7 @@
 
 
 .tel-link {
-  @include mq(md) {
+  @media (min-width: 768px) {
     pointer-events: none;
     cursor: default;
   }

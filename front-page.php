@@ -43,7 +43,7 @@
         <time
           class="p-hero-news__date"
           datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
-          <?php echo esc_html(get_the_date('Y年n月j日')); ?>
+          <?php echo esc_html(get_the_date('Yねんnがつjにち')); ?>
         </time>
       </a>
     </div>
@@ -57,37 +57,38 @@
 
   <!-- Aboutセクション -->
   <section class="p-about">
-    <div class="p-about__icon-wrap inview">
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
-        alt=""
-        class="p-about__icon"
-        loading="lazy">
-    </div>
+    <div class="p-about__inner">
+      <div class="p-about__icon-wrap inview">
+        <img
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
+          alt=""
+          class="p-about__icon"
+          loading="lazy">
+      </div>
 
-    <div class="p-about__heading">
-      <h2 class="p-about__title inview">
-        桜のこもれびキッズランドへ<br>
-        ようこそ
-      </h2>
-      <p class="p-about__subtitle inview">welcome</p>
-    </div>
+      <div class="p-about__heading">
+        <h2 class="p-about__title inview">
+          桜のこもれびキッズランドへ<br>
+          ようこそ
+        </h2>
+        <p class="p-about__subtitle inview">welcome</p>
+      </div>
 
-    <div class="p-about__text-wrap">
-      <p class="p-about__text inview">
-        「こもれび」とは<br>
-        風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
-        それはその瞬間に一度だけ存在します。
-      </p>
-      <p class="p-about__text inview">
-        桜のこもれびキッズランドは、<br>
-        子どもたち一人ひとりが独自の輝きを放つように、<br>
-        大切な個性を伸ばす場所です。<br>
-        温かく包み込むような雰囲気の中で、安心して成長できる環境を提供し、<br>
-        笑顔あふれる毎日をお約束します。
-      </p>
+      <div class="p-about__text-wrap">
+        <p class="p-about__text inview">
+          「こもれび」とは<br>
+          風に揺れる木の葉によって生み出される光と影の揺らめきを表すことばです。<br>
+          それはその瞬間に一度だけ存在します。
+        </p>
+        <p class="p-about__text inview">
+          桜のこもれびキッズランドは、<br>
+          子どもたち一人ひとりが<br class="sp_only">独自の輝きを放つように、<br>
+          大切な個性を伸ばす場所です。<br>
+          温かく包み込むような雰囲気の中で、安心して成長できる環境を提供し、<br>
+          笑顔あふれる毎日をお約束します。
+        </p>
+      </div>
     </div>
-
   </section>
 
 
@@ -134,11 +135,6 @@
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>
-
-
-
-
-
 
     <!-- リンクボタン -->
     <div class="inview">

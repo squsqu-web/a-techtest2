@@ -35,9 +35,11 @@
     color: v.$color-main;
     font-family: v.$font-sub;
     font-weight: v.$Regular;
+    margin-bottom: 1.6rem;
 
     @include mq(md) {
       font-size: 2rem;
+      margin-bottom: 1.2rem;
     }
   }
 
@@ -46,7 +48,7 @@
     font-family: v.$font-main;
     color: v.$color-main;
     text-transform: capitalize;
-    
+
     letter-spacing: 0.1em;
     line-height: 1;
     font-weight: v.$Black;
@@ -56,6 +58,3 @@
     }
   }
 }
-
-
-

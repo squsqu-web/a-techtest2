@@ -3,13 +3,10 @@
 
 
 .l-privacy-policy {
-  &__wrapper {
-
-    @include mq(md) {}
-  }
 
   &__inner {
     width: 75%;
+    max-width: 1080px;
     background-color: v.$color-white;
     margin: 8rem auto;
     padding: 3.6rem 4.8rem;
