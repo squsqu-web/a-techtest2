@@ -133,6 +133,18 @@
 
     color: v.$color-white;
 
+    .p-info-card__icon {
+      display: block;
+      width: 4.8rem;
+      height: 4.8rem;
+      object-fit: contain;
+
+      @include mq(md) {
+        width: 2.88rem;
+        height: 2.88rem;
+      }
+    }
+
     // 活動記録：青
     &.is-active-news {
       background-color: v.$color-accent-1;

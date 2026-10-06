@@ -137,6 +137,11 @@
     height: 3.5rem;
     @include flex();
 
+    &.is-active-introduction {
+      background-color: v.$color-main-5;
+      color: v.$color-white;
+    }
+
     &:hover {
       background-color: v.$color-main-5;
       color: v.$color-white;
@@ -169,9 +174,20 @@
 
   &__item {
     width: 100%;
-    background-color: v.$color-main-4;
     padding: 1.2rem;
     border-radius: 20px;
+
+    &--small-scale-a {
+      background-color: #EDF4FF;
+    }
+
+    &--small-scale {
+      background-color: #FFF9CB;
+    }
+
+    &--certified {
+      background-color: #FFEDF0;
+    }
   }
 
   @include mq(md) {

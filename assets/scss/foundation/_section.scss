@@ -152,10 +152,6 @@
 
 /* スマホ版 */
 @include mq(md) {
-  html {
-    font-size: calc(10 / 375 * 100vw);
-  }
-
   .section__body {
     max-width: 37.5rem;
     margin: 5rem auto 0;

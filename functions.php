@@ -310,7 +310,7 @@ add_action(
 
 
 /*====================================
- * アーカイブページで投稿数を端末で切り替え
+ * アーカイブページで投稿数を9件に設定
  *====================================*/
 function set_custom_posts_per_page_by_device($query)
 {
@@ -324,12 +324,24 @@ function set_custom_posts_per_page_by_device($query)
 
   if (
     $query->is_post_type_archive('introduction') ||
-    $query->is_post_type_archive('letter') ||
-    $query->is_post_type_archive('info')
+    $query->is_tax('introduction_type') ||
+    $query->is_tax('introduction_area')
   ) {
     $query->set('posts_per_page', 9);
+    return;
+  }
+
+  if ($query->is_post_type_archive('letter')) {
+    $query->set('posts_per_page', 9);
+    return;
+  }
+
+  if ($query->is_post_type_archive('info')) {
+    $query->set('posts_per_page', 9);
+    return;
   }
 }
+
 add_action('pre_get_posts', 'set_custom_posts_per_page_by_device');
 
 
@@ -473,6 +485,8 @@ add_filter('wp_insert_post_data', 'auto_slug_to_ascii', 10, 2);
 
 
 
+
+
 /**
  * こもれびだより検索
  */
@@ -488,101 +502,20 @@ function letter_search_query($query)
     return;
   }
 
-  // 園ID
-  $school_id = isset($_GET['school'])
-    ? absint($_GET['school'])
-    : 0;
+
+  /*====================================
+   * 検索条件を取得
+   *====================================*/
 
   // 都道府県スラッグ
   $area = isset($_GET['area'])
     ? sanitize_text_field($_GET['area'])
     : '';
 
-
-  /*====================================
-   * 園を選択した場合
-   *====================================*/
-  if ($school_id) {
-
-    $query->set('meta_query', array(
-      array(
-        'key'     => 'letter_school',
-        'value'   => $school_id,
-        'compare' => '=',
-        'type'    => 'NUMERIC',
-      ),
-    ));
-
-    return;
-  }
-
-
-  /*====================================
-   * 都道府県を選択した場合
-   *====================================*/
-  if ($area) {
-
-    // 都道府県に属する園を取得
-    $school_ids = get_posts(array(
-      'post_type'      => 'introduction',
-      'posts_per_page' => -1,
-      'post_status'    => 'publish',
-      'fields'         => 'ids',
-
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'introduction_area',
-          'field'    => 'slug',
-          'terms'     => $area,
-        ),
-      ),
-    ));
-
-
-    // 該当する園がある場合
-    if (!empty($school_ids)) {
-
-      $meta_query = array(
-        'relation' => 'OR',
-      );
-
-      foreach ($school_ids as $school_id) {
-
-        $meta_query[] = array(
-          'key'     => 'letter_school',
-          'value'   => $school_id,
-          'compare' => '=',
-          'type'    => 'NUMERIC',
-        );
-      }
-
-      $query->set('meta_query', $meta_query);
-    } else {
-
-      // 該当する園がなければ0件
-      $query->set('post__in', array(0));
-    }
-  }
-}
-
-add_action('pre_get_posts', 'letter_search_query');
-
-
-
-/**
- * こもれびだより 月別アーカイブ
- */
-function letter_archive_query($query)
-{
-  // 管理画面・メインクエリ以外は対象外
-  if (is_admin() || !$query->is_main_query()) {
-    return;
-  }
-
-  // こもれびだより一覧ページのみ
-  if (!$query->is_post_type_archive('letter')) {
-    return;
-  }
+  // 園名スラッグ
+  $school = isset($_GET['school'])
+    ? sanitize_text_field($_GET['school'])
+    : '';
 
   // 年
   $year = isset($_GET['letter_year'])
@@ -594,18 +527,242 @@ function letter_archive_query($query)
     ? absint($_GET['letter_month'])
     : 0;
 
-  // 年月が指定されていなければ何もしない
-  if (!$year || !$month) {
-    return;
+
+  /*====================================
+   * タクソノミー検索
+   *====================================*/
+
+  $tax_query = array(
+    'relation' => 'AND',
+  );
+
+
+  /*====================================
+   * 都道府県が選択されている場合
+   *====================================*/
+
+  if ($area !== '') {
+
+    $tax_query[] = array(
+      'taxonomy' => 'letter_prefecture',
+      'field'    => 'slug',
+      'terms'    => $area,
+    );
   }
 
-  // 指定された年月の記事だけ取得
-  $query->set('date_query', array(
-    array(
-      'year'  => $year,
-      'month' => $month,
-    ),
-  ));
+
+  /*====================================
+   * 園名が選択されている場合
+   *====================================*/
+
+  if ($school !== '') {
+
+    $tax_query[] = array(
+      'taxonomy' => 'letter_school',
+      'field'    => 'slug',
+      'terms'    => $school,
+    );
+  }
+
+
+  /*====================================
+   * タクソノミー条件を設定
+   *====================================*/
+
+  if (count($tax_query) > 1) {
+    $query->set('tax_query', $tax_query);
+  }
+
+
+  /*====================================
+   * 年月アーカイブ
+   *====================================*/
+
+  if ($year > 0) {
+
+    $date_query = array(
+      array(
+        'year' => $year,
+      ),
+    );
+
+    if ($month > 0) {
+      $date_query[0]['month'] = $month;
+    }
+
+    $query->set('date_query', $date_query);
+  }
 }
 
-add_action('pre_get_posts', 'letter_archive_query');
+add_action('pre_get_posts', 'letter_search_query');
+
+
+
+
+
+// 各園の様子：画像を6枚以上必須にする
+add_filter('acf/validate_value/name=introduction_gallery', function ($valid, $value, $field, $input) {
+
+  if ($valid !== true) {
+    return $valid;
+  }
+
+  if (empty($value) || !is_array($value)) {
+    return '「園の様子」の画像は6枚以上登録してください。';
+  }
+
+  if (count($value) < 6) {
+    return sprintf(
+      '「園の様子」の画像は6枚以上登録してください。（現在%d枚）',
+      count($value)
+    );
+  }
+
+  return $valid;
+}, 10, 4);
+
+
+/**
+ * ============================================
+ * AIOSEO：こもれびだよりのmeta description
+ * ============================================
+ *
+ */
+function my_letter_aioseo_description($description)
+{
+  if (!is_singular('letter')) {
+    return $description;
+  }
+
+  $sections = get_field('letter_sections');
+
+  if (empty($sections) || !is_array($sections)) {
+    return $description;
+  }
+
+  $texts = array();
+
+  foreach ($sections as $section) {
+
+    if (
+      !isset($section['text']) ||
+      empty($section['text'])
+    ) {
+      continue;
+    }
+
+    $text = $section['text'];
+    $text = wp_strip_all_tags($text);
+    $text = html_entity_decode(
+      $text,
+      ENT_QUOTES,
+      'UTF-8'
+    );
+
+    $text = preg_replace(
+      '/\s+/u',
+      ' ',
+      $text
+    );
+
+    $text = trim($text);
+
+    if ($text !== '') {
+      $texts[] = $text;
+    }
+  }
+
+  if (empty($texts)) {
+    return $description;
+  }
+
+  $description = implode(' ', $texts);
+
+  // 160文字以内にする
+  if (mb_strlen($description, 'UTF-8') > 160) {
+    $description = mb_substr(
+      $description,
+      0,
+      157,
+      'UTF-8'
+    ) . '…';
+  }
+
+  return $description;
+}
+
+add_filter(
+  'aioseo_description',
+  'my_letter_aioseo_description',
+  9999
+);
+
+
+
+
+/**
+ * ============================================
+ * AIOSEO：お知らせのmeta description
+ * ACFの繰り返しフィールド news_sections から生成
+ * ============================================
+ */
+function my_info_aioseo_description($description)
+{
+  // お知らせの個別記事だけを対象にする
+  if (!is_singular('info')) {
+    return $description;
+  }
+
+  // ACFの繰り返しフィールドを取得
+  $sections = get_field('news_sections');
+
+  if (empty($sections) || !is_array($sections)) {
+    return $description;
+  }
+
+  $texts = array();
+
+  foreach ($sections as $section) {
+    if (empty($section['text'])) {
+      continue;
+    }
+
+    $text = wp_strip_all_tags($section['text']);
+
+    $text = html_entity_decode(
+      $text,
+      ENT_QUOTES,
+      'UTF-8'
+    );
+
+    $text = preg_replace('/\s+/u', ' ', $text);
+    $text = trim($text);
+
+    if ($text !== '') {
+      $texts[] = $text;
+    }
+  }
+
+  if (empty($texts)) {
+    return $description;
+  }
+
+  $description = implode(' ', $texts);
+
+  if (mb_strlen($description, 'UTF-8') > 160) {
+    $description = mb_substr(
+      $description,
+      0,
+      157,
+      'UTF-8'
+    ) . '…';
+  }
+
+  return $description;
+}
+
+add_filter(
+  'aioseo_description',
+  'my_info_aioseo_description',
+  9999
+);

@@ -348,6 +348,10 @@
 
     cursor: pointer;
 
+    .p-form__privacy-text {
+      cursor: pointer;
+    }
+
     // 中央配置用
     @include mq(md) {
       margin: 0 auto;

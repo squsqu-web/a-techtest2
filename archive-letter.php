@@ -39,22 +39,26 @@
                   src="<?php echo esc_url(get_template_directory_uri() . '/img/letter-search.png'); ?>"
                   alt=""
                   class="p-letter-archive__search-title-icon inview">
-                <h3 class="p-letter-archive__search-title inview">園をさがす</h3>
+                <h2 class="p-letter-archive__search-title inview">園をさがす</h2>
               </div>
               <div class="p-letter-archive__search-select-wrap">
+
 
                 <!-- 都道府県 -->
                 <div class="p-letter-archive__search-select p-letter-archive__search-select--area inview">
                   <select name="area">
                     <option value="">都道府県をえらぶ</option>
+
                     <?php
                     $areas = get_terms(array(
-                      'taxonomy'   => 'introduction_area',
+                      'taxonomy'   => 'letter_prefecture',
                       'hide_empty' => true,
                     ));
+
                     if (!is_wp_error($areas)) :
                       foreach ($areas as $area) :
                     ?>
+
                         <option
                           value="<?php echo esc_attr($area->slug); ?>"
                           <?php selected(
@@ -63,6 +67,7 @@
                           ); ?>>
                           <?php echo esc_html($area->name); ?>
                         </option>
+
                     <?php
                       endforeach;
                     endif;
@@ -78,27 +83,29 @@
                       <option value="">園をえらぶ</option>
 
                       <?php
-                      $schools = get_posts(array(
-                        'post_type'      => 'introduction',
-                        'posts_per_page' => -1,
-                        'post_status'    => 'publish',
-                        'orderby'        => 'title',
-                        'order'          => 'ASC',
+                      $schools = get_terms(array(
+                        'taxonomy'   => 'letter_school',
+                        'hide_empty' => true,
                       ));
 
-                      foreach ($schools as $school) :
+                      if (!is_wp_error($schools)) :
+                        foreach ($schools as $school) :
                       ?>
 
-                        <option
-                          value="<?php echo esc_attr($school->ID); ?>"
-                          <?php selected(
-                            isset($_GET['school']) ? $_GET['school'] : '',
-                            $school->ID
-                          ); ?>>
-                          <?php echo esc_html(get_the_title($school->ID)); ?>
-                        </option>
+                          <option
+                            value="<?php echo esc_attr($school->slug); ?>"
+                            <?php selected(
+                              isset($_GET['school']) ? $_GET['school'] : '',
+                              $school->slug
+                            ); ?>>
+                            <?php echo esc_html($school->name); ?>
+                          </option>
 
-                      <?php endforeach; ?>
+                      <?php
+                        endforeach;
+                      endif;
+                      ?>
+
                     </select>
                   </div>
 
@@ -111,6 +118,8 @@
                     </button>
                   </div>
                 </div>
+
+
               </div>
             </form>
           </section>
@@ -137,7 +146,6 @@
 
                       <div class="p-letter-archive__card-wrap">
                         <h2 class="p-letter-archive__card-title"><?php the_title(); ?></h2>
-                        <p class="p-letter-archive__text"><?php echo esc_html(get_field('letter_title')); ?></p>
                         <time
                           class="p-letter-archive__date"
                           datetime="<?php echo get_the_date('c'); ?>">
@@ -150,7 +158,7 @@
               <?php endwhile; ?>
 
             <?php else : ?>
-              <p class="p-letter-archive__no-post">該当するこもれびだよりは<br class="sp_only">まだありません。</p>
+              <p class="p-letter-archive__no-post">該当するこもれびだよりは<br>まだありません。</p>
             <?php endif; ?>
           </section>
 
@@ -169,7 +177,7 @@
 
         <!-- サイドバー -->
         <aside class="p-letter-archive__sidebar">
-          <h4 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">アーカイブ</h4>
+          <h2 class="p-letter-archive__sidebar-title" id="letter-cat" data-aos="fade-up">アーカイブ</h2>
           <?php
           // こもれびだよりの投稿日をすべて取得
           $letter_dates = get_posts(array(
@@ -202,7 +210,7 @@
               rsort($months);
           ?>
 
-              <h5 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>ねん</h5>
+              <h3 class="p-letter-archive__archive-year inview"><?php echo esc_html($year); ?>ねん</h3>
 
               <ul class="p-letter-archive__archive-list">
                 <?php foreach ($months as $month) : ?>

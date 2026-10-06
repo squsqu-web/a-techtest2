@@ -34,14 +34,14 @@
       <div class="p-introduction-tab inview">
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction u-hover"
+          class="p-introduction-tab__button u-hover"
           data-tab="type">
           園の種類<br>から探す
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button u-hover"
+          class="p-introduction-tab__button is-active-introduction u-hover"
           data-tab="area">
           都道府県<br>から探す
         </button>
@@ -52,7 +52,7 @@
       <div class="l-introduction__contents-wrap inview">
         <!-- 園の種類 -->
         <div
-          class="p-introduction-filter is-active-introduction"
+          class="p-introduction-filter"
           data-panel="type">
           <?php
           $terms = get_terms(array(
@@ -74,7 +74,7 @@
 
 
         <!-- 都道府県 -->
-        <div class="p-introduction-filter u-hover" data-panel="area">
+        <div class="p-introduction-filter is-active-introduction u-hover" data-panel="area">
           <?php
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_area',
@@ -83,10 +83,12 @@
 
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
+              $is_active = is_tax('introduction_area', $term->term_id);
           ?>
 
-              <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button u-hover">
+              <a
+                href="<?php echo esc_url(get_term_link($term)); ?>"
+                class="p-introduction-filter__button u-hover<?php echo $is_active ? ' is-active-introduction' : ''; ?>">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
@@ -98,8 +100,18 @@
         <?php if (have_posts()) : ?>
           <div class="p-introduction-list">
             <?php while (have_posts()) : the_post(); ?>
+
+              <?php
+              $types = get_the_terms(get_the_ID(), 'introduction_type');
+              $type_class = '';
+
+              if ($types && !is_wp_error($types)) {
+                $type_class = ' p-introduction-list__item--' . $types[0]->slug;
+              }
+              ?>
+
               <article
-                class="p-introduction-list__item"
+                class="p-introduction-list__item<?php echo esc_attr($type_class); ?>"
                 data-aos="fade-up">
                 <a class="p-introduction-card" href="<?php the_permalink(); ?>">
 

@@ -93,8 +93,18 @@
         <?php if (have_posts()) : ?>
           <div class="p-introduction-list">
             <?php while (have_posts()) : the_post(); ?>
+
+              <?php
+              $terms = get_the_terms(get_the_ID(), 'introduction_type');
+              $type_class = '';
+
+              if ($terms && !is_wp_error($terms)) {
+                $type_class = ' p-introduction-list__item--' . $terms[0]->slug;
+              }
+              ?>
+
               <article
-                class="p-introduction-list__item"
+                class="p-introduction-list__item<?php echo esc_attr($type_class); ?>"
                 data-aos="fade-up">
                 <a
                   class="p-introduction-card u-hover"

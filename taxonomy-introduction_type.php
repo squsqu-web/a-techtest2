@@ -99,8 +99,18 @@
         <?php if (have_posts()) : ?>
           <div class="p-introduction-list">
             <?php while (have_posts()) : the_post(); ?>
+
+              <?php
+              $types = get_the_terms(get_the_ID(), 'introduction_type');
+              $type_class = '';
+
+              if ($types && !is_wp_error($types)) {
+                $type_class = ' p-introduction-list__item--' . $types[0]->slug;
+              }
+              ?>
+
               <article
-                class="p-introduction-list__item"
+                class="p-introduction-list__item<?php echo esc_attr($type_class); ?>"
                 data-aos="fade-up">
                 <a class="p-introduction-card" href="<?php the_permalink(); ?>">
 

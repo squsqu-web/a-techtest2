@@ -10,27 +10,27 @@ $breakpoints: (
 );
 
 // レスポンシブ対応
-@mixin mq($size) {
-  @media (max-width: map.get($breakpoints, $size)) {
+@mixin mq ($size) {
+  @media screen and (max-width: map-get($breakpoints, $size)) {
     @content;
   }
 }
 
 
+
+
 // 中央配置パーツ
-@mixin flex($justify: center,
-  $align: center) {
+@mixin flex($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
 }
 
 
-// ボタン用スタイル
-@mixin button-base($bg,
-  $color,
-  $radius: 3rem) {
 
+
+// ボタン用スタイル
+@mixin button-base($bg, $color, $radius: 40px) {
   background-color: $bg;
   color: $color;
 
@@ -45,16 +45,12 @@ $breakpoints: (
   text-decoration: none;
 }
 
-@mixin button-size($w,
-  $h) {
+@mixin button-size($w, $h) {
   width: $w;
   height: $h;
 }
 
-@mixin button-text($size,
-  $weight,
-  $family,
-  $spacing: 0.1em) {
+@mixin button-text($size, $weight, $family, $spacing: 0.1em) {
   font-size: $size;
   font-weight: $weight;
   font-family: $family;
@@ -62,14 +58,14 @@ $breakpoints: (
 }
 
 
-@mixin hover-up($move: -7px,
-  $opacity: .7) {
+@mixin hover-up($move: -7px, $opacity: .7) {
   transition: .4s;
 
   &:hover {
     opacity: $opacity;
     transform: translateY($move);
   }
+
 }
 
 // <!-- テストボタン -->
