@@ -69,7 +69,9 @@
                           src="<?php echo esc_url(get_template_directory_uri() . '/img/letter-pen.png'); ?>"
                           alt=""
                           class="letter-contents__icon"
-                          loading="lazy">
+                          loading="lazy"
+                          width="16"
+                          height="16">
                       </span>
 
                       <?php echo esc_html($letter_categories[0]->name); ?>
@@ -95,7 +97,9 @@
                           src="<?php echo esc_url(get_template_directory_uri() . '/img/letter-pen.png'); ?>"
                           alt=""
                           class="letter-contents__icon"
-                          loading="lazy">
+                          loading="lazy"
+                          width="16"
+                          height="16">
                       </span>
 
                       こもれびだより
@@ -135,7 +139,7 @@
 
                   <img
                     src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
-                    alt="<?php echo esc_attr(get_the_title()); ?>"
+                    alt="投稿画像はありません"
                     class="letter-contents__thumbnail inview"
                     loading="lazy"
                     width="640"
@@ -253,7 +257,7 @@
             foreach ($archives as $year => $months) :
 
               rsort($months);
-              ?>
+          ?>
 
               <h5 class="p-letter-archive__archive-year inview">
                 <?php echo esc_html($year); ?>年
@@ -278,14 +282,14 @@
                     <a
                       class="u-hover"
                       href="<?php echo esc_url(
-                        add_query_arg(
-                          array(
-                            'letter_year'  => $year,
-                            'letter_month' => $month,
-                          ),
-                          get_post_type_archive_link('letter')
-                        )
-                      ); ?>">
+                              add_query_arg(
+                                array(
+                                  'letter_year'  => $year,
+                                  'letter_month' => $month,
+                                ),
+                                get_post_type_archive_link('letter')
+                              )
+                            ); ?>">
 
                       <?php echo esc_html($month); ?>月
 

@@ -28,7 +28,8 @@
       src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
       alt=""
       class="p-introduction__icon inview"
-      loading="lazy">
+      loading="lazy"
+      width="64" height="64">
   </div>
 
   <div class="l-introduction__inner">
@@ -114,7 +115,7 @@
                     <?php if (has_post_thumbnail()) : ?>
                       <?php the_post_thumbnail('large', array(
                         'class'   => 'p-introduction-card__image',
-                        'alt'     => get_the_title(),
+                        'alt'     => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
                         'loading' => 'lazy'
                       )); ?>
                     <?php else : ?>
@@ -181,7 +182,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
           alt=""
           class="p-recruit__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <div class="p-recruit__heading">

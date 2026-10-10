@@ -119,14 +119,18 @@
                     <?php if (has_post_thumbnail()) : ?>
                       <?php the_post_thumbnail('large', array(
                         'class'   => 'p-introduction-card__image',
-                        'alt'     => get_the_title(),
+                        'alt'     => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
                         'loading' => 'lazy'
                       )); ?>
                     <?php else : ?>
 
-                      <img src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy"
+                      <img
+                        src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
+                        alt="<?php echo esc_attr(get_the_title()); ?>"
+                        loading="lazy"
                         width="640"
                         height="320">
+
                     <?php endif; ?>
                   </div>
 
@@ -201,7 +205,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
           alt=""
           class="p-recruit__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <div class="p-recruit__heading">

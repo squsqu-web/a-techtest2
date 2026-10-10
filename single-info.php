@@ -38,11 +38,18 @@
           <!-- アイキャッチ -->
           <div class="p-info-article__thumbnail inview">
             <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail(); ?>
+              <?php
+              the_post_thumbnail('full', [
+                'width'  => 640,
+                'height' => 320,
+              ]);
+              ?>
             <?php else : ?>
               <img
                 src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
-                alt="No Image">
+                alt="投稿画像はありません"
+                width="640"
+                height="320">
             <?php endif; ?>
           </div>
 

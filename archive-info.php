@@ -108,7 +108,8 @@
                     <img
                       src="<?php echo esc_url(get_theme_file_uri('img/svg/' . $icon_file)); ?>"
                       alt=""
-                      class="p-info-card__icon">
+                      class="p-info-card__icon"
+                      width="48" height="48">
                   <?php endif; ?>
 
                   <?php if ($badge_term instanceof WP_Term) : ?>

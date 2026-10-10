@@ -53,7 +53,7 @@
   });
 
   AOS.init({
-    duration: 1300,
+    duration: 2000,
     once: true
   });
 
@@ -95,12 +95,12 @@
   });
 
 
-  // 「.rellax」用パララックス
+ /*  // 「.rellax」用パララックス
   if (document.querySelector('.rellax')) {
     new Rellax('.rellax', {
       speed: -5
     });
-  }
+  } */
 
 
   // introduction タブ切り替え

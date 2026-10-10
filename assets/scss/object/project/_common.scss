@@ -32,14 +32,14 @@ body {
 }
 
 
-// インビュー
+
+ // インビュー
 .inview {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s;
+  transition: opacity 0.6s, transform 0.6s;
 }
 
-.inview.show {
+.inview.show,
+.inview.is-show {
   opacity: 1;
-  transform: translateY(0);
 }

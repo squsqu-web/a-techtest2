@@ -26,7 +26,8 @@
         src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/cherry-tree.svg'); ?>"
         alt=""
         class="p-recruit-page__icon"
-        loading="lazy">
+        loading="lazy"
+        width="72" height="72">
     </div>
 
     <div class="p-recruit-page__heading">
@@ -53,7 +54,9 @@
             <img
               src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
               alt=""
-              class="p-recruit-page__motto-title-icon">
+              class="p-recruit-page__motto-title-icon"
+              width="24" height="24"
+              loading="lazy">
             <span>子ども主体の保育</span>
           </h3>
 
@@ -84,7 +87,9 @@
             <img
               src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
               alt=""
-              class="p-recruit-page__motto-title-icon">
+              class="p-recruit-page__motto-title-icon"
+              width="24" height="24"
+              loading="lazy">
             <span>自由な風土</span>
           </h3>
 
@@ -115,7 +120,9 @@
             <img
               src="<?php echo esc_url(get_template_directory_uri() . '/img/recruit/title-cherry.webp'); ?>"
               alt=""
-              class="p-recruit-page__motto-title-icon">
+              class="p-recruit-page__motto-title-icon"
+              width="24" height="24"
+              loading="lazy">
             <span>ワークライフバランス</span>
           </h3>
 
@@ -140,7 +147,8 @@
         src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/light.svg'); ?>"
         alt=""
         class="p-recruit-page__icon"
-        loading="lazy">
+        loading="lazy"
+        width="72" height="72">
     </div>
 
     <div class="p-recruit-page__heading">
@@ -253,7 +261,8 @@
         src="<?php echo esc_url(get_template_directory_uri() . '/img/svg/question-mark.svg'); ?>"
         alt=""
         class="p-recruit-page__icon"
-        loading="lazy">
+        loading="lazy"
+        width="72" height="72">
     </div>
 
     <div class="p-recruit-page__heading">

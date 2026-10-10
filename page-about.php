@@ -27,7 +27,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
           alt=""
           class="p-about__icon inview"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
 
@@ -56,7 +57,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
           alt=""
           class="p-yearly-program__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <!-- 見出し -->
@@ -75,7 +77,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/apr-program.webp'); ?>" alt="4がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/apr-program.webp'); ?>" alt="装飾された室内の様子" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -90,7 +92,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/may-program.webp'); ?>" alt="5がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/may-program.webp'); ?>" alt="こどもたちが親子遠足を楽しんでいる様子" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -105,7 +107,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jun-program.webp'); ?>" alt="6がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jun-program.webp'); ?>" alt="園児が運動会を楽しんでいる様子" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -125,7 +127,7 @@
 
               <!-- 月とタイトル -->
               <h3 class="p-yearly-program__card-month">7がつ</h3>
-              <p class="p-yearly-program__card-title">たなばた会</p>
+              <p class="p-yearly-program__card-title">「家族みんな健康で仲良しでいられますように」と書いてある七夕の装飾</p>
             </div>
           </article>
 
@@ -135,7 +137,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/aug-program.webp'); ?>" alt="8がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/aug-program.webp'); ?>" alt="水遊びを楽しむ園児" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -150,7 +152,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/sep-program.webp'); ?>" alt="9がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/sep-program.webp'); ?>" alt="滑り台で楽しそうにしている園児" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -165,7 +167,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/oct-program.webp'); ?>" alt="10がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/oct-program.webp'); ?>" alt="ハロウィンの仮装を楽しんでいる園児たち" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -180,7 +182,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/nov-program.webp'); ?>" alt="11がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/nov-program.webp'); ?>" alt="収穫体験遠足で女の子に手を引かれる可愛らしい園児" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -195,7 +197,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/dec-program.webp'); ?>" alt="12がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/dec-program.webp'); ?>" alt="クリスマスツリーの前で楽しそうにしている女の子達" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -210,7 +212,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jan-program.webp'); ?>" alt="1がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/jan-program.webp'); ?>" alt="お面をつけて遊んでいる園児たち" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -225,7 +227,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/feb-program.webp'); ?>" alt="2がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/feb-program.webp'); ?>" alt="お遊戯会でかわいい仮装姿の女の子" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -240,7 +242,7 @@
 
               <!-- アイキャッチ -->
               <div class="p-yearly-program__thumbnail">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/mar-program.webp'); ?>" alt="3がつの行事" loading="lazy" width="296" height="180">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/about/mar-program.webp'); ?>" alt="先生に花を渡す女の子" loading="lazy" width="296" height="180">
               </div>
 
               <!-- 月とタイトル -->
@@ -266,7 +268,8 @@
             src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg"
             alt=""
             class="p-contact__icon"
-            loading="lazy">
+            loading="lazy"
+            width="72" height="72">
         </div>
 
         <!-- セクションタイトル -->

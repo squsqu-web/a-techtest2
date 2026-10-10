@@ -35,9 +35,12 @@
         )); ?>
       <?php else : ?>
         <img
-          src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
-          alt="<?php echo esc_attr(get_the_title()); ?>"
-          class="p-introduction-single__thumbnail inview">
+          src="<?php echo get_template_directory_uri(); ?>/img/svg/camera.svg"
+          alt=""
+          class="p-introduction-single__icon"
+          loading="lazy"
+          data-aos="fade-up"
+          width="72" height="72">
       <?php endif; ?>
 
 
@@ -70,7 +73,9 @@
         alt=""
         class="p-introduction-single__icon"
         loading="lazy"
-        data-aos="fade-up">
+        data-aos="fade-up"
+        width="72"
+        height="72">
     </div>
 
     <!-- セクションタイトル -->
@@ -94,7 +99,9 @@
               src="<?php echo esc_url($image['url']); ?>"
               alt="<?php echo esc_attr($image['alt']); ?>"
               loading="lazy"
-              data-aos="fade-up">
+              data-aos="fade-up"
+              width="<?php echo esc_attr($image['width']); ?>"
+              height="<?php echo esc_attr($image['height']); ?>">
         <?php
           endforeach;
         endif;
@@ -115,7 +122,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/mail-open.svg"
           alt="アイコン"
           class="p-introduction-single__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <!-- セクションタイトル -->
@@ -130,10 +138,16 @@
         <?php
         $principal_image = get_field('introduction_principal_image');
 
-        if ($principal_image) {
-          $principal_image_url = $principal_image;
+        if (is_array($principal_image)) {
+          $principal_image_url = $principal_image['url'];
+          $principal_image_width = $principal_image['width'];
+          $principal_image_height = $principal_image['height'];
         } else {
           $principal_image_url = get_template_directory_uri() . '/img/staff/introduction-message.webp';
+          $principal_image_path = get_template_directory() . '/img/staff/introduction-message.webp';
+          $principal_image_size = getimagesize($principal_image_path);
+          $principal_image_width = $principal_image_size[0];
+          $principal_image_height = $principal_image_size[1];
         }
         ?>
 
@@ -142,7 +156,9 @@
             src="<?php echo esc_url($principal_image_url); ?>"
             alt="<?php echo esc_attr(get_the_title()); ?> 園長"
             class="p-introduction-single-message__text-img inview"
-            loading="lazy">
+            loading="lazy"
+            width="<?php echo esc_attr($principal_image_width); ?>"
+            height="<?php echo esc_attr($principal_image_height); ?>">
         </div>
 
         <!-- 園長からのメッセージACF -->
@@ -167,7 +183,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/bell.svg"
           alt="アイコン"
           class="p-introduction-single__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <!-- セクションタイトル -->
@@ -609,7 +626,8 @@
           alt=""
           class="p-introduction-single-letter__icon"
           loading="lazy"
-          data-aos="fade-up">
+          data-aos="fade-up"
+          width="72" height="72">
       </div>
 
 
@@ -750,7 +768,8 @@
             src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg"
             alt=""
             class="p-contact__icon"
-            loading="lazy">
+            loading="lazy"
+            width="72" height="72">
         </div>
 
 

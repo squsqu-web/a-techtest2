@@ -38,7 +38,8 @@
                 <img
                   src="<?php echo esc_url(get_template_directory_uri() . '/img/letter-search.png'); ?>"
                   alt=""
-                  class="p-letter-archive__search-title-icon inview">
+                  class="p-letter-archive__search-title-icon inview"
+                  width="20" height="20">
                 <h2 class="p-letter-archive__search-title inview">園をさがす</h2>
               </div>
               <div class="p-letter-archive__search-select-wrap">
@@ -114,7 +115,9 @@
                     <button type="submit">
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/search.webp"
-                        alt="検索開始">
+                        alt="検索開始"
+                        width="20"
+                        height="20">
                     </button>
                   </div>
                 </div>
@@ -141,7 +144,9 @@
                         <img
                           src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image.webp'); ?>"
                           alt="<?php echo esc_attr(get_the_title()); ?>"
-                          class="p-letter-archive__image">
+                          class="p-letter-archive__image"
+                          width="300"
+                          height="135">
                       <?php endif; ?>
 
                       <div class="p-letter-archive__card-wrap">

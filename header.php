@@ -28,7 +28,7 @@
             <!-- about -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/about/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">わたしたちのこと</span>
                 <span class="l-header__link-en">about</span>
               </a>
@@ -37,7 +37,7 @@
             <!-- introduction -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/introduction/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">各園のご紹介</span>
                 <span class="l-header__link-en">introduction</span>
               </a>
@@ -46,7 +46,7 @@
             <!-- letter -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/letter/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">こもれびだより</span>
                 <span class="l-header__link-en">letter</span>
               </a>
@@ -65,7 +65,7 @@
 
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-                        alt="ロゴ画像">
+                        alt="桜のこもれびキッズランドのロゴ画像" width="280" height="89">
                     </picture>
                   </a>
                 </h1>
@@ -79,7 +79,7 @@
 
                       <img
                         src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-                        alt="ロゴ画像" data-aos="fade-up">
+                        alt="桜のこもれびキッズランドのロゴ画像" data-aos="fade-up" width="280" height="89">
                     </picture>
                   </a>
                 </div>
@@ -89,7 +89,7 @@
             <!-- info -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/info/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">お知らせ</span>
                 <span class="l-header__link-en">info</span>
               </a>
@@ -98,7 +98,7 @@
             <!-- recruit -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/recruit/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">採用情報</span>
                 <span class="l-header__link-en">recruit</span>
               </a>
@@ -107,7 +107,7 @@
             <!-- contact -->
             <li class="l-header__item inview">
               <a href="<?php echo home_url('/contact/'); ?>" class="l-header__link u-hover">
-                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up"></span>
+                <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="l-header__icon" width="48" height="48"></span>
                 <span class="l-header__link-ja">お問い合わせ</span>
                 <span class="l-header__link-en">contact</span>
               </a>
@@ -131,7 +131,7 @@
 
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-                    alt="桜のこもれびキッズランド">
+                    alt="桜のこもれびキッズランドのロゴ画像" width="203" height="63">
                 </picture>
               </a>
             </h1>
@@ -145,7 +145,7 @@
 
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-                    alt="桜のこもれびキッズランド">
+                    alt="桜のこもれびキッズランドのロゴ画像" width="203" height="63">
                 </picture>
               </a>
             </div>
@@ -178,7 +178,7 @@
                 <!-- わたしたちのこと -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/about/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/about.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">わたしたちのこと</span>
                     <span class="drawer__link-en">about</span>
                   </a>
@@ -187,7 +187,7 @@
                 <!-- 各園のご紹介 -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/introduction/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">各園のご紹介</span>
                     <span class="drawer__link-en">introduction</span>
                   </a>
@@ -196,7 +196,7 @@
                 <!-- こもれびだより -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/letter/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">こもれびだより</span>
                     <span class="drawer__link-en">letter</span>
                   </a>
@@ -205,7 +205,7 @@
                 <!-- お知らせ -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/info/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/info-bell.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">お知らせ</span>
                     <span class="drawer__link-en">info</span>
                   </a>
@@ -214,7 +214,7 @@
                 <!-- 採用情報 -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/recruit/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">採用情報</span>
                     <span class="drawer__link-en">recruit</span>
                   </a>
@@ -223,7 +223,7 @@
                 <!-- お問い合わせ -->
                 <li class="drawer__item u-hover">
                   <a href="<?php echo home_url('/contact/'); ?>" class="drawer__link u-hover">
-                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="drawer__icon" loading="lazy" data-aos="fade-up"></span>
+                    <span><img src="<?php echo get_template_directory_uri(); ?>/img/svg/contact.svg" alt="" class="drawer__icon" data-aos="fade-up" width="48" height="48"></span>
                     <span class="drawer__link-ja">お問い合わせ</span>
                     <span class="drawer__link-en">contact</span>
                   </a>

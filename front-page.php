@@ -12,7 +12,7 @@
     </picture>
 
     <div class="p-hero__text" data-aos="fade-up">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/svg/Vector.svg" alt="" class="l-header__icon" loading="lazy" data-aos="fade-up">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/svg/Vector.svg" alt="" class="l-header__icon" data-aos="fade-up" width="516" height="413">
       <p class="p-hero__text-comment">一人ひとりの輝きが、<br>未来を彩る</p>
     </div>
 
@@ -63,7 +63,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/cherry-tree.svg"
           alt=""
           class="p-about__icon"
-          loading="lazy">
+          loading="lazy"
+          width="72" height="72">
       </div>
 
       <div class="p-about__heading">
@@ -99,7 +100,8 @@
         src="<?php echo get_template_directory_uri(); ?>/img/svg/introduction-tree.svg"
         alt=""
         class="p-introduction__icon"
-        loading="lazy">
+        loading="lazy"
+        width="72" height="72">
     </div>
 
     <div class="p-introduction__heading">
@@ -152,7 +154,8 @@
           src="<?php echo get_template_directory_uri(); ?>/img/svg/letter.svg"
           alt=""
           class="p-letter__icon inview"
-          loading="lazy">
+          loading="lazy"
+          width="80" height="80">
       </div>
 
       <div class="p-letter__heading">
@@ -236,7 +239,9 @@
             alt=""
             class="p-recruit__icon"
             loading="lazy"
-            data-aos="fade-up">
+            data-aos="fade-up"
+            width="72" height="72"
+            >
         </div>
 
         <div class="p-recruit__heading">

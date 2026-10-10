@@ -11,7 +11,8 @@
 
           <img
             src="<?php echo get_template_directory_uri(); ?>/img/logo.png"
-            alt="ロゴ画像">
+            alt="桜のこもれびキッズランドのロゴ画像"
+            width="240" height="71">
         </picture>
 
       </a>
