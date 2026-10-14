@@ -33,7 +33,7 @@
 
     <!-- お知らせボタン -->
     <div class="p-hero-news inview">
-      <a href="<?php the_permalink(); ?>" class="p-hero-news__link u-hover">
+      <a href="<?php the_permalink(); ?>" class="p-hero-news__link u-hover-lift">
         <span class="p-hero-news__category">お知らせ</span>
 
         <h2 class="p-hero-news__title">
@@ -140,7 +140,7 @@
 
     <!-- リンクボタン -->
     <div class="inview">
-      <a href="<?php echo home_url('/introduction'); ?>" class="p-introduction__link c-button u-hover">
+      <a href="<?php echo home_url('/introduction'); ?>" class="p-introduction__link c-button u-hover-lift">
         一覧ページへ
       </a>
     </div>
@@ -178,7 +178,7 @@
           while ($letter_query->have_posts()) :
             $letter_query->the_post();
         ?>
-            <li class="p-letter__item u-hover">
+            <li class="p-letter__item u-hover-lift">
               <a href="<?php the_permalink(); ?>" class="p-letter__card">
 
                 <?php if (has_post_thumbnail()) : ?>
@@ -221,7 +221,7 @@
 
       <!-- リンクボタン -->
       <div class="inview p-letter__link-wrap">
-        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover">
+        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover-lift">
           もっとみる
         </a>
       </div>
@@ -253,10 +253,10 @@
 
       <!-- リンクボタン -->
       <div class="p-recruit__link-wrap inview">
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover">
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover-lift">
           採用情報
         </a>
-        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button u-hover">
+        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button u-hover-lift">
           エントリー
         </a>
       </div>

@@ -1,25 +1,34 @@
 @use '../foundation/mixin' as *;
 
 .u-hover {
-  transition: opacity 1.0s, transform 1.0s;
-  will-change: transform, opacity;
+/* 位置を変えないホバー */
+
+  transition: opacity 0.4s ease;
+}
+
+/* 浮き上がるホバー */
+.u-hover-lift {
+  transition:
+    opacity 0.4s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* PC */
 @media (any-hover: hover) {
-
   .u-hover:hover {
-    opacity: .7;
-    transform: translate3d(0, -7px, 0);
+    opacity: 0.7;
   }
 
+  .u-hover-lift:hover {
+    opacity: 0.7;
+    transform: translateY(-7px);
+  }
 }
 
 /* SP */
 @media (hover: none) {
-
-  .u-hover:active {
-    opacity: .7;
+  .u-hover:active,
+  .u-hover-lift:active {
+    opacity: 0.7;
   }
-
 }

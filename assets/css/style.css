@@ -317,11 +317,6 @@ img {
   text-decoration: none;
   width: 24rem;
   height: 6rem;
-  transition: 0.4s;
-}
-.c-button:hover {
-  opacity: 0.7;
-  transform: translateY(-7px);
 }
 
 @media screen and (max-width: 767.98px) {
@@ -2379,9 +2374,6 @@ body {
   text-decoration: none;
   transition: 0.3s;
   padding: 1.2rem;
-}
-.p-yearly-program__card:hover {
-  opacity: 0.7;
 }
 .p-yearly-program {
   /* アイキャッチ */
@@ -5420,20 +5412,29 @@ body {
 }
 
 .u-hover {
-  transition: opacity 1s, transform 1s;
-  will-change: transform, opacity;
+  /* 位置を変えないホバー */
+  transition: opacity 0.4s ease;
+}
+
+/* 浮き上がるホバー */
+.u-hover-lift {
+  transition: opacity 0.4s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* PC */
 @media (any-hover: hover) {
   .u-hover:hover {
     opacity: 0.7;
-    transform: translate3d(0, -7px, 0);
+  }
+  .u-hover-lift:hover {
+    opacity: 0.7;
+    transform: translateY(-7px);
   }
 }
 /* SP */
 @media (hover: none) {
-  .u-hover:active {
+  .u-hover:active,
+  .u-hover-lift:active {
     opacity: 0.7;
   }
 }

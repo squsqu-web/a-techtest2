@@ -2,29 +2,33 @@
 @use '../../foundation/mixin' as *;
 
 .c-button {
-
-  @include button-text(1.8rem,
+  @include button-text(
+    1.8rem,
     v.$Regular,
     v.$font-sub,
-    calc(2 / 20 * 1em));
+    calc(2 / 20 * 1em)
+  );
 
-  // line-height: calc(32 / 20);
   line-height: 1;
   border: 2px solid v.$color-main;
 
-  @include button-base(v.$color-white,
-    v.$color-main);
+  @include button-base(
+    v.$color-white,
+    v.$color-main
+  );
 
-  @include button-size(24rem,
-    6rem);
-
-  @include hover-up();
+  @include button-size(
+    24rem,
+    6rem
+  );
 }
 
 @include mq(md) {
   .c-button {
-    @include button-size(20rem,
-      5rem);
+    @include button-size(
+      20rem,
+      5rem
+    );
   }
 }
 
@@ -39,8 +43,10 @@
 }
 
 .c-button--sm {
-  @include button-size(16rem,
-    4rem);
+  @include button-size(
+    16rem,
+    4rem
+  );
 
   gap: 0px;
   padding-right: 0;

@@ -94,15 +94,7 @@
     });
   });
 
-
- /*  // 「.rellax」用パララックス
-  if (document.querySelector('.rellax')) {
-    new Rellax('.rellax', {
-      speed: -5
-    });
-  } */
-
-
+  
   // introduction タブ切り替え
   document.addEventListener('DOMContentLoaded', function () {
 

@@ -20,14 +20,30 @@
     <!-- pc -->
     <nav class="footer__nav">
       <ul class="footer__nav-list inview">
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/about/'); ?>" class="footer__nav-link top-footer">わたしたちのこと</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/introduction/'); ?>" class="footer__nav-link">各園のご紹介</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/letter/'); ?>" class="footer__nav-link">こもれびだより</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/recruit/'); ?>" class="footer__nav-link">採用情報</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/info/'); ?>" class="footer__nav-link">お知らせ</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/contact/'); ?>" class="footer__nav-link">お問い合わせ</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/sitemap/'); ?>" class="footer__nav-link">サイトマップ</a></li>
-        <li class="footer__nav-item u-hover"><a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link">プライバシーポリシー</a></li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/about/'); ?>" class="footer__nav-link top-footer u-hover">わたしたちのこと</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/introduction/'); ?>" class="footer__nav-link u-hover">各園のご紹介</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/letter/'); ?>" class="footer__nav-link u-hover">こもれびだより</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/recruit/'); ?>" class="footer__nav-link u-hover">採用情報</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/info/'); ?>" class="footer__nav-link u-hover">お知らせ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/contact/'); ?>" class="footer__nav-link u-hover">お問い合わせ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/sitemap/'); ?>" class="footer__nav-link u-hover">サイトマップ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="<?php echo home_url('/privacy-policy/'); ?>" class="footer__nav-link u-hover">プライバシーポリシー</a>
+        </li>
       </ul>
     </nav>
 
