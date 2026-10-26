@@ -1,17 +1,14 @@
 // 基本スタイル
 html {
-  font-size: clamp(5.33px, calc(10 / 1440 * 100vw), 10px);
+  font-size: 62.5%;
 }
-
-@media (max-width: 767.98px) {
-  html {
-    font-size: clamp(8px, calc(10 / 375 * 100vw), 10px);
-  }
-}
-
 
 // 画像
 img {
   width: 100%;
   object-fit: cover;
+}
+
+*{
+  outline: 2px solid red;
 }

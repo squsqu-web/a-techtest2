@@ -14,8 +14,9 @@
       </p>
     </div>
 
+
     <!-- パンくず -->
-    <div class="breadcrumb-container u-hover" data-aos="fade-up">
+    <div class="breadcrumb-container inview">
       <nav class="breadcrumb">
 
         <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -36,6 +37,7 @@
 
       </nav>
     </div>
+
 
   </section>
 

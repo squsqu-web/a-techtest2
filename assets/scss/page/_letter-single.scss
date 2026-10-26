@@ -59,6 +59,13 @@
     border-bottom: 2px solid v.$color-main-2;
     margin-bottom: 3.2rem;
 
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
+
     @include mq(md) {
       font-size: 2rem;
     }

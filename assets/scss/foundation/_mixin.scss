@@ -3,9 +3,9 @@
 
 // ブレイクポイント
 $breakpoints: (
-  sm: 699.98px,
-  md: 767.98px,
-  lg: 1023.98px,
+  sm: 480px,
+  md: 767px,
+  lg: 1024px,
   xl: 1440px,
 );
 
@@ -58,19 +58,9 @@ $breakpoints: (
 }
 
 
-@mixin hover-up($move: -7px, $opacity: .7) {
-  transition: .4s;
-
-  &:hover {
-    opacity: $opacity;
-    transform: translateY($move);
-  }
-
-}
-
 // <!-- テストボタン -->
 // <div data-aos="fade-up">
-//   <a class="button u-hover" href="#">
+//   <a class="button" href="#">
 //     <i class="fa-brands fa-instagram"></i>
 //     <span>testボタン</span>
 //   </a>

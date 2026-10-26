@@ -103,6 +103,13 @@
     border-radius: 2rem;
   }
 
+  &__card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+
   &__card-wrap {
     padding: 1.2rem;
     position: relative;
@@ -121,8 +128,14 @@
     letter-spacing: 0.04em;
     line-height: 1.5;
     font-weight: v.$Regular;
-
     margin: 0 0 1.1rem;
+
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
   }
 
   &__card-text {
@@ -131,6 +144,13 @@
     letter-spacing: 0.04em;
     line-height: 1.5;
     font-weight: v.$Regular;
+
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
   }
 
   &__text {

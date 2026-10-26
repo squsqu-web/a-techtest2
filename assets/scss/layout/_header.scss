@@ -24,13 +24,17 @@
   }
 
   &__inner {
+    width: 100%;
     max-width: 1440px;
     height: 12rem;
+    box-sizing: border-box;
+
     display: flex;
     justify-content: center;
     margin-inline: auto;
-    padding-inline: 20px;
-    padding: 9.6rem 0 0;
+
+    // PC：左右の余白を最大80px確保
+    padding: 9.6rem clamp(1rem, 5.56vw, 8rem) 0;
 
     @include mq(md) {
       width: 100%;
@@ -103,7 +107,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 16.5rem;
+
+    // 1440pxでは165px、画面幅に応じて縮小
+    width: clamp(7rem, 11.46vw, 16.5rem);
+    box-sizing: border-box;
     padding: 1.25rem 0;
   }
 
@@ -145,10 +152,6 @@
     position: relative;
     z-index: auto;
 
-    @include mq(md) {
-      // padding: 20px;
-    }
-
     a {
       display: flex;
       align-items: center;
@@ -157,17 +160,9 @@
     }
 
     img {
-      // width: clamp(32px, 5vw, 64px);
-      // height: clamp(32px, 5vw, 64px);
-      width: 28rem;
+      width: 100%;
       height: auto;
-      object-fit: cover;
-
-      @include mq(md) {
-        // width: clamp(32px, 5vw, 64px);
-        // height: clamp(32px, 5vw, 64px);
-        width: 100%;
-      }
+      object-fit: contain;
     }
   }
 
@@ -175,7 +170,7 @@
 
 
 .l-header__item:nth-child(4) {
-  width: 28rem;
+  width: clamp(14rem, 19.45vw, 28rem);
   flex-shrink: 0;
 }
 
@@ -282,8 +277,9 @@
 .c-hamburger {
   @include mq(md) {
     position: absolute;
-    right: -6.5rem;
-    top: -6.5rem;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 

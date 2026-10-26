@@ -32,8 +32,8 @@
   ?>
 
     <!-- お知らせボタン -->
-    <div class="p-hero-news inview">
-      <a href="<?php the_permalink(); ?>" class="p-hero-news__link u-hover-lift">
+    <div class="p-hero-news">
+      <a href="<?php the_permalink(); ?>" class="p-hero-news__link">
         <span class="p-hero-news__category">お知らせ</span>
 
         <h2 class="p-hero-news__title">
@@ -129,7 +129,7 @@
 
         if ($term) :
         ?>
-          <li class="p-introduction__prefectures-item u-hover">
+          <li class="p-introduction__prefectures-item">
             <a href="<?php echo esc_url(get_term_link($term)); ?>">
               <?php echo esc_html($prefecture); ?>
             </a>
@@ -140,7 +140,7 @@
 
     <!-- リンクボタン -->
     <div class="inview">
-      <a href="<?php echo home_url('/introduction'); ?>" class="p-introduction__link c-button u-hover-lift">
+      <a href="<?php echo home_url('/introduction'); ?>" class="p-introduction__link c-button">
         一覧ページへ
       </a>
     </div>
@@ -178,8 +178,8 @@
           while ($letter_query->have_posts()) :
             $letter_query->the_post();
         ?>
-            <li class="p-letter__item u-hover-lift">
-              <a href="<?php the_permalink(); ?>" class="p-letter__card">
+            <li class="p-letter__item">
+              <a href="<?php the_permalink(); ?>" class="p-letter__card u-hover-lift">
 
                 <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail('large', array(
@@ -198,12 +198,20 @@
                 <?php endif; ?>
 
                 <div class="p-letter__card-wrap">
+
                   <h3 class="p-letter__card-title">
-                    <?php the_title(); ?>
+                    <?php
+                    $letter_categories = get_the_terms(get_the_ID(), 'letter_category');
+
+                    if ($letter_categories && ! is_wp_error($letter_categories)) {
+                      echo esc_html($letter_categories[0]->name);
+                    }
+                    ?>
                   </h3>
 
                   <div class="p-letter__card-text">
-                    <?php echo esc_html(get_field('letter_title')); ?>
+                    <!-- <?php echo esc_html(get_field('letter_title')); ?> -->
+                    <?php the_title(); ?>
                   </div>
 
                   <time class="p-letter__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
@@ -221,7 +229,7 @@
 
       <!-- リンクボタン -->
       <div class="inview p-letter__link-wrap">
-        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button u-hover-lift">
+        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button">
           もっとみる
         </a>
       </div>
@@ -240,8 +248,7 @@
             class="p-recruit__icon"
             loading="lazy"
             data-aos="fade-up"
-            width="72" height="72"
-            >
+            width="72" height="72">
         </div>
 
         <div class="p-recruit__heading">
@@ -253,10 +260,10 @@
 
       <!-- リンクボタン -->
       <div class="p-recruit__link-wrap inview">
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button u-hover-lift">
+        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button">
           採用情報
         </a>
-        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button u-hover-lift">
+        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button">
           エントリー
         </a>
       </div>

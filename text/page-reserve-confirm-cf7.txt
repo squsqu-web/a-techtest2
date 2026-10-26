@@ -68,8 +68,8 @@
   </tr>
 </table>
 
-<input type="submit" value="送信" class="p-reserve-input__submit u-hover confirm-submit pc_only">
-<input type="submit" value="確認" class="p-reserve-input__submit u-hover confirm-submit sp_only">
+<input type="submit" value="送信" class="p-reserve-input__submit confirm-submit pc_only">
+<input type="submit" value="確認" class="p-reserve-input__submit confirm-submit sp_only">
 
 </section>
 

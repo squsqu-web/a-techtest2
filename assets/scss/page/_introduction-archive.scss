@@ -275,6 +275,13 @@
     letter-spacing: 0.1em;
     font-weight: v.$Regular;
 
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
+
     @include mq(md) {
       font-size: 1.8rem;
     }

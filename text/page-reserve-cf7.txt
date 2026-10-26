@@ -1,7 +1,7 @@
 <section class="p-reserve-input__wrapper">
 
     <!-- お名前 -->
-    <div class="p-reserve-input__block u-hover">
+    <div class="p-reserve-input__block">
       <div class="form-input-left">
         <label for="your-name" class="p-reserve-input__label">
           <span class="p-reserve-input__required">必須</span>お名前
@@ -13,7 +13,7 @@
     </div>
 
     <!-- ふりがな -->
-    <div class="p-reserve-input__block u-hover">
+    <div class="p-reserve-input__block">
       <div class="form-input-left">
         <label for="your-kana" class="p-reserve-input__label">
           <span class="p-reserve-input__required">必須</span>ふりがな
@@ -25,7 +25,7 @@
     </div>
 
     <!-- 電話番号 -->
-    <div class="p-reserve-input__block u-hover">
+    <div class="p-reserve-input__block">
       <div class="form-input-left">
         <label for="your-tel" class="p-reserve-input__label">
           <span class="p-reserve-input__required p-reserve-input__optional">任意</span>電話番号
@@ -37,7 +37,7 @@
     </div>
 
     <!-- メールアドレス -->
-    <div class="p-reserve-input__block u-hover">
+    <div class="p-reserve-input__block">
       <div class="form-input-left">
         <label for="your-email" class="p-reserve-input__label">
           <span class="p-reserve-input__required">必須</span>メールアドレス
@@ -49,7 +49,7 @@
     </div>
 
     <!-- ご希望の連絡方法 -->
-    <div class="p-reserve-input__block u-hover">
+    <div class="p-reserve-input__block">
       <div class="form-input-left">
         <label for="contact-method" class="p-reserve-input__label">
           <span class="p-reserve-input__required">必須</span>ご希望の連絡方法
@@ -73,7 +73,7 @@
 
 
     <!-- ご希望の連絡時間帯 -->
-    <div class="p-reserve-input__block input-mt45 u-hover">
+    <div class="p-reserve-input__block input-mt45">
       <div class="form-input-left">
         <label class="p-reserve-input__label">
           <span class="p-reserve-input__required p-reserve-input__optional">任意</span>ご希望の連絡時間帯
@@ -100,7 +100,7 @@
 
     
     <!-- お問い合わせ項目 -->
-    <div class="p-reserve-input__block input-mt45 u-hover">
+    <div class="p-reserve-input__block input-mt45">
       <div class="form-input-left">
         <label class="p-reserve-input__label koumoku">
           <span class="p-reserve-input__required">必須</span>お問い合わせ項目
@@ -117,7 +117,7 @@
     </div>
 
     <!-- 希望店舗 -->
-    <div class="p-reserve-input__block input-mt45 u-hover">
+    <div class="p-reserve-input__block input-mt45">
       <div class="form-input-left req-store">
         <label for="store" class="p-reserve-input__label">
           <span class="p-reserve-input__required">必須</span>希望店舗
@@ -129,7 +129,7 @@
     </div>
 
     <!-- 来店希望日（第一希望） -->
-    <div class="p-reserve-input__block input-mt u-hover">
+    <div class="p-reserve-input__block input-mt">
       <div class="form-input-left req-visit1st">
         <label for="first-date" class="p-reserve-input__label">
           <span class="p-reserve-input__required p-reserve-input__optional">任意</span>来店希望日（第一希望）
@@ -144,7 +144,7 @@
     </div>
 
     <!-- 来店希望日（第二希望） -->
-    <div class="p-reserve-input__block input-mt u-hover">
+    <div class="p-reserve-input__block input-mt">
       <div class="form-input-left req-visit2nd">
         <label for="second-date" class="p-reserve-input__label">
           <span class="p-reserve-input__required p-reserve-input__optional">任意</span>来店希望日（第二希望）
@@ -161,7 +161,7 @@
 
 
     <!-- お問い合わせ内容 -->
-    <div class="p-reserve-input__block input-textarea u-hover">
+    <div class="p-reserve-input__block input-textarea">
       <div class="form-input-left">
         <label for="message" class="p-reserve-input__label label-text textarea-text">
           <span class="p-reserve-input__required p-reserve-input__optional">任意</span>お問い合わせ内容
@@ -183,7 +183,7 @@
       </div>
     </div>
 
-    <input type="submit" value="確認" class="p-reserve-input__submit u-hover">
+    <input type="submit" value="確認" class="p-reserve-input__submit">
 
   </section>
 

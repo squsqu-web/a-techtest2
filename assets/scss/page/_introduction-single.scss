@@ -878,6 +878,13 @@
     font-weight: v.$Regular;
     margin: 0 0 1.2rem;
 
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
+
     @include mq(md) {
       font-size: 1.6rem;
     }
@@ -890,6 +897,13 @@
     letter-spacing: 0.04em;
     line-height: 1.5;
     font-weight: v.$Regular;
+
+    // 記事タイトルを2行まで表示ここから
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    // 記事タイトルを2行まで表示ここまで
 
     @include mq(md) {
       font-size: 1.4rem;

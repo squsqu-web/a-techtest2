@@ -11,10 +11,10 @@
   </section>
 
   <!-- カスタムパンくずリスト -->
-  <div class="breadcrumb-container" data-aos="fade-up">
+  <div class="breadcrumb-container inview">
     <nav class="breadcrumb">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="u-hover">TOP</a>
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
+      <span class="sep">&gt;</span>
       <span>わたしたちのこと</span>
     </nav>
   </div>
@@ -285,7 +285,7 @@
         <div class="p-contact__link-wrap inview">
           <a
             href="<?php echo esc_url(home_url('/contact')); ?>"
-            class="p-contact__link p-contact__link-info c-button u-hover-lift">
+            class="p-contact__link p-contact__link-info c-button-lift">
             お問い合わせ
           </a>
         </div>

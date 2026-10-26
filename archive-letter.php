@@ -10,14 +10,16 @@
     </div>
   </section>
 
+
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container inview">
-    <nav class="breadcrumb u-hover">
+    <nav class="breadcrumb">
       <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span class="sep">&gt;</span>
       <span>こもれびだより</span>
     </nav>
   </div>
+
 
   <!-- 記事リスト -->
   <div class="l-letter__wrapper">
@@ -133,8 +135,8 @@
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
                 <article class="p-letter-archive__item">
-                  <div class="p-letter-archive__card u-hover">
-                    <a href="<?php the_permalink(); ?>" class="p-letter-archive__link">
+                  <div class="p-letter-archive__card">
+                    <a href="<?php the_permalink(); ?>" class="p-letter-archive__link u-hover-lift">
 
                       <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('large', [
@@ -149,14 +151,31 @@
                           height="135">
                       <?php endif; ?>
 
+
                       <div class="p-letter-archive__card-wrap">
-                        <h2 class="p-letter-archive__card-title"><?php the_title(); ?></h2>
+
+                        <?php
+                        $letter_categories = get_the_terms(get_the_ID(), 'letter_category');
+
+                        if ($letter_categories && ! is_wp_error($letter_categories)) :
+                        ?>
+                          <p class="p-letter-archive__category">
+                            <?php echo esc_html($letter_categories[0]->name); ?>
+                          </p>
+                        <?php endif; ?>
+
+                        <h2 class="p-letter-archive__card-title">
+                          <?php the_title(); ?>
+                        </h2>
+
                         <time
                           class="p-letter-archive__date"
-                          datetime="<?php echo get_the_date('c'); ?>">
-                          <?php echo get_the_date('Y'); ?>ねん<?php echo get_the_date('n'); ?>がつ<?php echo get_the_date('j'); ?>にち
+                          datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+                          <?php echo esc_html(get_the_date('Yねんnがつjにち')); ?>
                         </time>
+
                       </div>
+
                     </a>
                   </div>
                 </article>
@@ -228,7 +247,7 @@
                   ?>
 
                   <li class="p-letter-archive__archive-item inview<?php echo $is_active ? ' is-active' : ''; ?>">
-                    <a class="u-hover"
+                    <a
                       href="<?php echo esc_url(
                               add_query_arg(
                                 array(

@@ -150,7 +150,7 @@
             <label class="p-reserve-input__label"><span class="p-reserve-input__required">必須</span>お問い合わせ内容</label>
             <div class="p-reserve-input__confirm">お名だよよ</div>
           </div>
-          <input type="submit" value="送信" class="p-reserve-input__submit u-hover">
+          <input type="submit" value="送信" class="p-reserve-input__submit">
         </section>
       </form>
     </div>

@@ -10,16 +10,18 @@
     </div>
   </section>
 
+
   <!-- カスタムパンくずリスト -->
-  <div class="breadcrumb-container">
-    <nav class="breadcrumb u-hover">
+  <div class="breadcrumb-container inview">
+    <nav class="breadcrumb">
       <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span class="sep">&gt;</span>
       <a href="<?php echo esc_url(home_url('/introduction')); ?>">各園のご紹介</a>
-      <span class="sep" data-aos="fade-up">&gt;</span>
-      <span data-aos="fade-up"><?php the_title(); ?></span>
+      <span class="sep">&gt;</span>
+      <span><?php the_title(); ?></span>
     </nav>
   </div>
+
 
 
   <!-- 紹介文セクション -->
@@ -272,7 +274,7 @@
 
               <a
                 href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $overview_tel)); ?>"
-                class="tel-link u-hover">
+                class="tel-link">
                 <?php echo esc_html($overview_tel); ?>
               </a>
 
@@ -672,7 +674,7 @@
 
                 <a
                   href="<?php the_permalink(); ?>"
-                  class="p-introduction-single-letter__card u-hover">
+                  class="p-introduction-single-letter__card">
 
                   <?php if (has_post_thumbnail()) : ?>
 
@@ -744,7 +746,7 @@
 
           <a
             href="<?php echo esc_url(get_post_type_archive_link('letter')); ?>"
-            class="p-introduction-single-letter__link c-button u-hover">
+            class="p-introduction-single-letter__link c-button">
             もっと見る
           </a>
 
@@ -798,7 +800,7 @@
 
           <a
             href="<?php echo esc_url(home_url('/contact')); ?>"
-            class="p-contact__link p-contact__link-info c-button u-hover">
+            class="p-contact__link p-contact__link-info c-button">
             お問い合わせ
           </a>
 

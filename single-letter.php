@@ -12,24 +12,26 @@
   </section>
 
 
+
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container inview">
-    <nav class="breadcrumb u-hover">
+    <nav class="breadcrumb">
       <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
 
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span class="sep">&gt;</span>
 
       <a href="<?php echo esc_url(get_post_type_archive_link('letter')); ?>">
         こもれびだより一覧
       </a>
 
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span class="sep">&gt;</span>
 
-      <span data-aos="fade-up">
+      <span>
         <?php the_title(); ?>
       </span>
     </nav>
   </div>
+
 
 
   <!-- 記事リスト -->
@@ -182,7 +184,7 @@
 
 
               <!-- 戻るボタン -->
-              <div class="single__back-btn-wrap u-hover">
+              <div class="single__back-btn-wrap">
 
                 <div class="single__back-btn inview">
 
@@ -277,10 +279,10 @@
 
 
                   <li
-                    class="p-letter-archive__archive-item u-hover inview<?php echo $is_active ? ' is-active' : ''; ?>">
+                    class="p-letter-archive__archive-item inview<?php echo $is_active ? ' is-active' : ''; ?>">
 
                     <a
-                      class="u-hover"
+
                       href="<?php echo esc_url(
                               add_query_arg(
                                 array(

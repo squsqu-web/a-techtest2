@@ -1,8 +1,7 @@
 @use '../foundation/mixin' as *;
 
-.u-hover {
-/* 位置を変えないホバー */
-
+/* 通常のリンク */
+a {
   transition: opacity 0.4s ease;
 }
 
@@ -10,12 +9,12 @@
 .u-hover-lift {
   transition:
     opacity 0.4s ease,
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 1.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* PC */
+/* マウス操作ができるデバイス */
 @media (any-hover: hover) {
-  .u-hover:hover {
+  a:hover {
     opacity: 0.7;
   }
 
@@ -25,10 +24,9 @@
   }
 }
 
-/* SP */
+/* タッチ操作が中心のデバイス */
 @media (hover: none) {
-  .u-hover:active,
-  .u-hover-lift:active {
+  a:active {
     opacity: 0.7;
   }
 }

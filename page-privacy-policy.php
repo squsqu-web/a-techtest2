@@ -10,7 +10,7 @@
 
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container inview">
-  <nav class="breadcrumb u-hover">
+  <nav class="breadcrumb">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep" data-aos="fade-up">&gt;</span>
     <span>プライバシーポリシー</span>

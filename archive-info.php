@@ -10,14 +10,16 @@
     </div>
   </section>
 
+
   <!-- カスタムパンくずリスト -->
   <div class="breadcrumb-container inview">
-    <nav class="breadcrumb u-hover">
+    <nav class="breadcrumb">
       <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-      <span class="sep" data-aos="fade-up">&gt;</span>
+      <span class="sep">&gt;</span>
       <span>お知らせ</span>
     </nav>
   </div>
+
 
   <!-- 記事セクション全体 -->
   <section class="l-info">
@@ -28,7 +30,7 @@
 
         <a
           href="<?php echo esc_url(get_post_type_archive_link('info')); ?>"
-          class="p-info-filter__button is-active u-hover">
+          class="p-info-filter__button is-active">
           すべて
         </a>
 
@@ -43,7 +45,7 @@
         ?>
             <a
               href="<?php echo esc_url(get_term_link($term)); ?>"
-              class="p-info-filter__button u-hover">
+              class="p-info-filter__button">
               <?php echo esc_html($term->name); ?>
             </a>
         <?php
@@ -62,7 +64,7 @@
 
             <article class="p-info-list__item">
 
-              <a class="p-info-card u-hover" href="<?php the_permalink(); ?>">
+              <a class="p-info-card u-hover-lift" href="<?php the_permalink(); ?>">
 
                 <?php
                 // 記事に登録されたカテゴリーを取得

@@ -10,12 +10,10 @@
 </section>
 
 
-<!-- カスタムパンくずリスト -->
-<div
-  class="breadcrumb-container u-hover"
-  data-aos="fade-up">
 
-  <nav class="breadcrumb u-hover">
+<!-- カスタムパンくずリスト -->
+<div class="breadcrumb-container inview">
+  <nav class="breadcrumb">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep">&gt;</span>
     <a href="<?php echo esc_url(get_post_type_archive_link('introduction')); ?>">各園のご紹介</a>
@@ -23,6 +21,7 @@
     <span><?php single_term_title(); ?></span>
   </nav>
 </div>
+
 
 
 <!-- メインコンテンツ -->
@@ -34,14 +33,14 @@
       <div class="p-introduction-tab inview">
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction u-hover"
+          class="p-introduction-tab__button is-active-introduction"
           data-tab="type">
           園の種類<br>から探す
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button u-hover"
+          class="p-introduction-tab__button"
           data-tab="area">
           都道府県<br>から探す
         </button>
@@ -87,7 +86,7 @@
 
               <a
                 href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button u-hover">
+                class="p-introduction-filter__button">
                 <?php echo esc_html($term->name); ?>
               </a>
           <?php endforeach;
@@ -219,8 +218,8 @@
 
     <!-- リンクボタン -->
     <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button u-hover">採用情報</a>
-      <a href="<?php echo esc_url(home_url('/recruit#recruit-entry')); ?>" class="p-recruit__link-entry c-button u-hover">エントリー</a>
+      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button">採用情報</a>
+      <a href="<?php echo esc_url(home_url('/recruit#recruit-entry')); ?>" class="p-recruit__link-entry c-button">エントリー</a>
     </div>
 
   </div>

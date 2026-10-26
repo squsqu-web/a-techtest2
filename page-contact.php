@@ -10,7 +10,7 @@
 
 <!-- パンくずリスト -->
 <div class="breadcrumb-container inview">
-  <nav class="breadcrumb u-hover">
+  <nav class="breadcrumb">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span class="sep">&gt;</span>
     <span>お問い合わせ</span>
@@ -29,7 +29,7 @@
     </p>
 
     <p class="p-contact__intro-link inview">
-      <a class="u-hover" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">
+      <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">
         弊社への登録に際して、お預かりする個人情報の扱いについて
       </a>
     </p>

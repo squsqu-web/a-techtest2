@@ -5,7 +5,7 @@
     <section class="l-main-visual">
       <h1 class="l-main-visual__title" data-aos="fade-up">price menu</h1>
       <div class="sticky-wrapper">
-        <picture class="">
+        <picture>
           <source srcset="<?php echo get_template_directory_uri(); ?>/img/price-menu_top-sp.webp" type="image/webp" media="(max-width: 767px)">
           <source srcset="<?php echo get_template_directory_uri(); ?>/img/price-menu_top-sp.jpg"  type="image/jpeg" media="(max-width: 767px)">
           <source srcset="<?php echo get_template_directory_uri(); ?>/img/price-menu_top-pc.webp" type="image/webp" media="(min-width: 768px)">
@@ -20,7 +20,7 @@
       <div class="contents-overlap-wrapper">
         <!-- カスタムパンくずリスト -->
         <div class="breadcrumb-container">
-          <nav class="breadcrumb  u-hover" data-aos="fade-up">
+          <nav class="breadcrumb " data-aos="fade-up">
             <a href="<?php echo esc_url(home_url('/')); ?>">ホーム</a>
             <span class="sep" data-aos="fade-up">｜</span>
             <span href="<?php echo home_url('/price'); ?>">メニュー料金</span>
@@ -46,8 +46,8 @@
                 <!-- Body -->
                 <div class="p-price__row p-price__row--top__left" data-aos="fade-up">
                   <a href="#body">
-                    <h3 class="p-price__content__title u-hover">body</h3>
-                    <p class="p-price__content__title__ja price__body u-hover">体脱毛</p>
+                    <h3 class="p-price__content__title">body</h3>
+                    <p class="p-price__content__title__ja price__body">体脱毛</p>
                   </a>
                 </div>
 
@@ -56,44 +56,44 @@
                 <!-- V-line -->
                 <div class="p-price__row p-price__row--top__right" data-aos="fade-up">
                   <a href="#V-line">
-                    <h3 class="p-price__content__title u-hover vvv-line">V-line</h3>
-                    <p class="p-price__content__title__ja price__vio u-hover">VIO脱毛</p>
+                    <h3 class="p-price__content__title vvv-line">V-line</h3>
+                    <p class="p-price__content__title__ja price__vio">VIO脱毛</p>
                   </a>
                 </div>
 
-                <i class="fa-solid fa-chevron-right vio-fa u-hover" data-aos="fade-up"></i>
+                <i class="fa-solid fa-chevron-right vio-fa" data-aos="fade-up"></i>
               </div>
 
               <div class="p-price__row p-price__row--center">
                 <!-- Custom -->
                 <div class="p-price__row--center__left" data-aos="fade-up">
-                  <a href="#custom" class="u-hover">
-                    <h3 class="p-price__content__title u-hover">custom</h3>
-                    <p class="p-price__content__title__ja price__custom-ja u-hover">オーダーメイド</p>
+                  <a href="#custom">
+                    <h3 class="p-price__content__title">custom</h3>
+                    <p class="p-price__content__title__ja price__custom-ja">オーダーメイド</p>
                   </a>
                 </div>
                 <i class="fa-solid fa-chevron-right custom-fa" data-aos="fade-up"></i>
 
                 <!-- Set -->
                 <div class="p-price__row--center__right" data-aos="fade-up">
-                  <a href="#Set" class="u-hover">
-                    <h3 class="p-price__content__title u-hover">set</h3>
-                    <p class="p-price__content__title__ja price__set u-hover">セット脱毛</p>
+                  <a href="#Set">
+                    <h3 class="p-price__content__title">set</h3>
+                    <p class="p-price__content__title__ja price__set">セット脱毛</p>
                   </a>
                 </div>
 
-                <i class="fa-solid fa-chevron-right set-fa u-hover" data-aos="fade-up"></i>
+                <i class="fa-solid fa-chevron-right set-fa" data-aos="fade-up"></i>
               </div>
 
               <div class="p-price__row p-price__row--bottom" data-aos="fade-up">
                 <!-- All -->
                 <div class="p-price__row--bottom__left all-bottom">
-                  <a href="<?php echo home_url('/price'); ?>" class="">
-                    <h3 class="p-price__content__title u-hover">all</h3>
-                    <p class="p-price__content__title__ja price__all u-hover">全てのメニュー</p>
+                  <a href="<?php echo home_url('/price'); ?>">
+                    <h3 class="p-price__content__title">all</h3>
+                    <p class="p-price__content__title__ja price__all">全てのメニュー</p>
                   </a>
                 </div>
-                <i class="fa-solid fa-chevron-right all-fa u-hover" data-aos="fade-up"></i>
+                <i class="fa-solid fa-chevron-right all-fa" data-aos="fade-up"></i>
                 <div class="p-price__row--bottom__right">
                   <span class="empty"></span>
                 </div>

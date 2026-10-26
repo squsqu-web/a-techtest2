@@ -8,14 +8,16 @@
   </div>
 </section>
 
+
 <!-- カスタムパンくずリスト -->
 <div class="breadcrumb-container inview">
-  <nav class="breadcrumb u-hover">
+  <nav class="breadcrumb">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-    <span class="sep" data-aos="fade-up">&gt;</span>
+    <span class="sep">&gt;</span>
     <span>採用情報</span>
   </nav>
 </div>
+
 
 <!-- たいせつにしていることセクション -->
 <section class="p-recruit-page__motto">
@@ -276,7 +278,7 @@
 
         <div class="c-accordion">
           <!-- アコーディオン１項目目 -->
-          <div class="u-hover">
+          <div>
             <div class="c-accordion__item inview">
               <button type="button" class="c-accordion__question accordion-header active">
                 スタッフの資格や経験について教えてください。
@@ -289,7 +291,7 @@
           </div>
 
           <!-- アコーディオン２項目目 -->
-          <div class="u-hover">
+          <div>
             <div class="c-accordion__item inview">
               <button type="button" class="c-accordion__question accordion-header">
                 子どもたちに提供される食事や健康管理について教えてください。
@@ -302,7 +304,7 @@
           </div>
 
           <!-- アコーディオン３項目目 -->
-          <div class="u-hover">
+          <div>
             <div class="c-accordion__item inview">
               <button type="button" class="c-accordion__question accordion-header">
                 保護者とのコミュニケーションはどのように行われていますか？
