@@ -127,7 +127,7 @@
 
   &__link-en {
     text-transform: capitalize;
-    font-family: v.$font-sub;
+    font-family: v.$font-main;
     font-size: 1rem;
     color: v.$color-main;
     letter-spacing: 0.01em;
@@ -376,21 +376,17 @@
 
   &__link-en {
     text-transform: capitalize;
-    font-family: v.$font-sub;
+    font-family: v.$font-main;
     font-size: 1rem;
     color: v.$color-main;
     letter-spacing: 0.01em;
     line-height: 1.2;
     font-weight: v.$Black;
-
-    @include mq(md) {}
   }
 
   &__icon {
     width: 4.8rem;
     height: 4.8rem;
     margin: 0 0 1.2rem;
-
-    @include mq(md) {}
   }
 }

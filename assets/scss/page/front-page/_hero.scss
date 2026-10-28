@@ -4,7 +4,8 @@
 
 .p-hero {
   position: relative;
-  margin: 0 0 12rem;
+  margin: 0 auto 12rem;
+  max-width: 1440px;
 
   @include mq(md) {
     margin: 0 0 8rem;
@@ -46,6 +47,7 @@
       display: block;
       width: 100%;
       height: auto;
+      filter: drop-shadow(0 4px 4px #00000040);
     }
 
     @include mq(md) {

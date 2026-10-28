@@ -4,6 +4,11 @@
 // リキャプチャを最前面に
 .grecaptcha-badge {
   z-index: 9999999;
+  bottom: 80px !important;
+
+  @include mq(md) {
+    bottom: 15rem !important;
+  }
 }
 
 body {
@@ -15,6 +20,8 @@ body {
 // 共通背景用
 .l-page-bg {
   background-image: url("../../img/bg.png");
+  background-size: cover;
+  background-position: top center;
 
   @include mq(md) {
     background-image: url("../../img/sp-bg.png");
@@ -33,7 +40,7 @@ body {
 
 
 
- // インビュー
+// インビュー
 .inview {
   opacity: 0;
   transition: opacity 0.6s, transform 0.6s;

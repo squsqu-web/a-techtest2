@@ -4,6 +4,7 @@
 .p-introduction {
   text-align: center;
   width: 75%;
+  max-width: 1440px;
   margin: 0 auto 16.2rem;
 
   @include mq(md) {
@@ -56,7 +57,7 @@
     margin: 0 auto 1rem;
 
     @include mq(md) {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin: 0 auto 1rem;
     }
   }
@@ -65,7 +66,7 @@
     font-size: 1rem;
     color: v.$color-main;
     text-transform: capitalize;
-    font-family: v.$font-sub;
+    font-family: v.$font-main;
     letter-spacing: 0.2em;
     line-height: 1;
     font-weight: v.$Black;

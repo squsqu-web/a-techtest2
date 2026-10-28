@@ -5,6 +5,7 @@
 // Breadcrumb NavXT パンくずリスト
 .breadcrumb-container {
   width: 75%;
+  max-width: 1080px;
   margin: 0 auto;
 
   @include mq(md) {

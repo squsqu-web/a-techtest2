@@ -14,7 +14,7 @@
   padding: 1.6rem 1.6rem 1.8rem;
 
   position: fixed;
-  top: 58rem;
+  top: 32rem;
   right: 3rem;
 
   // ふわっと表示・非表示
@@ -29,8 +29,8 @@
 
   @include mq(md) {
     height: 11rem;
-    top: 53rem;
-    right: 11rem;
+    top: 44rem;
+    right: 16rem;
   }
 
   &__link {

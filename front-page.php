@@ -16,43 +16,45 @@
       <p class="p-hero__text-comment">一人ひとりの輝きが、<br>未来を彩る</p>
     </div>
 
+    <!-- お知らせ -->
+    <?php
+    $info_query = new WP_Query(array(
+      'post_type'      => 'info',
+      'posts_per_page' => 1,
+      'orderby'        => 'date',
+      'order'          => 'DESC',
+    ));
+
+    if ($info_query->have_posts()) :
+      $info_query->the_post();
+    ?>
+
+      <!-- お知らせボタン -->
+      <div class="p-hero-news">
+        <a href="<?php the_permalink(); ?>" class="p-hero-news__link">
+          <span class="p-hero-news__category">お知らせ</span>
+
+          <h2 class="p-hero-news__title">
+            <?php the_title(); ?>
+          </h2>
+
+          <time
+            class="p-hero-news__date"
+            datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+            <?php echo esc_html(get_the_date('Yねんnがつjにち')); ?>
+          </time>
+        </a>
+      </div>
+
+    <?php
+    endif;
+
+    wp_reset_postdata();
+    ?>
+
   </section>
 
-  <!-- お知らせ -->
-  <?php
-  $info_query = new WP_Query(array(
-    'post_type'      => 'info',
-    'posts_per_page' => 1,
-    'orderby'        => 'date',
-    'order'          => 'DESC',
-  ));
 
-  if ($info_query->have_posts()) :
-    $info_query->the_post();
-  ?>
-
-    <!-- お知らせボタン -->
-    <div class="p-hero-news">
-      <a href="<?php the_permalink(); ?>" class="p-hero-news__link">
-        <span class="p-hero-news__category">お知らせ</span>
-
-        <h2 class="p-hero-news__title">
-          <?php the_title(); ?>
-        </h2>
-
-        <time
-          class="p-hero-news__date"
-          datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
-          <?php echo esc_html(get_the_date('Yねんnがつjにち')); ?>
-        </time>
-      </a>
-    </div>
-
-  <?php
-  endif;
-
-  wp_reset_postdata();
-  ?>
 
 
   <!-- Aboutセクション -->
@@ -229,9 +231,7 @@
 
       <!-- リンクボタン -->
       <div class="inview p-letter__link-wrap">
-        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button">
-          もっとみる
-        </a>
+        <a href="<?php echo home_url('/letter'); ?>" class="p-letter__link c-button">もっと見る</a>
       </div>
     </div>
   </section>

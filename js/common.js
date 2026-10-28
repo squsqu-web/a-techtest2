@@ -212,27 +212,30 @@
 })(jQuery);
 
 
-// TOPページお知らせ用
+
+ // TOPページお知らせ用
 document.addEventListener('DOMContentLoaded', function () {
   const hero = document.querySelector('.p-hero');
   const heroNews = document.querySelector('.p-hero-news');
 
   if (!hero || !heroNews) return;
 
-  const observer = new IntersectionObserver(
-    function (entries) {
-      const entry = entries[0];
+  // FVが表示されている間だけお知らせを表示
+  function updateHeroNews() {
+    const heroBottom = hero.getBoundingClientRect().bottom;
 
-      if (entry.isIntersecting) {
-        heroNews.classList.remove('is-hidden');
-      } else {
-        heroNews.classList.add('is-hidden');
-      }
-    },
-    {
-      threshold: 0
+    if (heroBottom > 0) {
+      heroNews.classList.remove('is-hidden');
+    } else {
+      heroNews.classList.add('is-hidden');
     }
-  );
+  }
 
-  observer.observe(hero);
+  // 初期表示
+  updateHeroNews();
+
+  // スクロール時に表示・非表示を切り替え
+  window.addEventListener('scroll', updateHeroNews, {
+    passive: true
+  });
 });

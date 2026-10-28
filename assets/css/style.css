@@ -185,6 +185,7 @@ img {
 
 .breadcrumb-container {
   width: 75%;
+  max-width: 1080px;
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
@@ -410,7 +411,7 @@ img {
   border: 1px solid #333333;
   padding: 1.6rem;
   font-size: 1.6rem;
-  color: #55000C;
+  color: #333333;
   background-color: #FFFFFF;
   resize: vertical;
   border-radius: 0.4rem;
@@ -649,7 +650,8 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
+  max-width: 1080px;
   height: 16rem;
   margin: 0 auto 1.2rem;
   background-image: url("../../img/page-heading.png");
@@ -694,6 +696,12 @@ img {
 
 .grecaptcha-badge {
   z-index: 9999999;
+  bottom: 80px !important;
+}
+@media screen and (max-width: 767px) {
+  .grecaptcha-badge {
+    bottom: 15rem !important;
+  }
 }
 
 body {
@@ -702,6 +710,8 @@ body {
 
 .l-page-bg {
   background-image: url("../../img/bg.png");
+  background-size: cover;
+  background-position: top center;
 }
 @media screen and (max-width: 767px) {
   .l-page-bg {
@@ -783,6 +793,7 @@ body {
 }
 .p-contact__inner {
   width: 75%;
+  max-width: 1440px;
   margin-inline: auto;
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -840,7 +851,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -1008,7 +1019,7 @@ body {
 }
 .l-header__link-en {
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 1rem;
   color: #55000C;
   letter-spacing: 0.01em;
@@ -1223,7 +1234,7 @@ body {
 }
 .drawer__link-en {
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 1rem;
   color: #55000C;
   letter-spacing: 0.01em;
@@ -1235,8 +1246,10 @@ body {
   height: 4.8rem;
   margin: 0 0 1.2rem;
 }
+
 .footer {
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -1348,8 +1361,8 @@ body {
 
 .page-top {
   position: fixed;
-  bottom: 8rem;
-  right: 4rem;
+  bottom: 3.2rem;
+  right: 3.2rem;
   z-index: 1000;
 }
 @media screen and (max-width: 767px) {
@@ -1423,7 +1436,7 @@ body {
   border-radius: 2rem;
   padding: 1.6rem 1.6rem 1.8rem;
   position: fixed;
-  top: 58rem;
+  top: 32rem;
   right: 3rem;
   opacity: 1;
   visibility: visible;
@@ -1433,8 +1446,8 @@ body {
 @media screen and (max-width: 767px) {
   .p-hero-news {
     height: 11rem;
-    top: 53rem;
-    right: 11rem;
+    top: 44rem;
+    right: 16rem;
   }
 }
 .p-hero-news__link {
@@ -1497,7 +1510,8 @@ body {
 
 .p-hero {
   position: relative;
-  margin: 0 0 12rem;
+  margin: 0 auto 12rem;
+  max-width: 1440px;
 }
 @media screen and (max-width: 767px) {
   .p-hero {
@@ -1540,6 +1554,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2509803922));
 }
 @media screen and (max-width: 767px) {
   .p-hero__text {
@@ -1626,7 +1641,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -1668,6 +1683,7 @@ body {
 .p-introduction {
   text-align: center;
   width: 75%;
+  max-width: 1440px;
   margin: 0 auto 16.2rem;
 }
 @media screen and (max-width: 767px) {
@@ -1722,7 +1738,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .p-introduction__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 auto 1rem;
   }
 }
@@ -1730,7 +1746,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -1869,7 +1885,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .p-letter__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 auto 1rem;
   }
 }
@@ -1877,7 +1893,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -2063,7 +2079,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -2262,11 +2278,16 @@ body {
   font-weight: 400;
   margin: 0 auto 1rem;
 }
+@media screen and (max-width: 767px) {
+  .p-yearly-program__title {
+    font-size: 2rem;
+  }
+}
 .p-yearly-program__subtitle {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -2286,10 +2307,12 @@ body {
   background: #FFFFFF;
   padding: 6rem 4rem;
   text-align: left;
+  border-radius: 40px;
 }
 @media screen and (max-width: 767px) {
   .p-yearly-program__list-wraper {
     padding: 6rem 1.25rem;
+    border-radius: 30px;
   }
 }
 .p-yearly-program__list {
@@ -3002,6 +3025,10 @@ body {
   letter-spacing: 0.04em;
   line-height: 1.5;
   font-weight: 400;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 @media screen and (max-width: 767px) {
   .p-info-card__title {
@@ -3124,6 +3151,7 @@ body {
 }
 .p-news-article__subtitle {
   font-size: 1.6rem;
+  font-family: "Jost", sans-serif;
   color: #333333;
   letter-spacing: 0.1em;
   line-height: 2;
@@ -3603,7 +3631,7 @@ body {
   line-height: 1;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -3697,7 +3725,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -3814,7 +3842,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -4192,7 +4220,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -4436,7 +4464,7 @@ body {
   font-size: 1rem;
   color: #55000C;
   text-transform: capitalize;
-  font-family: "Kosugi Maru", sans-serif;
+  font-family: "Jost", sans-serif;
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: 900;
@@ -4583,6 +4611,7 @@ body {
   display: flex;
   align-items: center;
   padding: 3.2rem 0;
+  background: repeating-linear-gradient(to right, #55000C 0 2px, transparent 2px 6px) left bottom/100% 1px no-repeat;
 }
 @media screen and (max-width: 767px) {
   .p-recruit-page__req-item {
@@ -4591,6 +4620,9 @@ body {
     gap: 2.4rem;
     padding: 0 0 2.4rem;
   }
+}
+.p-recruit-page__req-item:last-child {
+  background: none;
 }
 .p-recruit-page__req-item-big-pb {
   padding: 3.9rem 0;
@@ -4626,6 +4658,7 @@ body {
   letter-spacing: 0.2em;
   line-height: 1.5;
   font-weight: 400;
+  color: #55000C;
 }
 @media screen and (max-width: 767px) {
   .p-recruit-page__req-desc {

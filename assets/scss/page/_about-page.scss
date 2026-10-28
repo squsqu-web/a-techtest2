@@ -104,13 +104,16 @@
     font-weight: v.$Regular;
     margin: 0 auto 1rem;
 
+    @include mq(md) {
+      font-size: 2rem
+    }
   }
 
   &__subtitle {
     font-size: 1rem;
     color: v.$color-main;
     text-transform: capitalize;
-    font-family: v.$font-sub;
+    font-family: v.$font-main;
     letter-spacing: 0.2em;
     line-height: 1;
     font-weight: v.$Black;
@@ -129,9 +132,11 @@
     background: v.$color-white;
     padding: 6rem 4rem;
     text-align: left;
+    border-radius: 40px;
 
     @include mq(md) {
       padding: 6rem 1.25rem;
+      border-radius: 30px;
     }
   }
 
