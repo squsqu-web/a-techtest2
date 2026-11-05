@@ -7,7 +7,7 @@
   padding: 3.2rem 3.2rem 6.4rem;
   border-radius: 4rem;
 
-  @include mq(md) {
+  @include mq(lg) {
     width: 100%;
     padding: 3.2rem 1.5rem 6.4rem;
     border-radius: 3rem;
@@ -18,7 +18,7 @@
     justify-content: space-between;
     margin-bottom: 1.2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       flex-direction: column;
     }
   }
@@ -35,7 +35,7 @@
 
     margin-bottom: 3.2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.6rem;
       gap: 1.4rem;
     }
@@ -45,7 +45,7 @@
     width: 1.6rem;
     height: auto;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.4rem;
     }
   }
@@ -66,7 +66,7 @@
     -webkit-line-clamp: 2;
     // 記事タイトルを2行まで表示ここまで
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 2rem;
     }
   }
@@ -78,7 +78,7 @@
     line-height: 1.2;
     font-weight: v.$Regular;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.2rem;
     }
   }
@@ -91,7 +91,7 @@
     object-fit: cover;
     border-radius: 40px;
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 100%;
       height: auto;
       border-radius: 20px;
@@ -101,7 +101,7 @@
   &__section {
     margin-bottom: 3.2rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
   }
 
   &__section-heading {

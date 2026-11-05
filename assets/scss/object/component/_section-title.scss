@@ -5,7 +5,7 @@
   padding: 30.3rem 0 0;
   margin-bottom: 1.2rem;
 
-  @include mq(md) {
+  @include mq(lg) {
     padding: 18.6rem 0 0;
     margin-bottom: .9rem;
   }
@@ -23,7 +23,7 @@
     background-size: cover;
     background-position: center;
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 92%;
       height: 12rem;
       background-image: url("../../img/page-heading-sp.png");
@@ -38,7 +38,7 @@
     font-weight: v.$Regular;
     margin-bottom: 1.6rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 2rem;
       margin-bottom: 1.2rem;
     }
@@ -54,7 +54,7 @@
     line-height: 1;
     font-weight: v.$Black;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1rem;
     }
   }

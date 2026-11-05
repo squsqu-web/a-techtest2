@@ -29,18 +29,27 @@
   <div class="l-introduction__inner">
     <section class="p-introduction-sec">
 
+      <?php
+      $current_term = get_queried_object();
+
+      $current_taxonomy = (
+        is_object($current_term) &&
+        isset($current_term->taxonomy)
+      ) ? $current_term->taxonomy : '';
+      ?>
+
       <!-- タブ -->
       <div class="p-introduction-tab inview">
         <button
           type="button"
-          class="p-introduction-tab__button is-active-introduction"
+          class="p-introduction-tab__button<?php echo $current_taxonomy === 'introduction_type' ? ' is-active-introduction' : ''; ?>"
           data-tab="type">
           園の種類<br>から探す
         </button>
 
         <button
           type="button"
-          class="p-introduction-tab__button"
+          class="p-introduction-tab__button<?php echo $current_taxonomy === 'introduction_area' ? ' is-active-introduction' : ''; ?>"
           data-tab="area">
           都道府県<br>から探す
         </button>
@@ -51,29 +60,61 @@
       <div class="l-introduction__contents-wrap inview">
         <!-- 園の種類 -->
         <div
-          class="p-introduction-filter is-active-introduction"
+          class="p-introduction-filter<?php echo $current_taxonomy === 'introduction_type' ? ' is-active-introduction' : ''; ?>"
           data-panel="type">
+
           <?php
+
+
+
+
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_type',
             'hide_empty' => true,
+            'include'    => array(18, 17, 16),
+            'orderby'    => 'include',
           ));
+
+
+
+
+          // $terms = get_terms(array(
+          //   'taxonomy'   => 'introduction_type',
+          //   'hide_empty' => true,
+          // ));
+
+
+
+
 
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
+
+              $is_active = (
+                isset($current_term->term_id) &&
+                $current_taxonomy === 'introduction_type' &&
+                (int) $current_term->term_id === (int) $term->term_id
+              );
           ?>
 
-              <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button">
+              <a
+                href="<?php echo esc_url(get_term_link($term)); ?>"
+                class="p-introduction-filter__button<?php echo $is_active ? ' is-active-introduction' : ''; ?>">
                 <?php echo esc_html($term->name); ?>
               </a>
-          <?php endforeach;
-          endif; ?>
+
+          <?php
+            endforeach;
+          endif;
+          ?>
         </div>
 
 
         <!-- 都道府県 -->
-        <div class="p-introduction-filter" data-panel="area">
+        <div
+          class="p-introduction-filter<?php echo $current_taxonomy === 'introduction_area' ? ' is-active-introduction' : ''; ?>"
+          data-panel="area">
+
           <?php
           $terms = get_terms(array(
             'taxonomy'   => 'introduction_area',
@@ -82,15 +123,24 @@
 
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
+
+              $is_active = (
+                isset($current_term->term_id) &&
+                $current_taxonomy === 'introduction_area' &&
+                (int) $current_term->term_id === (int) $term->term_id
+              );
           ?>
 
               <a
                 href="<?php echo esc_url(get_term_link($term)); ?>"
-                class="p-introduction-filter__button">
+                class="p-introduction-filter__button<?php echo $is_active ? ' is-active-introduction' : ''; ?>">
                 <?php echo esc_html($term->name); ?>
               </a>
-          <?php endforeach;
-          endif; ?>
+
+          <?php
+            endforeach;
+          endif;
+          ?>
         </div>
 
 

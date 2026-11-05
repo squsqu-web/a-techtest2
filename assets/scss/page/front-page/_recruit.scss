@@ -20,10 +20,6 @@
     margin-inline: auto;
     background-color: v.$color-mtransparent;
     text-align: center;
-
-    // 1440pxでは28rem、狭い画面では段階的に縮小
-    padding: 5rem clamp(4.2rem, calc(57.2vw - 54.4rem), 28rem);
-
     border-radius: 40px;
 
     @include mq(md) {
@@ -33,6 +29,10 @@
   }
 
   &__inner-wrap {
+    width: 48%;
+    margin: 0 auto;
+    padding: 64px 0;
+
     @include mq(md) {}
 
   }

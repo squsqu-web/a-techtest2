@@ -285,10 +285,11 @@
         <div class="p-contact__link-wrap inview">
           <a
             href="<?php echo esc_url(home_url('/contact')); ?>"
-            class="p-contact__link p-contact__link-info c-button-lift">
+            class="p-contact__link p-contact__link-info c-button">
             お問い合わせ
           </a>
         </div>
+        
       </div>
     </div>
 

@@ -10,7 +10,7 @@
   background-image: url(../../img/top-letters__bg.svg);
   position: relative;
 
-  @include mq(md) {
+  @include mq(lg) {
     background-image: url(../../img/top-letters__bg_sp.svg);
   }
 }
@@ -23,7 +23,7 @@
     margin-inline: auto;
     padding: 0 0 8rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 92%;
     }
   }
@@ -33,8 +33,9 @@
     padding: 6rem 4rem 0;
     border-radius: 40px;
 
-    @include mq(md) {
+    @include mq(lg) {
       padding: 3rem 1.2rem 0;
+      border-radius: 30px;
     }
   }
 }
@@ -43,7 +44,7 @@
   padding: 11.4rem 0 0;
   margin: 13.4rem 0 0;
 
-  @include mq(md) {
+  @include mq(lg) {
     margin: 8rem 0 0;
   }
 }
@@ -73,6 +74,7 @@
     background-color: v.$color-white;
     color: v.$color-main-5;
     border: 1px solid v.$color-main-5;
+    border-bottom: none;
     font-size: 1.6rem;
     letter-spacing: 0.1em;
     line-height: 1.2;
@@ -86,7 +88,7 @@
       color: v.$color-white;
     }
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.4rem;
       padding: 1.2rem 1rem;
       width: 12rem;
@@ -97,7 +99,7 @@
       display: block;
       font-size: 1.4rem;
 
-      @include mq(md) {
+      @include mq(lg) {
         font-size: 1.2rem;
       }
     }
@@ -147,7 +149,7 @@
       color: v.$color-white;
     }
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.4rem;
       width: 15rem;
       height: 3.3rem;
@@ -155,7 +157,7 @@
     }
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     justify-content: flex-start;
     margin-bottom: 4rem;
   }
@@ -190,7 +192,7 @@
     }
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     grid-template-columns: 30rem;
     justify-content: center;
     gap: 3rem;
@@ -234,7 +236,7 @@
     gap: .8rem;
     margin-bottom: .8rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
   }
 
 
@@ -282,7 +284,7 @@
     -webkit-line-clamp: 2;
     // 記事タイトルを2行まで表示ここまで
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.8rem;
     }
   }
@@ -295,7 +297,7 @@
   display: flex;
   justify-content: center;
 
-  @include mq(md) {
+  @include mq(lg) {
     margin-bottom: 8rem;
   }
 

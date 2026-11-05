@@ -6,7 +6,7 @@
   <section class="l-main-visual">
     <div class="l-main-visual__title">
       <h1 class="l-main-visual__title-ja inview">桜のこもれびキッズランド</h1>
-      <p class="l-main-visual__title-en inview">許可保育所&nbsp;<?php the_title(); ?></p>
+      <p class="l-main-visual__title-ja-sm inview">許可保育所&nbsp;<?php the_title(); ?></p>
     </div>
   </section>
 
@@ -54,11 +54,22 @@
           </h2>
         <?php endif; ?>
 
-        <?php if (get_field('introduction_text')) : ?>
-          <p class="p-introduction-single__text inview">
-            <?php the_field('introduction_text'); ?>
-          </p>
-        <?php endif; ?>
+        <?php
+$introduction_text = get_field('introduction_text');
+
+if ($introduction_text) :
+  $paragraphs = preg_split('/\r\n|\r|\n/', trim($introduction_text));
+?>
+
+  <div class="p-introduction-single__text inview">
+    <?php foreach ($paragraphs as $paragraph) : ?>
+      <?php if (trim($paragraph) !== '') : ?>
+        <p><?php echo esc_html(trim($paragraph)); ?></p>
+      <?php endif; ?>
+    <?php endforeach; ?>
+  </div>
+
+<?php endif; ?>
       </div>
 
     </div>
@@ -797,13 +808,11 @@
 
         <!-- リンクボタン -->
         <div class="p-contact__link-wrap inview">
-
           <a
             href="<?php echo esc_url(home_url('/contact')); ?>"
             class="p-contact__link p-contact__link-info c-button">
             お問い合わせ
           </a>
-
         </div>
 
       </div>

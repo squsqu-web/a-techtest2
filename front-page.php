@@ -241,6 +241,7 @@
   <section class="p-recruit">
     <div class="p-recruit__inner">
       <div class="p-recruit__inner-wrap">
+
         <div class="p-recruit__icon-wrap">
           <img
             src="<?php echo get_template_directory_uri(); ?>/img/svg/recruit.svg"
@@ -256,17 +257,20 @@
           <p class="p-recruit__subtitle inview">recruit</p>
         </div>
         <p class="p-recruit__text inview">桜のこもれびキッズランドで<br class="sp_only">働いてみませんか？</p>
+
+        <!-- リンクボタン -->
+        <div class="p-recruit__link-wrap inview">
+          <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button">
+            採用情報
+          </a>
+          <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button">
+            エントリー
+          </a>
+        </div>
+
       </div>
 
-      <!-- リンクボタン -->
-      <div class="p-recruit__link-wrap inview">
-        <a href="<?php echo home_url('/recruit'); ?>" class="p-recruit__link-info c-button">
-          採用情報
-        </a>
-        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button">
-          エントリー
-        </a>
-      </div>
+
     </div>
   </section>
 

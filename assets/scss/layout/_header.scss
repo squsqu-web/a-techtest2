@@ -14,7 +14,7 @@
   top: 0;
   z-index: 10;
 
-  @include mq(md) {
+  @include mq(hamburger) {
     max-width: 100%;
     left: 0;
     right: 0;
@@ -36,7 +36,7 @@
     // PC：左右の余白を最大80px確保
     padding: 9.6rem clamp(1rem, 5.56vw, 8rem) 0;
 
-    @include mq(md) {
+    @include mq(hamburger) {
       width: 100%;
       padding: 0 2rem;
       height: 15rem;
@@ -48,7 +48,7 @@
     align-items: center;
     flex-shrink: 0;
 
-    @include mq(md) {}
+    @include mq(lg) {}
 
   }
 
@@ -122,7 +122,7 @@
     font-weight: v.$Regular;
     margin: 0 0 0.4rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
   }
 
   &__link-en {
@@ -134,7 +134,7 @@
     line-height: 1.2;
     font-weight: v.$Black;
 
-    @include mq(md) {}
+    @include mq(lg) {}
   }
 
   &__icon {
@@ -142,7 +142,7 @@
     height: 4.8rem;
     margin: 0 0 1.2rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
   }
 
   &__logo {
@@ -176,7 +176,9 @@
 
 // ハンバーガーメニュー（SP用）
 .c-hamburger {
-  @include mq(md) {
+  display: none;
+
+  @include mq(hamburger) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,7 +254,7 @@
 .l-header__sp {
   display: none;
 
-  @include mq(md) {
+  @include mq(hamburger) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,14 +270,14 @@
 }
 
 .l-header__sp .l-header__logo img {
-  @include mq(md) {
+  @include mq(lg) {
     width: 20rem;
     height: auto;
   }
 }
 
 .c-hamburger {
-  @include mq(md) {
+  @include mq(hamburger) {
     position: absolute;
     right: 2rem;
     top: 50%;
@@ -288,7 +290,7 @@
   display: block;
 }
 
-@include mq(md) {
+@include mq(hamburger){
   .u-sp-none {
     display: none;
   }
@@ -326,7 +328,7 @@
     height: 100%;
 
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 92%;
       background: v.$color-mtransparent;
       margin: 6.7rem auto 0;

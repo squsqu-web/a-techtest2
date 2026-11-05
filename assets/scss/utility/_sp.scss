@@ -5,7 +5,7 @@
   display: none;
 }
 
-@include mq(md) {
+@include mq(lg) {
   .sp_only {
     display: block;
   }
@@ -16,7 +16,7 @@
   display: block;
 }
 
-@include mq(md) {
+@include mq(lg) {
   .pc_only {
     display: none;
   }

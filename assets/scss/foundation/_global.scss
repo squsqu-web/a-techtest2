@@ -8,7 +8,7 @@
   max-width: 1080px;
   margin: 0 auto;
 
-  @include mq(md) {
+  @include mq(lg) {
     width: 92%;
   }
 }
@@ -20,7 +20,7 @@
   line-height: 1.5;
   font-weight: v.$Regular;
 
-  @include mq(md) {
+  @include mq(lg) {
     font-size: 1.4rem;
   }
 }

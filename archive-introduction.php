@@ -55,10 +55,27 @@
       <div class="l-introduction__contents-wrap inview">
         <div class="p-introduction-filter is-active-introduction" data-panel="type">
           <?php
+
+
+
+
           $terms = get_terms(array(
-            'taxonomy' => 'introduction_type',
+            'taxonomy'   => 'introduction_type',
             'hide_empty' => true,
+            'include'    => array(18, 17, 16),
+            'orderby'    => 'include',
           ));
+
+
+
+          // $terms = get_terms(array(
+          //   'taxonomy'   => 'introduction_type',
+          //   'hide_empty' => true,
+          // ));
+
+
+
+
           if (!empty($terms) && !is_wp_error($terms)) :
             foreach ($terms as $term) :
           ?>
@@ -194,11 +211,12 @@
       </div>
 
       <p class="p-recruit__text inview">桜のこもれびキッズランドで働いてみませんか？</p>
-    </div>
 
-    <div class="p-recruit__link-wrap inview">
-      <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button">採用情報</a>
-      <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button">エントリー</a>
+      <!-- リンクボタン -->
+      <div class="p-recruit__link-wrap inview">
+        <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="p-recruit__link-info c-button">採用情報</a>
+        <a href="<?php echo home_url('/recruit#recruit-entry'); ?>" class="p-recruit__link-entry c-button">エントリー</a>
+      </div>
     </div>
 
   </div>

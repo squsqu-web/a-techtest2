@@ -5,21 +5,18 @@
 .p-about-page {
   margin: 12rem 0 5rem;
 
-  @include mq(md) {
+  @include mq(lg) {
     margin: 8rem 0 5rem;
   }
 
   &__inner {
+    width: 100%;
     max-width: 1440px;
     margin-inline: auto;
-
-    @include mq(md) {
-      width: 100%;
-    }
   }
 
   &__text-wrap {
-    @include mq(md) {
+    @include mq(lg) {
       width: 92%;
       margin-inline: auto;
       text-align: left;
@@ -33,7 +30,7 @@
     line-height: 3;
     font-weight: v.$Regular;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.6rem;
       width: 100%;
     }
@@ -45,17 +42,16 @@
   text-align: center;
 
 
-  &__inner {
-    width: 75%;
-    max-width: 1080px;
-    margin-inline: auto;
-    margin: 8rem auto 11.8rem;
+&__inner {
+  width: 75%;
+  max-width: 1080px;
+  margin: 8rem auto 11.8rem;
 
-    @include mq(md) {
-      width: 92%;
-      margin: 6rem auto 8rem;
-    }
+  @include mq(lg) {
+    width: 92%;
+    margin: 6rem auto 8rem;
   }
+}
 
 
   /* ==============================
@@ -70,7 +66,7 @@
     margin: 0 auto 1rem;
     border-radius: 50%;
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 8rem;
       height: 8rem;
       margin: 0 auto .8rem;
@@ -81,7 +77,7 @@
     width: 7.2rem;
     height: 7.2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       width: 5.3rem;
       height: 5.3rem;
     }
@@ -104,7 +100,7 @@
     font-weight: v.$Regular;
     margin: 0 auto 1rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 2rem
     }
   }
@@ -119,7 +115,7 @@
     font-weight: v.$Black;
     margin: 0 auto 3.2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       margin: 0 auto 3.2rem;
     }
   }
@@ -134,7 +130,7 @@
     text-align: left;
     border-radius: 40px;
 
-    @include mq(md) {
+    @include mq(lg) {
       padding: 6rem 1.25rem;
       border-radius: 30px;
     }
@@ -145,7 +141,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
@@ -156,7 +152,7 @@
     background-color: v.$color-main-4;
     border-radius: 20px;
 
-    @include mq(md) {}
+    @include mq(lg) {}
 
   }
 
@@ -167,7 +163,7 @@
   &__card {
     display: block;
     width: 100%;
-    height: 26.4rem;
+    height: 100%;
     color: inherit;
     text-decoration: none;
     transition: .3s;
@@ -180,7 +176,7 @@
     aspect-ratio: 296 / 180;
     margin-bottom: .8rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
 
 
     img {
@@ -190,7 +186,7 @@
       object-fit: cover;
       border-radius: 20px;
 
-      @include mq(md) {}
+      @include mq(lg) {}
 
     }
   }
@@ -201,7 +197,7 @@
     gap: .8rem;
     margin-bottom: .8rem;
 
-    @include mq(md) {}
+    @include mq(lg) {}
 
   }
 
@@ -242,7 +238,7 @@
     font-weight: v.$Regular;
     margin-top: 3.2rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.4rem;
     }
   }

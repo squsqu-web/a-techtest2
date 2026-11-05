@@ -10,14 +10,14 @@
   &__confirm-text {
     font-size: 1.6rem;
 
-    color: v.$color-main;
+    color: v.$color-main-2;
     letter-spacing: 0.1em;
     line-height: 1.5;
     font-weight: v.$Regular;
 
     padding-top: 0.8rem;
 
-    @include mq(md) {
+    @include mq(lg) {
       font-size: 1.4rem;
       padding-top: 0;
     }
@@ -31,7 +31,7 @@
 .l-main-visual-confirm {
   margin-bottom: 12rem;
 
-  @include mq(md) {
+  @include mq(lg) {
     margin-bottom: 6rem;
   }
 }

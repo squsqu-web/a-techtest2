@@ -4,10 +4,10 @@
 // リキャプチャを最前面に
 .grecaptcha-badge {
   z-index: 9999999;
-  bottom: 80px !important;
+  bottom: 120px !important;
 
-  @include mq(md) {
-    bottom: 15rem !important;
+  @include mq(lg) {
+    bottom: 12rem !important;
   }
 }
 
@@ -23,7 +23,7 @@ body {
   background-size: cover;
   background-position: top center;
 
-  @include mq(md) {
+  @include mq(lg) {
     background-image: url("../../img/sp-bg.png");
   }
 }
@@ -33,7 +33,7 @@ body {
   padding-top: 20rem;
   position: relative;
 
-  @include mq(md) {
+  @include mq(lg) {
     padding-top: 12.6rem;
   }
 }

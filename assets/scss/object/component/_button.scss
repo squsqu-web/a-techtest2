@@ -23,7 +23,7 @@
   );
 }
 
-@include mq(md) {
+@include mq(lg) {
   .c-button {
     @include button-size(
       20rem,
@@ -53,7 +53,7 @@
   letter-spacing: 0.1em;
   line-height: calc(26 / 16);
 
-  @include mq(md) {
+  @include mq(lg) {
     font-size: 1.2rem;
     width: 12rem;
     height: 3rem;
